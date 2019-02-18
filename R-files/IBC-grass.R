@@ -78,11 +78,11 @@ assign("IBCloadedSettings", NULL, envir=IBCvariables) # name for loaded settings
 #############################################################
 # save all further output to a file
 #############################################################
-#con <- file("IBCgrassGUI.log")
-#sink(con, append=TRUE)
-#sink(con, append=TRUE, type="message")
+con <- file("IBCgrassGUI.log")
+sink(con, append=TRUE)
+sink(con, append=TRUE, type="message")
 #############################################################
 # start GUI
 #############################################################
 Welcomefct()
-#sink()
+sink()
