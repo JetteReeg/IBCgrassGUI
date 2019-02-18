@@ -1,0 +1,119 @@
+Species	PFT	plant size	growth form	resource response	grazing response	clonal type	flowering type	germination periods
+Achillea millefolium	MSCAcl3p	medium	semi-rosette	competitor	avoider	long spacer, with resource sharing	late	spring and summer
+Achillea ptarmica	MESTcl1p	medium	erect	stress-tolerator	tolerator	short spacer, with resource sharing	late	spring and summer
+Agrostis canina	MSIIcl3p	medium	semi-rosette	intermediate	intermediate	long spacer, with resource sharing	late	spring and summer
+Agrostis capillaris	MSITcl3p	medium	semi-rosette	intermediate	tolerator	long spacer, with resource sharing	late	spring and summer
+Agrostis gigantea	MSCAcl3p	medium	semi-rosette	competitor	avoider	long spacer, with resource sharing	late	spring and summer
+Agrostis stolonifera	MSIAcl4p	medium	semi-rosette	intermediate	avoider	long spacer, no resource sharing	late	spring and summer
+Ajuga reptans	SSITcl4p	small	semi-rosette	intermediate	tolerator	long spacer, no resource sharing	late	spring and summer
+Alopecurus pratensis	MECTcl3p	medium	erect	competitor	tolerator	long spacer, with resource sharing	early	spring and summer
+Angelica sylvestris	LSCIcl1p	large	semi-rosette	competitor	intermediate	short spacer, with resource sharing	late	spring and summer
+Anthoxanthum odoratum	MSITcl1p	medium	semi-rosette	intermediate	tolerator	short spacer, with resource sharing	late	spring and summer
+Anthriscus sylvestris	LSCIcl2p	large	semi-rosette	competitor	intermediate	short spacer, no resource sharing	late	spring and summer
+Arrhenatherum elatius	LSCIcl1p	large	semi-rosette	competitor	intermediate	short spacer, with resource sharing	late	spring and summer
+Artemisia vulgaris	LSCTp	large	semi-rosette	competitor	tolerator	aclonal	late	spring and summer
+Bellis perennis	SRIAcl4p	small	rosette	intermediate	avoider	long spacer, no resource sharing	early	spring and summer
+Bistorta officinalis	MSSTcl3p	medium	semi-rosette	stress-tolerator	tolerator	long spacer, with resource sharing	late	spring and summer
+Briza media	SSITcl3p	small	semi-rosette	intermediate	tolerator	long spacer, with resource sharing	late	spring and summer
+Bromus racemosus	LSCTcl2	large	semi-rosette	competitor	tolerator	short spacer, no resource sharing	late	spring and summer
+Caltha palustris	MSIAcl1p	medium	semi-rosette	intermediate	avoider	short spacer, with resource sharing	late	spring and summer
+Calystegia sepium	LECIcl4p	large	erect	competitor	intermediate	long spacer, no resource sharing	late	spring and summer
+Campanula patula	MSIIp	medium	semi-rosette	intermediate	intermediate	aclonal	late	spring and summer
+Cardamine pratensis	MSCTcl2p	medium	semi-rosette	competitor	tolerator	short spacer, no resource sharing	late	spring and summer
+Cardamine pratensis	SSIAcl4p	small	semi-rosette	intermediate	avoider	long spacer, no resource sharing	late	spring and summer
+Carex nigra	MSSTcl3p	medium	semi-rosette	stress-tolerator	tolerator	long spacer, with resource sharing	late	spring and summer
+Carex panicea	MSITcl3p	medium	semi-rosette	intermediate	tolerator	long spacer, with resource sharing	late	spring and summer
+Carum carvi	LSCTp	large	semi-rosette	competitor	tolerator	aclonal	late	spring and summer
+Centaurea jacea	MSCTcl2p	medium	semi-rosette	competitor	tolerator	short spacer, no resource sharing	late	spring and summer
+Centaurea jacea	SECTp	small	erect	competitor	tolerator	aclonal	early	spring and summer
+Cerastium arvense	SECTcl3p	small	erect	competitor	tolerator	long spacer, with resource sharing	early	spring and summer
+Cerastium fontanum	SEITcl1p	small	erect	intermediate	tolerator	short spacer, with resource sharing	late	spring and summer
+Cerastium holosteoides	SECTp	small	erect	competitor	tolerator	aclonal	early	spring and summer
+Cerastium holosteoides	SRIAcl2p	small	rosette	intermediate	avoider	short spacer, no resource sharing	late	spring and summer
+Cirsium arvense	MECAcl4p	medium	erect	competitor	avoider	long spacer, no resource sharing	late	spring and summer
+Cirsium oleraceum	LSCIcl1p	large	semi-rosette	competitor	intermediate	short spacer, with resource sharing	late	spring and summer
+Cirsium palustre	LSCAp	large	semi-rosette	competitor	avoider	aclonal	late	spring and summer
+Cirsium rivulare	LSSTcl3p	large	semi-rosette	stress-tolerator	tolerator	long spacer, with resource sharing	late	spring and summer
+Cirsium vulgare	LSCAp	large	semi-rosette	competitor	avoider	aclonal	late	spring and summer
+Colchicum autumnale	SSIAcl4p	small	semi-rosette	intermediate	avoider	long spacer, no resource sharing	late	spring and summer
+Convolvulus arvensis	MECTp	medium	erect	competitor	tolerator	aclonal	late	spring and summer
+Crepis biennis	MSCIp	medium	semi-rosette	competitor	intermediate	aclonal	late	spring and summer
+Crepis paludosa	MSCIcl1p	medium	semi-rosette	competitor	intermediate	short spacer, with resource sharing	late	spring and summer
+Crepis paludosa	MSCIcl1p	medium	semi-rosette	competitor	intermediate	short spacer, with resource sharing	late	spring and summer
+Cynosorus cristatus	MSIAcl1p	medium	semi-rosette	intermediate	avoider	short spacer, with resource sharing	late	spring and summer
+Dactylis glomerata	MSCTcl2p	medium	semi-rosette	competitor	tolerator	short spacer, no resource sharing	late	spring and summer
+Daucus carota	LSCIp	large	semi-rosette	competitor	intermediate	aclonal	late	spring and summer
+Daucus carota	MSCIp	medium	semi-rosette	competitor	intermediate	aclonal	late	spring and summer
+Deschampsia cespitosa	LSCAcl1p	large	semi-rosette	competitor	avoider	short spacer, with resource sharing	late	spring and summer
+Deschampsia cespitosa	MSCAcl1p	medium	semi-rosette	competitor	avoider	short spacer, with resource sharing	late	spring and summer
+Elymus repens	LSCTcl3p	large	semi-rosette	competitor	tolerator	long spacer, with resource sharing	late	spring and summer
+Epilobium palustre	MEIIcl4p	medium	erect	intermediate	intermediate	long spacer, no resource sharing	late	spring and summer
+Equisetum arvense	SECAcl3p	small	erect	competitor	avoider	long spacer, with resource sharing	late	spring and summer
+Festuca arundinacea	LSCTcl3p	large	semi-rosette	competitor	tolerator	long spacer, with resource sharing	late	spring and summer
+Festuca pratensis	MSCTcl1p	medium	semi-rosette	competitor	tolerator	short spacer, with resource sharing	late	spring and summer
+Festuca rubra	MSCAcl3p	medium	semi-rosette	competitor	avoider	long spacer, with resource sharing	late	spring and summer
+Filipendula ulmaria	LSCIcl3p	large	semi-rosette	competitor	intermediate	long spacer, with resource sharing	late	spring and summer
+Galium mollugo agg.	MECIcl4p	medium	erect	competitor	intermediate	long spacer, no resource sharing	late	spring and summer
+Galium palustre	SESIcl4p	small	erect	stress-tolerator	intermediate	long spacer, no resource sharing	late	spring and summer
+Galium uliginosum	SEITcl4p	small	erect	intermediate	tolerator	long spacer, no resource sharing	early	spring and summer
+Galium verum	MESTcl3p	medium	erect	stress-tolerator	tolerator	long spacer, with resource sharing	late	spring and summer
+Geranium pratense	MSCIcl1p	medium	semi-rosette	competitor	intermediate	short spacer, with resource sharing	late	spring and summer
+Glechoma hederacea	SEITcl4p	small	erect	intermediate	tolerator	long spacer, no resource sharing	early	spring and summer
+Helictotrichon pubescens	MSCTcl3p	medium	semi-rosette	competitor	tolerator	long spacer, with resource sharing	late	spring and summer
+Heracleum sphondylium	LSCIp	large	semi-rosette	competitor	intermediate	aclonal	late	spring and summer
+Holcus lanatus	MSCTcl1p	medium	semi-rosette	competitor	tolerator	short spacer, with resource sharing	late	spring and summer
+Holcus mollis	MSIAcl3p	medium	semi-rosette	intermediate	avoider	long spacer, with resource sharing	late	spring and summer
+Hyperchaeris radicata	SRIAcl2p	small	rosette	intermediate	avoider	short spacer, no resource sharing	late	spring and summer
+Hypericum perforatum	MECTp	medium	erect	competitor	tolerator	aclonal	late	spring and summer
+Juncus acutiflorus	LSSTcl3p	large	semi-rosette	stress-tolerator	tolerator	long spacer, with resource sharing	late	spring and summer
+Juncus effusus	LECAcl3p	large	erect	competitor	avoider	long spacer, with resource sharing	late	spring and summer
+Knautia arvensis	MSCIp	medium	semi-rosette	competitor	intermediate	aclonal	late	spring and summer
+Lamium album	SEIAcl4p	small	erect	intermediate	avoider	long spacer, no resource sharing	early	spring and summer
+Lathyrus pratensis	MECIcl3p	medium	erect	competitor	intermediate	long spacer, with resource sharing	late	spring and summer
+Leontodon autumnalis	SRIAcl1p	small	rosette	intermediate	avoider	short spacer, with resource sharing	late	spring and summer
+Leontodon hispidus	SRITcl1p	small	rosette	intermediate	tolerator	short spacer, with resource sharing	late	spring and summer
+Leucanthemum vulgare	MSCIcl3p	medium	semi-rosette	competitor	intermediate	long spacer, with resource sharing	late	spring and summer
+Lolium perenne	MSCAcl2p	medium	semi-rosette	competitor	avoider	short spacer, no resource sharing	late	spring and summer
+Lotus corniculatus	MEITp	medium	erect	intermediate	tolerator	aclonal	late	spring and summer
+Lotus pedunculatus	MEITp	medium	erect	intermediate	tolerator	aclonal	late	spring and summer
+Luzula campestris	SSITcl3p	small	semi-rosette	intermediate	tolerator	long spacer, with resource sharing	late	spring and summer
+Myosotis nemorosa	SSITcl3p	small	semi-rosette	intermediate	tolerator	long spacer, with resource sharing	late	spring and summer
+Phalaris arundinacea	LECIcl3p	large	erect	competitor	intermediate	long spacer, with resource sharing	late	spring and summer
+Phleum pratense	MSCTcl1p	medium	semi-rosette	competitor	tolerator	short spacer, with resource sharing	late	spring and summer
+Pimpinella major	MSCIcl1p	medium	semi-rosette	competitor	intermediate	short spacer, with resource sharing	late	spring and summer
+Plantago lanceolata	MRITcl3p	medium	rosette	intermediate	tolerator	long spacer, with resource sharing	early	spring and summer
+Plantago major	SRIAcl1p	small	rosette	intermediate	avoider	short spacer, with resource sharing	late	spring and summer
+Plantago media	SRIAcl1p	small	rosette	intermediate	avoider	short spacer, with resource sharing	late	spring and summer
+Poa angustifolia	MSSAcl4p	medium	semi-rosette	stress-tolerator	avoider	long spacer, no resource sharing	late	spring and summer
+Poa pratensis	MSCAcl3p	medium	semi-rosette	competitor	avoider	long spacer, with resource sharing	late	spring and summer
+Poa trivialis	MSITcl4p	medium	semi-rosette	intermediate	tolerator	long spacer, no resource sharing	late	spring and summer
+Polygonum aviculare	SEIAp	small	erect	intermediate	avoider	aclonal	late	spring and summer
+Potentilla anserina	SRIAcl3p	small	rosette	intermediate	avoider	long spacer, with resource sharing	late	spring and summer
+Prunella vulgaris	SEIAcl4p	small	erect	intermediate	avoider	long spacer, no resource sharing	early	spring and summer
+Ranunculus acris	MSCTcl1p	medium	semi-rosette	competitor	tolerator	short spacer, with resource sharing	late	spring and summer
+Ranunculus bulbosus	SSITcl2p	small	semi-rosette	intermediate	tolerator	short spacer, no resource sharing	late	spring and summer
+Ranunculus flammula	MSIAcl4p	medium	semi-rosette	intermediate	avoider	long spacer, no resource sharing	late	spring and summer
+Ranunculus repens	MSIAcl4p	medium	semi-rosette	intermediate	avoider	long spacer, no resource sharing	late	spring and summer
+Ranunculus repens	MSIAcl4p	medium	semi-rosette	intermediate	avoider	long spacer, no resource sharing	late	spring and summer
+Rumex acetosa	MSCTcl2p	medium	semi-rosette	competitor	tolerator	short spacer, no resource sharing	late	spring and summer
+Rumex crispus	MSCAp	medium	semi-rosette	competitor	avoider	aclonal	late	spring and summer
+Rumex obtusifolius	MSCAcl1p	medium	semi-rosette	competitor	avoider	short spacer, with resource sharing	late	spring and summer
+Salvia pratensis	MSIIcl1p	medium	semi-rosette	intermediate	intermediate	short spacer, with resource sharing	late	spring and summer
+Sanguisorba officinalis	MSSIcl1p	medium	semi-rosette	stress-tolerator	intermediate	short spacer, with resource sharing	late	spring and summer
+Scirpus sylvaticus	LSSIcl3p	large	semi-rosette	stress-tolerator	intermediate	long spacer, with resource sharing	late	spring and summer
+Senecio jacobaea	MSCAcl1p	medium	semi-rosette	competitor	avoider	short spacer, with resource sharing	late	spring and summer
+Silene flos-cuculi	MSIIcl3p	medium	semi-rosette	intermediate	intermediate	long spacer, with resource sharing	late	spring and summer
+Silene vulgaris	SRITcl3pf	small	rosette	intermediate	tolerator	long spacer, with resource sharing	early	spring and summer
+Stellaria graminea	SESTcl4p	small	erect	stress-tolerator	tolerator	long spacer, no resource sharing	late	spring and summer
+Taraxacum sect. Ruderalia	SRIAcl1p	small	rosette	intermediate	avoider	short spacer, with resource sharing	late	spring and summer
+Tragopogon pratensis	MSIIp	medium	semi-rosette	intermediate	intermediate	aclonal	late	spring and summer
+Trifolium pratense	SSCTp	small	semi-rosette	competitor	tolerator	aclonal	late	spring and summer
+Trifolium repens	SSIAcl4p	small	semi-rosette	intermediate	avoider	long spacer, no resource sharing	late	spring and summer
+Trisetum flavescens	MSITcl3p	medium	semi-rosette	intermediate	tolerator	long spacer, with resource sharing	late	spring and summer
+Trollius europaeus	MSCTcl1p	medium	semi-rosette	competitor	tolerator	short spacer, with resource sharing	late	spring and summer
+Tussilago farfara	SRITcl3p	small	rosette	intermediate	tolerator	long spacer, with resource sharing	late	spring and summer
+Urtica dioica	LECAcl4p	large	erect	competitor	avoider	long spacer, no resource sharing	late	spring and summer
+Veronica arvensis	SEITcl4p	small	erect	intermediate	tolerator	long spacer, no resource sharing	early	spring and summer
+Veronica chamaedrys	SEITcl3p	small	erect	intermediate	tolerator	long spacer, with resource sharing	early	spring and summer
+Vicia cracca	LECAcl4p	large	erect	competitor	avoider	long spacer, no resource sharing	late	spring and summer
+Vicia sepium	MECIcl3p	medium	erect	competitor	intermediate	long spacer, with resource sharing	late	spring and summer

@@ -1,0 +1,25 @@
+  general parameters
+  -#  ModelVersion (3); // mode of density denpendent mortality and competition
+  -#  CellNum (173); // grid size (cm)
+  -#  Tmax (100); // maximal number of years simulated
+  -#  Tinit (50); // initial years before herbicide effects are simulated
+  -#  NamePftFile ("Fieldedge.txt"); // PFT list
+  -#  NameHerbEffectFile ("HerbFact.txt"); // fixed herbicide effect values
+  -#  seedsPerType (10); // degree of isolation as number of seed input per year
+  resources
+  -#  meanBRes (90); // belowground resources
+  -#  meanARes (100); // aboveground resources
+  -#  Aampl (0.7); // amplitude of seasonal distribution of aboveground resources (based on day length)
+  -#  Bampl (0); // amplitude of seasonal distribution of belowground resources
+  disturbances
+  -#  AreaEvent (0.1); // amount of area trampled per year
+  -#  GrazProb (0.01); // amount of area grazed per year
+  -#  NCut (1); // number of cutting events per year
+  herbicide impact parameter
+  -#  week_start (1); // week of application of herbicide
+  -#  Generation ("F0"); // affected generation
+  -#  HerbDuration (30); // number of years simulated with herbicide effect
+  -#  HerbEffectType (1); // defines simulation run as treatment of control (1 - treatment; 0 - control)
+  -#  EffectModel (0); // defines on which input herbicide effects are based (0 - txt file 2 - dose response)
+  -#  app_rate (260); // application rate (only used if EffectModel is 2)
+  -#  MCrun (1); // number of monte carlo runs

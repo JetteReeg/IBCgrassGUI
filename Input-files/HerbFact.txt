@@ -1,0 +1,2 @@
+Biomass	Mortality	SeedlingBiomass	Establishment	SeedSterility	SeedNumber
+0	0	0	0	0	0

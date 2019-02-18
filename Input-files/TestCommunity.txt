@@ -1,0 +1,14 @@
+select	Species	plant.size	growth.form	resource.response	grazing.response	clonal.type	flowering.type	germination.periods
+TRUE	Achillea millefolium	medium	semi-rosette	competitor	avoider	long spacer, with resource sharing	late	spring and summer
+TRUE	Agrostis canina	medium	semi-rosette	intermediate	intermediate	long spacer, with resource sharing	late	spring and summer
+TRUE	Agrostis gigantea	medium	semi-rosette	competitor	avoider	long spacer, with resource sharing	late	spring and summer
+TRUE	Ajuga reptans	small	semi-rosette	intermediate	tolerator	long spacer, no resource sharing	late	spring and summer
+TRUE	Angelica sylvestris	large	semi-rosette	competitor	intermediate	short spacer, with resource sharing	late	spring and summer
+TRUE	Anthriscus sylvestris	large	semi-rosette	competitor	intermediate	short spacer, no resource sharing	late	spring and summer
+TRUE	Artemisia vulgaris	large	semi-rosette	competitor	tolerator	aclonal	late	spring and summer
+TRUE	Bistorta officinalis	medium	semi-rosette	stress-tolerator	tolerator	long spacer, with resource sharing	late	spring and summer
+TRUE	Bromus racemosus	large	semi-rosette	competitor	tolerator	short spacer, no resource sharing	late	spring and summer
+TRUE	Calystegia sepium	large	erect	competitor	intermediate	long spacer, no resource sharing	late	spring and summer
+TRUE	Cardamine pratensis	medium	semi-rosette	competitor	tolerator	short spacer, no resource sharing	late	spring and summer
+TRUE	Carex nigra	medium	semi-rosette	stress-tolerator	tolerator	long spacer, with resource sharing	late	spring and summer
+TRUE	Trollius europaeus	medium	semi-rosette	competitor	tolerator	short spacer, with resource sharing	late	spring and summer
