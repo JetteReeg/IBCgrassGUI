@@ -1,4 +1,11 @@
+################################################################################
+#                                                                              #
+# This function will run simulations on preset communities.                    #
+# The communities are based on the publications Reeg et al. 2017, 2018a, 2018b #
+#                                                                              #
+################################################################################
 RunPreSet <- function(){
+  # delete old files of previous simulations
   if (length(list.files("currentSimulation/"))>0){
     setwd('currentSimulation')
     unlink(list.files(getwd()), recursive=TRUE)
@@ -120,20 +127,12 @@ RunPreSet <- function(){
   vbox3.1$packStart(label_above)
   vbox3.1$packStart(ResourceSliderAbove)
   
-  # box for amplitude
+  # box amplitude for aboveground seasonal variation of resources
   vbox3.2 <- gtkVBoxNew()
   label_aboveampl<-gtkLabel('Amplitude for aboveground seasonality')
   label_aboveampl$setTooltipText("Amplitude for aboveground resource distribution over 1 growing season")
   AboveAmplitudeSlider <- gtkHScaleNewWithRange(min = 0, max = 0.9, step = 0.1)
   AboveAmplitudeSlider$setValue(get("IBCabampl", envir=IBCvariables))
-  
-  # label_belowampl<-gtkLabel('Amplitude for belowground seasonality')
-  # label_belowampl$setTooltipText("Amplitude for belowground resource distribution over 1 growing season")
-  # BelowAmplitudeSlider <- gtkHScaleNewWithRange(min = 0, max = 0.9, step = 0.1)
-  # BelowAmplitudeSlider$setValue(get("IBCbelampl", envir=IBCvariables))
-  # 
-  # vbox3.1$packStart(label_belowampl)
-  # vbox3.1$packStart(BelowAmplitudeSlider)
   
   vbox3.2$packStart(label_aboveampl)
   vbox3.2$packStart(AboveAmplitudeSlider)
@@ -155,41 +154,35 @@ RunPreSet <- function(){
   vbox4$packStart(label_disturbances)
   
   
-  #slider for trampling
+  # slider for trampling
   label_tramp<-gtkLabel('Trampling [% area trampled]')
   label_tramp$setTooltipText("Trampling causes the destruction of aboveground shootmass.")
   label_tramp['height.request'] <- 20
-  # 14
   vbox4$packStart(label_tramp)
   TramplingSlider <- gtkHScale(min = 0, max = 50, step = 0.1)
   TramplingSlider$setTooltipText("Trampling causes the destruction of aboveground shootmass.")
   TramplingSlider$setValue(get("IBCtramp", envir=IBCvariables)*100)
-  # 15
   vbox4$packStart(TramplingSlider)
   
   # slider for grazing
   label_graz<-gtkLabel('Grazing [% area grazed]')
   label_graz$setTooltipText("During the grazing process, parts of the aboveground shoot mass is removed. The proportion of grazed shoot mass is PFT specific.")
   label_graz['height.request'] <- 20
-  # 16
   vbox4$packStart(label_graz)
   GrazingSlider <- gtkHScale(min = 0, max = 50, step = 0.1)
   GrazingSlider$setTooltipText("During the grazing process, parts of the aboveground shoot mass is removed. The proportion of grazed shoot mass is PFT specific.")
   GrazingSlider$setValue(get("IBCgraz", envir=IBCvariables)*100)
-  # 17
   vbox4$packStart(GrazingSlider)
   
-  # radio button selection of the cutting
+  # radio button selection of the cutting events
   label_cuts<-gtkLabel('Cutting events')
   label_cuts$setTooltipText("During a cutting event, the aboveground shoot mass is removed to a certain level above the surface.")
   label_cuts['height.request'] <- 20
-  # 18
   vbox4$packStart(label_cuts)
   cuts <- c("In autumn" , " In spring and autumn" , " In spring, summer and autumn", "No cutting event")
   radio_buttons_cut <- NULL
   for (cuts in cuts){
     button_cuts <- gtkRadioButton(radio_buttons_cut, cuts)
-    # 7-
     vbox4$packStart(button_cuts)
     radio_buttons_cut<- c(radio_buttons_cut, button_cuts)
   }
@@ -203,7 +196,7 @@ RunPreSet <- function(){
   ##################################################
   vbox5 <- gtkVBoxNew()
   vbox5$setBorderWidth(5)
-  
+  # go one step further..
   ContinueButton<-gtkButton('Continue')
   ContinueButton$setTooltipText("Go to the next step.")
   ClickOnButtonContinue <- function(button){
@@ -242,22 +235,25 @@ RunPreSet <- function(){
     if(vbox4[[10]]$getActive()==T) {
       assign("IBCcut", 0, envir = IBCvariables)
     }
-    
+    # go to the herbicide settings
     HerbicideSettings()
+    # close the current window
     RunPreSetWindow$destroy()
   }
   
+  # return to previous window
   ReturnButton <- gtkButton('Back')
   ReturnButton$setTooltipText("Go back to the previous window.")
   ClickOnReturn <- function(button){
-    
+    # close current window
     RunPreSetWindow$destroy()
+    # open previous window
     Selection()
     
   }
   
   vbox5$packStart(ContinueButton)
-  vbox5$packStart(ReturnButton,fill=F) #button which will start 
+  vbox5$packStart(ReturnButton,fill=F)
   
   gSignalConnect(ContinueButton, "clicked", ClickOnButtonContinue)
   gSignalConnect(ReturnButton, "clicked", ClickOnReturn)
@@ -289,7 +285,13 @@ RunPreSet <- function(){
   RunPreSetWindow$add(vbox)
   RunPreSetWindow$show()
 }
-
+################################################################################
+#                                                                              #
+# This function will create a new community/regional species pool.             #
+# A list with all already classified plant species is given, but the user has  #
+# the possibility to add new species                                           #
+#                                                                              #
+################################################################################
 CreateNew <- function(){
   ##################################################
   ### Title
@@ -301,7 +303,10 @@ Create a new community</span>
 Please select the species occuring in the regional species pool, add new species or load previously saved community file.')
 
   ###################################################
-  ### chunk number 2: callBackEdit
+  ### Edit the entry of a table
+  ### Code is adapted from 
+  ### https://github.com/lawremi/RGtk2/blob/master/books/rgui/ProgGUIInR/inst/Examples/ch-RGtk2/ex-RGtk2-rGtkDataFrame.R
+  ### Author: John Verzani
   ###################################################
   #line 17 "ex-RGtk2-rGtkDataFrame.Rnw"
   editCallBack <- function(cell, path, arg3, ...) {
@@ -340,7 +345,10 @@ Please select the species occuring in the regional species pool, add new species
   
   
   ###################################################
-  ### chunk number 3: AddColumnWithType
+  ### Add column of a table
+  ### Code is adapted from 
+  ### https://github.com/lawremi/RGtk2/blob/master/books/rgui/ProgGUIInR/inst/Examples/ch-RGtk2/ex-RGtk2-rGtkDataFrame.R
+  ### Author: John Verzani
   ###################################################
   #line 58 "ex-RGtk2-rGtkDataFrame.Rnw"
   gtkTreeViewAddColumnWithType <-
@@ -359,7 +367,6 @@ Please select the species occuring in the regional species pool, add new species
                    "factor" = gtkCellRendererCombo(), # if type=factor --> add a combo box
                    gtkCellRendererText() #if not factor --> only Text
       )
-      # cr$setTooltipText('test')
       
       ## the new column we will add
       vc <- gtkTreeViewColumn()
@@ -391,10 +398,6 @@ Please select the species occuring in the regional species pool, add new species
         }
         cr['model'] <- cstore
         cr['text-column'] <- 0
-        # 
-        # newValue <- i
-        # rGtkstore[,storeCol] <- newValue
-        
       }
       
       
@@ -405,7 +408,10 @@ Please select the species occuring in the regional species pool, add new species
                            data = list(view=view,type=type,column=storeCol))
     }
   ###################################################
-  ### chunk number 3: AddColumnWithType last entry
+  ### Edit the entry of a table
+  ### Code is adapted from 
+  ### https://github.com/lawremi/RGtk2/blob/master/books/rgui/ProgGUIInR/inst/Examples/ch-RGtk2/ex-RGtk2-rGtkDataFrame.R
+  ### Author: John Verzani
   ###################################################
   #line 58 "ex-RGtk2-rGtkDataFrame.Rnw"
   gtkTreeViewAddColumnWithTypeLastEntry <-
@@ -424,7 +430,6 @@ Please select the species occuring in the regional species pool, add new species
                    "factor" = gtkCellRendererCombo(), # if type=factor --> add a combo box
                    gtkCellRendererText() #if not factor --> only Text
       )
-      # cr$setTooltipText('test')
       
       ## the new column we will add
       vc <- gtkTreeViewColumn()
@@ -472,7 +477,10 @@ Please select the species occuring in the regional species pool, add new species
   
   
   ###################################################
-  ### chunk number 4: keyNav
+  ### Add key navigation in a table
+  ### Code is adapted from 
+  ### https://github.com/lawremi/RGtk2/blob/master/books/rgui/ProgGUIInR/inst/Examples/ch-RGtk2/ex-RGtk2-rGtkDataFrame.R
+  ### Author: John Verzani
   ###################################################
   #line 116 "ex-RGtk2-rGtkDataFrame.Rnw"
   ### -- bug with this when not editing
@@ -513,7 +521,7 @@ Please select the species occuring in the regional species pool, add new species
   }
   
   ###################################################
-  ### Data frame with all Trait options
+  ### Data frame with all Trait options and classified species
   ###################################################
   PFTfile <- read.table("Input-files/CompleteSpeciesList.txt", header=T, sep="\t")
   df <- PFTfile[,-2]
@@ -539,7 +547,7 @@ Please select the species occuring in the regional species pool, add new species
   })
   
   ##################################################
-  ### create df to append a species
+  ### create data.frame to append a species
   ##################################################
   PFTfile <- read.table("Input-files/CompleteSpeciesList.txt", header=T, sep="\t")
   Species <- "Add species name"
@@ -566,7 +574,7 @@ Please select the species occuring in the regional species pool, add new species
     view.append$addColumnWithTypeLastEntry(name = nms[i], type, viewCol = i, storeCol = i)
   })
   ##################################################
-  ### button to append to df
+  ### button to append species to data.frame
   ##################################################
   appendButton <- gtkButton("Add to list")
   append <- function(button){
@@ -596,7 +604,7 @@ Please select the species occuring in the regional species pool, add new species
   ##################################################
   ### buttons for community file
   ##################################################
-  # 1 button for save community
+  # 1 button for saving the community
   SaveSelectedCommunityButton <- gtkButton('Save selected species as new community')
   SaveSelectedCommunity <- function(button){
     dialog <- gtkFileChooserDialog ( title = "Save a file" ,
@@ -634,7 +642,7 @@ Please select the species occuring in the regional species pool, add new species
                      } )
     dialog$run()
   }
-  # 2 button for save classified species
+  # 2 button for saving/updating the classified species
   SaveAllClassifiedSpeciesButton <- gtkButton('Save the updated list of all classified species')
   SaveAllClassifiedSpecies <- function(button){
     df <- data.frame(sw$getChildren()[[1]]$getModel())
@@ -839,7 +847,9 @@ Please select the species occuring in the regional species pool, add new species
     write.table(Community, "Model-files/Community.txt", sep="\t", row.names=F, quote = F)
     assign("IBCcommunity", "Community.txt", envir = IBCvariables)
     assign("IBCcommunityFile", Community, envir = IBCvariables)
+    # close current window
     CreateNewCommunityWindow$destroy()
+    # open the environmental settings window
     setEnvironmentaParametersforNewCommunity()
   }
   
@@ -907,7 +917,11 @@ Add a species to the list above ... </span>')
   CreateNewCommunityWindow$add(vbox)
   CreateNewCommunityWindow$show()
 }
-
+################################################################################
+#                                                                              #
+# This function will load a previously saved community/regional species pool.  #
+#                                                                              #
+################################################################################
 LoadNew <- function(){
   ##################################################
   ### Choose file
@@ -1129,7 +1143,9 @@ LoadNew <- function(){
                          dialog_tmp$ModifyBg("normal", color)
                          gSignalConnect (dialog_tmp, "response", function(dialog_tmp, response, user.data){ dialog_tmp$Destroy()})
                        }
+                       # close current dialog
                        dialog$destroy ( )
+                       # open environmental settings window
                        setEnvironmentaParametersforNewCommunity()
                      }
                      if ( response == GtkResponseType [ "cancel" ] ) {
@@ -1140,10 +1156,14 @@ LoadNew <- function(){
                    } )
   dialog$run()
 }
-
+################################################################################
+#                                                                              #
+# This function will load previous simulation settings.                        #
+#                                                                              #
+################################################################################
 LoadPrev <- function(){
   ##################################################
-  ### Choose file
+  ### Choose simulation settings file
   ##################################################
   dialog <- gtkFileChooserDialog ( title = "Select a file" ,
                                    parent = NULL , action = "select" ,
@@ -1172,20 +1192,29 @@ LoadPrev <- function(){
                          dialog_tmp$ModifyBg("normal", color)
                          gSignalConnect (dialog_tmp, "response", function(dialog_tmp, response, user.data){ dialog_tmp$Destroy()})
                        }
+                       # close current window
                        dialog$destroy ( )
+                       # open environmental settings window
                        setEnvironmentaParametersforNewCommunity()
                      }
                      if ( response == GtkResponseType [ "cancel" ] ) {
+                       # close current window
                        dialog$destroy ( )
+                       # open selection window
                        Selection()
                      }
                      
                    } )
   dialog$run()
 }
-
-
+################################################################################
+#                                                                              #
+# This function will open the environmental settings window for new PFT        #
+# communities.                                                                 #
+#                                                                              #
+################################################################################
 setEnvironmentaParametersforNewCommunity <- function(){
+   # delete old files
    if (length(list.files("currentSimulation/"))>0){
      setwd('currentSimulation')
      unlink(list.files(getwd()), recursive=TRUE)
@@ -1236,20 +1265,12 @@ setEnvironmentaParametersforNewCommunity <- function(){
    vbox2.1$packStart(label_above)
    vbox2.1$packStart(ResourceSliderAbove)
    
-   # box for amplitude
+   # box amplitude of aboveground seasonal variation in resources
    vbox2.2 <- gtkVBoxNew()
    label_aboveampl<-gtkLabel('Amplitude for aboveground seasonality')
    label_aboveampl$setTooltipText("Amplitude for aboveground resource distribution over 1 growing season")
    AboveAmplitudeSlider <- gtkHScaleNewWithRange(min = 0, max = 0.9, step = 0.1)
    AboveAmplitudeSlider$setValue(get("IBCabampl", envir=IBCvariables))
-   
-   # label_belowampl<-gtkLabel('Amplitude for belowground seasonality')
-   # label_belowampl$setTooltipText("Amplitude for belowground resource distribution over 1 growing season")
-   # BelowAmplitudeSlider <- gtkHScaleNewWithRange(min = 0, max = 0.9, step = 0.1)
-   # BelowAmplitudeSlider$setValue(get("IBCbelampl", envir=IBCvariables))
-   # 
-   # vbox3.1$packStart(label_belowampl)
-   # vbox3.1$packStart(BelowAmplitudeSlider)
    
    vbox2.2$packStart(label_aboveampl)
    vbox2.2$packStart(AboveAmplitudeSlider)
@@ -1290,7 +1311,7 @@ setEnvironmentaParametersforNewCommunity <- function(){
    GrazingSlider$setValue(get("IBCgraz", envir=IBCvariables)*100)
    vbox3$packStart(GrazingSlider)
     
-   # radio button selection of the cutting
+   # radio button selection of the cutting events
    label_cuts<-gtkLabel('Cutting events')
    label_cuts$setTooltipText("During a cutting event, the aboveground shoot mass is removed to a certain level above the surface.")
    label_cuts['height.request'] <- 20
@@ -1335,16 +1356,18 @@ setEnvironmentaParametersforNewCommunity <- function(){
      if(vbox3[[10]]$getActive()==T) {
        assign("IBCcut", 0, envir = IBCvariables)
      }
-
+     # go to herbicide settings window
      HerbicideSettings()
+     # close current window
      RunPreSetWindow$destroy()
    }
 
    ReturnButton <- gtkButton('Back')
    ReturnButton$setTooltipText("Go back to the previous window.")
    ClickOnReturn <- function(button){
-
+     # close current window
      RunPreSetWindow$destroy()
+     # open selection window
      Selection()
 
    }

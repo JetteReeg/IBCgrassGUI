@@ -1,3 +1,7 @@
+###############################################################################
+# Function for calculating dose response curves according to                  #
+# effect = App_rate^b/(EC50^b+App_rate^b)                                     # 
+###############################################################################
 CalculateDR<- function(){
   ##################################################
   ### title
@@ -39,6 +43,7 @@ CalculateDR<- function(){
     Eff_help <- Eff_help[complete.cases(Eff_help),]
     Eff_control <- Eff_help[Eff_help$AppRate==0,-1]
     colnames(Eff_control) <- c("control", "Species") 
+    # calculate relative values
     Eff_help <- merge(Eff_help, Eff_control, all=T)
     Eff_help$Effect <- Eff_help$Effect/Eff_help$control
     Eff_help <- Eff_help[,c(2,3,1)]
@@ -48,13 +53,12 @@ CalculateDR<- function(){
     Effect_Array = matrix(data = 0, ncol = 2, nrow = length(App_rate))
     count = 0
     
+    # for all tested application rates
     for(App_rate in App_rate){
-      
       count = sum(count,1)
       effect = App_rate^b/(EC50^b+App_rate^b) #This is the effect function
       Effect_Array[count,1] = effect
       Effect_Array[count,2] = App_rate
-      
     }  
     
     App_rate = Eff_help[duplicated(Eff_help$AppRate)==FALSE,1]
@@ -72,18 +76,16 @@ CalculateDR<- function(){
       Results_array[,3][which(Results_array[,1]==App_rate)] = rep(Effect_Array[count2,1],length(which(Results_array[,1]==App_rate)))
     }
     
+    # return the sum of squared differences
     SQ_diff = sum((Results_array[,2]-Results_array[,3])^2)
-    
-    
     return(SQ_diff)
   }
   ##################################################
   ### Biomass dose response
   ##################################################
-  # Effects <- "BiomassEffects.txt"
   if (!is.null(get("BiomassEffFile", IBCvariables))){
-    # Existiert ein File mit den Effekten?
-      # wenn ja: 
+    # if a file with effects on biomass exists
+      # calculate dose response
       Eff <- get("BiomassEffFile", IBCvariables)
       select_AppRate_columns <- Eff[,seq(1,ncol(Eff),2)]
       AppRate<-stack(select_AppRate_columns)[,1]
@@ -101,9 +103,7 @@ CalculateDR<- function(){
       output <- data.frame()
       for (file in Specs){
         Spec<-file
-        
         x <- c(2,2) #inital values
-        
         xmin <- tryCatch(optim(par = x, fn = App_rate_function),
                  warnings = function(w) {print("no dose response can be calculated")}, 
                  error = function(e) {
@@ -112,16 +112,14 @@ CalculateDR<- function(){
                               type="warning" ,
                               buttons="ok" ,
                               "No dose responses for the attribute shoot mass could be calculated. Please review your data.")
-                   gSignalConnect (dialog1, "response", function(dialog1, response, user.data){ dialog1$Destroy(); w$destroy();})
+                   gSignalConnect (dialog1, "response", function(dialog1, response, user.data){ dialog1$Destroy(); w$destroy(); HerbicideSettings()})
                    })
-        
-        
+        # not accounting for the error..
           error_b <- 0
           error_EC50 <- 0
-        
+        # optimized parameter values
         b<-xmin$par[2]
         EC50<-xmin$par[1]
-        
         output <- rbind(output, cbind(Spec, EC50, error_EC50, b, error_b))
       }
   
@@ -137,15 +135,16 @@ CalculateDR<- function(){
       output_wrap<-data.frame(output[,-c(3,5)])
       output_wrap <- rbind(output_wrap, average)
       output_wrap<-data.frame(rbind(output_wrap, stdv))
+      # save dose response for biomass
       write.table(output_wrap, "EC50andslope_Biomass.txt", sep = "\t")
     }# End if exists
   rm(Eff)
   ##################################################
   ### Seedling biomass dose response
   ##################################################
-  # Effects <- "SeedlingBiomassEffects.txt"
   if (!is.null(get("SeedlingBiomassEffFile", IBCvariables))){
-    
+    # if effect data for seedling biomass exists
+    # calculate the dose response
     Eff <- get("SeedlingBiomassEffFile", IBCvariables)
     select_AppRate_columns <- Eff[,seq(1,ncol(Eff),2)]
     AppRate<-stack(select_AppRate_columns)[,1]
@@ -164,9 +163,7 @@ CalculateDR<- function(){
     output <- data.frame()
     for (file in Specs){
       Spec<-file
-      
       x <- c(2,2) #inital values
-      
       xmin <- tryCatch(optim(par = x, fn = App_rate_function),
                        warnings = function(w) {print("no dose response can be calculated")}, 
                        error = function(e) {
@@ -177,13 +174,12 @@ CalculateDR<- function(){
                                                      "No dose responses for the attribute seedling shoot mass could be calculated. Please review your data.")
                          gSignalConnect (dialog1, "response", function(dialog1, response, user.data){  dialog1$Destroy(); w$destroy();})
                        })
-      
+      # not accounting for error..
       error_b <- 0
       error_EC50 <- 0
-      
+      # optimized parameters
       b<-xmin$par[2]
       EC50<-xmin$par[1]
-      
       output <- rbind(output, cbind(Spec, EC50, error_EC50, b, error_b))
     }
     
@@ -199,14 +195,16 @@ CalculateDR<- function(){
     output_wrap<-data.frame(output[,-c(3,5)])
     output_wrap <- rbind(output_wrap, average)
     output_wrap<-data.frame(rbind(output_wrap, stdv))
+    # save dose response
     write.table(output_wrap, "EC50andslope_SeedlingBiomass.txt", sep = "\t")
   }# End if exists
   rm(Eff)
   ##################################################
   ### Survival dose response
   ##################################################
-  # Effects <- "SurvivalEffects.txt"
   if (!is.null(get("SurvivalEffFile", IBCvariables))){
+    # if effect data for survival exists
+    # calculate the dose response
     Eff <- get("SurvivalEffFile", IBCvariables)
     select_AppRate_columns <- Eff[,seq(1,ncol(Eff),2)]
     AppRate<-stack(select_AppRate_columns)[,1]
@@ -224,9 +222,7 @@ CalculateDR<- function(){
     output <- data.frame()
     for (file in Specs){
       Spec<-file
-      
       x <- c(2,2) #inital values
-      
       xmin <- tryCatch(optim(par = x, fn = App_rate_function),
                        warnings = function(w) {print("no dose response can be calculated")}, 
                        error = function(e) {
@@ -237,13 +233,12 @@ CalculateDR<- function(){
                                                      "No dose responses for the attribute survival could be calculated. Please review your data.")
                          gSignalConnect (dialog1, "response", function(dialog1, response, user.data){ dialog1$Destroy(); w$destroy();})
                        })
-      
+      # not accounting for error...
       error_b <- 0
       error_EC50 <- 0
-      
+      # optimized parameters
       b<-xmin$par[2]
       EC50<-xmin$par[1]
-      
       output <- rbind(output, cbind(Spec, EC50, error_EC50, b, error_b))
     }
     
@@ -259,15 +254,16 @@ CalculateDR<- function(){
     output_wrap<-data.frame(output[,-c(3,5)])
     output_wrap <- rbind(output_wrap, average)
     output_wrap<-data.frame(rbind(output_wrap, stdv))
+    # save dose response
     write.table(output_wrap, "EC50andslope_Survival.txt", sep = "\t")
   }# End if exists
   rm(Eff)
   ##################################################
   ### Establishment dose response
   ##################################################
-  # Effects <- "EstablishmentEffects.txt"
+  # if effect data for establishment exists
+  # calculate the dose response
   if (!is.null(get("EstablishmentEffFile", IBCvariables))){
-    
     Eff <- get("EstablishmentEffFile", IBCvariables)
     select_AppRate_columns <- Eff[,seq(1,ncol(Eff),2)]
     AppRate<-stack(select_AppRate_columns)[,1]
@@ -285,9 +281,7 @@ CalculateDR<- function(){
     output <- data.frame()
     for (file in Specs){
       Spec<-file
-      
       x <- c(2,2) #inital values
-      
       xmin <- tryCatch(optim(par = x, fn = App_rate_function),
                        warnings = function(w) {print("no dose response can be calculated")}, 
                        error = function(e) {
@@ -298,14 +292,12 @@ CalculateDR<- function(){
                                                      "No dose responses for the attribute establishment could be calculated. Please review your data.")
                          gSignalConnect (dialog1, "response", function(dialog1, response, user.data){ dialog1$Destroy(); w$destroy();})
                        })
-      
-     
+      # not accounting for error...
       error_b <- 0
       error_EC50 <- 0
-      
+      # optimized parameters
       b<-xmin$par[2]
       EC50<-xmin$par[1]
-      
       output <- rbind(output, cbind(Spec, EC50, error_EC50, b, error_b))
     }
     
@@ -321,13 +313,15 @@ CalculateDR<- function(){
     output_wrap<-data.frame(output[,-c(3,5)])
     output_wrap <- rbind(output_wrap, average)
     output_wrap<-data.frame(rbind(output_wrap, stdv))
+    # save dose response
     write.table(output_wrap, "EC50andslope_Establishment.txt", sep = "\t")
   }# End if exists
   rm(Eff)
   ##################################################
   ### Seed Sterility dose response
   ##################################################
-  # Effects <- "SeedSterilityEffects.txt"
+  # if effect data for seed sterility exists
+  # calculate the dose response
   if (!is.null(get("SeedSterilityEffFile", IBCvariables))){
     Eff <- get("SeedSterilityEffFile", IBCvariables)
     select_AppRate_columns <- Eff[,seq(1,ncol(Eff),2)]
@@ -346,9 +340,7 @@ CalculateDR<- function(){
     output <- data.frame()
     for (file in Specs){
       Spec<-file
-      
       x <- c(2,2) #inital values
-      
       xmin <- tryCatch(optim(par = x, fn = App_rate_function),
                        warnings = function(w) {print("no dose response can be calculated")}, 
                        error = function(e) {
@@ -359,13 +351,12 @@ CalculateDR<- function(){
                                                      "No dose responses for the attribute seed sterility could be calculated. Please review your data.")
                          gSignalConnect (dialog1, "response", function(dialog1, response, user.data){ dialog1$Destroy(); w$destroy();})
                        })
-      
+      # not accounting for error...
       error_b <- 0
       error_EC50 <- 0
-      
+      # optimized parameters
       b<-xmin$par[2]
       EC50<-xmin$par[1]
-      
       output <- rbind(output, cbind(Spec, EC50, error_EC50, b, error_b))
     }
     
@@ -381,13 +372,15 @@ CalculateDR<- function(){
     output_wrap<-data.frame(output[,-c(3,5)])
     output_wrap <- rbind(output_wrap, average)
     output_wrap<-data.frame(rbind(output_wrap, stdv))
+    # save dose response
     write.table(output_wrap, "EC50andslope_SeedSterility.txt", sep = "\t")
   }# End if exists
   rm(Eff)
   ##################################################
   ### Seed number dose response
   ##################################################
-  # Effects <- "SeedNumberEffects.txt"
+  # if effect data for seed number exists
+  # calculate the dose response
   if (!is.null(get("SeedNumberEffFile", IBCvariables))){
     Eff <- get("SeedNumberEffFile", IBCvariables)
     select_AppRate_columns <- Eff[,seq(1,ncol(Eff),2)]
@@ -406,9 +399,7 @@ CalculateDR<- function(){
     output <- data.frame()
     for (file in Specs){
       Spec<-file
-      
       x <- c(2,2) #inital values
-      
       xmin <- tryCatch(optim(par = x, fn = App_rate_function),
                        warnings = function(w) {print("no dose response can be calculated")}, 
                        error = function(e) {
@@ -419,13 +410,12 @@ CalculateDR<- function(){
                                                      "No dose responses for the attribute seed number could be calculated. Please review your data.")
                          gSignalConnect (dialog1, "response", function(dialog1, response, user.data){ dialog1$Destroy(); w$destroy();})
                        })
-     
+      # not accounting for error...
       error_b <- 0
       error_EC50 <- 0
-      
+      # optimized parameters
       b<-xmin$par[2]
       EC50<-xmin$par[1]
-      
       output <- rbind(output, cbind(Spec, EC50, error_EC50, b, error_b))
     }
     
@@ -441,15 +431,16 @@ CalculateDR<- function(){
     output_wrap<-data.frame(output[,-c(3,5)])
     output_wrap <- rbind(output_wrap, average)
     output_wrap<-data.frame(rbind(output_wrap, stdv))
+    # save dose response
     write.table(output_wrap, "EC50andslope_SeedNumber.txt", sep = "\t")
   }# End if exists
   rm(Eff)
   ##################################################
-  ### example dose resonse
+  ### example dose resonse to present as a graphic
   ##################################################
     samplesize <- 100
     #####
-    # read the file
+    # read the first file that exists
     #####
     DR<-"EC50andslope_Biomass.txt"
     if (DR %in% list.files())  {

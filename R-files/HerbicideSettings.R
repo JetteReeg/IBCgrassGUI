@@ -1,3 +1,8 @@
+###############################################################################
+# This function comprises the herbicide settings.                             #
+# It defines the duration of herbicide application [years], the affected      #
+# attributes and the source of herbicide effects [txt or dose-response].      #
+###############################################################################
 HerbicideSettings<-function(){
   ##################################################
   ### Title
@@ -54,7 +59,7 @@ HerbicideSettings<-function(){
   label_endpoints <- gtkLabel()
   label_endpoints$setMarkup('<span weight=\"bold\"size=\"large\">Which attributes are affected?</span>')
   label_endpoints['height.request'] <- 20
-  # check poings
+  # check points affected attributes
   BiomassCheck<-gtkCheckButton('shoot mass')
   BiomassCheck$setTooltipText("The gain in shoot mass of plants is reduced for one week.")
   BiomassCheck$setActive(get("BiomassEff", envir=IBCvariables))
@@ -84,7 +89,7 @@ HerbicideSettings<-function(){
   vbox3$packStart(SeedNumberCheck)
   
   ##################################################
-  ### Transfer settings
+  ### Source of herbicide impact
   ##################################################
   vbox4 <- gtkVBoxNew()
   vbox4$setBorderWidth(10)
@@ -93,6 +98,7 @@ HerbicideSettings<-function(){
   label_effect$setMarkup('<span weight=\"bold\"size=\"large\">Herbicide effects based on</span>')
   label_effect$setTooltipText("You can either select specific effect intensities [0-1] for each attribute via a txt-file  or - if available - enter the data of standardized greenhouse experiments for the selected attributes.")
   label_effect['height.request'] <- 20
+  # choices: either txt-file (for testing the impact of various intensities) or dose-responses
   Effectchoices <- c("Please select option", "txt-File", "dose-response function per attribute")
   comboherbeff <- gtkComboBoxNewText()
   comboherbeff$show()
@@ -112,10 +118,10 @@ HerbicideSettings<-function(){
   ##################################################
   vbox5 <- gtkVBoxNew()
   vbox5$setBorderWidth(10)
-  
-  
+  # after selection...
   ClickOnContinue <- function(button){
     active<-comboherbeff$getActive()
+    # make sure at least one attribute was selected
     if(all(c(BiomassCheck$getActive(), SeedlingBiomassCheck$getActive(), SurvivalCheck$getActive(),
              EstablishmentCheck$getActive(),SeedSterilityCheck$getActive(),SeedNumberCheck$getActive())==F)){
       dialog1 <- gtkMessageDialog(parent=HerbicideWindow,
@@ -127,6 +133,7 @@ HerbicideSettings<-function(){
       dialog1$ModifyBg("normal", color)
       gSignalConnect (dialog1, "response", function(dialog1, response, user.data){ dialog1$Destroy()})
     }
+    # make sure one source was selected
     if (active == 0){
       dialog1 <- gtkMessageDialog(parent=HerbicideWindow,
                                   flags = "destroy-with-parent",
@@ -137,6 +144,7 @@ HerbicideSettings<-function(){
       dialog1$ModifyBg("normal", color)
       gSignalConnect (dialog1, "response", function(dialog1, response, user.data){ dialog1$Destroy()})
     } else{
+      # save selected values
       assign("IBCDuration", DurationSlider$getValue(), envir=IBCvariables)
       assign("IBCRecovery", RecoverySlider$getValue(), envir=IBCvariables)
       assign("IBCInit", InitSlider$getValue(), envir=IBCvariables)
@@ -146,15 +154,16 @@ HerbicideSettings<-function(){
       assign("EstablishmentEff", EstablishmentCheck$getActive(), envir=IBCvariables)
       assign("SeedSterilityEff", SeedSterilityCheck$getActive(), envir=IBCvariables)
       assign("SeedNumberEff", SeedNumberCheck$getActive(), envir=IBCvariables)
-      
+      # if source is a txt-file
       if (active == 1){
         assign("IBCherbeffect", "txt-file", envir = IBCvariables)
-        # load effect data
+        # if no effect data exist (e.g. if previous settings were loaded)
         if (is.null(get("EffectData", envir=IBCvariables))){
           df<-NULL
           #####
           # create the table
           #####
+          # row for biomass
           if (BiomassCheck$getActive()) {
             if (!exists("df")) { 
               df <- data.frame (Biomass=c(rep(0.0,DurationSlider$getValue())))
@@ -162,7 +171,7 @@ HerbicideSettings<-function(){
               df <- cbind(df, Biomass=c(rep(0.0,DurationSlider$getValue())))
             }
           }
-          
+          # row for seedling biomass
           if (SeedlingBiomassCheck$getActive()) {
             if (!exists("df")) { 
               df <- data.frame (SeedlingBiomass=c(rep(0.0,DurationSlider$getValue())))
@@ -170,7 +179,7 @@ HerbicideSettings<-function(){
               df <- cbind(df, SeedlingBiomass=c(rep(0.0,DurationSlider$getValue())))
             }
           }
-          
+          # row for survival
           if (SurvivalCheck$getActive()) {
             if (!exists("df")) { 
               df <- data.frame (Mortality=c(rep(0.0,DurationSlider$getValue())))
@@ -178,7 +187,7 @@ HerbicideSettings<-function(){
               df <- cbind(df, Mortality=c(rep(0.0,DurationSlider$getValue())))
             }
           }
-          
+          # row for establishment
           if (EstablishmentCheck$getActive()) {
             if (!exists("df")) { 
               df <- data.frame (Establishment=c(rep(0.0,DurationSlider$getValue())))
@@ -186,7 +195,7 @@ HerbicideSettings<-function(){
               df <- cbind(df, Establishment=c(rep(0.0,DurationSlider$getValue())))
             }
           }
-          
+          # row for seed sterility
           if (SeedSterilityCheck$getActive()) {
             if (!exists("df")) { 
               df <- data.frame (SeedSterility=c(rep(0.0,DurationSlider$getValue())))
@@ -194,7 +203,7 @@ HerbicideSettings<-function(){
               df <- cbind(df, SeedSterility=c(rep(0.0,DurationSlider$getValue())))
             }
           }
-          
+          # row for seed number
           if (SeedNumberCheck$getActive()) {
             if (!exists("df")) { 
               df <- data.frame (SeedNumber=c(rep(0.0,DurationSlider$getValue())))
@@ -206,9 +215,10 @@ HerbicideSettings<-function(){
           col.name<-colnames(df)
           df <-data.frame(df, row.names = NULL)
         } else {
+          # load previous effect data
           df <- get("EffectData", envir=IBCvariables)
         }
-        
+        # create a dataframe object
         obj <- gtkDfEdit(df, update=T, envir=IBCvariables)
         
         #####
@@ -226,9 +236,11 @@ HerbicideSettings<-function(){
         #####
         SaveCloseButton <- gtkButton('Save & Continue')
         SaveCloseButton$setTooltipText("Save the data and go to the next step.")
+        # Save the data and go to the next step
         SaveClose <- function(button){
           df<-obj$getModel()
           test<-data.frame(df)
+          # inserted values should not be greater than 1
           if(is.null(test[test>1])){
             dialog1 <- gtkMessageDialog(parent=win,
                                         flags = "destroy-with-parent",
@@ -239,10 +251,11 @@ HerbicideSettings<-function(){
             dialog1$ModifyBg("normal", color)
             gSignalConnect (dialog1, "response", function(dialog1, response, user.data){ dialog1$Destroy()})
           } else{
+            # close windows
             win$destroy()
             HerbicideWindow$destroy()
+            # save the table
             test<-df[,-1]
-            # write.table(test, "test.txt", row.names=F, quote=F, sep="\t")
             df_ref<-data.frame(Biomass=c(rep(0,0)), SeedlingBiomass=c(rep(0,0)), 
                                Mortality=c(rep(0,0)), Establishment=c(rep(0,0)),
                                SeedSterility=c(rep(0,0)), SeedNumber=c(rep(0,0)))
@@ -251,24 +264,21 @@ HerbicideSettings<-function(){
             df_save <- df_save[c("Biomass", "Mortality", "SeedlingBiomass", "Establishment", "SeedSterility", "SeedNumber")]
             assign("EffectData", df_save, envir=IBCvariables)
             write.table(df_save, "HerbFact.txt", row.names=F, quote=F, sep="\t")
-            
+            # call the sensitivity window
             SensitivityTXT()
-            
-            
           }
-          
         }
-        
+        # return to the herbicide settings
         ReturnButton <- gtkButton('Back')
         ReturnButton$setTooltipText("Go back to the previous step.")
         ClickOnReturn <- function(button){
-          
+          # destroy current windows
           win$destroy()
           HerbicideWindow$destroy()
+          # call herbicide window
           HerbicideSettings()
-          
         }
-        
+        # packing
         gSignalConnect(ReturnButton, "clicked", ClickOnReturn)
         gSignalConnect(SaveCloseButton, "clicked", SaveClose)
         
@@ -290,7 +300,7 @@ HerbicideSettings<-function(){
         win$add(vbox1)
         win$show()
       }
-      
+      # if selected source is dose response
       if (active == 2){
         assign("IBCherbeffect", "dose-response", envir = IBCvariables)
         rep.col<-function(x,n){
@@ -305,22 +315,24 @@ HerbicideSettings<-function(){
           #####
           # biomass
           #####
+          # if biomass was selected
           if (BiomassCheck$getActive()){
             #####
             # create the dataframe
             #####
+            # if no data has been reloaded
             if (is.null(get("BiomassEffFile", envir=IBCvariables))){
               column_name <- c()
               nb_data <- as.numeric(get("nb_data", envir = IBCvariables))
               for (i in 1:nb_data){
                 column_name_help <- c(paste('ApplicationRate_Spec',i,sep=""), paste('Effect_Spec',i, sep=""))
                 column_name <- c(column_name, column_name_help)
-                # df <- cbind(df, c(rep(0.0,10)))
               }
               col <- c(rep(0.0, 3))
               df <- as.data.frame(rep.col(col, length(column_name)))
               colnames(df)<-column_name
             } else{
+              # otherwise load the data
               df <- get("BiomassEffFile", envir=IBCvariables)
             }
             # data frame object
@@ -340,6 +352,7 @@ HerbicideSettings<-function(){
             # Buttons and their functions
             #####
             SaveCloseButtonBiomass_help <- gtkButton('Save shoot mass effects & continue')
+            # create data.frame for data input, save and continue
             SaveCloseBiomass_help <- function(button){
               df<-obj$getModel()
               test<-data.frame(df)
@@ -348,6 +361,7 @@ HerbicideSettings<-function(){
               # delete everything greater than the expected column number
               test<-test[,c(2:(col_exp+1))]
               test <- test[test<0]
+              # if there are negative values..
               if(any(test)){
                 dialog1 <- gtkMessageDialog(parent=winBiomass_help,
                                             flags = "destroy-with-parent",
@@ -358,6 +372,7 @@ HerbicideSettings<-function(){
                 dialog1$ModifyBg("normal", color)
                 gSignalConnect (dialog1, "response", function(dialog1, response, user.data){ dialog1$Destroy()})
               } else{
+                # save effect data
                 write.table(df, "BiomassEffects.txt", row.names=F, quote=F, sep="\t")
                 test<-data.frame(df)
                 # calculate expected column number
@@ -365,19 +380,20 @@ HerbicideSettings<-function(){
                 # delete everything greater than the expected column number
                 test<-test[,c(2:(col_exp+1))]
                 assign("BiomassEffFile", test, IBCvariables)
+                # close window and go to next attribute
                 winBiomass_help$destroy()
                 SeedlingEffect()
               }
             } # end save and close go biomass entry window
-            
+            # return to previous step
             ReturnButtonBiomass <- gtkButton('Back')
             ReturnButtonBiomass$setTooltipText('Go back to the previous step.')
             ClickOnReturnBiomass <- function(button){
-              
+              # close windows
               HerbicideWindow$destroy()
               winBiomass_help$destroy()
+              # call herbicide settings
               HerbicideSettings()
-              
             }
             
             gSignalConnect(SaveCloseButtonBiomass_help, "clicked", SaveCloseBiomass_help)
@@ -404,11 +420,13 @@ HerbicideSettings<-function(){
         #####
         # Seedling biomass
         #####
+        # if seedling biomass was selected
         SeedlingEffect <- function(){
           if (SeedlingBiomassCheck$getActive()){
             #####
             # create the dataframe
             #####
+            # if no previous data was loaded
             if (is.null(get("SeedlingBiomassEffFile", envir=IBCvariables))){
               column_name <- c()
               nb_data <- as.numeric(get("nb_data", envir = IBCvariables))
@@ -421,6 +439,7 @@ HerbicideSettings<-function(){
               df <- as.data.frame(rep.col(col, length(column_name)))
               colnames(df)<-column_name
             } else{
+              # otherwise load previous data
               df <- get("SeedlingBiomassEffFile", envir=IBCvariables)
             }
             # data frame object
@@ -448,6 +467,7 @@ HerbicideSettings<-function(){
               # delete everything greater than the expected column number
               test<-test[,c(2:(col_exp+1))]
               test <- test[test<0]
+              # no negative values allowed
               if(any(test)){
                 dialog1 <- gtkMessageDialog(parent=winSeedlingBiomass_help,
                                             flags = "destroy-with-parent",
@@ -466,18 +486,19 @@ HerbicideSettings<-function(){
                 test<-test[,c(2:(col_exp+1))]
                 assign("SeedlingBiomassEffFile", test, IBCvariables)
                 winSeedlingBiomass_help$destroy()
+                # call survival
                 SurvivalEffect()
               }
             } # end save and close go biomass entry window
-            
+            # return to previous step
             ReturnButtonSeedlingBiomass <- gtkButton('Back')
             ReturnButtonSeedlingBiomass$setTooltipText("Go back to the previous step.")
             ClickOnReturnSeedlingBiomass <- function(button){
-              
+              # close windows
               HerbicideWindow$destroy()
               winSeedlingBiomass_help$destroy()
+              # call herbicide settings
               HerbicideSettings()
-              
             }
             
             gSignalConnect(SaveCloseButtonSeedlingBiomass_help, "clicked", SaveCloseSeedlingBiomass_help)
@@ -504,6 +525,7 @@ HerbicideSettings<-function(){
         # Survival
         #####
         SurvivalEffect <- function(){
+          # if survival was selected
           if (SurvivalCheck$getActive()){
             #####
             # create the dataframe
@@ -514,7 +536,6 @@ HerbicideSettings<-function(){
               for (i in 1:nb_data){
                 column_name_help <- c(paste('ApplicationRate_Spec',i,sep=""), paste('Effect_Spec',i, sep=""))
                 column_name <- c(column_name, column_name_help)
-                # df <- cbind(df, c(rep(0.0,10)))
               }
               col <- c(rep(0.0, 3))
               df <- as.data.frame(rep.col(col, length(column_name)))
@@ -539,6 +560,7 @@ HerbicideSettings<-function(){
             # Buttons and their functions
             #####
             SaveCloseButtonSurvival_help <- gtkButton('Save survival effects & continue')
+            # save and go to next attribute
             SaveCloseSurvival_help <- function(button){
               df<-obj$getModel()
               test<-data.frame(df)
@@ -547,6 +569,7 @@ HerbicideSettings<-function(){
               # delete everything greater than the expected column number
               test<-test[,c(2:(col_exp+1))]
               test <- test[test<0]
+              # negative values are not allowed
               if(any(test)){
                 dialog1 <- gtkMessageDialog(parent=winSurvival_help,
                                             flags = "destroy-with-parent",
@@ -557,6 +580,7 @@ HerbicideSettings<-function(){
                 dialog1$ModifyBg("normal", color)
                 gSignalConnect (dialog1, "response", function(dialog1, response, user.data){ dialog1$Destroy()})
               } else{
+                # save effects
                 write.table(df, "SurvivalEffects.txt", row.names=F, quote=F, sep="\t")
                 test<-data.frame(df)
                 # calculate expected column number
@@ -565,18 +589,20 @@ HerbicideSettings<-function(){
                 test<-test[,c(2:(col_exp+1))]
                 assign("SurvivalEffFile", test, IBCvariables)
                 winSurvival_help$destroy()
+                # go to next attribute
                 EstablishmentEffect()
               }
             } # end save and close go biomass entry window
             
             ReturnButtonSurvival <- gtkButton('Back')
             ReturnButtonSurvival$setTooltipText('Go back to previous step.')
+            # return to herbicide settings
             ClickOnReturnSurvival <- function(button){
-              
+              # close windows
               HerbicideWindow$destroy()
               winSurvival_help$destroy()
+              # call herbicide settings
               HerbicideSettings()
-              
             }
             
             gSignalConnect(SaveCloseButtonSurvival_help, "clicked", SaveCloseSurvival_help)
@@ -603,10 +629,12 @@ HerbicideSettings<-function(){
         # Establishment
         #####
         EstablishmentEffect <- function(){
+          # if establishment was selected
           if (EstablishmentCheck$getActive()){
             #####
             # create the dataframe
             #####
+            # if no data can be loaded
             if (is.null(get("EstablishmentEffFile", envir=IBCvariables))){
               column_name <- c()
               nb_data <- as.numeric(get("nb_data", envir = IBCvariables))
@@ -619,6 +647,7 @@ HerbicideSettings<-function(){
               df <- as.data.frame(rep.col(col, length(column_name)))
               colnames(df)<-column_name
             } else{
+              # otherwise load the data
               df <- get("EstablishmentEffFile", envir=IBCvariables)
             }
             # data frame object
@@ -638,6 +667,7 @@ HerbicideSettings<-function(){
             # Buttons and their functions
             #####
             SaveCloseButtonEstablishment_help <- gtkButton('Save establishment effects & continue')
+            # save effects and continue
             SaveCloseEstablishment_help <- function(button){
               df<-obj$getModel()
               test<-data.frame(df)
@@ -646,6 +676,7 @@ HerbicideSettings<-function(){
               # delete everything greater than the expected column number
               test<-test[,c(2:(col_exp+1))]
               test <- test[test<0]
+              # negative values are not allowed
               if(any(test)){
                 dialog1 <- gtkMessageDialog(parent=winEstablishment_help,
                                             flags = "destroy-with-parent",
@@ -664,19 +695,20 @@ HerbicideSettings<-function(){
                 test<-test[,c(2:(col_exp+1))]
                 assign("EstablishmentEffFile", test, IBCvariables)
                 winEstablishment_help$destroy()
+                # go to next attribute
                 SeedSterilityEffect()
               }
             } # end save and close go biomass entry window
             ReturnButtonEstablishment <- gtkButton('Back')
             ReturnButtonEstablishment$setTooltipText('Go back to previous step.')
+            # return to herbicide settings
             ClickOnReturnEstablishment <- function(button){
-              
+              #close windows
               HerbicideWindow$destroy()
               winEstablishment_help$destroy()
+              # call herbicide settings
               HerbicideSettings()
-              
             }
-            
             gSignalConnect(SaveCloseButtonEstablishment_help, "clicked", SaveCloseEstablishment_help)
             gSignalConnect(ReturnButtonEstablishment,"clicked", ClickOnReturnEstablishment)
             #####
@@ -702,10 +734,12 @@ HerbicideSettings<-function(){
         # Seed Sterility
         #####
         SeedSterilityEffect <- function(){
+          # if seed sterility was selected
           if (SeedSterilityCheck$getActive()){
             #####
             # create the dataframe
             #####
+            # if no data can be loaded
             if (is.null(get("SeedSterilityEffFile", envir=IBCvariables))){
               column_name <- c()
               nb_data <- as.numeric(get("nb_data", envir = IBCvariables))
@@ -718,6 +752,7 @@ HerbicideSettings<-function(){
               df <- as.data.frame(rep.col(col, length(column_name)))
               colnames(df)<-column_name
             } else{
+              # load data
               df <- get("SeedSterilityEffFile", envir=IBCvariables)
             }
             # data frame object
@@ -737,6 +772,7 @@ HerbicideSettings<-function(){
             # Buttons and their functions
             #####
             SaveCloseButtonSeedSterility_help <- gtkButton('Save seed sterility effects & continue')
+            # save effects and continue
             SaveCloseSeedSterility_help <- function(button){
               df<-obj$getModel()
               test<-data.frame(df)
@@ -745,6 +781,7 @@ HerbicideSettings<-function(){
               # delete everything greater than the expected column number
               test<-test[,c(2:(col_exp+1))]
               test <- test[test<0]
+              # negative values are not allowed
               if(any(test)){
                 dialog1 <- gtkMessageDialog(parent=winSeedSterility_help,
                                             flags = "destroy-with-parent",
@@ -763,17 +800,19 @@ HerbicideSettings<-function(){
                 test<-test[,c(2:(col_exp+1))]
                 assign("SeedSterilityEffFile", test, IBCvariables)
                 winSeedSterility_help$destroy()
+                # call seed number effects
                 SeedNumberEffect()
               }
             } # end save and close go biomass entry window
             ReturnButtonSeedSterility <- gtkButton('Back')
             ReturnButtonSeedSterility$setTooltipText('Go back to previous step.')
+            # return to herbicide settings
             ClickOnReturnSeedSterility <- function(button){
-              
+              # close windows
               HerbicideWindow$destroy()
               winSeedSterility_help$destroy()
+              # call herbicide settings
               HerbicideSettings()
-              
             }
             
             gSignalConnect(SaveCloseButtonSeedSterility_help, "clicked", SaveCloseSeedSterility_help)
@@ -801,22 +840,24 @@ HerbicideSettings<-function(){
         # Seed Number
         #####
         SeedNumberEffect <- function(){
+          # if seed number was selected
           if (SeedNumberCheck$getActive()){
             #####
             # create the dataframe
             #####
+            # if no data can be loaded
             if (is.null(get("SeedNumberEffFile", envir=IBCvariables))){
               column_name <- c()
               nb_data <- as.numeric(get("nb_data", envir = IBCvariables))
               for (i in 1:nb_data){
                 column_name_help <- c(paste('ApplicationRate_Spec',i,sep=""), paste('Effect_Spec',i, sep=""))
                 column_name <- c(column_name, column_name_help)
-                # df <- cbind(df, c(rep(0.0,10)))
               }
               col <- c(rep(0.0, 3))
               df <- as.data.frame(rep.col(col, length(column_name)))
               colnames(df)<-column_name
             } else{
+              # load previous data
               df <- get("SeedNumberEffFile", envir=IBCvariables)
             }
             # data frame object
@@ -836,6 +877,7 @@ HerbicideSettings<-function(){
             # Buttons and their functions
             #####
             SaveCloseButtonSeedNumber_help <- gtkButton('Save seed number effects & continue')
+            # save and continue
             SaveCloseSeedNumber_help <- function(button){
               df<-obj$getModel()
               test<-data.frame(df)
@@ -844,6 +886,7 @@ HerbicideSettings<-function(){
               # delete everything greater than the expected column number
               test<-test[,c(2:(col_exp+1))]
               test <- test[test<0]
+              # negative values are not allowed
               if(any(test)){
                 dialog1 <- gtkMessageDialog(parent=winSeedNumber_help,
                                             flags = "destroy-with-parent",
@@ -861,20 +904,25 @@ HerbicideSettings<-function(){
                 # delete everything greater than the expected column number
                 test<-test[,c(2:(col_exp+1))]
                 assign("SeedNumberEffFile", test, IBCvariables)
+                # close window
                 winSeedNumber_help$destroy()
+                # call calculate dose responses
                 CalculateDR()
+                # close window
                 HerbicideWindow$destroy()
+                # call sensitivity settings
                 SensitivityDR()
               }
             } # end save and close go biomass entry window
             ReturnButtonSeedNumber <- gtkButton('Back')
             ReturnButtonSeedNumber$setTooltipText('Go back to previous step.')
+            # return to herbicide settings
             ClickOnReturnSeedNumber <- function(button){
-              
+              # close windows
               HerbicideWindow$destroy()
               winSeedNumber_help$destroy()
+              # call herbicide settings
               HerbicideSettings()
-              
             }
             
             gSignalConnect(SaveCloseButtonSeedNumber_help, "clicked", SaveCloseSeedNumber_help)
@@ -896,8 +944,11 @@ HerbicideSettings<-function(){
             winSeedNumber_help$add(vboxSeedNumber_help)
             winSeedNumber_help$show()
           } else {# end if seed number affected
+            # close window
             HerbicideWindow$destroy()
+            # calculate dose responses
             CalculateDR()
+            # call sensitivities
             SensitivityDR()
           }
         }
@@ -915,13 +966,13 @@ HerbicideSettings<-function(){
         GoButton <- gtkButton('Go')
         ReturnButton <- gtkButton('Back')
         ReturnButton$setTooltipText('Go back to the previous step.')
-        
+        # go back to herbicide settings
         ClickOnReturn <- function(button){
-          
+          # close windows
           win$destroy()
           HerbicideWindow$destroy()
+          # call herbicide settings
           HerbicideSettings()
-          
         }
         
         gSignalConnect(GoButton, "clicked", BiomassEffect)
@@ -946,25 +997,21 @@ HerbicideSettings<-function(){
       }
     }
   }
-
-  #       #####
-  #       # Buttons
-  #       #####
-
-
-  
+  # return to environmental settings
   ClickOnReturn <- function(button){
-    
+    # close window
     HerbicideWindow$destroy()
     if (get("IBCcommunity", envir=IBCvariables)=="Community.txt"){
+      # call environmental settings
       setEnvironmentaParametersforNewCommunity()
     } else {
+      # call environmental settings
       RunPreSet()
     }
-    
-    
   }
-  
+  #####
+  # Buttons
+  #####  
   ReturnButton <- gtkButton('Back')
   ContinueButton <- gtkButton('Continue')
   
@@ -972,10 +1019,7 @@ HerbicideSettings<-function(){
   vbox5$packStart(ReturnButton,fill=F)
     
   gSignalConnect(ReturnButton, "clicked", ClickOnReturn)
-  
   gSignalConnect(ContinueButton, "clicked", ClickOnContinue)
-  
-  # gSignalConnect(comboherbeff, "changed", ClickOnCombobox)
   
   ##################################################
   ### put it together

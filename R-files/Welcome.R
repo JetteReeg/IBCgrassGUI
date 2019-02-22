@@ -1,3 +1,6 @@
+###############################################################################
+# This function will start the Welcome screen of the                          #
+###############################################################################
 Welcomefct <- function(){
   ##################################################
   ### Title
@@ -6,7 +9,7 @@ Welcomefct <- function(){
   WelcomeTitle$setMarkup("<span weight=\"bold\" size=\"x-large\">Welcome to the IBC-grass herbicide GUI!</span>")
   
   ##################################################
-  ### Picture
+  ### Picture of IBCgrass model
   ##################################################
   PicBox <- gtkVBoxNew(F, 1)
   PicBox$setBorderWidth(10)
@@ -14,17 +17,18 @@ Welcomefct <- function(){
   PicBox$add(WelcomePic)
   
   ##################################################
-  ### Basis information
+  ### Base information on the GUI
   ##################################################
   WelcomeText <- gtkLabel()
-  WelcomeText$setMarkup('This is the graphical user interface (GUI) to run and analyse herbicide impacts on a plant community using the IBC-grass model,
+  WelcomeText$setMarkup('This is the graphical user interface (GUI) to run and analyse herbicide impacts on a plant community using the IBCgrass model,
 an individual-based and spatially-explicit plant community model. 
-A detailed model description can be found in the references. See also the user manual for detailed informations on the GUI.
+A detailed model description can be found in the Manual folder incl. GMP document, ODD proctocoll and DoxyGen model documentation. 
+See the user manual for detailed informations on the GUI.
 
 <u>Author of the GUI:</u> 
-  Jette Reeg, contact: jette.reeg@online.de
+  Jette Reeg, contact: jreeg@uni-potsdam.de
 
-<u>References:</u> 
+<u>References of IBCgrass:</u> 
   May F, Grimm V, Jeltsch F. 2009. Reversed effects of grazing on plant diversity: the role 
       of below-ground competition and size symmetry. Oikos 118:1830-1843. doi: 10.1111/j.1600-0706.2009.17724.x
   Weiss L, Pfestorf H, May F, Körner K, Boch S, Fischer M, Müller J, Prati D, Socher SA, Jeltsch F. 2014. Grazing response 
@@ -39,7 +43,7 @@ A detailed model description can be found in the references. See also the user m
       comparing model predictions of the plant community model IBC-grass to empirical data. Environ Sci Eur. 30:44. 
       doi: 10.1186/s12302-018-0174-9
 
-<u>Version:</u> 1.0')
+<u>Version:</u> 0.1.0')
   
   WelcomeBox <- gtkVBoxNew(F, 1)
   WelcomeBox$setBorderWidth(10)
@@ -68,6 +72,9 @@ A detailed model description can be found in the references. See also the user m
   StartExistButton$setTooltipText('If you saved an earlier simulation, you can look again at the results and analyses.')
   StartBox$packStart(StartExistButton,fill=F) #button which will start 
   
+  # start an existing project will open the analyse window of the GUI
+  # function checks if the selected folder includes output files of an IBCgrass project
+  # warning message if the selected folder does not include an IBCgrass project
   StartExistButtonClick <- function(button){
       dialog <- gtkFileChooserDialog ( title = "Select project" ,
                                        parent = Welcome , action = "select-folder" ,
@@ -108,6 +115,7 @@ A detailed model description can be found in the references. See also the user m
   ExitButton$setTooltipText('Exit the IBC-grass GUI.')
   StartBox$packStart(ExitButton,fill=F) #button which will start 
   
+  # function will close the GUI and deletes all files of the current session, that are not saved previously
   ExitButtonClick <- function(button){
     Welcome$destroy()
     assign("GUIopen", "close", envir = IBCvariables)
@@ -127,7 +135,7 @@ A detailed model description can be found in the references. See also the user m
   gSignalConnect(ExitButton, "clicked", ExitButtonClick)
   
   ##################################################
-  ### put it together
+  ### put all parts of the window together
   ##################################################
   BaseInformationBox <- gtkVBoxNew(F, 1) # a new box
   BaseInformationBox$setBorderWidth(10)
@@ -144,7 +152,6 @@ A detailed model description can be found in the references. See also the user m
   Welcome$add(BaseInformationBox)
   
   Welcome$show()
+  # make sure the GUI will not close
   while(get("GUIopen", envir=IBCvariables)=="open") Sys.sleep(1)
-  
-  
 }

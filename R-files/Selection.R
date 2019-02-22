@@ -1,6 +1,12 @@
+###############################################################################
+#                                                                             #
+# This function will show all possible options                                #
+# for starting a new IBCgrass project                                         #
+#                                                                             #
+###############################################################################
 Selection<-function(){
   ##################################################
-  ### Update IBCvariables
+  ### Update variables of the IBCgrass environment (necessary if user goes one step back)
   ##################################################
   assign("GUIopen", "open", envir = IBCvariables)
   assign("IBCcommunity", "Fieldedge.txt", envir = IBCvariables)
@@ -41,15 +47,15 @@ Selection<-function(){
   assign("IBCApprates", "", envir=IBCvariables)
   assign("IBCloadedSettings", NULL, envir=IBCvariables)
   ##################################################
-  ### Title
+  ### Title of the window
   ##################################################
   vbox <- gtkVBoxNew()
   vbox$setBorderWidth(10)
   label_title <- gtkLabel()
-  label_title$setMarkup('<span weight=\"bold\" size=\"large\">What do you want to do?</span>')
+  label_title$setMarkup('<span weight=\"bold\" size=\"large\">Select an option...</span>')
   vbox$packStart(label_title)
   ##################################################
-  ### Choices
+  ### Choices the user has
   ##################################################
   choices <- c("Run scenarios on pre-set IBC-grass communities" , "Create a new IBC-grass community", "Load previously saved community file",
                "Load previous simulation settings (SimulationSettings.RData file is needed)")
@@ -57,37 +63,39 @@ Selection<-function(){
   
   for (choice in choices){
     button <- gtkRadioButton(radio_buttons, choice)
+    # use one of the three communities, which has been already used in one of the publicationes (Reeg et al. 2017, 2018a, 2018b)
     if (choice==choices[1]) button$setTooltipText("Run IBCgrass on one of three given communities")
+    # create a new IBCgrass community based either on already classified PFTs (but different regional species pool) or add new plant species
+    # new communities can be saved to be used in later projects
     if (choice==choices[2]) button$setTooltipText("Create a new community")
+    # load a community which was saved in previous projects (see above)
     if (choice==choices[3]) button$setTooltipText("Load a community file, which you saved in a previous session")
+    # load the settings of previous simulations either to rerun the simulation or to change only a few settings
     if (choice==choices[4]) button$setTooltipText("Rerun or modify previous simulation settings. If a personal community was used, you will need to provide the community file.")
     vbox$packStart(button)
     radio_buttons<- c(radio_buttons, button)
   }
   
   ##################################################
-  ### Buttons
+  ### Buttons for calling the right function 
+  ### depend on the selected option
   ##################################################
   
   ClickOnButton <- function(button){
     
     if(vbox[[2]]$getActive()==T) {
-      # SelectionWindow$destroy()
       RunPreSet()
     }
     
     if(vbox[[3]]$getActive()==T) {
-      # SelectionWindow$destroy()
       CreateNew()
     }
     
     if(vbox[[4]]$getActive()==T) {
-      # SelectionWindow$destroy()
       LoadNew()
     }
     
     if(vbox[[5]]$getActive()==T) {
-      # SelectionWindow$destroy()
       LoadPrev()
     }
     SelectionWindow$destroy()
@@ -100,13 +108,13 @@ Selection<-function(){
     
   }
   
-  
+  # packing the buttons
   SelectionButton <- gtkButton('Continue')
-  vbox$packStart(SelectionButton,fill=F) #button which will start 
+  vbox$packStart(SelectionButton,fill=F) #button which will start one of the option 
   
   ReturnButton <- gtkButton('Back')
   ReturnButton$setTooltipText('Go back to previous step.')
-  vbox$packStart(ReturnButton,fill=F) #button which will start 
+  vbox$packStart(ReturnButton,fill=F) #button which will return
   
   gSignalConnect(SelectionButton, "clicked", ClickOnButton)
   gSignalConnect(ReturnButton, "clicked", ClickOnReturn)
