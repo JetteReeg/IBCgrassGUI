@@ -127,7 +127,8 @@ See the user manual for detailed informations on the GUI.
       setwd('..')
     }
     to.remove <- list.files(getwd())
-    to.keep <- c("ExampleAnalyses", "Model-files", "Input-files", "Manual, GMP, ODD, Literature", "R", "R-files", "IBCgrassGUI.log", "RunIBCgrassGUI_Windows.bat", "RunIBCgrassGUI_Linux.sh")
+    to.keep <- c("ExampleAnalyses", "Model-files", "Input-files", "Manual, GMP, ODD, Literature", "R", "R-files", 
+                 "IBCgrassGUI.log", "RunIBCgrassGUI_Windows.bat", "RunIBCgrassGUI_Linux.sh", "LICENSE", "README.md", "Doxyfile")
     to.remove <- to.remove[!(to.remove %in% to.keep)]
     unlink(to.remove, recursive=TRUE)
   }

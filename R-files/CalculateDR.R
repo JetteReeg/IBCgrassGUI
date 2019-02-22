@@ -112,7 +112,7 @@ CalculateDR<- function(){
                               type="warning" ,
                               buttons="ok" ,
                               "No dose responses for the attribute shoot mass could be calculated. Please review your data.")
-                   gSignalConnect (dialog1, "response", function(dialog1, response, user.data){ dialog1$Destroy(); w$destroy(); HerbicideSettings()})
+                   gSignalConnect (dialog1, "response", function(dialog1, response, user.data){ dialog1$Destroy(); w$destroy(); HerbicideSettings();})
                    })
         # not accounting for the error..
           error_b <- 0
@@ -172,7 +172,7 @@ CalculateDR<- function(){
                                                      type="warning" ,
                                                      buttons="ok" ,
                                                      "No dose responses for the attribute seedling shoot mass could be calculated. Please review your data.")
-                         gSignalConnect (dialog1, "response", function(dialog1, response, user.data){  dialog1$Destroy(); w$destroy();})
+                         gSignalConnect (dialog1, "response", function(dialog1, response, user.data){  dialog1$Destroy(); w$destroy(); HerbicideSettings();})
                        })
       # not accounting for error..
       error_b <- 0
@@ -231,7 +231,7 @@ CalculateDR<- function(){
                                                      type="warning" ,
                                                      buttons="ok" ,
                                                      "No dose responses for the attribute survival could be calculated. Please review your data.")
-                         gSignalConnect (dialog1, "response", function(dialog1, response, user.data){ dialog1$Destroy(); w$destroy();})
+                         gSignalConnect (dialog1, "response", function(dialog1, response, user.data){ dialog1$Destroy(); w$destroy();HerbicideSettings();})
                        })
       # not accounting for error...
       error_b <- 0
@@ -290,7 +290,7 @@ CalculateDR<- function(){
                                                      type="warning" ,
                                                      buttons="ok" ,
                                                      "No dose responses for the attribute establishment could be calculated. Please review your data.")
-                         gSignalConnect (dialog1, "response", function(dialog1, response, user.data){ dialog1$Destroy(); w$destroy();})
+                         gSignalConnect (dialog1, "response", function(dialog1, response, user.data){ dialog1$Destroy(); w$destroy();HerbicideSettings();})
                        })
       # not accounting for error...
       error_b <- 0
@@ -349,7 +349,7 @@ CalculateDR<- function(){
                                                      type="warning" ,
                                                      buttons="ok" ,
                                                      "No dose responses for the attribute seed sterility could be calculated. Please review your data.")
-                         gSignalConnect (dialog1, "response", function(dialog1, response, user.data){ dialog1$Destroy(); w$destroy();})
+                         gSignalConnect (dialog1, "response", function(dialog1, response, user.data){ dialog1$Destroy(); w$destroy();HerbicideSettings();})
                        })
       # not accounting for error...
       error_b <- 0
@@ -408,7 +408,7 @@ CalculateDR<- function(){
                                                      type="warning" ,
                                                      buttons="ok" ,
                                                      "No dose responses for the attribute seed number could be calculated. Please review your data.")
-                         gSignalConnect (dialog1, "response", function(dialog1, response, user.data){ dialog1$Destroy(); w$destroy();})
+                         gSignalConnect (dialog1, "response", function(dialog1, response, user.data){ dialog1$Destroy(); w$destroy();HerbicideSettings();})
                        })
       # not accounting for error...
       error_b <- 0
@@ -472,7 +472,7 @@ CalculateDR<- function(){
                                               buttons="ok" ,
                                               "No dose responses were calculated. Please go back to ensure your dose response data are correct.")
                               gSignalConnect (dialog1, "response", function(dialog1, response, user.data){ dialog1$Destroy();
-                              w$destroy();})
+                              w$destroy();HerbicideSettings();})
                                 }
                             }
                         }
@@ -527,7 +527,7 @@ CalculateDR<- function(){
                                             buttons="ok" ,
                                             "No dose responses were calculated. Please go back to ensure your dose response data are correct.")
                             gSignalConnect (dialog1, "response", function(dialog1, response, user.data){ dialog1$Destroy();
-                            w$destroy();})
+                            w$destroy();HerbicideSettings();})
                               }
                           }
                       }
