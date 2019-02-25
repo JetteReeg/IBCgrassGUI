@@ -1,4 +1,5 @@
 #!/bin/bash
+echo IBCgrass GUI Copyright (C) 2019  Jette Reeg This program comes with ABSOLUTELY NO WARRANTY. This is free software, and you are welcome to redistribute it under certain conditions.
 cd ./Model-files
 g++ -c -fmessage-length=0 -std=c++11 -o CEnvir.o CEnvir.cpp 
 g++ -c -fmessage-length=0 -std=c++11 -o CGrid.o CGrid.cpp 
