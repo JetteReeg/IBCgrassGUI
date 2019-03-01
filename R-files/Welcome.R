@@ -31,11 +31,11 @@ See the user manual for detailed informations on the GUI.
 <u>References of IBCgrass:</u> 
   May F, Grimm V, Jeltsch F. 2009. Reversed effects of grazing on plant diversity: the role 
       of below-ground competition and size symmetry. Oikos 118:1830-1843. doi: 10.1111/j.1600-0706.2009.17724.x
-  Weiss L, Pfestorf H, May F, Körner K, Boch S, Fischer M, Müller J, Prati D, Socher SA, Jeltsch F. 2014. Grazing response 
+  Weiss L, Pfestorf H, May F, Koerner K, Boch S, Fischer M, Müller J, Prati D, Socher SA, Jeltsch F. 2014. Grazing response 
       patterns indicate isolation of semi-natural European grasslands.Oikos 123:599-612 . doi: 10.1111/j.1600-0706.2013.00957.x
-  Körner K, Pfestorf H, May F, Jeltsch F. 2014. Modelling the effect of belowground herbivory on grassland diversity. 
+  Koerner K, Pfestorf H, May F, Jeltsch F. 2014. Modelling the effect of belowground herbivory on grassland diversity. 
       Ecol Modell 273:79-85 . doi: 10.1016/j.ecolmodel.2013.10.025
-  Reeg J, Schad T, Preuss TG, Solga A, Körner K, Mihan C, Jeltsch F. 2017. Modelling direct and indirect 
+  Reeg J, Schad T, Preuss TG, Solga A, Koerner K, Mihan C, Jeltsch F. 2017. Modelling direct and indirect 
       effects of herbicides on non-target grassland communities. Ecol. Modell. 348, 44-55. doi:10.1016/j.ecolmodel.2017.01.010
   Reeg J, Heine S, Mihan C, Preuss TG, McGee S, Jeltsch F. 2018. Potential impact of effects on reproductive attributes induced 
       by herbicides on a plant community. Environmental Toxicology and Chemistry. doi: 10.1002/etc.4122
@@ -126,7 +126,8 @@ See the user manual for detailed informations on the GUI.
       unlink(list.files(getwd()), recursive=TRUE)
       setwd('..')
     }
-    to.remove <- list.files(getwd())
+    to.remove <- setdiff(list.files(), list.dirs(recursive = FALSE, full.names = FALSE))
+    to.remove <- c(to.remove, "currentSimulation")
     to.keep <- c("ExampleAnalyses", "Model-files", "Input-files", "Manual, GMP, ODD, Literature", "R", "R-files", 
                  "IBCgrassGUI.log", "RunIBCgrassGUI_Windows.bat", "RunIBCgrassGUI_Linux.sh", "LICENSE", "README.md", "Doxyfile")
     to.remove <- to.remove[!(to.remove %in% to.keep)]
