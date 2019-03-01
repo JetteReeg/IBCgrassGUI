@@ -19,16 +19,17 @@
 
 # clean workspace
 rm(list=ls())
-
+# add local R library to install packages to (to avoid admin rights)
+.libPaths( c( .libPaths(), paste(getwd(), "/Rlibraries", sep="")))
 # install necessary packages
-if (!"RGtk2" %in% installed.packages()) install.packages("RGtk2", repos='http://cran.us.r-project.org', dependencies = T)
-if (!"RGtk2Extras" %in% installed.packages()) install.packages("RGtk2Extras", repos='http://cran.us.r-project.org', dependencies = T)
-if (!"data.table" %in% installed.packages()) install.packages("data.table", repos='http://cran.us.r-project.org', dependencies = T)
-if (!"ggplot2" %in% installed.packages()) install.packages("ggplot2", repos='http://cran.us.r-project.org', dependencies = T)
-if (!"ggthemes" %in% installed.packages()) install.packages("ggthemes", repos='http://cran.us.r-project.org', dependencies = T)
-if (!"reshape2" %in% installed.packages()) install.packages("reshape2", repos='http://cran.us.r-project.org', dependencies = T)
-if (!"foreach" %in% installed.packages()) install.packages("foreach", repos='http://cran.us.r-project.org', dependencies = T)
-if (!"doParallel" %in% installed.packages()) install.packages("doParallel", repos='http://cran.us.r-project.org', dependencies = T)
+if (!"RGtk2" %in% installed.packages()) install.packages("RGtk2", repos='http://cran.us.r-project.org', dependencies = T, lib = paste(getwd(), "/Rlibraries", sep=""))
+if (!"RGtk2Extras" %in% installed.packages()) install.packages("RGtk2Extras", repos='http://cran.us.r-project.org', dependencies = T, lib = paste(getwd(), "/Rlibraries", sep=""))
+if (!"data.table" %in% installed.packages()) install.packages("data.table", repos='http://cran.us.r-project.org', dependencies = T, lib = paste(getwd(), "/Rlibraries", sep=""))
+if (!"ggplot2" %in% installed.packages()) install.packages("ggplot2", repos='http://cran.us.r-project.org', dependencies = T, lib = paste(getwd(), "/Rlibraries", sep=""))
+if (!"ggthemes" %in% installed.packages()) install.packages("ggthemes", repos='http://cran.us.r-project.org', dependencies = T, lib = paste(getwd(), "/Rlibraries", sep=""))
+if (!"reshape2" %in% installed.packages()) install.packages("reshape2", repos='http://cran.us.r-project.org', dependencies = T, lib = paste(getwd(), "/Rlibraries", sep=""))
+if (!"foreach" %in% installed.packages()) install.packages("foreach", repos='http://cran.us.r-project.org', dependencies = T, lib = paste(getwd(), "/Rlibraries", sep=""))
+if (!"doParallel" %in% installed.packages()) install.packages("doParallel", repos='http://cran.us.r-project.org', dependencies = T, lib = paste(getwd(), "/Rlibraries", sep=""))
 
 # load necessary packages
 library(RGtk2)
