@@ -21,5 +21,4 @@ g++ -c -fmessage-length=0 -std=c++11 -o RunPara.o RunPara.cpp
 g++ -c -fmessage-length=0 -std=c++11 -o CHerbEff.o CHerbEff.cpp 
 g++ -static -o IBCgrassGUI SPftValInit.o SPftTraits.o RunPara.o Plant.o OutStructs.o LCG.o GMHerbicideEffect.o Cell.o CTKmodel.o CTDSeed.o CTDPlant.o CSeed.o CObject.o CHerbEff.o CGridEnvir.o CGrid.o CGenet.o CEnvir.o 
 
-# run one MC
-IBCgrassGUI 90 100 5 1 50 10 Fieldedge.txt 0 0.1 0.1 1 0 0 0 1
+

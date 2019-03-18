@@ -26,7 +26,7 @@ R 		https://www.r-project.org/
 
 GTK		The R package RGtk2 depends on gtk. The installation of RGtk2 led to errors under Mac. In that case, GTK needs to be installed by hand. 
 
-G++ compiler	e.g. MinGW (http://www.mingw.org/) 
+G++ compiler	e.g. MinGW (http://www.mingw.org/wiki/Getting_Started)
 
 The software was tested on Windows 7, Windows 10 and Ubuntu 16.04. With following version:
 
