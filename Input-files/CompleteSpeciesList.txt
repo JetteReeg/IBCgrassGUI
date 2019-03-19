@@ -78,6 +78,7 @@ Lotus corniculatus	MEITp	medium	erect	intermediate	tolerator	aclonal	late	spring
 Lotus pedunculatus	MEITp	medium	erect	intermediate	tolerator	aclonal	late	spring and summer
 Luzula campestris	SSITcl3p	small	semi-rosette	intermediate	tolerator	long spacer, with resource sharing	late	spring and summer
 Myosotis nemorosa	SSITcl3p	small	semi-rosette	intermediate	tolerator	long spacer, with resource sharing	late	spring and summer
+Myosotis arvensis	SSIIp	small	semi-rosette	intermediate	intermediate	aclonal	late	spring and summer
 Phalaris arundinacea	LECIcl3p	large	erect	competitor	intermediate	long spacer, with resource sharing	late	spring and summer
 Phleum pratense	MSCTcl1p	medium	semi-rosette	competitor	tolerator	short spacer, with resource sharing	late	spring and summer
 Pimpinella major	MSCIcl1p	medium	semi-rosette	competitor	intermediate	short spacer, with resource sharing	late	spring and summer
@@ -103,9 +104,9 @@ Sanguisorba officinalis	MSSIcl1p	medium	semi-rosette	stress-tolerator	intermedia
 Scirpus sylvaticus	LSSIcl3p	large	semi-rosette	stress-tolerator	intermediate	long spacer, with resource sharing	late	spring and summer
 Senecio jacobaea	MSCAcl1p	medium	semi-rosette	competitor	avoider	short spacer, with resource sharing	late	spring and summer
 Silene flos-cuculi	MSIIcl3p	medium	semi-rosette	intermediate	intermediate	long spacer, with resource sharing	late	spring and summer
-Silene vulgaris	SRITcl3pf	small	rosette	intermediate	tolerator	long spacer, with resource sharing	early	spring and summer
+Silene vulgaris	SRIIcl1	small	rosette	intermediate	intermediate	short spacer, with resource sharing	early	spring and summer
 Stellaria graminea	SESTcl4p	small	erect	stress-tolerator	tolerator	long spacer, no resource sharing	late	spring and summer
-Taraxacum sect. Ruderalia	SRIAcl1p	small	rosette	intermediate	avoider	short spacer, with resource sharing	late	spring and summer
+Taraxacum sect. Ruderalia	SRIAcl1pf	small	rosette	intermediate	avoider	short spacer, with resource sharing	early	spring and summer
 Tragopogon pratensis	MSIIp	medium	semi-rosette	intermediate	intermediate	aclonal	late	spring and summer
 Trifolium pratense	SSCTp	small	semi-rosette	competitor	tolerator	aclonal	late	spring and summer
 Trifolium repens	SSIAcl4p	small	semi-rosette	intermediate	avoider	long spacer, no resource sharing	late	spring and summer
