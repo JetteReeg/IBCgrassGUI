@@ -209,12 +209,12 @@ RunPreSet <- function(){
     
     if(vbox2[[3]]$getActive()==T) {
       assign("IBCcommunity", "Calthion.txt", envir = IBCvariables)
-      community <- read.table("Input-files/Fieldedge.txt", sep="\t", header=T)
+      community <- read.table("Input-files/Calthion.txt", sep="\t", header=T)
       assign("IBCcommunityFile", community, envir = IBCvariables)
     }
     if(vbox2[[4]]$getActive()==T) {
       assign("IBCcommunity", "Arrhenatheretalia.txt", envir = IBCvariables)
-      community <- read.table("Input-files/Fieldedge.txt", sep="\t", header=T)
+      community <- read.table("Input-files/Arrhenatheretalia.txt", sep="\t", header=T)
       assign("IBCcommunityFile", community, envir = IBCvariables)
     }
     assign("IBCbelres", ResourceSliderBelow$getValue(), envir = IBCvariables)

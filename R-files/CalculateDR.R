@@ -576,7 +576,7 @@ CalculateDR<- function(){
       # sample dose responses
       geom_line(data=plotting, aes(x = V1, y = as.numeric(value)*100, group=factor(variable), color="random samples"), size=0.05)+
       geom_line(data= mean_dr , aes(x = V1, y = as.numeric(value)*100, color="mean dose response"),size=0.4) +
-      xlab("Application rate [g/ha]") +
+      xlab("Application rate") +
       ylab("Effect [%]") +
       ggtitle("")
     for ( i in 1:nb_specs){

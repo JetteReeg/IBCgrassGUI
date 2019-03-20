@@ -59,8 +59,8 @@ SEITcl3p	Veronica chamaedrys
 SEITcl4p	"Glechoma hederacea; Galium uliginosum; Veronica arvensis"								
 SESIcl4p	Galium palustre								
 SESTcl4p	Stellaria graminea								
-SRIAcl1p	"Leontodon autumnalis; Plantago media; Plantago major"	
-SRIAcl1pf	Taraxacum sect. Ruderalia							
+SRIAcl1p	"Leontodon autumnalis; Plantago media; Plantago major"								
+SRIAcl1pf	Taraxacum								
 SRIAcl2p	"Cerastium holosteoides; Hyperchaeris radicata"								
 SRIAcl3p	Potentilla anserina								
 SRIAcl4p	Bellis perennis								
@@ -72,5 +72,5 @@ SSIAcl4p	"Trifolium repens; Colchicum autumnale; Cardamine pratensis"
 SSITcl2	Ranunculus bulbosus								
 SSITcl3p	"Myosotis nemorosa; Briza media; Luzula campestris"								
 SSITcl4p	Ajuga reptans								
-SSIIp	Mysotis arvensis
-SSCIcl1p	Silene vulgaris
+SSIIp	Mysotis arvensis								
+SSCIcl1p	Silene vulgaris								
