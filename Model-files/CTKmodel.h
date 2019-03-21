@@ -46,7 +46,7 @@
 #include <map>
 #include <vector>
 using namespace std;
-
+//------------------------------------------------------------------------------
 /**\brief herbicide effect profile
  * Set of herbicide effect endpoints on plant and seed performance.
  */
@@ -78,15 +78,19 @@ struct SEffProfile{
    double exposure_strength(){return pEstabSeedFac+pEstabSpacerFac+SeedBioFac+
 			  HerbSeedMort+AllocSpacerFac+AllocSeedFac+growthFac+SurvFac;}
 };
-
+//-----------------------------------------------------------------------------------
 /**
  * \brief toxicokinetic environment
  */
 class CTKmodel {
 	//! Filename of Herbicide factors if read via a txt file
 	static string NameHerbFile;
+	//! Filename of Application rates
+	static string NameAppFile;
 	//! annually correction factors for txt-file option
 	static vector<SEffProfile> EffTimeline;
+	//! annual application rates for dose response option
+	static vector<double> AppRateTimeline;
 	//! type specific susceptibility
 	static map<string, double> PFTsensi;
 	//! type specific effect
@@ -103,8 +107,10 @@ class CTKmodel {
 	static map<string, double> PFTeffect_AllocSE;
 
 public:
-	//! reading txt-file
+	//! reading txt-file with effect intensities
 	static double GetHerbEff(const int pos1=0,string file=NameHerbFile);
+	//! reading txt file with application rates
+	static double GetAppRates(const int pos1=0,string file=NameAppFile);
 	//! set PFT sensitivities
 	static void setPFTsensi(string PFT);
 protected:

@@ -35,6 +35,8 @@ public:
 	static std::string NamePftFile;
 	//! Filename of PftHerbEffect-File (if effect is based on a txt file)
 	static std::string NameHerbEffectFile;
+	//! Filename of Application Rate File
+	static std::string NameAppRateFile;
 	//! scenario parameters
 	static SRunPara RunPara;
 	//! mode of resource competition for aboveground resources: 0 = symmetric; 1 = partial asymmetry; 2 = total asymmetry
@@ -111,8 +113,8 @@ public:
 	int EffectModel;
 	//! switch whether F1 generation is also affected ("F0" only parent generation; "F1" also F1 generation)
 	std::string Generation;
-	//! for dose response effects: application rate
-	int app_rate;
+	//! number of scenario
+	int scenario;
    	///@}
 
 	/** @name CutParam

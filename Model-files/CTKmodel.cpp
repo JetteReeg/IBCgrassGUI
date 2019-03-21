@@ -19,8 +19,12 @@
 using namespace std;
 //! name of txt-file
 string CTKmodel::NameHerbFile="HerbFact.txt";
+//! name of AppRate file
+string CTKmodel::NameAppFile="AppRate.txt";
 //! listed herbicide induced effects
 vector<SEffProfile> CTKmodel::EffTimeline;
+//! application rate timeline
+vector<double> CTKmodel::AppRateTimeline;
 //! type specific sensitivity to herbicide
 map<string, double> CTKmodel::PFTsensi;
 //! type specific effect on plant growth
@@ -48,7 +52,7 @@ SEffProfile::SEffProfile(double pEstSE, double pEstSp, double fThres, double fMM
  * @param file file name of txt file to be read
  * @return Effect timeline
  */
-double CTKmodel::GetHerbEff(const int pos1,string file) //todo check for attributes!
+double CTKmodel::GetHerbEff(const int pos1,string file)
 {
 	//Open HerbFile
 	const char* name=SRunPara::NameHerbEffectFile.c_str();
@@ -79,6 +83,27 @@ double CTKmodel::GetHerbEff(const int pos1,string file) //todo check for attribu
 	}
   return HerbFile.tellg();
 }//end  CEnvir::GetHerbEff
+//----------------------------------------------------------------------
+/**
+ * reading txt-file which contains application rates for several years
+ * @param pos1 file position to start reading
+ * @param file file name of txt file to be read
+ * @return AppRate timeline
+ */
+double CTKmodel::GetAppRates(const int pos1,string file)
+{
+	//Open AppRate file
+	const char* name=SRunPara::NameAppRateFile.c_str();
+	ifstream AppRateFile(name);
+	 // Error message if file cannot be opened
+	if (!AppRateFile.good()) {cerr<<("Error while opening AppRateFile");exit(3); }
+	double current_apprate = 0;
+	while (AppRateFile >> current_apprate){
+				AppRateTimeline.push_back(current_apprate);
+			}
+	// Close the file.
+	AppRateFile.close();
+}
 //----------------------------------------------------------------------------------------------------
 /**
  * set sensitivity of type PFT
@@ -158,7 +183,7 @@ SEffProfile* CTKmodel::getProfileProxy(string PFT,int year)
 			slope_seednumber = SPftTraits::PftLinkList.find(PFT)->second->slope_seednumber;
 			// get the application rates (as RunPara)
 			int rate;
-			rate=SRunPara::RunPara.app_rate;
+			rate=AppRateTimeline[year-SRunPara::RunPara.Tinit];
 			// set effect on establishment (seeds)
 			if(EC50_establishment>0)	dummi->pEstabSeedFac=pow(rate,slope_establishment)/(pow(EC50_establishment,slope_establishment)+pow(rate,slope_establishment));
 				else dummi->pEstabSeedFac=0.0;
@@ -258,7 +283,7 @@ SEffProfile* CTKmodel::getProfileProxySeeds(string PFT,int year)
 			slope_seednumber = SPftTraits::PftLinkList.find(PFT)->second->slope_seednumber;
 			// get the application rates (as RunPara)
 			int rate;
-			rate=SRunPara::RunPara.app_rate;
+			rate=AppRateTimeline[year-SRunPara::RunPara.Tinit];
 			// set effect on establishment (seeds)
 			if(EC50_establishment>0)	dummi->pEstabSeedFac=pow(rate,slope_establishment)/(pow(EC50_establishment,slope_establishment)+pow(rate,slope_establishment));
 				else dummi->pEstabSeedFac=0.0;

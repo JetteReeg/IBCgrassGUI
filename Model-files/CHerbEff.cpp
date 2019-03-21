@@ -73,6 +73,9 @@ void CHerbicideEffectEnv::InitRun(){
   //set PFT sensitivities according to PFT trait 'herb'
   for (map<string,long int>::iterator it=CEnvir::PftInitList.begin();it!=CEnvir::PftInitList.end();++it)
 	CTKmodel::setPFTsensi(it->first);
+  //! read in necessary files
+  if (SRunPara::RunPara.EffectModel==0) CTKmodel::GetHerbEff(); //! for specific effect intensities: HerbFact.txt
+  if (SRunPara::RunPara.EffectModel==2) CTKmodel::GetAppRates(); //! for dose responses: AppRate.txt
 }
 //------------------------------------------------------------------------------
 /**

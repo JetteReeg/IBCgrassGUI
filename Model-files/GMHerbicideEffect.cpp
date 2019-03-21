@@ -143,7 +143,6 @@ time_t GetSec(){
   -#  Tmax (100); // maximal number of years simulated
   -#  Tinit (50); // initial years before herbicide effects are simulated
   -#  NamePftFile ("Fieldedge.txt"); // PFT list
-  -#  NameHerbEffectFile ("HerbFact.txt"); // fixed herbicide effect values
   -#  seedsPerType (10); // degree of isolation as number of seed input per year
   resources
   -#  meanBRes (90); // belowground resources
@@ -160,7 +159,7 @@ time_t GetSec(){
   -#  HerbDuration (30); // number of years simulated with herbicide effect
   -#  HerbEffectType (1); // defines simulation run as treatment of control (1 - treatment; 0 - control)
   -#  EffectModel (0); // defines on which input herbicide effects are based (0 - txt file 2 - dose response)
-  -#  app_rate (260); // application rate (only used if EffectModel is 2)
+  -#  scenario (1); // number of scenario
   -#  MCrun (1); // number of monte carlo runs
 
 Output file names are given for each run individually.
@@ -187,31 +186,30 @@ int main(int argc, char* argv[])
 	initLCG( pid, 3487234);
 	if (argc>=2) {
 		// example parameters:
-		// 3 50 5 1 Fieldedge.txt HerbFact.txt 10 90 100 0 0.1 0.01 1 1 0 0 0 1
+		// 3 50 5 1 Fieldedge.txt 10 90 100 0 0.1 0.01 1 1 1 0 0 1 1
 		//general parameter
 		SRunPara::RunPara.ModelVersion=atoi(argv[1]); // mode of density denpendent mortality and competition
 		SRunPara::RunPara.CellNum=atoi(argv[2]); // grid size
 		SRunPara::RunPara.Tmax=atoi(argv[3]); // maximal number of years simulated
 		SRunPara::RunPara.Tinit=atoi(argv[4]); // initial years before herbicide effects are simulated
 		SRunPara::RunPara.NamePftFile=argv[5]; // PFT list
-		SRunPara::RunPara.NameHerbEffectFile=argv[6]; // fixed herbicide effect values
-		SRunPara::RunPara.seedsPerType=atoi(argv[7]); // degree of isolation as number of seed input per year
+		SRunPara::RunPara.seedsPerType=atoi(argv[6]); // degree of isolation as number of seed input per year
 		// resources
-		SRunPara::RunPara.meanBRes=atoi(argv[8]); // belowground resources
-		SRunPara::RunPara.meanARes=atoi(argv[9]); // aboveground resources
-		SRunPara::RunPara.Aampl=atof(argv[10]); // amplitude of seasonal distribution of aboveground resources (based on day length)
+		SRunPara::RunPara.meanBRes=atoi(argv[7]); // belowground resources
+		SRunPara::RunPara.meanARes=atoi(argv[8]); // aboveground resources
+		SRunPara::RunPara.Aampl=atof(argv[9]); // amplitude of seasonal distribution of aboveground resources (based on day length)
 		SRunPara::RunPara.Bampl=0; // amplitude of seasonal distribution of belowground resources
 		// disturbances
-		SRunPara::RunPara.AreaEvent=atof(argv[11]); // amount of area trampled per year
-		SRunPara::RunPara.GrazProb=atof(argv[12]); // amount of area grazed per year
-		SRunPara::RunPara.NCut=atoi(argv[13]); // number of cutting events per year
+		SRunPara::RunPara.AreaEvent=atof(argv[10]); // amount of area trampled per year
+		SRunPara::RunPara.GrazProb=atof(argv[11]); // amount of area grazed per year
+		SRunPara::RunPara.NCut=atoi(argv[12]); // number of cutting events per year
 		//herbicide impact parameter
-		SRunPara::RunPara.week_start=1; // week of application of herbicide
+		SRunPara::RunPara.week_start=atoi(argv[13]); // week of application of herbicide
 		SRunPara::RunPara.Generation="F0"; // affected generation
 		SRunPara::RunPara.HerbDuration=atoi(argv[14]); // number of years simulated with herbicide effect
 		SRunPara::RunPara.HerbEffectType=atoi(argv[15]); // defines simulation run as treatment of control (1 - treatment; 0 - control)
 		SRunPara::RunPara.EffectModel=atoi(argv[16]); // defines on which input herbicide effects are based (0 - txt file 2 - dose response)
-		SRunPara::RunPara.app_rate=atof(argv[17]); // application rate (only used if EffectModel is 2)
+		SRunPara::RunPara.scenario=atof(argv[17]); // number of scenario
 		SRunPara::RunPara.MCrun=atoi(argv[18]); // number of monte carlo runs
 }
 
@@ -239,8 +237,6 @@ int main(int argc, char* argv[])
 	srand (time (0));
 	// initialize run
 	Init();
-	// get herbicide effect data
-	CTKmodel::GetHerbEff();
 	// start run
 	Run();
 	// reset

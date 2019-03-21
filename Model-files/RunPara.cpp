@@ -15,6 +15,8 @@ using namespace std;
 std::string SRunPara::NamePftFile="Fieldedge.txt";
 //! effect file for herbicide induced impacts based on a txt file
 std::string SRunPara::NameHerbEffectFile="HerbFact.txt";
+//! Application rates per year
+std::string SRunPara::NameAppRateFile="AppRate.txt";
 //! parameters of specific run
 SRunPara SRunPara::RunPara=SRunPara();
 //---------------------------------------------------------------------------
@@ -29,7 +31,7 @@ SRunPara::SRunPara():Version(version2),AboveCompMode(asympart),BelowCompMode(sym
   DistAreaYear(0),AreaEvent(0.1),mort_seeds(0.5),meanARes(100),meanBRes(100), ModelVersion(2), EffectModel(1),
   Aampl(0),Bampl(0),
   Generation("F0"),
-  app_rate(0),
+  scenario(0),
   ITVsd(0.0)
 {}
 //-------------------------------------------------------------------
@@ -44,7 +46,7 @@ std::string SRunPara::getRunID(){
 	if (SRunPara::RunPara.HerbEffectType==1) dummi2="treatment";
 	// add type, Apprate, MCrun into file name
 	dummi<<"_type_"<<dummi2
-	   <<"_AppRate_"<<SRunPara::RunPara.app_rate
+	   <<"_Scenario_"<<SRunPara::RunPara.scenario
 	   <<"_MCrun_"<<SRunPara::RunPara.MCrun;
 	// return the file name string
 	return dummi.str();
