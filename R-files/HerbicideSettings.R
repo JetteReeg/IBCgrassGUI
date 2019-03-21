@@ -34,6 +34,12 @@ HerbicideSettings<-function(){
   DurationSlider <- gtkHScale(min = 1, max = 100, step = 1)
   DurationSlider$setTooltipText("The model simulates 1 herbicide application each year [effects occur for 1 week of each process].")
   DurationSlider$setValue(get("IBCDuration", envir=IBCvariables))
+  # Slider herbicide duration
+  label_weekstart<-gtkLabel('Week of herbicide application [calender week]')
+  label_weekstart$setTooltipText("The model can simulate different timings of the herbicide application [effects occur for 1 week of each process].")
+  weekstartSlider <- gtkHScale(min = 11, max = 40, step = 1)
+  weekstartSlider$setTooltipText("The model can simulate different timings of the herbicide application [effects occur for 1 week of each process].")
+  weekstartSlider$setValue(get("IBCweekstart", envir=IBCvariables))
   # Slider recovery duration
   label_recovery<-gtkLabel('Recovery duration [years]')
   label_recovery$setTooltipText("The recovery period follows the herbicide application period to analyse the potential ability to recover.")
@@ -47,6 +53,8 @@ HerbicideSettings<-function(){
   vbox2$packStart(InitSlider)
   vbox2$packStart(label_duration)
   vbox2$packStart(DurationSlider)
+  vbox2$packStart(label_weekstart)
+  vbox2$packStart(weekstartSlider)
   vbox2$packStart(label_recovery)
   vbox2$packStart(RecoverySlider)
   
@@ -146,6 +154,7 @@ HerbicideSettings<-function(){
     } else{
       # save selected values
       assign("IBCDuration", DurationSlider$getValue(), envir=IBCvariables)
+      assign("IBCweekstart", weekstartSlider$getValue(), envir=IBCvariables)
       assign("IBCRecovery", RecoverySlider$getValue(), envir=IBCvariables)
       assign("IBCInit", InitSlider$getValue(), envir=IBCvariables)
       assign("BiomassEff", BiomassCheck$getActive(), envir=IBCvariables)

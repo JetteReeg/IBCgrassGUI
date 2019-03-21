@@ -50,20 +50,20 @@ SimulationSpecifics<-function(){
   vbox4$packStart(label_iso)
   vbox4$packStart(IsoSlider)
   ##################################################
-  ### edit field 'Application rates'
+  ### edit field 'number of treatment scenarios'
   ##################################################
   vbox5 <- gtkVBoxNew()
   vbox5$setBorderWidth(10)
-  label_apprates <-gtkLabel()
-  label_apprates$setMarkup('<span underline=\"single\"size=\"large\">Application rates [comma seperated]</span>')
-  label_apprates['height.request'] <- 20
-  label_apprates$setTooltipText('Insert the application rates, you would like to test. Make sure that you do not include spaces!')
-  entry_apprates <- gtkEntryNew()
-  apprates<-get("IBCApprates", envir=IBCvariables)
-  entry_apprates$setText(paste(apprates, sep="", collapse=","))
+  label_scenarios <-gtkLabel()
+  label_scenarios$setMarkup('<span underline=\"single\"size=\"large\">Number of herbicide scenarios</span>')
+  label_scenarios['height.request'] <- 20
+  label_scenarios$setTooltipText('Please type in the number of herbicide scenarios you would like to test. In the next window you will be asked to type in annual application rates for each scenario.')
+  entry_scenarios <- gtkEntryNew()
+  scenarios<-get("IBCScenarios", envir=IBCvariables)
+  entry_scenarios$setText(scenarios)
   
-  vbox5$packStart(label_apprates)
-  vbox5$packStart(entry_apprates)
+  vbox5$packStart(label_scenarios)
+  vbox5$packStart(entry_scenarios)
   ##################################################
   ### Button start 
   ##################################################
@@ -75,12 +75,12 @@ SimulationSpecifics<-function(){
     # sqrt(PlotSlider$getValue())
     assign("IBCgridsize", round(sqrt(PlotSlider$getValue())*100), envir = IBCvariables)
     assign("IBCSeedInput", IsoSlider$getValue(), envir = IBCvariables)
-    apprates<-entry_apprates$getText()
-    apprates<-unlist(strsplit(apprates, ","))
-    assign("IBCApprates", apprates, envir=IBCvariables)
+    scenarios<-entry_scenarios$getText()
+    assign("IBCScenarios", scenarios, envir=IBCvariables)
     w$destroy()
-    
-    StartSimulations()
+    if(get("IBCherbeffect", envir = IBCvariables)=="dose-response") {
+      GetAppRates()
+    } else  StartSimulations()
   }
   gSignalConnect(SB, signal = "clicked", Start)
   ##################################################
@@ -121,6 +121,111 @@ SimulationSpecifics<-function(){
   w$add(vbox)
   w$show()
   
+}
+
+GetAppRates <- function(){
+  ##################################################
+  ### Create data frame to insert annual application rates
+  ##################################################
+  # if no effect data exist (e.g. if previous settings were loaded)
+  if (is.null(get("IBCAppRateScenarios", envir=IBCvariables))){
+    rep.col<-function(x,n){
+      matrix(rep(x,each=n), ncol=n, byrow=TRUE)
+    }
+    df<-NULL
+    #####
+    # create the table
+    #####
+    # 
+    df <- data.frame()
+    scenarios <- as.numeric(get("IBCScenarios", envir = IBCvariables))
+    column_name <-c()
+    for (i in 1:scenarios){
+      column_name_help <- paste('Scenario',i,sep="")
+      column_name <- c(column_name, column_name_help)
+    }
+    col <- c(rep(0.0,get("IBCDuration", envir=IBCvariables)))
+    df <- as.data.frame(rep.col(col, length(column_name)))
+    colnames(df)<-column_name
+  } else {
+    # load previous effect data
+    df <- get("IBCAppRateScenarios", envir=IBCvariables)
+  }
+  # create a dataframe object
+  obj <- gtkDfEdit(df, update=T, envir=IBCvariables)
+  #####
+  # What to do
+  #####
+  label_txtfile<-gtkLabel()
+  label_txtfile$setMarkup('
+                          <span weight=\"bold\" size=\"large\">Application rates</span>
+                          <span size=\"large\">Please insert the annual application rates for each scenario.</span><span weight=\"bold\"></span>')
+  label_txtfile['height.request'] <- 100
+  #####
+  # Buttons
+  #####
+  SaveCloseButton <- gtkButton('Save & Continue')
+  SaveCloseButton$setTooltipText("Save the data and go to the next step.")
+  # Save the data and go to the next step
+  SaveClose <- function(button){
+    df<-obj$getModel()
+    test<-data.frame(df)
+    # inserted values should not be greater than 1
+    if(is.na(test)){
+      dialog1 <- gtkMessageDialog(parent=win,
+                                  flags = "destroy-with-parent",
+                                  type="warning" ,
+                                  buttons="ok" ,
+                                  "Please make sure, that you insert values for all years.")
+      color <-gdkColorToString('white')
+      dialog1$ModifyBg("normal", color)
+      gSignalConnect (dialog1, "response", function(dialog1, response, user.data){ dialog1$Destroy()})
+    } else{
+      # close windows
+      win$destroy()
+      # save the table
+      test<-data.frame(df)
+      # calculate expected column number
+      col_exp <- as.numeric(get("IBCScenarios", IBCvariables))
+      # delete everything greater than the expected column number
+      test<-test[,c(2:(col_exp+1))]
+      assign("IBCAppRateScenarios", test, IBCvariables)
+      print(test)
+      fwrite(test, "AppRateScenarios.txt", sep="\t")
+      # call the sensitivity window
+      StartSimulations()
+    }
+  }
+  # return to the herbicide settings
+  ReturnButton <- gtkButton('Back')
+  ReturnButton$setTooltipText("Go back to the previous step.")
+  ClickOnReturn <- function(button){
+    # destroy current windows
+    win$destroy()
+    # call herbicide window
+    SimulationSpecifics()
+  }
+  # packing
+  gSignalConnect(ReturnButton, "clicked", ClickOnReturn)
+  gSignalConnect(SaveCloseButton, "clicked", SaveClose)
+  
+  #####
+  # put it together
+  #####
+  vbox1 <- gtkVBoxNew()
+  vbox1$setBorderWidth(10)
+  vbox1$packStart(label_txtfile)
+  vbox1$packStart(obj)
+  vbox1$packStart(SaveCloseButton,fill=F)
+  vbox1$packStart(ReturnButton,fill=F) #button which will start 
+  
+  win <- gtkWindow(show=F) 
+  win["title"] <- "IBC-grass 2.0"
+  win$setPosition('GTK_WIN_POS_CENTER')
+  color <-gdkColorToString('white')
+  win$ModifyBg("normal", color)
+  win$add(vbox1)
+  win$show()
 }
 
 StartSimulations <- function(){
@@ -242,7 +347,8 @@ Please wait while simulations are running.
     #####
     ModelVersion <- 2
     PFTfileName <- get("IBCcommunity", envir=IBCvariables)
-    PFTHerbEffectFile="./HerbFact.txt"
+    PFTHerbEffectFile <- "./HerbFact.txt"
+    AppRateFile <- "./AppRate.txt"
     MCruns <- get("IBCrepetition", envir=IBCvariables)
     GridSize <- get("IBCgridsize", envir=IBCvariables)
     SeedInput <- get("IBCSeedInput", envir=IBCvariables)
@@ -252,6 +358,7 @@ Please wait while simulations are running.
     graz <- get("IBCgraz", envir=IBCvariables)
     tramp <- get("IBCtramp", envir=IBCvariables)
     cut <- get("IBCcut", envir=IBCvariables)
+    week_start <- get("IBCweekstart", envir=IBCvariables)-10
     HerbDuration <- get("IBCDuration", envir=IBCvariables)
     RecovDuration <- get("IBCRecovery", envir=IBCvariables)
     InitDuration <- get("IBCInit", envir=IBCvariables)
@@ -259,31 +366,33 @@ Please wait while simulations are running.
     HerbEff <- get("IBCherbeffect", envir=IBCvariables) # txt or dose response
     if(HerbEff=="txt-file") EffectModel <- 0
     if(HerbEff=="dose-response") EffectModel <- 2
-    AppRates <- get("IBCApprates", envir=IBCvariables) # vector of rates
+    Scenarios <- as.numeric(get("IBCScenarios", envir=IBCvariables)) # vector of rates
     nb_data <- as.numeric(get("nb_data", envir=IBCvariables)) # number of test species
     #####
     # running control
     #####
     gtkSpinnerStart(task2)
-    apprate <- 0
+    scenario <- 0
     # copy community file into Model-folder
     path <- "Model-files/"
     write.table(get("IBCcommunityFile", envir=IBCvariables), paste(path,PFTfileName, sep=""), sep="\t", quote=F,row.names=F)
 
     copy <- file.copy("Input-files/HerbFact.txt",  path)
+    copy <- file.copy("Input-files/AppRate.txt",  path)
     setwd('Model-files')
     no_cores <- detectCores()-2
     cl <- makeCluster(no_cores)
     registerDoParallel(cl)
 
     foreach(MC = 1:MCruns)  %dopar%
-      system(paste('./IBCgrassGUI', ModelVersion, GridSize, Tmax, InitDuration, PFTfileName, PFTHerbEffectFile, SeedInput, belowres, abres, abampl, tramp, graz, cut,
-                   HerbDuration, 0, EffectModel, apprate, MC, sep=" "), intern=T)
+      system(paste('./IBCgrassGUI', ModelVersion, GridSize, Tmax, InitDuration, PFTfileName, SeedInput, belowres, abres, abampl, tramp, graz, cut,
+                   week_start, HerbDuration, 0, EffectModel, scenario, MC, sep=" "), intern=T)
     stopCluster(cl)
 
     setwd('..')
     remove <- file.remove(paste("Model-files/", PFTfileName, sep=""))
     remove <- file.remove("Model-files/HerbFact.txt")
+    remove <- file.remove("Model-files/AppRate.txt")
     #####
     # copy control
     #####
@@ -321,9 +430,9 @@ Please wait while simulations are running.
       
       foreach(MC = 1:MCruns, .export=c("PFTfile", "PFTsensitivity", "PFTfileName", "EffectModel",
                                        "ModelVersion", "belowres", "abres", "abampl", "Tmax", "InitDuration", "GridSize", "SeedInput",
-                                       "HerbDuration", "tramp", "graz", "cut"))  %dopar%
+                                       "HerbDuration", "tramp", "graz", "cut", "week_start"))  %dopar%
       {
-        apprate <- 0
+        scenario <- 1
         PFTfile<-merge(PFTfile, PFTsensitivity, by="Species")
         #make sure, all values are set to 0 (no affect)
         PFTfile[,25] <- 0
@@ -349,14 +458,17 @@ Please wait while simulations are running.
         path <- "Model-files/"
         copy <- file.copy(paste(unlist(strsplit(PFTfileName,".txt")), MC, ".txt", sep=""),  path)
         copy <- file.copy("HerbFact.txt",  path)
+        copy <- file.copy("Input-files/AppRate.txt",  path)
         setwd('Model-files')
-        mycall<-paste('./IBCgrassGUI', ModelVersion, GridSize, Tmax, InitDuration, paste("./",unlist(strsplit(PFTfileName,".txt")), MC, ".txt", sep=""), PFTHerbEffectFile, 
-                      SeedInput, belowres, abres, abampl, tramp, graz, cut, HerbDuration, 1, EffectModel, apprate, MC, sep=" ")
+        mycall<-paste('./IBCgrassGUI', ModelVersion, GridSize, Tmax, InitDuration, paste("./",unlist(strsplit(PFTfileName,".txt")), MC, ".txt", sep=""), 
+                      SeedInput, belowres, abres, abampl, tramp, graz, cut, 
+                      week_start, HerbDuration, 1, EffectModel, scenario, MC, sep=" ")
         #start treatment run
         system(mycall, intern=TRUE)
         setwd('..')
         remove <- file.remove(paste("Model-files/", unlist(strsplit(PFTfileName,".txt")), MC, ".txt", sep=""))
         remove <- file.remove("Model-files/HerbFact.txt")
+        remove <- file.remove("Model-files/AppRate.txt")
       }
         
       stopCluster(cl)
@@ -382,14 +494,15 @@ Please wait while simulations are running.
       }
       dir.create(paste("currentSimulation/HerbicideSettings", sep=""), recursive=TRUE)
       file_list <- list.files(pattern=paste(unlist(strsplit(PFTfileName,".txt")),"*",sep=""))
-      file_list <- file_list[file_list!="Fieldedge.txt"]
+      file_list <- file_list[file_list!=PFTfileName] #TODO: stimmt das mit der Datei???
       file_list <- c(file_list, "SimulationSettings.Rdata")
       copy <- file.copy(file_list ,  paste("currentSimulation/HerbicideSettings", sep=""))
       #  todo make sure that all files were copied!
       if (all(copy==T)) file.remove(file_list)
-      file_list <- list.files(pattern="HerbFact*")
-      copy <- file.copy(file_list ,  paste("currentSimulation/HerbicideSettings", sep=""))
-      if (all(copy==T)) file.remove(file_list)
+      copy <- file.copy("HerbFact.txt" ,  paste("currentSimulation/HerbicideSettings", sep=""))
+      if (all(copy==T)) file.remove("HerbFact.txt")
+      copy <- file.copy("PFTsensitivity.txt" ,  paste("currentSimulation/HerbicideSettings", sep=""))
+      if (all(copy==T)) file.remove("PFTsensitivity.txt")
     }
     #####
     # running treatment based on dose responses
@@ -397,6 +510,7 @@ Please wait while simulations are running.
     if(HerbEff=="dose-response"){
     count <- 0
     PFTfile <- get("IBCcommunityFile", envir=IBCvariables)
+    AppRateScenarios <- get("IBCAppRateScenarios", envir=IBCvariables)
     PFTsensitivity <- get("PFTSensitivityFile", envir=IBCvariables)
     # question: same random distributions for the AppRates? --> first MCrun loop than apprate loop
     no_cores <- detectCores()-2
@@ -405,7 +519,8 @@ Please wait while simulations are running.
     
     foreach(MC = 1:MCruns, .export=c("PFTfile", "PFTsensitivity", "PFTfileName", "EffectModel",
                                      "ModelVersion", "belowres", "abres", "abampl", "Tmax", "InitDuration", "GridSize", "SeedInput",
-                                     "HerbDuration", "tramp", "graz", "cut", "AppRates", "nb_data"))  %dopar%
+                                     "week_start", "HerbDuration", "tramp", "graz", "cut", "Scenarios", "nb_data",
+                                     "AppRateScenarios"))  %dopar%
     {
         #####
         # set sensitivities
@@ -569,18 +684,21 @@ Please wait while simulations are running.
         copy <- file.copy(paste(unlist(strsplit(PFTfileName,".txt")), MC, ".txt", sep=""),  path)
         copy <- file.copy("Input-files/HerbFact.txt",  path)
         setwd('Model-files')
-        for(apprate in 1:length(AppRates)){
-          mycall<-paste('./IBCgrassGUI',ModelVersion, GridSize, Tmax, InitDuration, paste("./",unlist(strsplit(PFTfileName,".txt")), MC, ".txt", sep=""), PFTHerbEffectFile, 
-                        SeedInput, belowres, abres, abampl, tramp, graz, cut, HerbDuration, 1, EffectModel, AppRates[apprate], MC, sep=" ")
+        for(scenario in 1:Scenarios){
+          #split txt file with all AppRates of all Scenarios into the scenario and save as AppRate.txt
+          write.table(AppRateScenarios[,scenario], "AppRate.txt",  col.names=FALSE,  row.names=FALSE, sep="\t")
+          mycall<-paste('./IBCgrassGUI',ModelVersion, GridSize, Tmax, InitDuration, 
+                        paste("./",unlist(strsplit(PFTfileName,".txt")), MC, ".txt", sep=""), 
+                        SeedInput, belowres, abres, abampl, tramp, graz, cut, 
+                        week_start, HerbDuration, 1, EffectModel, scenario, MC, sep=" ")
           #start treatment run
           system(mycall, intern=TRUE)
-          # count <- count +1
-          # task3$SetFraction(count/(MCruns*length(AppRates)))
-          # task3$setTooltipText(paste(count, "of ", MCruns*length(AppRates), " repetitions finished", sep=""))
-        } # end for apprates
+          remove <- file.remove("Model-files/AppRate.txt")
+          } # end for apprates
         setwd('..')
         remove <- file.remove(paste("Model-files/", unlist(strsplit(PFTfileName,".txt")), MC, ".txt", sep=""))
         remove <- file.remove("Model-files/HerbFact.txt")
+        
     }
       
     stopCluster(cl)
@@ -609,7 +727,7 @@ Please wait while simulations are running.
     dir.create(paste("currentSimulation/HerbicideSettings", sep=""), recursive=TRUE)
     file_list <- list.files(pattern=paste(unlist(strsplit(PFTfileName,".txt")),"*",sep=""))
     file_list <- file_list[file_list!=PFTfileName]
-    file_list <- c(file_list, "SimulationSettings.Rdata", "Example_doseresponse.png")
+    file_list <- c(file_list, "SimulationSettings.Rdata", "Example_doseresponse.png", "AppRateScenarios.txt")
     copy <- file.copy(file_list ,  paste("currentSimulation/HerbicideSettings", sep=""))
     #  todo make sure that all files were copied!
     if (all(copy==T)) file.remove(file_list)
@@ -695,10 +813,16 @@ Please wait while simulations are running.
       for (file in file_list){
         if (!exists("PFT")){
           # save also MC run ID
+          MCtmp <- unlist(strsplit(file, "_"))[7]
+          MC <- unlist(strsplit(MCtmp, ".txt"))
           temp <-  fread(file, sep="\t")
+          temp[,MC:=MC]
           PFT<-temp
         } else {
+          MCtmp <- unlist(strsplit(file, "_"))[7]
+          MC <- unlist(strsplit(MCtmp, ".txt"))
           temp <-  fread(file, sep="\t")
+          temp[,MC:=MC]
           # also save MC run ID
           l <- list(PFT,temp)
           PFT<-rbindlist(l)
@@ -723,16 +847,20 @@ Please wait while simulations are running.
       file_list <- list.files(pattern="Grd__*")
       for (file in file_list){
         if (!exists("GRD")){
-          # save also MC run ID
+          MCtmp <- unlist(strsplit(file, "_"))[7]
+          MC <- unlist(strsplit(MCtmp, ".txt"))
           temp <-  fread(file, sep="\t")
+          temp[,MC:=MC]
           GRD<-temp
         }
         # if the merged dataset does exist, append to it
         else {
+          MCtmp <- unlist(strsplit(file, "_"))[7]
+          MC <- unlist(strsplit(MCtmp, ".txt"))
           temp <-  fread(file, sep="\t")
-          temp_GRD<-temp
+          temp[,MC:=MC]
           # also save MC run ID
-          l <- list(GRD, temp_GRD)
+          l <- list(GRD, temp)
           GRD<-rbindlist(l)
           rm(temp)
         }

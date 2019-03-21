@@ -286,24 +286,25 @@ Results <- function(){
   ShowSettingsProject <- function(button){
     load(file = "HerbicideSettings/SimulationSettings.Rdata")
     variables <- ls(SaveEnvironment)
-    variables <- variables[!(variables %in% c("origFiles", "origWD", "GUIopen", "PFTtoSpecies", "IBCcommunityFile", "IBCloadedSettings", 
+    variables <- variables[!(variables %in% c("origFiles", "origWD", "GUIopen", "PFTtoSpecies", "IBCcommunityFile", "IBCloadedSettings",
+                                              "IBCAppRateScenarios", "IBCScenarios", "IBCApprates",
                                               "BiomassEffFile", "EstablishmentEffFile", "SeedlingBiomassEffFile", "SeedNumberEffFile",
                                               "SeedSterilityEffFile", "SurvivalEffFile", "PFTSensitivityFile", "EffectData", "nb_data"))]
     variables <- variables[c(
                                      #Community + Gridsize
-                                     7,11,
+                                     6,10,
                                      #resources
-                                     3,4,6,
+                                     3,4,5,
                                      # seed input
-                                     16,
+                                     15,
                                      # disturbances
-                                     8, 10, 17,
+                                     7, 9, 16,
                                      #HerbDurations
-                                     13,9,14,12,5,
+                                     12,8,13,11,5,17,
                                      #attribute
                                      1,2,18,19,20,21,
                                      #MCs
-                                     15)]
+                                     14)]
     dfSettings <- data.frame()
     for(variable in variables){
       value <- as.character(get(variable, envir=SaveEnvironment))

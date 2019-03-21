@@ -69,6 +69,7 @@ assign("IBCherbeffect", "txt-file", envir = IBCvariables)                     # 
 assign("nb_data", 6, envir = IBCvariables)                                    # number of test species
 assign("origWD", getwd(), envir=IBCvariables)                                 # original working directory
 assign("IBCDuration", 1, envir=IBCvariables)                                  # herbicide duration (in years)
+assign("IBCweekstart", 11, envir=IBCvariables)                                # week of herbicide application within each year
 assign("IBCRecovery", 1, envir=IBCvariables)                                  # recovery period (in years)
 assign("IBCInit", 1, envir=IBCvariables)                                      # initial years
 assign("BiomassEff", F, envir=IBCvariables)                                   # whether biomass is affected
@@ -92,7 +93,8 @@ assign("PFTSensitivityFile", NULL, envir=IBCvariables)                        # 
 assign("IBCrepetition", 10, envir = IBCvariables)                             # number of repetitions
 assign("IBCgridsize", 174, envir = IBCvariables)                              # grid size
 assign("IBCSeedInput", 10, envir = IBCvariables)                              # seed input
-assign("IBCApprates", "", envir=IBCvariables)                                 # application rates
+assign("IBCAppRateScenarios", NULL, envir=IBCvariables)                                 # annual application rates
+assign("IBCScenarios", 1, envir=IBCvariables)                                 # number of herbicide scenarios
 assign("IBCloadedSettings", NULL, envir=IBCvariables)                         # name for loaded settings
 
 ###############################################################################
