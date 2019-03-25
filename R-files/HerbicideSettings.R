@@ -302,7 +302,7 @@ HerbicideSettings<-function(){
         vbox1$packStart(ReturnButton,fill=F) #button which will start 
         
         win <- gtkWindow(show=F) 
-        win["title"] <- "IBC-grass 2.0"
+        win["title"] <- "IBC-grass GUI"
         win$setPosition('GTK_WIN_POS_CENTER')
         color <-gdkColorToString('white')
         win$ModifyBg("normal", color)
@@ -429,7 +429,7 @@ HerbicideSettings<-function(){
             
             color <-gdkColorToString('white')
             winBiomass_help <- gtkWindowNew(show=F)
-            winBiomass_help["title"] <- "IBC-grass 2.0"
+            winBiomass_help["title"] <- "IBC-grass GUI"
             winBiomass_help$setPosition('GTK_WIN_POS_CENTER')
             winBiomass_help$ModifyBg("normal", color)
             winBiomass_help$add(vboxBiomass_help)
@@ -543,7 +543,7 @@ HerbicideSettings<-function(){
             vboxSeedlingBiomass_help$packStart(ReturnButtonSeedlingBiomass,fill=F)
             winSeedlingBiomass_help <- gtkWindowNew(show=F)
             winSeedlingBiomass_help$setPosition('GTK_WIN_POS_CENTER')
-            winSeedlingBiomass_help["title"] <- "IBC-grass 2.0"
+            winSeedlingBiomass_help["title"] <- "IBC-grass GUI"
             winSeedlingBiomass_help$ModifyBg("normal", color)
             winSeedlingBiomass_help$add(vboxSeedlingBiomass_help)
             winSeedlingBiomass_help$show()
@@ -656,7 +656,7 @@ HerbicideSettings<-function(){
             vboxSurvival_help$packStart(ReturnButtonSurvival, fill=F)
             winSurvival_help <- gtkWindowNew(show=F)
             winSurvival_help$setPosition('GTK_WIN_POS_CENTER')
-            winSurvival_help["title"] <- "IBC-grass 2.0"
+            winSurvival_help["title"] <- "IBC-grass GUI"
             winSurvival_help$ModifyBg("normal", color)
             winSurvival_help$add(vboxSurvival_help)
             winSurvival_help$show()
@@ -771,7 +771,7 @@ HerbicideSettings<-function(){
             
             winEstablishment_help <- gtkWindowNew(show=F)
             winEstablishment_help$setPosition('GTK_WIN_POS_CENTER')
-            winEstablishment_help["title"] <- "IBC-grass 2.0"
+            winEstablishment_help["title"] <- "IBC-grass GUI"
             winEstablishment_help$ModifyBg("normal", color)
             winEstablishment_help$add(vboxEstablishment_help)
             winEstablishment_help$show()
@@ -887,7 +887,7 @@ HerbicideSettings<-function(){
             
             winSeedSterility_help <- gtkWindowNew(show=F)
             winSeedSterility_help$setPosition('GTK_WIN_POS_CENTER')
-            winSeedSterility_help["title"] <- "IBC-grass 2.0"
+            winSeedSterility_help["title"] <- "IBC-grass GUI"
             winSeedSterility_help$ModifyBg("normal", color)
             winSeedSterility_help$add(vboxSeedSterility_help)
             winSeedSterility_help$show()
@@ -1007,7 +1007,7 @@ HerbicideSettings<-function(){
             
             winSeedNumber_help <- gtkWindowNew(show=F)
             winSeedNumber_help$setPosition('GTK_WIN_POS_CENTER')
-            winSeedNumber_help["title"] <- "IBC-grass 2.0"
+            winSeedNumber_help["title"] <- "IBC-grass GUI"
             winSeedNumber_help$ModifyBg("normal", color)
             winSeedNumber_help$add(vboxSeedNumber_help)
             winSeedNumber_help$show()
@@ -1057,7 +1057,7 @@ HerbicideSettings<-function(){
         
         win <- gtkWindowNew(show=F)
         win$setPosition('GTK_WIN_POS_CENTER')
-        win["title"] <- "IBC-grass 2.0"
+        win["title"] <- "IBC-grass GUI"
         color <-gdkColorToString('white')
         win$ModifyBg("normal", color)
         win$add(vbox)
@@ -1095,7 +1095,7 @@ HerbicideSettings<-function(){
   # create a new window
   HerbicideWindow <- gtkWindow(show=F)
   HerbicideWindow$setPosition('GTK_WIN_POS_CENTER')
-  HerbicideWindow["title"] <- "IBC-grass 2.0"
+  HerbicideWindow["title"] <- "IBC-grass GUI"
   color <-gdkColorToString('white')
   HerbicideWindow$ModifyBg("normal", color)
   

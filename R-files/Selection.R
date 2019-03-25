@@ -124,7 +124,7 @@ Selection<-function(){
   ##################################################
   SelectionWindow <- gtkWindow(show=F)
   SelectionWindow$setPosition('GTK_WIN_POS_CENTER')
-  SelectionWindow["title"] <- "IBC-grass 2.0"
+  SelectionWindow["title"] <- "IBC-grass GUI"
   color <-gdkColorToString('white')
   SelectionWindow$ModifyBg("normal", color)
   SelectionWindow$add(vbox)

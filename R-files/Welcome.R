@@ -43,7 +43,7 @@ See the user manual for detailed informations on the GUI.
       comparing model predictions of the plant community model IBC-grass to empirical data. Environ Sci Eur. 30:44. 
       doi: 10.1186/s12302-018-0174-9
 
-<u>Version:</u> 0.1.0')
+<u>Version:</u> 0.1.19')
   
   WelcomeBox <- gtkVBoxNew(F, 1)
   WelcomeBox$setBorderWidth(10)
@@ -144,7 +144,7 @@ See the user manual for detailed informations on the GUI.
   
   Welcome <- gtkWindow(show=F)
   Welcome$setPosition('GTK_WIN_POS_CENTER')
-  Welcome["title"] <- "IBC-grass 2.0"
+  Welcome["title"] <- "IBC-grass GUI"
   color <-gdkColorToString('white')
   Welcome$ModifyBg("normal", color)
   Welcome$add(BaseInformationBox)

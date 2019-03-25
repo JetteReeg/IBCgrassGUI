@@ -306,7 +306,7 @@ SensitivityTXT <- function(){
   
   w <- gtkWindow(show=F)
   w$setPosition('GTK_WIN_POS_CENTER')
-  w["title"] <- "IBC-grass 2.0"
+  w["title"] <- "IBC-grass GUI"
   color <-gdkColorToString('white')
   w$ModifyBg("normal", color)
   w$add(topvbox)
@@ -642,7 +642,7 @@ SensitivityDR <- function(){
   
   w <- gtkWindow(show=F)
   w$setPosition('GTK_WIN_POS_CENTER')
-  w["title"] <- "IBC-grass 2.0"
+  w["title"] <- "IBC-grass GUI"
   color <-gdkColorToString('white')
   w$ModifyBg("normal", color)
   w$add(topvbox)

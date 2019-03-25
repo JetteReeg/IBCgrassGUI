@@ -278,7 +278,7 @@ RunPreSet <- function(){
   
   vbox$packStart(event)
   RunPreSetWindow <- gtkWindow(show=F) 
-  RunPreSetWindow["title"] <- "IBC-grass 2.0"
+  RunPreSetWindow["title"] <- "IBC-grass GUI"
   RunPreSetWindow$setPosition('GTK_WIN_POS_CENTER')
   color <-gdkColorToString('white')
   RunPreSetWindow$ModifyBg("normal", color)
@@ -910,7 +910,7 @@ Add a species to the list above ... </span>')
   
   
   CreateNewCommunityWindow <- gtkWindow(show=F) 
-  CreateNewCommunityWindow["title"] <- "IBC-grass 2.0"
+  CreateNewCommunityWindow["title"] <- "IBC-grass GUI"
   CreateNewCommunityWindow$setPosition('GTK_WIN_POS_CENTER')
   color <-gdkColorToString('white')
   CreateNewCommunityWindow$ModifyBg("normal", color)
@@ -1398,7 +1398,7 @@ setEnvironmentaParametersforNewCommunity <- function(){
    
    vbox$packStart(event)
    RunPreSetWindow <- gtkWindow(show=F) 
-   RunPreSetWindow["title"] <- "IBC-grass 2.0"
+   RunPreSetWindow["title"] <- "IBC-grass GUI"
    RunPreSetWindow$setPosition('GTK_WIN_POS_CENTER')
    color <-gdkColorToString('white')
    RunPreSetWindow$ModifyBg("normal", color)
