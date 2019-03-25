@@ -369,6 +369,7 @@ HerbicideSettings<-function(){
               col_exp <- as.numeric(get("nb_data", IBCvariables))*2
               # delete everything greater than the expected column number
               test<-test[,c(2:(col_exp+1))]
+              
               if (all(test==0)){
                 # if there are only 0's
                 dialog1 <- gtkMessageDialog(parent=winBiomass_help,
@@ -379,7 +380,7 @@ HerbicideSettings<-function(){
                 color <-gdkColorToString('white')
                 dialog1$ModifyBg("normal", color)
                 gSignalConnect (dialog1, "response", function(dialog1, response, user.data){ dialog1$Destroy()})
-              } else if(any(test[test<0])){
+              } else if(any(test[test<0], na.rm = TRUE)){
                 # if there are negative values..
                 dialog1 <- gtkMessageDialog(parent=winBiomass_help,
                                             flags = "destroy-with-parent",
@@ -494,7 +495,7 @@ HerbicideSettings<-function(){
                 color <-gdkColorToString('white')
                 dialog1$ModifyBg("normal", color)
                 gSignalConnect (dialog1, "response", function(dialog1, response, user.data){ dialog1$Destroy()})
-              } else if(any(test[test<0])){
+              } else if(any(test[test<0], na.rm = TRUE)){
                 # if there are negative values..
                 dialog1 <- gtkMessageDialog(parent=winSeedlingBiomass_help,
                                             flags = "destroy-with-parent",
@@ -606,7 +607,7 @@ HerbicideSettings<-function(){
                 color <-gdkColorToString('white')
                 dialog1$ModifyBg("normal", color)
                 gSignalConnect (dialog1, "response", function(dialog1, response, user.data){ dialog1$Destroy()})
-              } else if(any(test[test<0])){
+              } else if(any(test[test<0], na.rm = TRUE)){
                 # if there are negative values..
                 dialog1 <- gtkMessageDialog(parent=winSurvival_help,
                                             flags = "destroy-with-parent",
@@ -722,7 +723,7 @@ HerbicideSettings<-function(){
                 color <-gdkColorToString('white')
                 dialog1$ModifyBg("normal", color)
                 gSignalConnect (dialog1, "response", function(dialog1, response, user.data){ dialog1$Destroy()})
-              } else if(any(test[test<0])){
+              } else if(any(test[test<0], na.rm = TRUE)){
                 # if there are negative values..
                 dialog1 <- gtkMessageDialog(parent=winEstablishment_help,
                                             flags = "destroy-with-parent",
@@ -837,7 +838,7 @@ HerbicideSettings<-function(){
                 color <-gdkColorToString('white')
                 dialog1$ModifyBg("normal", color)
                 gSignalConnect (dialog1, "response", function(dialog1, response, user.data){ dialog1$Destroy()})
-              } else if(any(test[test<0])){
+              } else if(any(test[test<0], na.rm = TRUE)){
                 # if there are negative values..
                 dialog1 <- gtkMessageDialog(parent=winSeedSterility_help,
                                             flags = "destroy-with-parent",
@@ -952,7 +953,7 @@ HerbicideSettings<-function(){
                 color <-gdkColorToString('white')
                 dialog1$ModifyBg("normal", color)
                 gSignalConnect (dialog1, "response", function(dialog1, response, user.data){ dialog1$Destroy()})
-              } else if(any(test[test<0])){
+              } else if(any(test[test<0], na.rm = TRUE)){
                 # if there are negative values..
                 dialog1 <- gtkMessageDialog(parent=winSeedNumber_help,
                                             flags = "destroy-with-parent",
