@@ -25,7 +25,7 @@ HerbicideSettings<-function(){
   # Slider init duration
   label_init<-gtkLabel('Initial years before herbicide application [years]')
   label_init$setTooltipText("The higher values you choose, the more stable are the communities when the simulation of herbicide application start. But it also increases simulation runtime.")
-  InitSlider <- gtkHScale(min = 1, max = 50, step = 1)
+  InitSlider <- gtkHScale(min = 1, max = 150, step = 1)
   InitSlider$setTooltipText("The higher values you choose, the more stable are the communities when the simulation of herbicide application start. But it also increases simulation runtime.")
   InitSlider$setValue(get("IBCInit",envir=IBCvariables))
   # Slider herbicide duration

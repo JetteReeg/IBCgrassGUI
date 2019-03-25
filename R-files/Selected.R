@@ -106,7 +106,7 @@ RunPreSet <- function(){
   label_below<-gtkLabel('Belowground resource level')
   label_below$setTooltipText("Belowground resources may vary from nutrient poor [40] to rich [100].")
   
-  ResourceSliderBelow <- gtkHScale(min = 40, max = 100, step = 5)
+  ResourceSliderBelow <- gtkHScale(min = 40, max = 200, step = 5)
   ResourceSliderBelow$setTooltipText("Belowground resources may vary from nutrient poor [40] to rich [100].")
   ResourceSliderBelow$setValue(get("IBCbelres", envir=IBCvariables))
 
@@ -120,7 +120,7 @@ RunPreSet <- function(){
   label_above<-gtkLabel('Aboveground resource level')
   label_above$setTooltipText("Aboveground resources may vary from shaded [40] to sunny [100].")
   
-  ResourceSliderAbove <- gtkHScale(min = 40, max = 100, step = 5)
+  ResourceSliderAbove <- gtkHScale(min = 40, max = 200, step = 5)
   ResourceSliderAbove$setTooltipText("Aboveground resources may vary from shaded [40] to sunny [100].")
   ResourceSliderAbove$setValue(get("IBCabres", envir=IBCvariables))
   
@@ -1251,7 +1251,7 @@ setEnvironmentaParametersforNewCommunity <- function(){
    label_below<-gtkLabel('Belowground resource level')
    label_below$setTooltipText("Belowground resources may vary from nutrient poor [40] to rich [100].")
    
-   ResourceSliderBelow <- gtkHScale(min = 40, max = 100, step = 5)
+   ResourceSliderBelow <- gtkHScale(min = 40, max = 200, step = 5)
    ResourceSliderBelow$setTooltipText("Belowground resources may vary from nutrient poor [40] to rich [100].")
    ResourceSliderBelow$setValue(get("IBCbelres", envir=IBCvariables))
    
@@ -1265,7 +1265,7 @@ setEnvironmentaParametersforNewCommunity <- function(){
    label_above<-gtkLabel('Aboveground resource level')
    label_above$setTooltipText("Aboveground resources may vary from shaded [40] to sunny [100].")
    
-   ResourceSliderAbove <- gtkHScale(min = 40, max = 100, step = 5)
+   ResourceSliderAbove <- gtkHScale(min = 40, max = 200, step = 5)
    ResourceSliderAbove$setTooltipText("Aboveground resources may vary from shaded [40] to sunny [100].")
    ResourceSliderAbove$setValue(get("IBCabres", envir=IBCvariables))
    
