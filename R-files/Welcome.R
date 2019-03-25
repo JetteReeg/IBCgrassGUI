@@ -43,7 +43,7 @@ See the user manual for detailed informations on the GUI.
       comparing model predictions of the plant community model IBC-grass to empirical data. Environ Sci Eur. 30:44. 
       doi: 10.1186/s12302-018-0174-9
 
-<u>Version:</u> 0.1.19')
+<u>Version:</u> 0.1.21')
   
   WelcomeBox <- gtkVBoxNew(F, 1)
   WelcomeBox$setBorderWidth(10)
