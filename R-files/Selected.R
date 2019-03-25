@@ -391,7 +391,9 @@ Please select the species occuring in the regional species pool, add new species
         cstore <- gtkListStore("gchararray")
         rGtkstore <- view$getModel()
         vals <- rGtkstore[,storeCol, drop=TRUE]
-        
+        if(storeCol==9){
+          vals <- c(as.character(unique(vals)), "summer", "spring")
+        }
         for(i in as.character(unique(vals))) {
           iter <- cstore$append()
           cstore$setValue(iter$iter,column=0, i)
@@ -528,6 +530,7 @@ Please select the species occuring in the regional species pool, add new species
   for( i in 2: ncol(df)){
     df[,i] <- factor(df[,i])
   }
+  levels(df[,8])<-c(levels(df[,8]),"spring", "summer")
   select <- c(rep(F, nrow(df)))
   df <- cbind(select, df)
   
@@ -557,7 +560,7 @@ Please select the species occuring in the regional species pool, add new species
   grazing.response <- c(levels(factor(PFTfile$grazing.response)),"please select")
   clonal.type <- c(levels(factor(PFTfile$clonal.type)),"please select")
   flowering.type <- c(levels(factor(PFTfile$flowering.type)),"please select")
-  germination.periods <- c(levels(factor(c("both", "early", "late"))),"please select")
+  germination.periods <- c(levels(factor(c("spring and summer", "spring", "summer"))),"please select")
   df.new<-data.frame(cbind(Species, plant.size, growth.form, resource.response, grazing.response, clonal.type, flowering.type, germination.periods))
   df.new[,1] <- as.character(df.new[,1])
   for( i in 2: ncol(df.new)){
@@ -619,17 +622,20 @@ Please select the species occuring in the regional species pool, add new species
                      f = function ( dialog , response , data ) {
                        if ( response == GtkResponseType [ "ok" ] ) {
                          filename <- dialog$getFilename ( )
-                         dev <- unlist(strsplit(filename, "[.]"))[2]
+                         dev1 <- unlist(strsplit(filename, "[\\]"))
+                         dev <- dev1[length(dev1)]
+                         dev <- unlist(strsplit(dev, "[.]"))[2]
                          dev.ok <- c("txt", "cvs")
                          if (dev %in% dev.ok){
                            df <- data.frame(sw$getChildren()[[1]]$getModel())
                            df <- df[df$select==T,]
+                           print(df)
                            write.table(df, filename, sep="\t", row.names=F, quote=F)
-                           
+                           dialog$destroy ( )
                          } else {
                            dialog_tmp <- gtkMessageDialog(parent=dialog,
                                                           flags = "destroy-with-parent",
-                                                          type="question" ,
+                                                          type="warning" ,
                                                           buttons="ok" ,
                                                           "Please ensure that you save the file as 
                                                           'txt'or 'cvs'.")
@@ -638,7 +644,7 @@ Please select the species occuring in the regional species pool, add new species
                            gSignalConnect (dialog_tmp, "response", function(dialog_tmp, response, user.data){ dialog_tmp$Destroy()})
                          }
                        }
-                       dialog$destroy ( )
+                       if (response == GtkResponseType [ "cancel"]){dialog$destroy ( )}
                      } )
     dialog$run()
   }
@@ -937,7 +943,9 @@ LoadNew <- function(){
                    f = function ( dialog , response , data ) {
                      if ( response == GtkResponseType [ "ok" ] ) {
                        filename <- dialog$getFilename ( )
-                       dev <- unlist(strsplit(filename, "[.]"))[2]
+                       dev1 <- unlist(strsplit(filename, "[\\]"))
+                       dev <- dev1[length(dev1)]
+                       dev <- unlist(strsplit(dev, "[.]"))[2]
                        dev.ok <- c("txt", "cvs")
                        if (dev %in% dev.ok){
                          df <- read.table(filename, header=T, sep="\t")
@@ -1132,6 +1140,10 @@ LoadNew <- function(){
                          write.table(Community, "Model-files/Community.txt", sep="\t", row.names=F, quote = F)
                          assign("IBCcommunity", "Community.txt", envir = IBCvariables)
                          assign("IBCcommunityFile", Community, envir = IBCvariables)
+                         # close dialog
+                         dialog$destroy()
+                         # open environmental settings window
+                         setEnvironmentaParametersforNewCommunity()
                        } else {
                          dialog_tmp <- gtkMessageDialog(parent=dialog,
                                                         flags = "destroy-with-parent",
@@ -1143,10 +1155,6 @@ LoadNew <- function(){
                          dialog_tmp$ModifyBg("normal", color)
                          gSignalConnect (dialog_tmp, "response", function(dialog_tmp, response, user.data){ dialog_tmp$Destroy()})
                        }
-                       # close current dialog
-                       dialog$destroy ( )
-                       # open environmental settings window
-                       setEnvironmentaParametersforNewCommunity()
                      }
                      if ( response == GtkResponseType [ "cancel" ] ) {
                        dialog$destroy ( )
@@ -1180,7 +1188,10 @@ LoadPrev <- function(){
                          assign("IBCloadedSettings", filename, IBCvariables)
                          load(filename)
                          for(el in ls(SaveEnvironment)) assign(el, get(el, SaveEnvironment), envir=IBCvariables)
-                         
+                         # close current window
+                         dialog$destroy ( )
+                         # open environmental settings window
+                         setEnvironmentaParametersforNewCommunity()
                        } else {
                          dialog_tmp <- gtkMessageDialog(parent=dialog,
                                                         flags = "destroy-with-parent",
@@ -1192,10 +1203,6 @@ LoadPrev <- function(){
                          dialog_tmp$ModifyBg("normal", color)
                          gSignalConnect (dialog_tmp, "response", function(dialog_tmp, response, user.data){ dialog_tmp$Destroy()})
                        }
-                       # close current window
-                       dialog$destroy ( )
-                       # open environmental settings window
-                       setEnvironmentaParametersforNewCommunity()
                      }
                      if ( response == GtkResponseType [ "cancel" ] ) {
                        # close current window

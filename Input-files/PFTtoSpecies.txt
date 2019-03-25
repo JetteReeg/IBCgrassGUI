@@ -1,76 +1,73 @@
 Species	Example								
-LECAcl3	Juncus effusus								
-LECAcl4p	Urtica dioica								
-LECIcl3p	"Vicia cracca; Phalaris arundinacea"								
-LECIcl4p	Calystegia sepium								
-LSCAp	"Cirsium vulgare; Cirsium palustre"								
-LSCAcl1	Deschampsia cespitosa								
-LSCIcl1p	"Arrhenatherum elatius; Cirsium oleraceum; Angelica sylvestris"								
-LSCIcl2p	Anthriscus sylvestris								
-LSCIcl3p	Filipendula ulmaria								
-LSCIp	"Heracleum sphondylium; Daucus carota"								
-LSCTcl3p	"Elymus repens; Festuca arundinacea"								
-LSCTp	"Artemisia vulgaris; Carum carvi"								
-LSCTcl2	Bromus racemosus								
-LSSIcl3p	Scirpus sylvaticus								
-LSSTcl3p	"Cirsium rivulare; Juncus acutiflorus"								
-MECAcl4p	Cirsium arvense								
-MECIcl3p	"Lathyrus pratensis; Vicia sepium"								
-MECIcl4p	Galium mollugo agg.								
-MECTcl3p	Alopecurus pratensis								
-MECTp	"Convolvulus arvensis; Hypericum perforatum"								
-MEIIcl4p	Epilobium palustre								
-MEITp	"Lotus corniculatus; Lotus pedunculatus"								
-MESTcl1p	Achillea ptarmica								
-MESTcl3p	Galium verum								
-MRITcl3p	Plantago lanceolata								
-MSCAcl1p	"Rumex obtusifolius; Senecio jacobaea; Deschampsia cespitosa"								
-MSCAcl2p	Lolium perenne								
-MSCAcl3p	"Achillea millefolium; Agrostis gigantea; Festuca rubra; Poa pratensis"								
-MSCAp	Rumex crispus								
-MSCIcl1	Crepis paludosa								
-MSIAcl1p	Caltha palustris								
-MSIAcl4p	"Ranunculus flammula; Ranunculus repens"								
-MSCIcl1p	"Crepis paludosa; Geranium pratense; Pimpinella major"								
-MSCIcl3p	Leucanthemum vulgare								
-MSCIp	"Daucus carota; Crepis biennis; Knautia arvensis"								
-MSCTcl1p	"Ranunculus acris; Festuca pratensis; Phleum pratense; Holcus lanatus; Trollius europaeus"								
-MSCTcl2p	"Centaurea jacea; Rumex acetosa; Dactylis glomerata; Cardamine pratensis"								
-MSCTcl3	Helictotrichon pubescens								
-MSIAcl3p	Holcus mollis								
-MSIAcl4p	"Ranunculus repens; Agrostis stolonifera"								
-MSIIcl1p	Salvia pratensis								
-MSIIcl3p	"Agrostis canina; Silene flos-cuculi"								
-MSIIp	"Tragopogon pratensis; Campanula patula"								
-MSITcl1p	Anthoxanthum odoratum								
-MSITcl3p	"Agrostis capillaris; Carex panicea; Trisetum flavescens"								
-MSITcl4p	Poa trivialis								
-MSSIcl1p	Sanguisorba officinalis								
-MSIAcl1	Cynosorus cristatus								
-MSSAcl4p	Poa angustifolia								
-MSSTcl3	"Bistorta officinalis; Carex nigra"								
-SECAcl3p	Equisetum arvense								
-SECTcl3p	Cerastium arvense								
-SECTp	"Cerastium holosteoides; Centaurea jacea"								
-SEIAcl4p	"Lamium album; Prunella vulgaris"								
-SEIAp	Polygonum aviculare								
-SEITcl1p	Cerastium fontanum								
-SEITcl3p	Veronica chamaedrys								
-SEITcl4p	"Glechoma hederacea; Galium uliginosum; Veronica arvensis"								
-SESIcl4p	Galium palustre								
-SESTcl4p	Stellaria graminea								
-SRIAcl1p	"Leontodon autumnalis; Plantago media; Plantago major"								
-SRIAcl1pf	Taraxacum								
-SRIAcl2p	"Cerastium holosteoides; Hyperchaeris radicata"								
-SRIAcl3p	Potentilla anserina								
-SRIAcl4p	Bellis perennis								
-SRITcl1	Leontodon hispidus								
-SRITcl3p	Tussilago farfara								
-SRITcl3pf	Silene vulgaris								
-SSCTp	Trifolium pratense								
-SSIAcl4p	"Trifolium repens; Colchicum autumnale; Cardamine pratensis"								
-SSITcl2	Ranunculus bulbosus								
-SSITcl3p	"Myosotis nemorosa; Briza media; Luzula campestris"								
-SSITcl4p	Ajuga reptans								
-SSIIp	Mysotis arvensis								
-SSCIcl1p	Silene vulgaris								
+LECAcl3plb	Juncus effusus								
+LECAcl4plb	Urtica dioica								
+LECIcl3plb	"Vicia cracca; Phalaris arundinacea"								
+LECIcl4plb	Calystegia sepium								
+LSCAplb	"Cirsium vulgare; Cirsium palustre"								
+LSCAcl1plb	Deschampsia cespitosa								
+LSCIcl1plb	"Arrhenatherum elatius; Cirsium oleraceum; Angelica sylvestris"								
+LSCIcl2plb	Anthriscus sylvestris								
+LSCIcl3plb	Filipendula ulmaria								
+LSCIplb	"Heracleum sphondylium; Daucus carota"								
+LSCTcl3plb	"Elymus repens; Festuca arundinacea"								
+LSCTplb	"Artemisia vulgaris; Carum carvi"								
+LSCTcl2lb	Bromus racemosus								
+LSSIcl3plb	Scirpus sylvaticus								
+LSSTcl3plb	"Cirsium rivulare; Juncus acutiflorus"								
+MECAcl4plb	Cirsium arvense								
+MECIcl3plb	"Lathyrus pratensis; Vicia sepium"								
+MECIcl4plb	Galium mollugo agg.								
+MECTcl3peb	Alopecurus pratensis								
+MECTplb	"Convolvulus arvensis; Hypericum perforatum"								
+MEIIcl4plb	Epilobium palustre								
+MEITplb	"Lotus corniculatus; Lotus pedunculatus"								
+MESTcl1plb	Achillea ptarmica								
+MESTcl3plb	Galium verum								
+MRITcl3peb	Plantago lanceolata								
+MSCAcl1plb	"Rumex obtusifolius; Senecio jacobaea; Deschampsia cespitosa"								
+MSCAcl2plb	Lolium perenne								
+MSCAcl3plb	"Achillea millefolium; Agrostis gigantea; Festuca rubra; Poa pratensis"								
+MSCAplb	Rumex crispus								
+MSIAcl1plb	"Caltha palustris; Cynosorus cristatus"								
+MSIAcl3plb	Holcus mollis								
+MSIAcl4plb	"Ranunculus flammula; Ranunculus repens; Agrostis stolonifera"								
+MSCIcl1plb	"Crepis paludosa; Geranium pratense; Pimpinella major"								
+MSCIcl3plb	Leucanthemum vulgare								
+MSCIplb	"Daucus carota; Crepis biennis; Knautia arvensis"								
+MSCTcl1plb	"Ranunculus acris; Festuca pratensis; Phleum pratense; Holcus lanatus; Trollius europaeus"								
+MSCTcl2plb	"Centaurea jacea; Rumex acetosa; Dactylis glomerata; Cardamine pratensis"								
+MSCTcl3lb	Helictotrichon pubescens								
+MSIIcl1plb	Salvia pratensis								
+MSIIcl3plb	"Agrostis canina; Silene flos-cuculi"								
+MSIIplb	"Tragopogon pratensis; Campanula patula"								
+MSITcl1plb	Anthoxanthum odoratum								
+MSITcl3plb	"Agrostis capillaris; Carex panicea; Trisetum flavescens"								
+MSITcl4plb	Poa trivialis								
+MSSIcl1plb	Sanguisorba officinalis								
+MSSAcl4plb	Poa angustifolia								
+MSSTcl3plb	"Bistorta officinalis; Carex nigra"								
+SECAcl3plb	Equisetum arvense								
+SECTcl3peb	Cerastium arvense								
+SECTpeb	"Cerastium holosteoides; Centaurea jacea"								
+SEIAcl4peb	"Lamium album; Prunella vulgaris"								
+SEIAplb	Polygonum aviculare								
+SEIIcl1peb	Silene vulgaris								
+SEITcl1plb	Cerastium fontanum								
+SEITcl3peb	Veronica chamaedrys								
+SEITcl4peb	"Glechoma hederacea; Galium uliginosum; Veronica arvensis"								
+SESIcl4plb	Galium palustre								
+SESTcl4plb	Stellaria graminea								
+SRIAcl1plb	"Leontodon autumnalis; Plantago media; Plantago major"								
+SRIAcl1peb	Taraxacum								
+SRIAcl2plb	"Cerastium holosteoides; Hyperchaeris radicata"								
+SRIAcl3plb	Potentilla anserina								
+SRIAcl4peb	Bellis perennis								
+SRITcl1lb	Leontodon hispidus								
+SRITcl3plb	Tussilago farfara								
+SSCTplb	Trifolium pratense								
+SSIAcl4plb	"Trifolium repens; Colchicum autumnale; Cardamine pratensis"								
+SSITcl2lb	Ranunculus bulbosus								
+SSITcl3plb	"Myosotis nemorosa; Briza media; Luzula campestris"								
+SSITcl4plb	Ajuga reptans								
+SSIIplb	Mysotis arvensis								
+SSIIcl2plb	Dactylorhiza majalis								

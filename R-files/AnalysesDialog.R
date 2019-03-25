@@ -617,10 +617,13 @@ Results <- function(){
                                    f = function ( dialog , response , data ) {
                                      if ( response == GtkResponseType [ "ok" ] ) {
                                        filename <- dialog$getFilename ( )
-                                       dev <- unlist(strsplit(filename, "[.]"))[2]
+                                       dev1 <- unlist(strsplit(filename, "[\\]"))
+                                       dev <- dev1[length(dev1)]
+                                       dev <- unlist(strsplit(dev, "[.]"))[2]
                                        dev.ok <- c("ps", "tex", "pdf", "jpeg", "tiff", "png", "bmp", "wmf")
                                        if (dev %in% dev.ok){
                                          ggsave(filename, PopSizeP)
+                                         dialog$destroy ( )
                                        } else {
                                          dialog_tmp <- gtkMessageDialog(parent=dialog,
                                                                     flags = "destroy-with-parent",
@@ -633,7 +636,9 @@ Results <- function(){
                                          gSignalConnect (dialog_tmp, "response", function(dialog_tmp, response, user.data){ dialog_tmp$Destroy()})
                                        }
                                      }
-                                     dialog$destroy ( )
+                                     if ( response == GtkResponseType [ "cancel" ] ) {
+                                       dialog$destroy ( )
+                                     }
                                    } )
                   
                   dialog$run()
@@ -700,10 +705,13 @@ Results <- function(){
                                    f = function ( dialog , response , data ) {
                                      if ( response == GtkResponseType [ "ok" ] ) {
                                        filename <- dialog$getFilename ( )
-                                       dev <- unlist(strsplit(filename, "[.]"))[2]
+                                       dev1 <- unlist(strsplit(filename, "[\\]"))
+                                       dev <- dev1[length(dev1)]
+                                       dev <- unlist(strsplit(dev, "[.]"))[2]
                                        dev.ok <- c("ps", "tex", "pdf", "jpeg", "tiff", "png", "bmp", "wmf")
                                        if (dev %in% dev.ok){
                                          ggsave(filename, ShootmassP)
+                                         dialog$destroy()
                                        } else {
                                          dialog_tmp <- gtkMessageDialog(parent=dialog,
                                                                         flags = "destroy-with-parent",
@@ -718,7 +726,9 @@ Results <- function(){
                                        }
                                        
                                      }
-                                     dialog$destroy ( )
+                                     if ( response == GtkResponseType [ "cancel" ] ) {
+                                       dialog$destroy ( )
+                                     }
                                    } )
                   
                   dialog$run()
@@ -785,10 +795,13 @@ Results <- function(){
                                    f = function ( dialog , response , data ) {
                                      if ( response == GtkResponseType [ "ok" ] ) {
                                        filename <- dialog$getFilename ( )
-                                       dev <- unlist(strsplit(filename, "[.]"))[2]
+                                       dev1 <- unlist(strsplit(filename, "[\\]"))
+                                       dev <- dev1[length(dev1)]
+                                       dev <- unlist(strsplit(dev, "[.]"))[2]
                                        dev.ok <- c("ps", "tex", "pdf", "jpeg", "tiff", "png", "bmp", "wmf")
                                        if (dev %in% dev.ok){
                                          ggsave(filename, CoverP)
+                                         dialog$destroy()
                                        } else {
                                          dialog_tmp <- gtkMessageDialog(parent=dialog,
                                                                         flags = "destroy-with-parent",
@@ -801,9 +814,10 @@ Results <- function(){
                                          gSignalConnect (dialog_tmp, "response", function(dialog_tmp, response, user.data){ dialog_tmp$Destroy()})
                                          
                                        }
-                                       
                                      }
-                                     dialog$destroy ( )
+                                     if ( response == GtkResponseType [ "cancel" ] ) {
+                                       dialog$destroy ( )
+                                     }
                                    } )
                   
                   dialog$run()
@@ -878,10 +892,13 @@ Results <- function(){
                                    f = function ( dialog , response , data ) {
                                      if ( response == GtkResponseType [ "ok" ] ) {
                                        filename <- dialog$getFilename ( )
-                                       dev <- unlist(strsplit(filename, "[.]"))[2]
+                                       dev1 <- unlist(strsplit(filename, "[\\]"))
+                                       dev <- dev1[length(dev1)]
+                                       dev <- unlist(strsplit(dev, "[.]"))[2]
                                        dev.ok <- c("ps", "tex", "pdf", "jpeg", "tiff", "png", "bmp", "wmf")
                                        if (dev %in% dev.ok){
                                          ggsave(filename, PopSizeP)
+                                         dialog$destroy()
                                        } else {
                                          dialog_tmp <- gtkMessageDialog(parent=dialog,
                                                                         flags = "destroy-with-parent",
@@ -894,9 +911,10 @@ Results <- function(){
                                          gSignalConnect (dialog_tmp, "response", function(dialog_tmp, response, user.data){ dialog_tmp$Destroy()})
                                          
                                        }
-                                       
                                      }
-                                     dialog$destroy ( )
+                                     if ( response == GtkResponseType [ "cancel" ] ) {
+                                       dialog$destroy ( )
+                                     }
                                    } )
                   
                   dialog$run()
@@ -963,10 +981,13 @@ Results <- function(){
                                    f = function ( dialog , response , data ) {
                                      if ( response == GtkResponseType [ "ok" ] ) {
                                        filename <- dialog$getFilename ( )
-                                       dev <- unlist(strsplit(filename, "[.]"))[2]
+                                       dev1 <- unlist(strsplit(filename, "[\\]"))
+                                       dev <- dev1[length(dev1)]
+                                       dev <- unlist(strsplit(dev, "[.]"))[2]
                                        dev.ok <- c("ps", "tex", "pdf", "jpeg", "tiff", "png", "bmp", "wmf")
                                        if (dev %in% dev.ok){
                                          ggsave(filename, ShootmassP)
+                                         dialog$destroy()
                                        } else {
                                          dialog_tmp <- gtkMessageDialog(parent=dialog,
                                                                         flags = "destroy-with-parent",
@@ -979,9 +1000,10 @@ Results <- function(){
                                          gSignalConnect (dialog_tmp, "response", function(dialog_tmp, response, user.data){ dialog_tmp$Destroy()})
                                          
                                        }
-                                       
                                      }
-                                     dialog$destroy ( )
+                                     if ( response == GtkResponseType [ "cancel" ] ) {
+                                       dialog$destroy ( )
+                                     }
                                    } )
                   
                   dialog$run()
@@ -1045,10 +1067,13 @@ Results <- function(){
                                    f = function ( dialog , response , data ) {
                                      if ( response == GtkResponseType [ "ok" ] ) {
                                        filename <- dialog$getFilename ( )
-                                       dev <- unlist(strsplit(filename, "[.]"))[2]
+                                       dev1 <- unlist(strsplit(filename, "[\\]"))
+                                       dev <- dev1[length(dev1)]
+                                       dev <- unlist(strsplit(dev, "[.]"))[2]
                                        dev.ok <- c("ps", "tex", "pdf", "jpeg", "tiff", "png", "bmp", "wmf")
                                        if (dev %in% dev.ok){
                                          ggsave(filename, CoverP)
+                                         dialog$destroy()
                                        } else {
                                          dialog_tmp <- gtkMessageDialog(parent=dialog,
                                                                         flags = "destroy-with-parent",
@@ -1061,9 +1086,10 @@ Results <- function(){
                                          gSignalConnect (dialog_tmp, "response", function(dialog_tmp, response, user.data){ dialog_tmp$Destroy()})
                                          
                                        }
-                                       
                                      }
-                                     dialog$destroy ( )
+                                     if ( response == GtkResponseType [ "cancel" ] ) {
+                                       dialog$destroy ( )
+                                     }
                                    } )
                   
                   dialog$run()
@@ -1192,10 +1218,13 @@ Results <- function(){
                                f = function ( dialog , response , data ) {
                                  if ( response == GtkResponseType [ "ok" ] ) {
                                    filename <- dialog$getFilename ( )
-                                   dev <- unlist(strsplit(filename, "[.]"))[2]
+                                   dev1 <- unlist(strsplit(filename, "[\\]"))
+                                   dev <- dev1[length(dev1)]
+                                   dev <- unlist(strsplit(dev, "[.]"))[2]
                                    dev.ok <- c("ps", "tex", "pdf", "jpeg", "tiff", "png", "bmp", "wmf")
                                    if (dev %in% dev.ok){
                                      ggsave(filename, NPFTP)
+                                     dialog$destroy()
                                    } else {
                                      dialog_tmp <- gtkMessageDialog(parent=dialog,
                                                                     flags = "destroy-with-parent",
@@ -1208,9 +1237,10 @@ Results <- function(){
                                      gSignalConnect (dialog_tmp, "response", function(dialog_tmp, response, user.data){ dialog_tmp$Destroy()})
                                      
                                    }
-                                   
                                  }
-                                 dialog$destroy ( )
+                                 if ( response == GtkResponseType [ "cancel" ] ) {
+                                   dialog$destroy ( )
+                                 }
                                } )
               
               dialog$run()
@@ -1276,10 +1306,13 @@ Results <- function(){
                                f = function ( dialog , response , data ) {
                                  if ( response == GtkResponseType [ "ok" ] ) {
                                    filename <- dialog$getFilename ( )
-                                   dev <- unlist(strsplit(filename, "[.]"))[2]
+                                   dev1 <- unlist(strsplit(filename, "[\\]"))
+                                   dev <- dev1[length(dev1)]
+                                   dev <- unlist(strsplit(dev, "[.]"))[2]
                                    dev.ok <- c("ps", "tex", "pdf", "jpeg", "tiff", "png", "bmp", "wmf")
                                    if (dev %in% dev.ok){
                                      ggsave(filename, IndsP)
+                                     dialog$destroy()
                                    } else {
                                      dialog_tmp <- gtkMessageDialog(parent=dialog,
                                                                     flags = "destroy-with-parent",
@@ -1292,9 +1325,10 @@ Results <- function(){
                                      gSignalConnect (dialog_tmp, "response", function(dialog_tmp, response, user.data){ dialog_tmp$Destroy()})
                                      
                                    }
-                                   
                                  }
-                                 dialog$destroy ( )
+                                 if ( response == GtkResponseType [ "cancel" ] ) {
+                                   dialog$destroy ( )
+                                 }
                                } )
               
               dialog$run()
@@ -1360,10 +1394,13 @@ Results <- function(){
                                f = function ( dialog , response , data ) {
                                  if ( response == GtkResponseType [ "ok" ] ) {
                                    filename <- dialog$getFilename ( )
-                                   dev <- unlist(strsplit(filename, "[.]"))[2]
+                                   dev1 <- unlist(strsplit(filename, "[\\]"))
+                                   dev <- dev1[length(dev1)]
+                                   dev <- unlist(strsplit(dev, "[.]"))[2]
                                    dev.ok <- c("ps", "tex", "pdf", "jpeg", "tiff", "png", "bmp","wmf")
                                    if (dev %in% dev.ok){
                                      ggsave(filename, ShootmassComP)
+                                     dialog$destroy()
                                    } else {
                                      dialog_tmp <- gtkMessageDialog(parent=dialog,
                                                                     flags = "destroy-with-parent",
@@ -1376,9 +1413,10 @@ Results <- function(){
                                      gSignalConnect (dialog_tmp, "response", function(dialog_tmp, response, user.data){ dialog_tmp$Destroy()})
                                      
                                    }
-                                   
                                  }
-                                 dialog$destroy ( )
+                                 if ( response == GtkResponseType [ "cancel" ] ) {
+                                   dialog$destroy ( )
+                                 }
                                } )
               
               dialog$run()
@@ -1460,10 +1498,13 @@ Results <- function(){
                                f = function ( dialog , response , data ) {
                                  if ( response == GtkResponseType [ "ok" ] ) {
                                    filename <- dialog$getFilename ( )
-                                   dev <- unlist(strsplit(filename, "[.]"))[2]
+                                   dev1 <- unlist(strsplit(filename, "[\\]"))
+                                   dev <- dev1[length(dev1)]
+                                   dev <- unlist(strsplit(dev, "[.]"))[2]
                                    dev.ok <- c("ps", "tex", "pdf", "jpeg", "tiff", "png", "bmp", "wmf")
                                    if (dev %in% dev.ok){
                                      ggsave(filename, DiversityP)
+                                     dialog$destroy()
                                    } else {
                                      dialog_tmp <- gtkMessageDialog(parent=dialog,
                                                                     flags = "destroy-with-parent",
@@ -1476,9 +1517,10 @@ Results <- function(){
                                      gSignalConnect (dialog_tmp, "response", function(dialog_tmp, response, user.data){ dialog_tmp$Destroy()})
                                      
                                    }
-                                   
                                  }
-                                 dialog$destroy ( )
+                                 if ( response == GtkResponseType [ "cancel" ] ) {
+                                   dialog$destroy ( )
+                                 }
                                } )
              
               dialog$run()
@@ -1553,10 +1595,13 @@ Results <- function(){
                                f = function ( dialog , response , data ) {
                                  if ( response == GtkResponseType [ "ok" ] ) {
                                    filename <- dialog$getFilename ( )
-                                   dev <- unlist(strsplit(filename, "[.]"))[2]
+                                   dev1 <- unlist(strsplit(filename, "[\\]"))
+                                   dev <- dev1[length(dev1)]
+                                   dev <- unlist(strsplit(dev, "[.]"))[2]
                                    dev.ok <- c("ps", "tex", "pdf", "jpeg", "tiff", "png", "bmp", "wmf")
                                    if (dev %in% dev.ok){
                                      ggsave(filename, NPFTP)
+                                     dialog$destroy()
                                    } else {
                                      dialog_tmp <- gtkMessageDialog(parent=dialog,
                                                                     flags = "destroy-with-parent",
@@ -1569,9 +1614,10 @@ Results <- function(){
                                      gSignalConnect (dialog_tmp, "response", function(dialog_tmp, response, user.data){ dialog_tmp$Destroy()})
                                      
                                    }
-                                   
                                  }
-                                 dialog$destroy ( )
+                                 if ( response == GtkResponseType [ "cancel" ] ) {
+                                   dialog$destroy ( )
+                                 }
                                } )
              
               dialog$run()
@@ -1635,10 +1681,13 @@ Results <- function(){
                                f = function ( dialog , response , data ) {
                                  if ( response == GtkResponseType [ "ok" ] ) {
                                    filename <- dialog$getFilename ( )
-                                   dev <- unlist(strsplit(filename, "[.]"))[2]
+                                   dev1 <- unlist(strsplit(filename, "[\\]"))
+                                   dev <- dev1[length(dev1)]
+                                   dev <- unlist(strsplit(dev, "[.]"))[2]
                                    dev.ok <- c("ps", "tex", "pdf", "jpeg", "tiff", "png", "bmp", "wmf")
                                    if (dev %in% dev.ok){
                                      ggsave(filename, IndsP)
+                                     dialog$destroy()
                                    } else {
                                      dialog_tmp <- gtkMessageDialog(parent=dialog,
                                                                     flags = "destroy-with-parent",
@@ -1651,9 +1700,10 @@ Results <- function(){
                                      gSignalConnect (dialog_tmp, "response", function(dialog_tmp, response, user.data){ dialog_tmp$Destroy()})
                                      
                                    }
-                                   
                                  }
-                                 dialog$destroy ( )
+                                 if ( response == GtkResponseType [ "cancel" ] ) {
+                                   dialog$destroy ( )
+                                 }
                                } )
               
               dialog$run()
@@ -1717,10 +1767,13 @@ Results <- function(){
                                f = function ( dialog , response , data ) {
                                  if ( response == GtkResponseType [ "ok" ] ) {
                                    filename <- dialog$getFilename ( )
-                                   dev <- unlist(strsplit(filename, "[.]"))[2]
+                                   dev1 <- unlist(strsplit(filename, "[\\]"))
+                                   dev <- dev1[length(dev1)]
+                                   dev <- unlist(strsplit(dev, "[.]"))[2]
                                    dev.ok <- c("ps", "tex", "pdf", "jpeg", "tiff", "png", "bmp", "wmf")
                                    if (dev %in% dev.ok){
                                      ggsave(filename, ShootmassComP)
+                                     dialog$destroy()
                                    } else {
                                      dialog_tmp <- gtkMessageDialog(parent=dialog,
                                                                     flags = "destroy-with-parent",
@@ -1733,9 +1786,10 @@ Results <- function(){
                                      gSignalConnect (dialog_tmp, "response", function(dialog_tmp, response, user.data){ dialog_tmp$Destroy()})
                                      
                                    }
-                                   
                                  }
-                                 dialog$destroy ( )
+                                 if ( response == GtkResponseType [ "cancel" ] ) {
+                                   dialog$destroy ( )
+                                 }
                                } )
               
               dialog$run()
@@ -1815,10 +1869,13 @@ Results <- function(){
                                f = function ( dialog , response , data ) {
                                  if ( response == GtkResponseType [ "ok" ] ) {
                                    filename <- dialog$getFilename ( )
-                                   dev <- unlist(strsplit(filename, "[.]"))[2]
+                                   dev1 <- unlist(strsplit(filename, "[\\]"))
+                                   dev <- dev1[length(dev1)]
+                                   dev <- unlist(strsplit(dev, "[.]"))[2]
                                    dev.ok <- c("ps", "tex", "pdf", "jpeg", "tiff", "png", "bmp", "wmf")
                                    if (dev %in% dev.ok){
                                      ggsave(filename, DiversityP)
+                                     dialog$destroy()
                                    } else {
                                      dialog_tmp <- gtkMessageDialog(parent=dialog,
                                                                     flags = "destroy-with-parent",
@@ -1831,9 +1888,10 @@ Results <- function(){
                                      gSignalConnect (dialog_tmp, "response", function(dialog_tmp, response, user.data){ dialog_tmp$Destroy()})
                                      
                                    }
-                                   
                                  }
-                                 dialog$destroy ( )
+                                 if ( response == GtkResponseType [ "cancel" ] ) {
+                                   dialog$destroy ( )
+                                 }
                                } )
              
               dialog$run()
@@ -1986,10 +2044,13 @@ Thus, the maximal number of weeks can only be 30.</span> ')
                                  f = function ( dialog , response , data ) {
                                    if ( response == GtkResponseType [ "ok" ] ) {
                                      filename <- dialog$getFilename ( )
-                                     dev <- unlist(strsplit(filename, "[.]"))[2]
+                                     dev1 <- unlist(strsplit(filename, "[\\]"))
+                                     dev <- dev1[length(dev1)]
+                                     dev <- unlist(strsplit(dev, "[.]"))[2]
                                      dev.ok <- "txt"
                                      if (dev %in% dev.ok){
                                        write.table(to.show.popsize, filename, sep="\t", row.names=F)
+                                       dialog$destroy()
                                      } else {
                                        dialog_tmp <- gtkMessageDialog(parent=dialog,
                                                                       flags = "destroy-with-parent",
@@ -2002,7 +2063,9 @@ Thus, the maximal number of weeks can only be 30.</span> ')
                                        
                                      }
                                    }
-                                   dialog$destroy ( )
+                                   if ( response == GtkResponseType [ "cancel" ] ) {
+                                     dialog$destroy ( )
+                                   }
                                  } )
                 
                 dialog$run()
@@ -2099,10 +2162,13 @@ Thus, the maximal number of weeks can only be 30.</span> ')
                                  f = function ( dialog , response , data ) {
                                    if ( response == GtkResponseType [ "ok" ] ) {
                                      filename <- dialog$getFilename ( )
-                                     dev <- unlist(strsplit(filename, "[.]"))[2]
+                                     dev1 <- unlist(strsplit(filename, "[\\]"))
+                                     dev <- dev1[length(dev1)]
+                                     dev <- unlist(strsplit(dev, "[.]"))[2]
                                      dev.ok <- "txt"
                                      if (dev %in% dev.ok){
                                        write.table(to.show.shootmass, filename, sep="\t", row.names=F)
+                                       dialog$destroy()
                                      } else {
                                        dialog_tmp <- gtkMessageDialog(parent=dialog,
                                                                       flags = "destroy-with-parent",
@@ -2114,9 +2180,10 @@ Thus, the maximal number of weeks can only be 30.</span> ')
                                        gSignalConnect (dialog_tmp, "response", function(dialog_tmp, response, user.data){ dialog_tmp$Destroy()})
                                        
                                      }
-                                     
                                    }
-                                   dialog$destroy ( )
+                                   if ( response == GtkResponseType [ "cancel" ] ) {
+                                     dialog$destroy ( )
+                                   }
                                  } )
                 
                 dialog$run()
@@ -2213,10 +2280,13 @@ Thus, the maximal number of weeks can only be 30.</span> ')
                                  f = function ( dialog , response , data ) {
                                    if ( response == GtkResponseType [ "ok" ] ) {
                                      filename <- dialog$getFilename ( )
-                                     dev <- unlist(strsplit(filename, "[.]"))[2]
+                                     dev1 <- unlist(strsplit(filename, "[\\]"))
+                                     dev <- dev1[length(dev1)]
+                                     dev <- unlist(strsplit(dev, "[.]"))[2]
                                      dev.ok <- "txt"
                                      if (dev %in% dev.ok){
                                        write.table(to.show.cover, filename, sep="\t", row.names=F)
+                                       dialog$destroy()
                                      } else {
                                        dialog_tmp <- gtkMessageDialog(parent=dialog,
                                                                       flags = "destroy-with-parent",
@@ -2229,7 +2299,9 @@ Thus, the maximal number of weeks can only be 30.</span> ')
                                        
                                      }
                                    }
-                                   dialog$destroy ( )
+                                   if ( response == GtkResponseType [ "cancel" ] ) {
+                                     dialog$destroy ( )
+                                   }
                                  } )
                 dialog$run()
               }
@@ -2381,10 +2453,13 @@ Thus, the maximal number of weeks can only be 30.</span> ')
                            f = function ( dialog , response , data ) {
                              if ( response == GtkResponseType [ "ok" ] ) {
                                filename <- dialog$getFilename ( )
-                               dev <- unlist(strsplit(filename, "[.]"))[2]
+                               dev1 <- unlist(strsplit(filename, "[\\]"))
+                               dev <- dev1[length(dev1)]
+                               dev <- unlist(strsplit(dev, "[.]"))[2]
                                dev.ok <- "txt"
                                if (dev %in% dev.ok){
                                  write.table(to.show.NPFT, filename, sep="\t", row.names=F)
+                                 dialog$destroy()
                                } else {
                                  dialog_tmp <- gtkMessageDialog(parent=dialog,
                                                                 flags = "destroy-with-parent",
@@ -2397,7 +2472,9 @@ Thus, the maximal number of weeks can only be 30.</span> ')
                                  
                                }
                              }
-                             dialog$destroy ( )
+                             if ( response == GtkResponseType [ "cancel" ] ) {
+                               dialog$destroy ( )
+                             }
                            } )
           
           dialog$run()
@@ -2493,10 +2570,13 @@ Thus, the maximal number of weeks can only be 30.</span> ')
                            f = function ( dialog , response , data ) {
                              if ( response == GtkResponseType [ "ok" ] ) {
                                filename <- dialog$getFilename ( )
-                               dev <- unlist(strsplit(filename, "[.]"))[2]
+                               dev1 <- unlist(strsplit(filename, "[\\]"))
+                               dev <- dev1[length(dev1)]
+                               dev <- unlist(strsplit(dev, "[.]"))[2]
                                dev.ok <- "txt"
                                if (dev %in% dev.ok){
                                  write.table(to.show.Inds, filename, sep="\t", row.names=F)
+                                 dialog$destroy()
                                } else {
                                  dialog_tmp <- gtkMessageDialog(parent=dialog,
                                                                 flags = "destroy-with-parent",
@@ -2509,7 +2589,9 @@ Thus, the maximal number of weeks can only be 30.</span> ')
                                  
                                }
                              }
-                             dialog$destroy ( )
+                             if ( response == GtkResponseType [ "cancel" ] ) {
+                               dialog$destroy ( )
+                             }
                            } )
           
           dialog$run()
@@ -2604,10 +2686,13 @@ Thus, the maximal number of weeks can only be 30.</span> ')
                            f = function ( dialog , response , data ) {
                              if ( response == GtkResponseType [ "ok" ] ) {
                                filename <- dialog$getFilename ( )
-                               dev <- unlist(strsplit(filename, "[.]"))[2]
+                               dev1 <- unlist(strsplit(filename, "[\\]"))
+                               dev <- dev1[length(dev1)]
+                               dev <- unlist(strsplit(dev, "[.]"))[2]
                                dev.ok <- "txt"
                                if (dev %in% dev.ok){
                                  write.table(to.show.shootmasscom, filename, sep="\t", row.names=F)
+                                 dialog$destroy()
                                } else {
                                  dialog_tmp <- gtkMessageDialog(parent=dialog,
                                                                 flags = "destroy-with-parent",
@@ -2620,7 +2705,9 @@ Thus, the maximal number of weeks can only be 30.</span> ')
                                  
                                }
                              }
-                             dialog$destroy ( )
+                             if ( response == GtkResponseType [ "cancel" ] ) {
+                               dialog$destroy ( )
+                             }
                            } )
           
           dialog$run()
@@ -2730,10 +2817,13 @@ Eveness index is calculated as: - sum (p_i*log(p_i))/log(S) with s - number of P
                            f = function ( dialog , response , data ) {
                              if ( response == GtkResponseType [ "ok" ] ) {
                                filename <- dialog$getFilename ( )
-                               dev <- unlist(strsplit(filename, "[.]"))[2]
+                               dev1 <- unlist(strsplit(filename, "[\\]"))
+                               dev <- dev1[length(dev1)]
+                               dev <- unlist(strsplit(dev, "[.]"))[2]
                                dev.ok <- "txt"
                                if (dev %in% dev.ok){
                                  write.table(to.show.eveness, filename, sep="\t", row.names=F)
+                                 dialog$destroy()
                                } else {
                                  dialog_tmp <- gtkMessageDialog(parent=dialog,
                                                                 flags = "destroy-with-parent",
@@ -2746,7 +2836,9 @@ Eveness index is calculated as: - sum (p_i*log(p_i))/log(S) with s - number of P
                                  
                                }
                              }
-                             dialog$destroy ( )
+                             if ( response == GtkResponseType [ "cancel" ] ) {
+                               dialog$destroy ( )
+                             }
                            } )
           
           dialog$run()
@@ -2827,10 +2919,13 @@ Shannon index is calculated as: - sum (p_i*log(p_i))/log(S) with p_i - relative 
                            f = function ( dialog , response , data ) {
                              if ( response == GtkResponseType [ "ok" ] ) {
                                filename <- dialog$getFilename ( )
-                               dev <- unlist(strsplit(filename, "[.]"))[2]
+                               dev1 <- unlist(strsplit(filename, "[\\]"))
+                               dev <- dev1[length(dev1)]
+                               dev <- unlist(strsplit(dev, "[.]"))[2]
                                dev.ok <- "txt"
                                if (dev %in% dev.ok){
                                  write.table(to.show.shannon, filename, sep="\t", row.names=F)
+                                 dialog$destroy()
                                } else {
                                  dialog_tmp <- gtkMessageDialog(parent=dialog,
                                                                 flags = "destroy-with-parent",
@@ -2843,7 +2938,9 @@ Shannon index is calculated as: - sum (p_i*log(p_i))/log(S) with p_i - relative 
                                  
                                }
                              }
-                             dialog$destroy ( )
+                             if ( response == GtkResponseType [ "cancel" ] ) {
+                               dialog$destroy ( )
+                             }
                            } )
           
           dialog$run()
@@ -2924,10 +3021,13 @@ Simpson index is calculated as: 1-sum (p_i^2) with p_i - relative abundance of P
                            f = function ( dialog , response , data ) {
                              if ( response == GtkResponseType [ "ok" ] ) {
                                filename <- dialog$getFilename ( )
-                               dev <- unlist(strsplit(filename, "[.]"))[2]
+                               dev1 <- unlist(strsplit(filename, "[\\]"))
+                               dev <- dev1[length(dev1)]
+                               dev <- unlist(strsplit(dev, "[.]"))[2]
                                dev.ok <- "txt"
                                if (dev %in% dev.ok){
                                  write.table(to.show.simpson, filename, sep="\t", row.names=F)
+                                 dialog$destroy()
                                } else {
                                  dialog_tmp <- gtkMessageDialog(parent=dialog,
                                                                 flags = "destroy-with-parent",
@@ -2940,7 +3040,9 @@ Simpson index is calculated as: 1-sum (p_i^2) with p_i - relative abundance of P
                                  
                                }
                              }
-                             dialog$destroy ( )
+                             if ( response == GtkResponseType [ "cancel" ] ) {
+                               dialog$destroy ( )
+                             }
                            } )
           
           dialog$run()
@@ -3021,10 +3123,13 @@ Inverse Simpson index is calculated as: 1/sum (p_i^2) with p_i - relative abunda
                            f = function ( dialog , response , data ) {
                              if ( response == GtkResponseType [ "ok" ] ) {
                                filename <- dialog$getFilename ( )
-                               dev <- unlist(strsplit(filename, "[.]"))[2]
+                               dev1 <- unlist(strsplit(filename, "[\\]"))
+                               dev <- dev1[length(dev1)]
+                               dev <- unlist(strsplit(dev, "[.]"))[2]
                                dev.ok <- "txt"
                                if (dev %in% dev.ok){
                                  write.table(to.show.simpsoninv, filename, sep="\t", row.names=F)
+                                 dialog$destroy()
                                } else {
                                  dialog_tmp <- gtkMessageDialog(parent=dialog,
                                                                 flags = "destroy-with-parent",
@@ -3037,7 +3142,9 @@ Inverse Simpson index is calculated as: 1/sum (p_i^2) with p_i - relative abunda
                                  
                                }
                              }
-                             dialog$destroy ( )
+                             if ( response == GtkResponseType [ "cancel" ] ) {
+                               dialog$destroy ( )
+                             }
                            } )
           
           dialog$run()
