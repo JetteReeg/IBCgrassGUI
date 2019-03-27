@@ -819,13 +819,13 @@ Please wait while simulations are running.
       for (file in file_list){
         if (!exists("PFT")){
           # save also MC run ID
-          MCtmp <- unlist(strsplit(file, "_"))[7]
+          MCtmp <- unlist(strsplit(file, "_"))[8]
           MC <- unlist(strsplit(MCtmp, ".txt"))
           temp <-  fread(file, sep="\t")
           temp[,MC:=MC]
           PFT<-temp
         } else {
-          MCtmp <- unlist(strsplit(file, "_"))[7]
+          MCtmp <- unlist(strsplit(file, "_"))[8]
           MC <- unlist(strsplit(MCtmp, ".txt"))
           temp <-  fread(file, sep="\t")
           temp[,MC:=MC]
@@ -853,7 +853,7 @@ Please wait while simulations are running.
       file_list <- list.files(pattern="Grd__*")
       for (file in file_list){
         if (!exists("GRD")){
-          MCtmp <- unlist(strsplit(file, "_"))[7]
+          MCtmp <- unlist(strsplit(file, "_"))[8]
           MC <- unlist(strsplit(MCtmp, ".txt"))
           temp <-  fread(file, sep="\t")
           temp[,MC:=MC]
@@ -861,7 +861,7 @@ Please wait while simulations are running.
         }
         # if the merged dataset does exist, append to it
         else {
-          MCtmp <- unlist(strsplit(file, "_"))[7]
+          MCtmp <- unlist(strsplit(file, "_"))[8]
           MC <- unlist(strsplit(MCtmp, ".txt"))
           temp <-  fread(file, sep="\t")
           temp[,MC:=MC]
