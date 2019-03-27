@@ -149,7 +149,14 @@ GetAppRates <- function(){
     colnames(df)<-column_name
   } else {
     # load previous effect data
-    df <- get("IBCAppRateScenarios", envir=IBCvariables)
+    df <- as.data.frame(get("IBCAppRateScenarios", envir=IBCvariables))
+    scenarios <- as.numeric(get("IBCScenarios", envir = IBCvariables))
+    column_name <-c()
+    for (i in 1:scenarios){
+      column_name_help <- paste('Scenario',i,sep="")
+      column_name <- c(column_name, column_name_help)
+    }
+    colnames(df)<-column_name
   }
   # create a dataframe object
   obj <- gtkDfEdit(df, update=T, envir=IBCvariables)
@@ -171,7 +178,7 @@ GetAppRates <- function(){
     df<-obj$getModel()
     test<-data.frame(df)
     # inserted values should not be greater than 1
-    if(is.na(test)){
+    if(any(is.na(test))){
       dialog1 <- gtkMessageDialog(parent=win,
                                   flags = "destroy-with-parent",
                                   type="warning" ,
@@ -190,8 +197,7 @@ GetAppRates <- function(){
       # delete everything greater than the expected column number
       test<-test[,c(2:(col_exp+1))]
       assign("IBCAppRateScenarios", test, IBCvariables)
-      print(test)
-      fwrite(test, "AppRateScenarios.txt", sep="\t")
+      write.table(test, "AppRateScenarios.txt", sep="\t")
       # call the sensitivity window
       StartSimulations()
     }
