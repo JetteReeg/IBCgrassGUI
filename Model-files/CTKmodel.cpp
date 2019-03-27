@@ -103,6 +103,7 @@ double CTKmodel::GetAppRates(const int pos1,string file)
 			}
 	// Close the file.
 	AppRateFile.close();
+	return 0;
 }
 //----------------------------------------------------------------------------------------------------
 /**
