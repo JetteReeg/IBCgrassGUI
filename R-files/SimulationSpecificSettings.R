@@ -197,6 +197,14 @@ GetAppRates <- function(){
       # delete everything greater than the expected column number
       test<-test[,c(2:(col_exp+1))]
       assign("IBCAppRateScenarios", test, IBCvariables)
+      scenarios <- as.numeric(get("IBCScenarios", envir = IBCvariables))
+      column_name <-c()
+      for (i in 1:scenarios){
+        column_name_help <- paste('Scenario',i,sep="")
+        column_name <- c(column_name, column_name_help)
+      }
+      test <- as.data.frame(test)
+      colnames(test)<-column_name
       write.table(test, "AppRateScenarios.txt", sep="\t")
       # call the sensitivity window
       StartSimulations()
@@ -516,7 +524,7 @@ Please wait while simulations are running.
     if(HerbEff=="dose-response"){
     count <- 0
     PFTfile <- get("IBCcommunityFile", envir=IBCvariables)
-    AppRateScenarios <- get("IBCAppRateScenarios", envir=IBCvariables)
+    AppRateScenarios <- data.frame(get("IBCAppRateScenarios", envir=IBCvariables))
     PFTsensitivity <- get("PFTSensitivityFile", envir=IBCvariables)
     # question: same random distributions for the AppRates? --> first MCrun loop than apprate loop
     no_cores <- detectCores()-2
