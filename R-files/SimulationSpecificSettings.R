@@ -394,7 +394,7 @@ Please wait while simulations are running.
     copy <- file.copy("Input-files/HerbFact.txt",  path)
     copy <- file.copy("Input-files/AppRate.txt",  path)
     setwd('Model-files')
-    no_cores <- detectCores()-2
+    no_cores <- max(detectCores()-2,1)
     cl <- makeCluster(no_cores)
     registerDoParallel(cl)
 
@@ -436,7 +436,7 @@ Please wait while simulations are running.
     gtkSpinnerStart(task3) 
     if(HerbEff=="txt-file"){
       # for each MC run --> random sensitivity
-      no_cores <- detectCores()-2
+      no_cores <- max(detectCores()-2,1)
       cl <- makeCluster(no_cores)
       registerDoParallel(cl)
       PFTfile <- get("IBCcommunityFile", envir=IBCvariables)
@@ -527,7 +527,7 @@ Please wait while simulations are running.
     AppRateScenarios <- data.frame(get("IBCAppRateScenarios", envir=IBCvariables))
     PFTsensitivity <- get("PFTSensitivityFile", envir=IBCvariables)
     # question: same random distributions for the AppRates? --> first MCrun loop than apprate loop
-    no_cores <- detectCores()-2
+    no_cores <- max(detectCores()-2,1)
     cl <- makeCluster(no_cores)
     registerDoParallel(cl)
     

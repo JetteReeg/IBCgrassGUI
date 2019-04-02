@@ -30,7 +30,7 @@ BasisAnalyses <- function(){
   fwrite(effect.year.PFT, "effect.year.PFT.txt", sep="\t")
   
   # Tables
-  Inds<-effect.timestep.PFT[,.(mean.10=length(which((mean.effects.Inds*-1+1)>=0 & (mean.effects.Inds*-1+1)<=0.1))
+  Inds<-effect.timestep.PFT[,.(mean.10=length(which((mean.effects.Inds*-1+1)<=0.1))
               , min.10=length(which((min.effects.Inds*-1+1)>=0 & (min.effects.Inds*-1+1)<=0.1))
               , max.10=length(which((max.effects.Inds*-1+1)>=0 & (max.effects.Inds*-1+1)<=0.1))
               , mean.10_20=length(which((mean.effects.Inds*-1+1)>0.1 & (mean.effects.Inds*-1+1)<=0.2))
@@ -48,9 +48,9 @@ BasisAnalyses <- function(){
               , mean.50=length(which((mean.effects.Inds*-1+1)>0.5))
               , min.50=length(which((min.effects.Inds*-1+1)>0.5))
               , max.50=length(which((max.effects.Inds*-1+1)>0.5))), by=.(scenario, PFT, year)]
-  colnames(Inds) <- c("Application rate", colnames(Inds)[-1])
+  colnames(Inds) <- c("Herbicide scenario", colnames(Inds)[-1])
   #
-  shootmass<-effect.timestep.PFT[, .(mean.10=length(which((mean.effects.shootmass*-1+1)>=0 & (mean.effects.shootmass*-1+1)<=0.1))
+  shootmass<-effect.timestep.PFT[, .(mean.10=length(which((mean.effects.shootmass*-1+1)<=0.1))
                    , min.10=length(which((min.effects.shootmass*-1+1)>=0 & (min.effects.shootmass*-1+1)<=0.1))
                    , max.10=length(which((max.effects.shootmass*-1+1)>=0 & (max.effects.shootmass*-1+1)<=0.1))
                    , mean.10_20=length(which((mean.effects.shootmass*-1+1)>0.1 & (mean.effects.shootmass*-1+1)<=0.2))
@@ -68,9 +68,9 @@ BasisAnalyses <- function(){
                    , mean.50=length(which((mean.effects.shootmass*-1+1)>0.5))
                    , min.50=length(which((min.effects.shootmass*-1+1)>0.5))
                    , max.50=length(which((max.effects.shootmass*-1+1)>0.5))), by=.(scenario, PFT, year)]
-  colnames(shootmass) <- c("Application rate", colnames(shootmass)[-1])
+  colnames(shootmass) <- c("Herbicide scenario", colnames(shootmass)[-1])
   #
-  cover<-effect.timestep.PFT[, .(mean.10=length(which((mean.effects.cover*-1+1)>=0 & (mean.effects.cover*-1+1)<=0.1))
+  cover<-effect.timestep.PFT[, .(mean.10=length(which((mean.effects.cover*-1+1)<=0.1))
                , min.10=length(which((min.effects.cover*-1+1)>=0 & (min.effects.cover*-1+1)<=0.1))
                , max.10=length(which((max.effects.cover*-1+1)>=0 & (max.effects.cover*-1+1)<=0.1))
                , mean.10_20=length(which((mean.effects.cover*-1+1)>0.1 & (mean.effects.cover*-1+1)<=0.2))
@@ -88,7 +88,7 @@ BasisAnalyses <- function(){
                , mean.50=length(which((mean.effects.cover*-1+1)>0.5))
                , min.50=length(which((min.effects.cover*-1+1)>0.5))
                , max.50=length(which((max.effects.cover*-1+1)>0.5))), by=.(scenario, PFT, year)]
-  colnames(cover) <- c("Application rate", colnames(cover)[-1])
+  colnames(cover) <- c("Herbicide scenario", colnames(cover)[-1])
   #
   fwrite(Inds, "Inds_PFT.txt", sep="\t")
   fwrite(shootmass, "shootmass_PFT.txt", sep="\t")
@@ -126,7 +126,7 @@ BasisAnalyses <- function(){
                            ), by=.(scenario, year, period)]
   fwrite(effect.year.GRD, "effect.year.GRD.txt", sep="\t")
   # tables
-  NPFT<-effect.timestep.GRD[, .(mean.10=length(which((mean.effects.NPFT*-1+1)>=0 & (mean.effects.NPFT*-1+1)<=0.1))
+  NPFT<-effect.timestep.GRD[, .(mean.10=length(which((mean.effects.NPFT*-1+1)<=0.1))
               , min.10=length(which((min.effects.NPFT*-1+1)>=0 & (min.effects.NPFT*-1+1)<=0.1))
               , max.10=length(which((max.effects.NPFT*-1+1)>=0 & (max.effects.NPFT*-1+1)<=0.1))
               , mean.10_20=length(which((mean.effects.NPFT*-1+1)>0.1 & (mean.effects.NPFT*-1+1)<=0.2))
@@ -144,9 +144,9 @@ BasisAnalyses <- function(){
               , mean.50=length(which((mean.effects.NPFT*-1+1)>0.5))
               , min.50=length(which((min.effects.NPFT*-1+1)>0.5))
               , max.50=length(which((max.effects.NPFT*-1+1)>0.5))), by=.(scenario, year)]
-  colnames(NPFT) <- c("Application rate", colnames(NPFT)[-1])
+  colnames(NPFT) <- c("Herbicide scenario", colnames(NPFT)[-1])
   
-  Inds<-effect.timestep.GRD[, .(mean.10=length(which((mean.effects.Inds*-1+1)>=0 & (mean.effects.Inds*-1+1)<=0.1))
+  Inds<-effect.timestep.GRD[, .(mean.10=length(which((mean.effects.Inds*-1+1)<=0.1))
               , min.10=length(which((min.effects.Inds*-1+1)>=0 & (min.effects.Inds*-1+1)<=0.1))
               , max.10=length(which((max.effects.Inds*-1+1)>=0 & (max.effects.Inds*-1+1)<=0.1))
               , mean.10_20=length(which((mean.effects.Inds*-1+1)>0.1 & (mean.effects.Inds*-1+1)<=0.2))
@@ -164,9 +164,9 @@ BasisAnalyses <- function(){
               , mean.50=length(which((mean.effects.Inds*-1+1)>0.5))
               , min.50=length(which((min.effects.Inds*-1+1)>0.5))
               , max.50=length(which((max.effects.Inds*-1+1)>0.5))), by=.(scenario, year)]
-  colnames(Inds) <- c("Application rate", colnames(Inds)[-1])
+  colnames(Inds) <- c("Herbicide scenario", colnames(Inds)[-1])
   
-  abovemass<-effect.timestep.GRD[, .(mean.10=length(which((mean.effects.abovemass*-1+1)>=0 & (mean.effects.abovemass*-1+1)<=0.1))
+  abovemass<-effect.timestep.GRD[, .(mean.10=length(which((mean.effects.abovemass*-1+1)<=0.1))
                    , min.10=length(which((min.effects.abovemass*-1+1)>=0 & (min.effects.abovemass*-1+1)<=0.1))
                    , max.10=length(which((max.effects.abovemass*-1+1)>=0 & (max.effects.abovemass*-1+1)<=0.1))
                    , mean.10_20=length(which((mean.effects.abovemass*-1+1)>0.1 & (mean.effects.abovemass*-1+1)<=0.2))
@@ -184,9 +184,9 @@ BasisAnalyses <- function(){
                    , mean.50=length(which((mean.effects.abovemass*-1+1)>0.5))
                    , min.50=length(which((min.effects.abovemass*-1+1)>0.5))
                    , max.50=length(which((max.effects.abovemass*-1+1)>0.5))), by=.(scenario, year)]
-  colnames(abovemass) <- c("Application rate", colnames(abovemass)[-1])
+  colnames(abovemass) <- c("Herbicide scenario", colnames(abovemass)[-1])
   
-  shannon<-effect.timestep.GRD[, .(mean.10=length(which((mean.effects.shannon*-1+1)>=0 & (mean.effects.shannon*-1+1)<=0.1))
+  shannon<-effect.timestep.GRD[, .(mean.10=length(which((mean.effects.shannon*-1+1)<=0.1))
               , min.10=length(which((min.effects.shannon*-1+1)>=0 & (min.effects.shannon*-1+1)<=0.1))
               , max.10=length(which((max.effects.shannon*-1+1)>=0 & (max.effects.shannon*-1+1)<=0.1))
               , mean.10_20=length(which((mean.effects.shannon*-1+1)>0.1 & (mean.effects.shannon*-1+1)<=0.2))
@@ -204,9 +204,9 @@ BasisAnalyses <- function(){
               , mean.50=length(which((mean.effects.shannon*-1+1)>0.5))
               , min.50=length(which((min.effects.shannon*-1+1)>0.5))
               , max.50=length(which((max.effects.shannon*-1+1)>0.5))), by=.(scenario, year)]
-  colnames(shannon) <- c("Application rate", colnames(shannon)[-1])
+  colnames(shannon) <- c("Herbicide scenario", colnames(shannon)[-1])
   
-  eveness<-effect.timestep.GRD[, .(mean.10=length(which((mean.effects.eveness*-1+1)>=0 & (mean.effects.eveness*-1+1)<=0.1))
+  eveness<-effect.timestep.GRD[, .(mean.10=length(which((mean.effects.eveness*-1+1)<=0.1))
               , min.10=length(which((min.effects.eveness*-1+1)>=0 & (min.effects.eveness*-1+1)<=0.1))
               , max.10=length(which((max.effects.eveness*-1+1)>=0 & (max.effects.eveness*-1+1)<=0.1))
               , mean.10_20=length(which((mean.effects.eveness*-1+1)>0.1 & (mean.effects.eveness*-1+1)<=0.2))
@@ -224,9 +224,9 @@ BasisAnalyses <- function(){
               , mean.50=length(which((mean.effects.eveness*-1+1)>0.5))
               , min.50=length(which((min.effects.eveness*-1+1)>0.5))
               , max.50=length(which((max.effects.eveness*-1+1)>0.5))), by=.(scenario, year)]
-  colnames(eveness) <- c("Application rate", colnames(eveness)[-1])
+  colnames(eveness) <- c("Herbicide scenario", colnames(eveness)[-1])
   
-  simpson<-effect.timestep.GRD[, .(mean.10=length(which((mean.effects.simpson*-1+1)>=0 & (mean.effects.simpson*-1+1)<=0.1))
+  simpson<-effect.timestep.GRD[, .(mean.10=length(which((mean.effects.simpson*-1+1)<=0.1))
               , min.10=length(which((min.effects.simpson*-1+1)>=0 & (min.effects.simpson*-1+1)<=0.1))
               , max.10=length(which((max.effects.simpson*-1+1)>=0 & (max.effects.simpson*-1+1)<=0.1))
               , mean.10_20=length(which((mean.effects.simpson*-1+1)>0.1 & (mean.effects.simpson*-1+1)<=0.2))
@@ -244,9 +244,9 @@ BasisAnalyses <- function(){
               , mean.50=length(which((mean.effects.simpson*-1+1)>0.5))
               , min.50=length(which((min.effects.simpson*-1+1)>0.5))
               , max.50=length(which((max.effects.simpson*-1+1)>0.5))), by=.(scenario, year)]
-  colnames(simpson) <- c("Application rate", colnames(simpson)[-1])
+  colnames(simpson) <- c("Herbicide scenario", colnames(simpson)[-1])
   
-  simpsoninv<-effect.timestep.GRD[, .(mean.10=length(which((mean.effects.simpsoninv*-1+1)>=0 & (mean.effects.simpsoninv*-1+1)<=0.1))
+  simpsoninv<-effect.timestep.GRD[, .(mean.10=length(which((mean.effects.simpsoninv*-1+1)<=0.1))
               , min.10=length(which((min.effects.simpsoninv*-1+1)>=0 & (min.effects.simpsoninv*-1+1)<=0.1))
               , max.10=length(which((max.effects.simpsoninv*-1+1)>=0 & (max.effects.simpsoninv*-1+1)<=0.1))
               , mean.10_20=length(which((mean.effects.simpsoninv*-1+1)>0.1 & (mean.effects.simpsoninv*-1+1)<=0.2))
@@ -264,7 +264,7 @@ BasisAnalyses <- function(){
               , mean.50=length(which((mean.effects.simpsoninv*-1+1)>0.5))
               , min.50=length(which((min.effects.simpsoninv*-1+1)>0.5))
               , max.50=length(which((max.effects.simpsoninv*-1+1)>0.5))), by=.(scenario, year)]
-  colnames(simpsoninv) <- c("Application rate", colnames(simpsoninv)[-1])
+  colnames(simpsoninv) <- c("Herbicide scenario", colnames(simpsoninv)[-1])
   
   fwrite(NPFT, "NPFT_GRD.txt", sep="\t")
   fwrite(Inds, "Inds_GRD.txt", sep="\t")
@@ -586,7 +586,7 @@ Results <- function(){
                   scale_colour_colorblind() +
                   scale_x_continuous(breaks = seq(min(to.plot$Time), max(to.plot$Time), 30),
                                      labels=seq(min(to.plot$year), max(to.plot$year), 1))+
-                  guides(fill=guide_legend(title="", order=2),color=guide_legend(title="Application rate", order=1)) +
+                  guides(fill=guide_legend(title="", order=2),color=guide_legend(title="Herbicide scenario", order=1)) +
                   theme(axis.line = element_line(color = 'black')) +
                   ylab("Effect in population size") +
                   xlab("Year")
@@ -674,7 +674,7 @@ Results <- function(){
                   scale_colour_colorblind() +
                   scale_x_continuous(breaks = seq(min(to.plot$Time), max(to.plot$Time), 30),
                                      labels=seq(min(to.plot$year), max(to.plot$year), 1))+
-                  guides(fill=guide_legend(title="", order=2),color=guide_legend(title="Application rate", order=1)) +
+                  guides(fill=guide_legend(title="", order=2),color=guide_legend(title="Herbicide scenario", order=1)) +
                   theme(axis.line = element_line(color = 'black')) +
                   ylab("Effect in shoot mass") +
                   xlab("Year")
@@ -764,7 +764,7 @@ Results <- function(){
                   scale_colour_colorblind() +
                   scale_x_continuous(breaks = seq(min(to.plot$Time), max(to.plot$Time), 30),
                                      labels=seq(min(to.plot$year), max(to.plot$year), 1))+
-                  guides(fill=guide_legend(title="", order=2),color=guide_legend(title="Application rate", order=1)) +
+                  guides(fill=guide_legend(title="", order=2),color=guide_legend(title="Herbicide scenario", order=1)) +
                   theme(axis.line = element_line(color = 'black')) +
                   ylab("Effect in cover") +
                   xlab("Year")
@@ -861,7 +861,7 @@ Results <- function(){
                   scale_colour_colorblind() +
                   # scale_x_continuous(breaks = seq(min(to.plot$Time), max(to.plot$Time), 30),
                   #                    labels=seq(min(to.plot$year), max(to.plot$year), 1))+
-                  guides(fill=guide_legend(title="", order=2),color=guide_legend(title="Application rate", order=1)) +
+                  guides(fill=guide_legend(title="", order=2),color=guide_legend(title="Herbicide scenario", order=1)) +
                   theme(axis.line = element_line(color = 'black')) +
                   ylab("Effect in population size") +
                   xlab("Year")
@@ -950,7 +950,7 @@ Results <- function(){
                   scale_colour_colorblind() +
                   # scale_x_continuous(breaks = seq(min(to.plot$Time), max(to.plot$Time), 30),
                   #                    labels=seq(min(to.plot$year), max(to.plot$year), 1))+
-                  guides(fill=guide_legend(title="", order=2),color=guide_legend(title="Application rate", order=1)) +
+                  guides(fill=guide_legend(title="", order=2),color=guide_legend(title="Herbicide scenario", order=1)) +
                   theme(axis.line = element_line(color = 'black')) +
                   ylab("Effect in shoot mass") +
                   xlab("Year")
@@ -1036,7 +1036,7 @@ Results <- function(){
                   facet_wrap(~factor(PFT))+
                   scale_fill_manual(breaks=c(0), values=c("grey")) +
                   scale_colour_colorblind() +
-                  guides(fill=guide_legend(title="", order=2),color=guide_legend(title="Application rate", order=1)) +
+                  guides(fill=guide_legend(title="", order=2),color=guide_legend(title="Herbicide scenario", order=1)) +
                   theme(axis.line = element_line(color = 'black')) +
                   ylab("Effect in cover") +
                   xlab("Year")
@@ -1186,7 +1186,7 @@ Results <- function(){
               scale_colour_colorblind() +
               scale_x_continuous(breaks = seq(min(to.plot$Time), max(to.plot$Time), 30),
                                  labels=seq(min(to.plot$year), max(to.plot$year), 1))+
-              guides(fill=guide_legend(title="", order=2),color=guide_legend(title="Application rate", order=1)) +
+              guides(fill=guide_legend(title="", order=2),color=guide_legend(title="Herbicide scenario", order=1)) +
               theme(axis.line = element_line(color = 'black')) +
               ylab("Effect in number of PFTs") +
               xlab("Year")
@@ -1275,7 +1275,7 @@ Results <- function(){
               scale_colour_colorblind() +
               scale_x_continuous(breaks = seq(min(to.plot$Time), max(to.plot$Time), 30),
                                  labels=seq(min(to.plot$year), max(to.plot$year), 1))+
-              guides(fill=guide_legend(title="", order=2),color=guide_legend(title="Application rate", order=1)) +
+              guides(fill=guide_legend(title="", order=2),color=guide_legend(title="Herbicide scenario", order=1)) +
               theme(axis.line = element_line(color = 'black')) +
               ylab("Effect in number of plant individuals") +
               xlab("Year")
@@ -1363,7 +1363,7 @@ Results <- function(){
               scale_colour_colorblind() +
               scale_x_continuous(breaks = seq(min(to.plot$Time), max(to.plot$Time), 30),
                                  labels=seq(min(to.plot$year), max(to.plot$year), 1))+
-              guides(fill=guide_legend(title="", order=2),color=guide_legend(title="Application rate", order=1)) +
+              guides(fill=guide_legend(title="", order=2),color=guide_legend(title="Herbicide scenario", order=1)) +
               theme(axis.line = element_line(color = 'black')) +
               ylab("Effect in shoot mass") +
               xlab("Year")
@@ -1463,7 +1463,7 @@ Results <- function(){
               scale_colour_colorblind() +
               scale_x_continuous(breaks = seq(min(to.plot.div$Time), max(to.plot.div$Time), 30),
                                  labels=seq(min(to.plot.div$year), max(to.plot.div$year), 1))+
-              guides(fill=guide_legend(title="", order=2),color=guide_legend(title="Application rate", order=1)) +
+              guides(fill=guide_legend(title="", order=2),color=guide_legend(title="Herbicide scenario", order=1)) +
               theme(axis.line = element_line(color = 'black')) +
               ylab("Effect in diversity indices") +
               xlab("Year")
@@ -1564,7 +1564,7 @@ Results <- function(){
               scale_colour_colorblind() +
               # scale_x_continuous(breaks = seq(min(to.plot$Time), max(to.plot$Time), 30),
               #                    labels=seq(min(to.plot$year), max(to.plot$year), 1))+
-              guides(fill=guide_legend(title="", order=2),color=guide_legend(title="Application rate", order=1)) +
+              guides(fill=guide_legend(title="", order=2),color=guide_legend(title="Herbicide scenario", order=1)) +
               theme(axis.line = element_line(color = 'black')) +
               ylab("Effect in number of PFTs") +
               xlab("Year")
@@ -1650,7 +1650,7 @@ Results <- function(){
               geom_line(data=to.plot[which(to.plot$scenario==0),],aes(x=year, y=mean.effects.Inds), color='black', linetype='dotted')+
               scale_fill_manual(breaks=c(0), values=c("grey")) +
               scale_colour_colorblind() +
-              guides(fill=guide_legend(title="", order=2),color=guide_legend(title="Application rate", order=1)) +
+              guides(fill=guide_legend(title="", order=2),color=guide_legend(title="Herbicide scenario", order=1)) +
               theme(axis.line = element_line(color = 'black')) +
               ylab("Effect in number of plant individuals") +
               xlab("Year")
@@ -1736,7 +1736,7 @@ Results <- function(){
               geom_line(data=to.plot[which(to.plot$scenario==0),],aes(x=year, y=mean.effects.abovemass), color='black', linetype='dotted')+
               scale_fill_manual(breaks=c(0), values=c("grey")) +
               scale_colour_colorblind() +
-              guides(fill=guide_legend(title="", order=2),color=guide_legend(title="Application rate", order=1)) +
+              guides(fill=guide_legend(title="", order=2),color=guide_legend(title="Herbicide scenario", order=1)) +
               theme(axis.line = element_line(color = 'black')) +
               ylab("Effect in shoot mass") +
               xlab("Year")
@@ -1834,7 +1834,7 @@ Results <- function(){
               facet_wrap(~factor(Index))+
               scale_fill_manual(breaks=c(0), values=c("grey")) +
               scale_colour_colorblind() +
-              guides(fill=guide_legend(title="", order=2),color=guide_legend(title="Application rate", order=1)) +
+              guides(fill=guide_legend(title="", order=2),color=guide_legend(title="Herbicide scenario", order=1)) +
               theme(axis.line = element_line(color = 'black')) +
               ylab("Effect in diversity indices") +
               xlab("Year")
@@ -1975,7 +1975,7 @@ Results <- function(){
               to.show.popsize <- to.show
               
               NotebookPopSize <- gtkNotebook()
-              for (level in levels(factor(to.show.popsize$Application.rate))){
+              for (level in levels(factor(to.show.popsize$Herbicide.scenario))){
                 levelFrame <- gtkFrame()
                 vboxhelp <- gtkVBoxNew()
                 vboxhelp$setBorderWidth(5)
@@ -1991,7 +1991,7 @@ Thus, the maximal number of weeks can only be 30.</span> ')
                 # the table to show
                 levelTab <- gtkScrolledWindow()
                 levelTab['height.request'] <- 300
-                to.show.level.popsize <- to.show.popsize[to.show.popsize$Application.rate==level,]
+                to.show.level.popsize <- to.show.popsize[to.show.popsize$Herbicide.scenario==level,]
                 to.show.level.popsize<-data.frame(
                   to.show.level.popsize[,1:3],
                   '<10'=apply(to.show.level.popsize, 1, function(x){
@@ -2007,7 +2007,7 @@ Thus, the maximal number of weeks can only be 30.</span> ')
                   '>50'=apply(to.show.level.popsize, 1, function(x){
                     paste(x[19], '(', x[20], x[21],')' )}))
                 to.show.level.popsize$PFT <- as.character(to.show.level.popsize$PFT)
-                colnames(to.show.level.popsize) <- c(paste('Application rate'), paste('PFT'), paste('Year'),
+                colnames(to.show.level.popsize) <- c(paste('Herbicide scenario'), paste('PFT'), paste('Year'),
                                              paste('< 10'), paste('10 - 20'), paste('20 - 30')
                                              , paste('30 - 40'), paste('40 - 50'), paste('> 50'))
       
@@ -2024,7 +2024,7 @@ Thus, the maximal number of weeks can only be 30.</span> ')
                 vboxhelp$packStart(levelTab)
                 levelFrame$add(vboxhelp)
                 levelFrame$setTooltipText('IBC-grass simulates only the growing period of 30 weeks. Thus, one modelled year consists of 30 weeks.')
-                gtkNotebookAppendPage(NotebookPopSize, levelFrame, tab.label=gtkLabel(paste('Application rate: ',level)))
+                gtkNotebookAppendPage(NotebookPopSize, levelFrame, tab.label=gtkLabel(paste('Herbicide scenario: ',level)))
               }
               
               vboxTabPopSize$packStart(NotebookPopSize)
@@ -2093,7 +2093,7 @@ Thus, the maximal number of weeks can only be 30.</span> ')
               to.show.shootmass <- to.show
               
               NotebookShootmass <- gtkNotebook()
-              for (level in levels(factor(to.show.shootmass$Application.rate))){
+              for (level in levels(factor(to.show.shootmass$Herbicide.scenario))){
                 levelFrame <- gtkFrame()
                 vboxhelp <- gtkVBoxNew()
                 vboxhelp$setBorderWidth(5)
@@ -2109,7 +2109,7 @@ Thus, the maximal number of weeks can only be 30.</span> ')
                 # the table to show
                 levelTab <- gtkScrolledWindow()
                 levelTab['height.request'] <- 300
-                to.show.level.shootmass <- to.show.shootmass[to.show.shootmass$Application.rate==level,]
+                to.show.level.shootmass <- to.show.shootmass[to.show.shootmass$Herbicide.scenario==level,]
                 to.show.level.shootmass<-data.frame(
                   to.show.level.shootmass[,1:3],
                   '<10'=apply(to.show.level.shootmass, 1, function(x){
@@ -2125,7 +2125,7 @@ Thus, the maximal number of weeks can only be 30.</span> ')
                   '>50'=apply(to.show.level.shootmass, 1, function(x){
                     paste(x[19], '(', x[20], x[21],')' )}))
                 to.show.level.shootmass$PFT <- as.character(to.show.level.shootmass$PFT)
-                colnames(to.show.level.shootmass) <- c(paste('Application rate'), paste('PFT'), paste('Year'),
+                colnames(to.show.level.shootmass) <- c(paste('Herbicide scenario'), paste('PFT'), paste('Year'),
                                              paste('< 10'), paste('10 - 20'), paste('20 - 30')
                                              , paste('30 - 40'), paste('40 - 50'), paste('> 50'))
                 
@@ -2142,7 +2142,7 @@ Thus, the maximal number of weeks can only be 30.</span> ')
                 vboxhelp$packStart(levelTab)
                 levelFrame$add(vboxhelp)
                 levelFrame$setTooltipText('IBC-grass simulates only the growing period of 30 weeks. Thus, one modelled year consists of 30 weeks.')
-                gtkNotebookAppendPage(NotebookShootmass, levelFrame, tab.label=gtkLabel(paste('Application rate: ',level)))
+                gtkNotebookAppendPage(NotebookShootmass, levelFrame, tab.label=gtkLabel(paste('Herbicide scenario: ',level)))
               }
               
               vboxTabShootmass$packStart(NotebookShootmass)
@@ -2211,7 +2211,7 @@ Thus, the maximal number of weeks can only be 30.</span> ')
               to.show.cover <- to.show
               
               NotebookCover <- gtkNotebook()
-              for (level in levels(factor(to.show.cover$Application.rate))){
+              for (level in levels(factor(to.show.cover$Herbicide.scenario))){
                 levelFrame <- gtkFrame()
                 vboxhelp <- gtkVBoxNew()
                 vboxhelp$setBorderWidth(5)
@@ -2227,7 +2227,7 @@ Thus, the maximal number of weeks can only be 30.</span> ')
                 # the table to show
                 levelTab <- gtkScrolledWindow()
                 levelTab['height.request'] <- 300
-                to.show.level.cover <- to.show.cover[to.show.cover$Application.rate==level,]
+                to.show.level.cover <- to.show.cover[to.show.cover$Herbicide.scenario==level,]
                 to.show.level.cover<-data.frame(
                   to.show.level.cover[,1:3],
                   '<10'=apply(to.show.level.cover, 1, function(x){
@@ -2243,7 +2243,7 @@ Thus, the maximal number of weeks can only be 30.</span> ')
                   '>50'=apply(to.show.level.cover, 1, function(x){
                     paste(x[19], '(', x[20], x[21],')' )}))
                 to.show.level.cover$PFT <- as.character(to.show.level.cover$PFT)
-                colnames(to.show.level.cover) <- c(paste('Application rate'), paste('PFT'), paste('Year'),
+                colnames(to.show.level.cover) <- c(paste('Herbicide scenario'), paste('PFT'), paste('Year'),
                                              paste('< 10'), paste('10 - 20'), paste('20 - 30')
                                              , paste('30 - 40'), paste('40 - 50'), paste('> 50'))
                 
@@ -2260,7 +2260,7 @@ Thus, the maximal number of weeks can only be 30.</span> ')
                 vboxhelp$packStart(levelTab)
                 levelFrame$add(vboxhelp)
                 levelFrame$setTooltipText('IBC-grass simulates only the growing period of 30 weeks. Thus, one modelled year consists of 30 weeks.')
-                gtkNotebookAppendPage(NotebookCover, levelFrame, tab.label=gtkLabel(paste('Application rate: ',level)))
+                gtkNotebookAppendPage(NotebookCover, levelFrame, tab.label=gtkLabel(paste('Herbicide scenario: ',level)))
               }
               
               vboxTabCover$packStart(NotebookCover)
@@ -2385,7 +2385,7 @@ Thus, the maximal number of weeks can only be 30.</span> ')
         to.show.NPFT <- to.show
         
         NotebookNPFT <- gtkNotebook()
-        for (level in levels(factor(to.show.NPFT$Application.rate))){
+        for (level in levels(factor(to.show.NPFT$Herbicide.scenario))){
           levelFrame <- gtkFrame()
           vboxhelp <- gtkVBoxNew()
           vboxhelp$setBorderWidth(10)
@@ -2401,7 +2401,7 @@ Thus, the maximal number of weeks can only be 30.</span> ')
           # the table to show
           levelTab <- gtkScrolledWindow()
           levelTab['height.request'] <- 300
-          to.show.level.NPFT <- to.show.NPFT[to.show.NPFT$Application.rate==level,]
+          to.show.level.NPFT <- to.show.NPFT[to.show.NPFT$Herbicide.scenario==level,]
           to.show.level.NPFT<-data.frame(
             to.show.level.NPFT[,1:2],
             '<10'=apply(to.show.level.NPFT, 1, function(x){
@@ -2416,7 +2416,7 @@ Thus, the maximal number of weeks can only be 30.</span> ')
               paste(x[15], '(', x[16], x[17],')' )}),
             '>50'=apply(to.show.level.NPFT, 1, function(x){
               paste(x[18], '(', x[19], x[20],')' )}))
-          colnames(to.show.level.NPFT) <- c(paste('Application rate'), paste('Year'),
+          colnames(to.show.level.NPFT) <- c(paste('Herbicide scenario'), paste('Year'),
                                        paste('< 10'), paste('10 - 20'), paste('20 - 30')
                                        , paste('30 - 40'), paste('40 - 50'), paste('> 50'))
           
@@ -2433,7 +2433,7 @@ Thus, the maximal number of weeks can only be 30.</span> ')
           vboxhelp$packStart(levelTab)
           levelFrame$add(vboxhelp)
           levelFrame$setTooltipText('IBC-grass simulates only the growing period of 30 weeks. Thus, one modelled year consists of 30 weeks.')
-          gtkNotebookAppendPage(NotebookNPFT, levelFrame, tab.label=gtkLabel(paste('Application rate: ',level)))
+          gtkNotebookAppendPage(NotebookNPFT, levelFrame, tab.label=gtkLabel(paste('Herbicide scenario: ',level)))
         }
         
         vboxTabNPFT$packStart(NotebookNPFT)
@@ -2502,7 +2502,7 @@ Thus, the maximal number of weeks can only be 30.</span> ')
         
         
         NotebookInds <- gtkNotebook()
-        for (level in levels(factor(to.show.Inds$Application.rate))){
+        for (level in levels(factor(to.show.Inds$Herbicide.scenario))){
           levelFrame <- gtkFrame()
           vboxhelp <- gtkVBoxNew()
           vboxhelp$setBorderWidth(10)
@@ -2518,7 +2518,7 @@ Thus, the maximal number of weeks can only be 30.</span> ')
           # the table to show
           levelTab <- gtkScrolledWindow()
           levelTab['height.request'] <- 300
-          to.show.level.Inds <- to.show.Inds[to.show.Inds$Application.rate==level,]
+          to.show.level.Inds <- to.show.Inds[to.show.Inds$Herbicide.scenario==level,]
           to.show.level.Inds<-data.frame(
             to.show.level.Inds[,1:2],
             '<10'=apply(to.show.level.Inds, 1, function(x){
@@ -2533,7 +2533,7 @@ Thus, the maximal number of weeks can only be 30.</span> ')
               paste(x[15], '(', x[16], x[17],')' )}),
             '>50'=apply(to.show.level.Inds, 1, function(x){
               paste(x[18], '(', x[19], x[20],')' )}))
-          colnames(to.show.level.Inds) <- c(paste('Application rate'), paste('Year'),
+          colnames(to.show.level.Inds) <- c(paste('Herbicide scenario'), paste('Year'),
                                        paste('< 10'), paste('10 - 20'), paste('20 - 30')
                                        , paste('30 - 40'), paste('40 - 50'), paste('> 50'))
           
@@ -2550,7 +2550,7 @@ Thus, the maximal number of weeks can only be 30.</span> ')
           vboxhelp$packStart(levelTab)
           levelFrame$add(vboxhelp)
           levelFrame$setTooltipText('IBC-grass simulates only the growing period of 30 weeks. Thus, one modelled year consists of 30 weeks.')
-          gtkNotebookAppendPage(NotebookInds, levelFrame, tab.label=gtkLabel(paste('Application rate: ',level)))
+          gtkNotebookAppendPage(NotebookInds, levelFrame, tab.label=gtkLabel(paste('Herbicide scenario: ',level)))
         }
         
         vboxTabInds$packStart(NotebookInds)
@@ -2618,7 +2618,7 @@ Thus, the maximal number of weeks can only be 30.</span> ')
         
         
         NotebookShootmass <- gtkNotebook()
-        for (level in levels(factor(to.show.shootmasscom$Application.rate))){
+        for (level in levels(factor(to.show.shootmasscom$Herbicide.scenario))){
           levelFrame <- gtkFrame()
           vboxhelp <- gtkVBoxNew()
           vboxhelp$setBorderWidth(5)
@@ -2634,7 +2634,7 @@ Thus, the maximal number of weeks can only be 30.</span> ')
           # the table to show
           levelTab <- gtkScrolledWindow()
           levelTab['height.request'] <- 300
-          to.show.level.shootmasscom <- to.show.shootmasscom[to.show.shootmasscom$Application.rate==level,]
+          to.show.level.shootmasscom <- to.show.shootmasscom[to.show.shootmasscom$Herbicide.scenario==level,]
           to.show.level.shootmasscom<-data.frame(
             to.show.level.shootmasscom[,1:2],
             '<10'=apply(to.show.level.shootmasscom, 1, function(x){
@@ -2649,7 +2649,7 @@ Thus, the maximal number of weeks can only be 30.</span> ')
               paste(x[15], '(', x[16], x[17],')' )}),
             '>50'=apply(to.show.level.shootmasscom, 1, function(x){
               paste(x[18], '(', x[19], x[20],')' )}))
-          colnames(to.show.level.shootmasscom) <- c(paste('Application rate'), paste('Year'),
+          colnames(to.show.level.shootmasscom) <- c(paste('Herbicide scenario'), paste('Year'),
                                        paste('< 10'), paste('10 - 20'), paste('20 - 30')
                                        , paste('30 - 40'), paste('40 - 50'), paste('> 50'))
           
@@ -2666,7 +2666,7 @@ Thus, the maximal number of weeks can only be 30.</span> ')
           vboxhelp$packStart(levelTab)
           levelFrame$add(vboxhelp)
           levelFrame$setTooltipText('IBC-grass simulates only the growing period of 30 weeks. Thus, one modelled year consists of 30 weeks.')
-          gtkNotebookAppendPage(NotebookShootmass, levelFrame, tab.label=gtkLabel(paste('Application rate: ',level)))
+          gtkNotebookAppendPage(NotebookShootmass, levelFrame, tab.label=gtkLabel(paste('Herbicide scenario: ',level)))
         }
         
         vboxTabShootmass$packStart(NotebookShootmass)
@@ -2749,7 +2749,7 @@ Thus, the maximal number of weeks can only be 30.</span> ')
         
         
         NotebookEveness <- gtkNotebook()
-        for (level in levels(factor(to.show.eveness$Application.rate))){
+        for (level in levels(factor(to.show.eveness$Herbicide.scenario))){
           levelFrame <- gtkFrame()
           vboxhelp <- gtkVBoxNew()
           vboxhelp$setBorderWidth(5)
@@ -2765,7 +2765,7 @@ Eveness index is calculated as: - sum (p_i*log(p_i))/log(S) with s - number of P
           # the table to show
           levelTab <- gtkScrolledWindow()
           levelTab['height.request'] <- 300
-          to.show.level.eveness <- to.show.eveness[to.show.eveness$Application.rate==level,]
+          to.show.level.eveness <- to.show.eveness[to.show.eveness$Herbicide.scenario==level,]
           to.show.level.eveness<-data.frame(
             to.show.level.eveness[,1:2],
             '<10'=apply(to.show.level.eveness, 1, function(x){
@@ -2780,7 +2780,7 @@ Eveness index is calculated as: - sum (p_i*log(p_i))/log(S) with s - number of P
               paste(x[15], '(', x[16], x[17],')' )}),
             '>50'=apply(to.show.level.eveness, 1, function(x){
               paste(x[18], '(', x[19], x[20],')' )}))
-          colnames(to.show.level.eveness) <- c(paste('Application rate'), paste('Year'),
+          colnames(to.show.level.eveness) <- c(paste('Herbicide scenario'), paste('Year'),
                                        paste('< 10'), paste('10 - 20'), paste('20 - 30')
                                        , paste('30 - 40'), paste('40 - 50'), paste('> 50'))
           
@@ -2797,7 +2797,7 @@ Eveness index is calculated as: - sum (p_i*log(p_i))/log(S) with s - number of P
           vboxhelp$packStart(levelTab)
           levelFrame$add(vboxhelp)
           levelFrame$setTooltipText('IBC-grass simulates only the growing period of 30 weeks. Thus, one modelled year consists of 30 weeks.')
-          gtkNotebookAppendPage(NotebookEveness, levelFrame, tab.label=gtkLabel(paste('Application rate: ',level)))
+          gtkNotebookAppendPage(NotebookEveness, levelFrame, tab.label=gtkLabel(paste('Herbicide scenario: ',level)))
         }
         
         vboxEveness$packStart(NotebookEveness)
@@ -2851,7 +2851,7 @@ Eveness index is calculated as: - sum (p_i*log(p_i))/log(S) with s - number of P
         EvenessFrame$add(vboxEveness)
         
         NotebookShannon <- gtkNotebook()
-        for (level in levels(factor(to.show.shannon$Application.rate))){
+        for (level in levels(factor(to.show.shannon$Herbicide.scenario))){
           levelFrame <- gtkFrame()
           vboxhelp <- gtkVBoxNew()
           vboxhelp$setBorderWidth(5)
@@ -2867,7 +2867,7 @@ Shannon index is calculated as: - sum (p_i*log(p_i))/log(S) with p_i - relative 
           # the table to show
           levelTab <- gtkScrolledWindow()
           levelTab['height.request'] <- 300
-          to.show.level.shannon <- to.show.shannon[to.show.shannon$Application.rate==level,]
+          to.show.level.shannon <- to.show.shannon[to.show.shannon$Herbicide.scenario==level,]
           to.show.level.shannon<-data.frame(
             to.show.level.shannon[,1:2],
             '<10'=apply(to.show.level.shannon, 1, function(x){
@@ -2882,7 +2882,7 @@ Shannon index is calculated as: - sum (p_i*log(p_i))/log(S) with p_i - relative 
               paste(x[15], '(', x[16], x[17],')' )}),
             '>50'=apply(to.show.level.shannon, 1, function(x){
               paste(x[18], '(', x[19], x[20],')' )}))
-          colnames(to.show.level.shannon) <- c(paste('Application rate'), paste('Year'),
+          colnames(to.show.level.shannon) <- c(paste('Herbicide scenario'), paste('Year'),
                                        paste('< 10'), paste('10 - 20'), paste('20 - 30')
                                        , paste('30 - 40'), paste('40 - 50'), paste('> 50'))
           
@@ -2899,7 +2899,7 @@ Shannon index is calculated as: - sum (p_i*log(p_i))/log(S) with p_i - relative 
           vboxhelp$packStart(levelTab)
           levelFrame$add(vboxhelp)
           levelFrame$setTooltipText('IBC-grass simulates only the growing period of 30 weeks. Thus, one modelled year consists of 30 weeks.')
-          gtkNotebookAppendPage(NotebookShannon, levelFrame, tab.label=gtkLabel(paste('Application rate: ',level)))
+          gtkNotebookAppendPage(NotebookShannon, levelFrame, tab.label=gtkLabel(paste('Herbicide scenario: ',level)))
         }
         
         vboxShannon$packStart(NotebookShannon)
@@ -2953,7 +2953,7 @@ Shannon index is calculated as: - sum (p_i*log(p_i))/log(S) with p_i - relative 
         ShannonFrame$add(vboxShannon)
         
         NotebookSimpson <- gtkNotebook()
-        for (level in levels(factor(to.show.simpson$Application.rate))){
+        for (level in levels(factor(to.show.simpson$Herbicide.scenario))){
           levelFrame <- gtkFrame()
           vboxhelp <- gtkVBoxNew()
           vboxhelp$setBorderWidth(5)
@@ -2969,7 +2969,7 @@ Simpson index is calculated as: 1-sum (p_i^2) with p_i - relative abundance of P
           # the table to show
           levelTab <- gtkScrolledWindow()
           levelTab['height.request'] <- 300
-          to.show.level.simpson <- to.show.simpson[to.show.simpson$Application.rate==level,]
+          to.show.level.simpson <- to.show.simpson[to.show.simpson$Herbicide.scenario==level,]
           to.show.level.simpson<-data.frame(
             to.show.level.simpson[,1:2],
             '<10'=apply(to.show.level.simpson, 1, function(x){
@@ -2984,7 +2984,7 @@ Simpson index is calculated as: 1-sum (p_i^2) with p_i - relative abundance of P
               paste(x[15], '(', x[16], x[17],')' )}),
             '>50'=apply(to.show.level.simpson, 1, function(x){
               paste(x[18], '(', x[19], x[20],')' )}))
-          colnames(to.show.level.simpson) <- c(paste('Application rate'), paste('Year'),
+          colnames(to.show.level.simpson) <- c(paste('Herbicide scenario'), paste('Year'),
                                        paste('< 10'), paste('10 - 20'), paste('20 - 30')
                                        , paste('30 - 40'), paste('40 - 50'), paste('> 50'))
           
@@ -3001,7 +3001,7 @@ Simpson index is calculated as: 1-sum (p_i^2) with p_i - relative abundance of P
           vboxhelp$packStart(levelTab)
           levelFrame$add(vboxhelp)
           levelFrame$setTooltipText('IBC-grass simulates only the growing period of 30 weeks. Thus, one modelled year consists of 30 weeks.')
-          gtkNotebookAppendPage(NotebookSimpson, levelFrame, tab.label=gtkLabel(paste('Application rate: ',level)))
+          gtkNotebookAppendPage(NotebookSimpson, levelFrame, tab.label=gtkLabel(paste('Herbicide scenario: ',level)))
         }
         
         vboxSimpson$packStart(NotebookSimpson)
@@ -3055,7 +3055,7 @@ Simpson index is calculated as: 1-sum (p_i^2) with p_i - relative abundance of P
         SimpsonFrame$add(vboxSimpson)
         
         NotebookSimpsonInv <- gtkNotebook()
-        for (level in levels(factor(to.show.simpsoninv$Application.rate))){
+        for (level in levels(factor(to.show.simpsoninv$Herbicide.scenario))){
           levelFrame <- gtkFrame()
           vboxhelp <- gtkVBoxNew()
           vboxhelp$setBorderWidth(5)
@@ -3071,7 +3071,7 @@ Inverse Simpson index is calculated as: 1/sum (p_i^2) with p_i - relative abunda
           # the table to show
           levelTab <- gtkScrolledWindow()
           levelTab['height.request'] <- 300
-          to.show.level.simpsoninv <- to.show.simpsoninv[to.show.simpsoninv$Application.rate==level,]
+          to.show.level.simpsoninv <- to.show.simpsoninv[to.show.simpsoninv$Herbicide.scenario==level,]
           to.show.level.simpsoninv<-data.frame(
             to.show.level.simpsoninv[,1:2],
             '<10'=apply(to.show.level.simpsoninv, 1, function(x){
@@ -3086,7 +3086,7 @@ Inverse Simpson index is calculated as: 1/sum (p_i^2) with p_i - relative abunda
               paste(x[15], '(', x[16], x[17],')' )}),
             '>50'=apply(to.show.level.simpsoninv, 1, function(x){
               paste(x[18], '(', x[19], x[20],')' )}))
-          colnames(to.show.level.simpsoninv) <- c(paste('Application rate'), paste('Year'),
+          colnames(to.show.level.simpsoninv) <- c(paste('Herbicide scenario'), paste('Year'),
                                        paste('< 10'), paste('10 - 20'), paste('20 - 30')
                                        , paste('30 - 40'), paste('40 - 50'), paste('> 50'))
           
@@ -3103,7 +3103,7 @@ Inverse Simpson index is calculated as: 1/sum (p_i^2) with p_i - relative abunda
           vboxhelp$packStart(levelTab)
           levelFrame$add(vboxhelp)
           levelFrame$setTooltipText('IBC-grass simulates only the growing period of 30 weeks. Thus, one modelled year consists of 30 weeks.')
-          gtkNotebookAppendPage(NotebookSimpsonInv, levelFrame, tab.label=gtkLabel(paste('Application rate: ',level)))
+          gtkNotebookAppendPage(NotebookSimpsonInv, levelFrame, tab.label=gtkLabel(paste('Herbicide scenario: ',level)))
         }
         
         vboxSimpsonInv$packStart(NotebookSimpsonInv)

@@ -354,7 +354,7 @@ HerbicideSettings<-function(){
                                     <span weight=\"bold\" size=\"large\">Shoot mass effects</span>
                                     <span size=\"large\">Please insert the tested herbicide application rates and the measured effect data
                                     on shoot mass for each of the tested species.
-                                    The effect data should give the relation to control [0-1, 1 meaning no effect].
+                                    The data need to include the control data.
                                     Missing values should be NAs.</span>')
             label_txtfile['height.request'] <- 110
             #####
@@ -471,7 +471,7 @@ HerbicideSettings<-function(){
                                              <span weight=\"bold\" size=\"large\">Seedling shoot mass effects</span>
                                              <span size=\"large\">Please insert the tested herbicide application rates and the measured effect data
                                              on seedling shoot mass for each of the tested species.
-                                             The effect data should give the relation to control [0-1, 1 meaning no effect].
+                                             The data should include the control data.
                                              Missing values should be NAs.</span>')
             label_txtfile_Seedling['height.request'] <- 110
             #####
@@ -582,7 +582,7 @@ HerbicideSettings<-function(){
                                              <span weight=\"bold\" size=\"large\">Survival effects</span>
                                              <span size=\"large\"> Please insert the tested herbicide application rates and the measured effect data
                                              on survival for each of the tested species.
-                                             The effect data should give the relation to control [0-1, 1 meaning no effect].
+                                             The data should include the control data.
                                              Missing values should be NAs.</span>')
             label_txtfile_Survival['height.request'] <- 110
             #####
@@ -698,7 +698,7 @@ HerbicideSettings<-function(){
                                                   <span weight=\"bold\" size=\"large\">Establishment effects</span>
                                                   <span size=\"large\"> Please insert the tested herbicide application rates and the measured effect data
                                                   on seed establishment for each of the tested species.
-                                                  The effect data should give the relation to control [0-1, 1 meaning no effect].
+                                                  The data should include the control data.
                                                   Missing values should be NAs.</span>')
             label_txtfile_Establishment['height.request'] <- 110
             #####
@@ -813,7 +813,7 @@ HerbicideSettings<-function(){
                                                   <span weight=\"bold\" size=\"large\">Seed sterility effects</span>
                                                   <span size=\"large\"> Please insert the tested herbicide application rates and the measured effect data
                                                   on seed sterility (i.e. seeds are not germinating) for each of the tested species.
-                                                  The effect data should give the relation to control [0-1, 1 meaning no effect].
+                                                  The data should include the control data.
                                                   Missing values should be NAs.</span>')
             label_txtfile_SeedSterility['height.request'] <- 110
             #####
@@ -928,7 +928,7 @@ HerbicideSettings<-function(){
                                                <span weight=\"bold\" size=\"large\">Seed number effects</span>
                                                <span size=\"large\">Please insert the tested herbicide application rates and the measured effect data
                                                on seed number for each of the tested species.
-                                               The effect data should give the relation to control [0-1, 1 meaning no effect].
+                                               The data should include the control data.
                                                Missing values should be NAs.</span>')
             label_txtfile_SeedNumber['height.request'] <- 110
             #####

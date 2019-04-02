@@ -18,6 +18,6 @@ g++ -c -fmessage-length=0 -std=c++0x -o CTKmodel.o CTKmodel.cpp
 g++ -c -fmessage-length=0 -std=c++0x -o CGridEnvir.o CGridEnvir.cpp 
 g++ -c -fmessage-length=0 -std=c++0x -o RunPara.o RunPara.cpp 
 g++ -c -fmessage-length=0 -std=c++0x -o CHerbEff.o CHerbEff.cpp 
-g++ -o IBCgrassGUI SPftTraits.o RunPara.o Plant.o OutStructs.o LCG.o GMHerbicideEffect.o Cell.o CTKmodel.o CTDSeed.o CTDPlant.o CSeed.o CObject.o CHerbEff.o CGridEnvir.o CGrid.o CGenet.o CEnvir.o 
+g++ -static -o IBCgrassGUI SPftTraits.o RunPara.o Plant.o OutStructs.o LCG.o GMHerbicideEffect.o Cell.o CTKmodel.o CTDSeed.o CTDPlant.o CSeed.o CObject.o CHerbEff.o CGridEnvir.o CGrid.o CGenet.o CEnvir.o 
 cd ..
 Rscript "./R-files/IBC-grass.R"
