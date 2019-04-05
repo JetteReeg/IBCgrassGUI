@@ -1,3 +1,0 @@
-# Information
-R will install packages locally to avoid the need of admin rights
-
