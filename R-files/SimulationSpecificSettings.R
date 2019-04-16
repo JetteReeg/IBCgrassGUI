@@ -938,7 +938,7 @@ Please wait while simulations are running.
       results.PFT[,year := year+1]
       
       results.PFT[, period:= "during"] 
-      results.PFT[year<InitDuration, period := "before"] 
+      results.PFT[year<=InitDuration, period := "before"] 
       results.PFT[year>=(InitDuration+HerbDuration), period := "after"] 
       # only frequent PFTs
       frequentPFTs <- results.PFT[,.(mean.Popsize=mean(mean.Inds)),by=.(PFT)]
@@ -989,8 +989,8 @@ Please wait while simulations are running.
       results.GRD[,year := year+1]
       
       results.GRD[, period:= "during"] 
-      results.GRD[year<InitDuration, period := "before"] 
-      results.GRD[year>=(InitDuration+HerbDuration), period := "after"] 
+      results.GRD[year<=InitDuration, period := "before"] 
+      results.GRD[year>(InitDuration+HerbDuration), period := "after"] 
       
       fwrite(results.GRD, "resultsGRD.txt", sep="\t")
       rm(results.GRD, control.mean.GRD)

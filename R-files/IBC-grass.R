@@ -22,7 +22,12 @@ rm(list=ls())
 # add local R library to install packages to (to avoid admin rights)
 .libPaths( c( .libPaths(), paste(getwd(), "/Rlibraries", sep="")))
 # install necessary packages
-if (!"RGtk2" %in% installed.packages()) install.packages("RGtk2", repos='http://cran.us.r-project.org', dependencies = T, lib = paste(getwd(), "/Rlibraries", sep=""))
+if (.Platform$OS.type == "windows") {
+if (!"RGtk2" %in% installed.packages()) install.packages("https://cran.microsoft.com/snapshot/2019-02-01/bin/windows/contrib/3.6/RGtk2_2.20.35.zip", repos=NULL, dependencies=T, lib = paste(getwd(), "/Rlibraries", sep=""))
+}
+if (.Platform$OS.type == "unix") {
+  if (!"RGtk2" %in% installed.packages()) install.packages("https://cran.r-project.org/src/contrib/Archive/RGtk2/RGtk2_2.20.35.tar.gz", repos=NULL, dependencies=T, lib = paste(getwd(), "/Rlibraries", sep=""))
+}
 if (!"RGtk2Extras" %in% installed.packages()) install.packages("RGtk2Extras", repos='http://cran.us.r-project.org', dependencies = T, lib = paste(getwd(), "/Rlibraries", sep=""))
 if (!"data.table" %in% installed.packages()) install.packages("data.table", repos='http://cran.us.r-project.org', dependencies = T, lib = paste(getwd(), "/Rlibraries", sep=""))
 if (!"ggplot2" %in% installed.packages()) install.packages("ggplot2", repos='http://cran.us.r-project.org', dependencies = T, lib = paste(getwd(), "/Rlibraries", sep=""))
