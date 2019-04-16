@@ -139,7 +139,7 @@ SEffProfile* CTKmodel::getProfileProxy(string PFT,int year)
 		if(SRunPara::RunPara.EffectModel==0)
 		{
 			// get the effect profile of the specific year
-			SEffProfile yearEff= EffTimeline[year-SRunPara::RunPara.Tinit];
+			SEffProfile yearEff= EffTimeline[year-SRunPara::RunPara.Tinit-1];
 			// correction factor based on sensitivity
 			double PFTcorr=sensi;
 			dummi->pEstabSeedFac=yearEff.pEstabSeedFac*PFTcorr;
@@ -184,7 +184,7 @@ SEffProfile* CTKmodel::getProfileProxy(string PFT,int year)
 			slope_seednumber = SPftTraits::PftLinkList.find(PFT)->second->slope_seednumber;
 			// get the application rates (as RunPara)
 			int rate;
-			rate=AppRateTimeline[year-SRunPara::RunPara.Tinit];
+			rate=AppRateTimeline[year-SRunPara::RunPara.Tinit-1];
 			// set effect on establishment (seeds)
 			if(EC50_establishment>0)	dummi->pEstabSeedFac=pow(rate,slope_establishment)/(pow(EC50_establishment,slope_establishment)+pow(rate,slope_establishment));
 				else dummi->pEstabSeedFac=0.0;
@@ -231,14 +231,14 @@ SEffProfile* CTKmodel::getProfileProxySeeds(string PFT,int year)
 	SEffProfile* dummi=new SEffProfile;
 	// if treatment run and during herbicide application period
 	if((SRunPara::RunPara.HerbEffectType!=0) &&
-			(year>=SRunPara::RunPara.Tinit)&&
+			(year>SRunPara::RunPara.Tinit)&&
 			(year<=(SRunPara::RunPara.Tinit+SRunPara::RunPara.HerbDuration)))
 	{
 		// if the effect is based on a txt file (which was read in at the  beginning of the run using GetHerbEff() )
 		if(SRunPara::RunPara.EffectModel==0)
 		{
 			// get the effect profile of the specific year
-			SEffProfile yearEff= EffTimeline[year-SRunPara::RunPara.Tinit];
+			SEffProfile yearEff= EffTimeline[year-SRunPara::RunPara.Tinit-1];
 			// correction factor based on sensitivity
 			double PFTcorr=sensi;
 
@@ -284,7 +284,7 @@ SEffProfile* CTKmodel::getProfileProxySeeds(string PFT,int year)
 			slope_seednumber = SPftTraits::PftLinkList.find(PFT)->second->slope_seednumber;
 			// get the application rates (as RunPara)
 			int rate;
-			rate=AppRateTimeline[year-SRunPara::RunPara.Tinit];
+			rate=AppRateTimeline[year-SRunPara::RunPara.Tinit-1];
 			// set effect on establishment (seeds)
 			if(EC50_establishment>0)	dummi->pEstabSeedFac=pow(rate,slope_establishment)/(pow(EC50_establishment,slope_establishment)+pow(rate,slope_establishment));
 				else dummi->pEstabSeedFac=0.0;
