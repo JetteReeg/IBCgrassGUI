@@ -551,15 +551,15 @@ Please wait while simulations are running.
           DR<-read.table("EC50andslope_Biomass.txt", sep="\t", header=T)
           # random DRs
           # EC50
-          PFTfile[PFTfile$Sensitivity=="random",28] <- c(runif(nrow(PFTfile[PFTfile$Sensitivity=="random",]),  min = (DR[nb_data+1,2] - DR[nb_data+2,2]), max = (DR[nb_data+1,2] + DR[nb_data+2,2])))
+          PFTfile[PFTfile$Sensitivity=="random",28] <- c(runif(nrow(PFTfile[PFTfile$Sensitivity=="random",]),  min = max(0,(DR[nb_data+1,2] - DR[nb_data+2,2])), max = max(0,(DR[nb_data+1,2] + DR[nb_data+2,2]))))
           # slope
-          PFTfile[PFTfile$Sensitivity=="random",29] <- c(runif(nrow(PFTfile[PFTfile$Sensitivity=="random",]), min = (DR[nb_data+1,3] - DR[nb_data+2,3]), max = (DR[nb_data+1,3] + DR[nb_data+2,3])))
+          PFTfile[PFTfile$Sensitivity=="random",29] <- c(runif(nrow(PFTfile[PFTfile$Sensitivity=="random",]), min = max(0,(DR[nb_data+1,3] - DR[nb_data+2,3])), max = max(0,(DR[nb_data+1,3] + DR[nb_data+2,3]))))
           # existing DR
           for (i in 1:nb_data){
             # EC50
-            PFTfile[PFTfile$Sensitivity==paste("dose response based on Spec ", i, sep=""),28] <- c(runif(nrow(PFTfile[PFTfile$Sensitivity==paste("dose response based on Spec ", i, sep=""),]),  min = (DR[nb_data+1,2] - DR[nb_data+2,2]), max = (DR[nb_data+1,2] + DR[nb_data+2,2])))
+            PFTfile[PFTfile$Sensitivity==paste("dose response based on Spec ", i, sep=""),28] <- c(rep(DR[i,2],nrow(PFTfile[PFTfile$Sensitivity==paste("dose response based on Spec ", i, sep=""),])))
             # slope
-            PFTfile[PFTfile$Sensitivity==paste("dose response based on Spec ", i, sep=""),29] <- c(runif(nrow(PFTfile[PFTfile$Sensitivity==paste("dose response based on Spec ", i, sep=""),]),  min = (DR[nb_data+1,3] - DR[nb_data+2,3]), max = (DR[nb_data+1,3] + DR[nb_data+2,3])))
+            PFTfile[PFTfile$Sensitivity==paste("dose response based on Spec ", i, sep=""),29] <- c(rep(DR[i,3],nrow(PFTfile[PFTfile$Sensitivity==paste("dose response based on Spec ", i, sep=""),])))
           } # end nb of test species
           # not affected
           # EC50
@@ -575,15 +575,15 @@ Please wait while simulations are running.
           DR<-read.table("EC50andslope_SeedlingBiomass.txt", sep="\t", header=T)
           # random DRs
           # EC50
-          PFTfile[PFTfile$Sensitivity=="random",30] <- c(runif(nrow(PFTfile[PFTfile$Sensitivity=="random",]),  min = (DR[nb_data+1,2] - DR[nb_data+2,2]), max = (DR[nb_data+1,2] + DR[nb_data+2,2])))
+          PFTfile[PFTfile$Sensitivity=="random",30] <- c(runif(nrow(PFTfile[PFTfile$Sensitivity=="random",]),  min = max(0,(DR[nb_data+1,2] - DR[nb_data+2,2])), max = max(0,(DR[nb_data+1,2] + DR[nb_data+2,2]))))
           # slope
-          PFTfile[PFTfile$Sensitivity=="random",31] <- c(runif(nrow(PFTfile[PFTfile$Sensitivity=="random",]), min = (DR[nb_data+1,3] - DR[nb_data+2,3]), max = (DR[nb_data+1,3] + DR[nb_data+2,3])))
+          PFTfile[PFTfile$Sensitivity=="random",31] <- c(runif(nrow(PFTfile[PFTfile$Sensitivity=="random",]), min = max(0,(DR[nb_data+1,3] - DR[nb_data+2,3])), max = max(0,(DR[nb_data+1,3] + DR[nb_data+2,3]))))
           # existing DR
           for (i in 1:nb_data){
             # EC50
-            PFTfile[PFTfile$Sensitivity==paste("dose response based on Spec ", i, sep=""),30] <- c(runif(nrow(PFTfile[PFTfile$Sensitivity==paste("dose response based on Spec ", i, sep=""),]),  min = (DR[nb_data+1,2] - DR[nb_data+2,2]), max = (DR[nb_data+1,2] + DR[nb_data+2,2])))
+            PFTfile[PFTfile$Sensitivity==paste("dose response based on Spec ", i, sep=""),30] <- c(rep(DR[i,2],nrow(PFTfile[PFTfile$Sensitivity==paste("dose response based on Spec ", i, sep=""),])))
             # slope
-            PFTfile[PFTfile$Sensitivity==paste("dose response based on Spec ", i, sep=""),31] <- c(runif(nrow(PFTfile[PFTfile$Sensitivity==paste("dose response based on Spec ", i, sep=""),]),  min = (DR[nb_data+1,3] - DR[nb_data+2,3]), max = (DR[nb_data+1,3] + DR[nb_data+2,3])))
+            PFTfile[PFTfile$Sensitivity==paste("dose response based on Spec ", i, sep=""),31] <- c(rep(DR[i,3],nrow(PFTfile[PFTfile$Sensitivity==paste("dose response based on Spec ", i, sep=""),])))
           } # end nb of test species
           # not affected
           # EC50
@@ -599,15 +599,15 @@ Please wait while simulations are running.
           DR<-read.table("EC50andslope_Survival.txt", sep="\t", header=T)
           # random DRs
           # EC50
-          PFTfile[PFTfile$Sensitivity=="random",32] <- c(runif(nrow(PFTfile[PFTfile$Sensitivity=="random",]),  min = (DR[nb_data+1,2] - DR[nb_data+2,2]), max = (DR[nb_data+1,2] + DR[nb_data+2,2])))
+          PFTfile[PFTfile$Sensitivity=="random",32] <- c(runif(nrow(PFTfile[PFTfile$Sensitivity=="random",]),  min = max(0,(DR[nb_data+1,2] - DR[nb_data+2,2])), max = max(0,(DR[nb_data+1,2] + DR[nb_data+2,2]))))
           # slope
-          PFTfile[PFTfile$Sensitivity=="random",33] <- c(runif(nrow(PFTfile[PFTfile$Sensitivity=="random",]), min = (DR[nb_data+1,3] - DR[nb_data+2,3]), max = (DR[nb_data+1,3] + DR[nb_data+2,3])))
+          PFTfile[PFTfile$Sensitivity=="random",33] <- c(runif(nrow(PFTfile[PFTfile$Sensitivity=="random",]), min = max(0,(DR[nb_data+1,3] - DR[nb_data+2,3])), max = max(0,(DR[nb_data+1,3] + DR[nb_data+2,3]))))
           # existing DR
           for (i in 1:nb_data){
             # EC50
-            PFTfile[PFTfile$Sensitivity==paste("dose response based on Spec ", i, sep=""),32] <- c(runif(nrow(PFTfile[PFTfile$Sensitivity==paste("dose response based on Spec ", i, sep=""),]),  min = (DR[nb_data+1,2] - DR[nb_data+2,2]), max = (DR[nb_data+1,2] + DR[nb_data+2,2])))
+            PFTfile[PFTfile$Sensitivity==paste("dose response based on Spec ", i, sep=""),32] <- c(rep(DR[i,2],nrow(PFTfile[PFTfile$Sensitivity==paste("dose response based on Spec ", i, sep=""),])))
             # slope
-            PFTfile[PFTfile$Sensitivity==paste("dose response based on Spec ", i, sep=""),33] <- c(runif(nrow(PFTfile[PFTfile$Sensitivity==paste("dose response based on Spec ", i, sep=""),]),  min = (DR[nb_data+1,3] - DR[nb_data+2,3]), max = (DR[nb_data+1,3] + DR[nb_data+2,3])))
+            PFTfile[PFTfile$Sensitivity==paste("dose response based on Spec ", i, sep=""),33] <- c(rep(DR[i,3],nrow(PFTfile[PFTfile$Sensitivity==paste("dose response based on Spec ", i, sep=""),])))
           } # end nb of test species
           # not affected
           # EC50
@@ -623,15 +623,15 @@ Please wait while simulations are running.
           DR<-read.table("EC50andslope_Establishment.txt", sep="\t", header=T)
           # random DRs
           # EC50
-          PFTfile[PFTfile$Sensitivity=="random",34] <- c(runif(nrow(PFTfile[PFTfile$Sensitivity=="random",]),  min = (DR[nb_data+1,2] - DR[nb_data+2,2]), max = (DR[nb_data+1,2] + DR[nb_data+2,2])))
+          PFTfile[PFTfile$Sensitivity=="random",34] <- c(runif(nrow(PFTfile[PFTfile$Sensitivity=="random",]),  min = max(0,(DR[nb_data+1,2] - DR[nb_data+2,2])), max = max(0,(DR[nb_data+1,2] + DR[nb_data+2,2]))))
           # slope
-          PFTfile[PFTfile$Sensitivity=="random",35] <- c(runif(nrow(PFTfile[PFTfile$Sensitivity=="random",]), min = (DR[nb_data+1,3] - DR[nb_data+2,3]), max = (DR[nb_data+1,3] + DR[nb_data+2,3])))
+          PFTfile[PFTfile$Sensitivity=="random",35] <- c(runif(nrow(PFTfile[PFTfile$Sensitivity=="random",]), min = max(0,(DR[nb_data+1,3] - DR[nb_data+2,3])), max = max(0,(DR[nb_data+1,3] + DR[nb_data+2,3]))))
           # existing DR
           for (i in 1:nb_data){
             # EC50
-            PFTfile[PFTfile$Sensitivity==paste("dose response based on Spec ", i, sep=""),34] <- c(runif(nrow(PFTfile[PFTfile$Sensitivity==paste("dose response based on Spec ", i, sep=""),]),  min = (DR[nb_data+1,2] - DR[nb_data+2,2]), max = (DR[nb_data+1,2] + DR[nb_data+2,2])))
+            PFTfile[PFTfile$Sensitivity==paste("dose response based on Spec ", i, sep=""),34] <- c(rep(DR[i,2],nrow(PFTfile[PFTfile$Sensitivity==paste("dose response based on Spec ", i, sep=""),])))
             # slope
-            PFTfile[PFTfile$Sensitivity==paste("dose response based on Spec ", i, sep=""),35] <- c(runif(nrow(PFTfile[PFTfile$Sensitivity==paste("dose response based on Spec ", i, sep=""),]),  min = (DR[nb_data+1,3] - DR[nb_data+2,3]), max = (DR[nb_data+1,3] + DR[nb_data+2,3])))
+            PFTfile[PFTfile$Sensitivity==paste("dose response based on Spec ", i, sep=""),35] <- c(rep(DR[i,3],nrow(PFTfile[PFTfile$Sensitivity==paste("dose response based on Spec ", i, sep=""),])))
           } # end nb of test species
           # not affected
           # EC50
@@ -647,15 +647,15 @@ Please wait while simulations are running.
           DR<-read.table("EC50andslope_SeedSterility.txt", sep="\t", header=T)
           # random DRs
           # EC50
-          PFTfile[PFTfile$Sensitivity=="random",36] <- c(runif(nrow(PFTfile[PFTfile$Sensitivity=="random",]),  min = (DR[nb_data+1,2] - DR[nb_data+2,2]), max = (DR[nb_data+1,2] + DR[nb_data+2,2])))
+          PFTfile[PFTfile$Sensitivity=="random",36] <- c(runif(nrow(PFTfile[PFTfile$Sensitivity=="random",]),  min = max(0,(DR[nb_data+1,2] - DR[nb_data+2,2])), max = max(0,(DR[nb_data+1,2] + DR[nb_data+2,2]))))
           # slope
-          PFTfile[PFTfile$Sensitivity=="random",37] <- c(runif(nrow(PFTfile[PFTfile$Sensitivity=="random",]), min = (DR[nb_data+1,3] - DR[nb_data+2,3]), max = (DR[nb_data+1,3] + DR[nb_data+2,3])))
+          PFTfile[PFTfile$Sensitivity=="random",37] <- c(runif(nrow(PFTfile[PFTfile$Sensitivity=="random",]), min = max(0,(DR[nb_data+1,3] - DR[nb_data+2,3])), max = max(0,(DR[nb_data+1,3] + DR[nb_data+2,3]))))
           # existing DR
           for (i in 1:nb_data){
             # EC50
-            PFTfile[PFTfile$Sensitivity==paste("dose response based on Spec ", i, sep=""),36] <- c(runif(nrow(PFTfile[PFTfile$Sensitivity==paste("dose response based on Spec ", i, sep=""),]),  min = (DR[nb_data+1,2] - DR[nb_data+2,2]), max = (DR[nb_data+1,2] + DR[nb_data+2,2])))
+            PFTfile[PFTfile$Sensitivity==paste("dose response based on Spec ", i, sep=""),36] <- c(rep(DR[i,2],nrow(PFTfile[PFTfile$Sensitivity==paste("dose response based on Spec ", i, sep=""),])))
             # slope
-            PFTfile[PFTfile$Sensitivity==paste("dose response based on Spec ", i, sep=""),37] <- c(runif(nrow(PFTfile[PFTfile$Sensitivity==paste("dose response based on Spec ", i, sep=""),]),  min = (DR[nb_data+1,3] - DR[nb_data+2,3]), max = (DR[nb_data+1,3] + DR[nb_data+2,3])))
+            PFTfile[PFTfile$Sensitivity==paste("dose response based on Spec ", i, sep=""),37] <- c(rep(DR[i,3],nrow(PFTfile[PFTfile$Sensitivity==paste("dose response based on Spec ", i, sep=""),])))
           } # end nb of test species
           # not affected
           # EC50
@@ -671,15 +671,15 @@ Please wait while simulations are running.
           DR<-read.table("EC50andslope_SeedNumber.txt", sep="\t", header=T)
           # random DRs
           # EC50
-          PFTfile[PFTfile$Sensitivity=="random",38] <- c(runif(nrow(PFTfile[PFTfile$Sensitivity=="random",]),  min = (DR[nb_data+1,2] - DR[nb_data+2,2]), max = (DR[nb_data+1,2] + DR[nb_data+2,2])))
+          PFTfile[PFTfile$Sensitivity=="random",38] <- c(runif(nrow(PFTfile[PFTfile$Sensitivity=="random",]),  min = max(0,(DR[nb_data+1,2] - DR[nb_data+2,2])), max = max(0,(DR[nb_data+1,2] + DR[nb_data+2,2]))))
           # slope
-          PFTfile[PFTfile$Sensitivity=="random",39] <- c(runif(nrow(PFTfile[PFTfile$Sensitivity=="random",]), min = (DR[nb_data+1,3] - DR[nb_data+2,3]), max = (DR[nb_data+1,3] + DR[nb_data+2,3])))
+          PFTfile[PFTfile$Sensitivity=="random",39] <- c(runif(nrow(PFTfile[PFTfile$Sensitivity=="random",]), min = max(0,(DR[nb_data+1,3] - DR[nb_data+2,3])), max = max(0,(DR[nb_data+1,3] + DR[nb_data+2,3]))))
           # existing DR
           for (i in 1:nb_data){
             # EC50
-            PFTfile[PFTfile$Sensitivity==paste("dose response based on Spec ", i, sep=""),38] <- c(runif(nrow(PFTfile[PFTfile$Sensitivity==paste("dose response based on Spec ", i, sep=""),]),  min = (DR[nb_data+1,2] - DR[nb_data+2,2]), max = (DR[nb_data+1,2] + DR[nb_data+2,2])))
+            PFTfile[PFTfile$Sensitivity==paste("dose response based on Spec ", i, sep=""),38] <- c(rep(DR[i,2],nrow(PFTfile[PFTfile$Sensitivity==paste("dose response based on Spec ", i, sep=""),])))
             # slope
-            PFTfile[PFTfile$Sensitivity==paste("dose response based on Spec ", i, sep=""),39] <- c(runif(nrow(PFTfile[PFTfile$Sensitivity==paste("dose response based on Spec ", i, sep=""),]),  min = (DR[nb_data+1,3] - DR[nb_data+2,3]), max = (DR[nb_data+1,3] + DR[nb_data+2,3])))
+            PFTfile[PFTfile$Sensitivity==paste("dose response based on Spec ", i, sep=""),39] <- c(rep(DR[i,3],nrow(PFTfile[PFTfile$Sensitivity==paste("dose response based on Spec ", i, sep=""),])))
           } # end nb of test species
           # not affected
           # EC50
@@ -939,7 +939,7 @@ Please wait while simulations are running.
       
       results.PFT[, period:= "during"] 
       results.PFT[year<=InitDuration, period := "before"] 
-      results.PFT[year>=(InitDuration+HerbDuration), period := "after"] 
+      results.PFT[year>(InitDuration+HerbDuration), period := "after"] 
       # only frequent PFTs
       frequentPFTs <- results.PFT[,.(mean.Popsize=mean(mean.Inds)),by=.(PFT)]
       frequentPFTs<-frequentPFTs[mean.Popsize>5,]
