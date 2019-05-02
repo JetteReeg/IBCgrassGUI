@@ -1,0 +1,9 @@
+rows	ApplicationRate_Spec1	Effect_Spec1	ApplicationRate_Spec2	Effect_Spec2	ApplicationRate_Spec3	Effect_Spec3	ApplicationRate_Spec4	Effect_Spec4	ApplicationRate_Spec5	Effect_Spec5	X.
+1	0	2.452	0	4.33	0	1.753	0	0.36	0	2.036	
+2	0.01	2.648	0.01	4.488	0.12	1.63	0.01	0.356	0.12	2.056	
+3	0.04	1.98	0.04	4.617	0.37	1.218	0.04	0.368	0.37	2.368	
+4	0.12	0.681	0.12	4.38	1.1	0.275	0.12	0.424	1.1	2.244	
+5	0.37	0.347	0.37	1.428	3.3	0	0.37	0.365	3.3	0.487	
+6	1.1	0.48	1.1	0	10	0	1.1	0.104	10	0	
+7	3.3	0.559	NA	NA	NA	NA	3.3	0.055	NA	NA	
+8	10	0	NA	NA	NA	NA	NA	NA	NA	NA	
