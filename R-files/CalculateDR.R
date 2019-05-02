@@ -543,7 +543,7 @@ CalculateDR<- function(){
       count_g = 0
       b<-as.numeric(output_wrap[curves,3])
       EC50<-as.numeric(output_wrap[curves,2])
-      for(App_rate in seq(0,max_App_rate,1)){
+      for(App_rate in seq(0,max_App_rate,(max_App_rate/100))){
         count_g = sum(count_g,1)
         effect_graph = App_rate^b/(EC50^b+App_rate^b) # effect function with fitted value
         Array_graph[count_g,1] = App_rate
