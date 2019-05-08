@@ -406,6 +406,46 @@ Results <- function(){
       gSignalConnect(EffectDataButton, signal = "clicked", show_EffectData)
     }
     
+    if(!is.null(get("IBCAppRateScenarios", envir=SaveEnvironment))){
+      
+      ScenariosButton <- gtkButton('Show herbicide scenarios')
+      
+      show_Scenarios <- function(button){
+        Scenarios <- get("IBCAppRateScenarios", envir=SaveEnvironment)
+        store_Scenarios <- rGtkDataFrame(Scenarios)
+        view_Scenarios <- gtkTreeView(store_Scenarios)
+        nms_Scenarios <- names(Scenarios)
+        QT <- sapply(1:ncol(Scenarios), function(i) {
+          type <- class(Scenarios[,i])[1]
+          view_Scenarios$addColumnWithType(name = nms_Scenarios[i], type, viewCol = i, storeCol = i)
+        })
+        
+        cb_Scenarios <- gtkButton("Close Window")
+        
+        destroy_ScenariosW <- function(button){
+          ScenariosW$destroy()
+        }
+        
+        gSignalConnect(cb_Scenarios, signal = "clicked", destroy_ScenariosW)
+        
+        ScenariosW <- gtkWindow(show=F)
+        color <-gdkColorToString('white')
+        ScenariosW$ModifyBg("normal", color)
+        Scenarios_SW <- gtkScrolledWindow()
+        Scenarios_SW['width.request'] <- 400
+        Scenarios_SW['height.request'] <- 200
+        Scenarios_SW$setPolicy("automatic","automatic")
+        Scenarios_SW$add(view_Scenarios)
+        vbox_Scenarios<-gtkVBoxNew(spacing=10)
+        vbox_Scenarios$packStart(Scenarios_SW)
+        vbox_Scenarios$packStart(cb_Scenarios)
+        ScenariosW$add(vbox_Scenarios)
+        ScenariosW$show()
+      }
+      
+      gSignalConnect(ScenariosButton, signal = "clicked", show_Scenarios)
+    }
+    
     settingW <- gtkWindow(show=F)
     color <-gdkColorToString('white')
     settingW$ModifyBg("normal", color)
@@ -419,6 +459,9 @@ Results <- function(){
     vbox$packStart(PFTsensitivityButton)
     if(exists("EffectDataButton")){
       vbox$packStart(EffectDataButton)
+    }
+    if(exists("ScenariosButton")){
+      vbox$packStart(ScenariosButton)
     }
     vbox$packStart(cb_settings)
     settingW$add(vbox)
