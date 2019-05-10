@@ -24,7 +24,7 @@ R 		https://www.r-project.org/
 		R needs to be set as environmental variable (see Manual for further details).
 		Following R packages will be installed during the set up process: RGtk2, RGtk2Extras, data.table, reshape2, foreach, doParallel, ggplot2 and ggthemes.
 
-GTK		The R package RGtk2 depends on gtk. The installation of RGtk2 led to errors under Mac. In that case, GTK needs to be installed by hand. 
+GTK		The R package RGtk2 depends on gtk. The GUI tries to install gtk automatically on windows. If this fails, the GUI will not open and the user need to install gtk by hand. Under Mac operating systems, the installation of RGtk2 led to errors. In that case, GTK needs to be installed by hand. 
 
 G++ compiler	e.g. MinGW (http://www.mingw.org/wiki/Getting_Started)
 
