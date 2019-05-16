@@ -1,0 +1,83 @@
+\hypertarget{class_c_genet}{}\section{C\+Genet Class Reference}
+\label{class_c_genet}\index{CGenet@{CGenet}}
+
+
+Class organizing ramets of a genet.  
+
+
+
+
+{\ttfamily \#include $<$C\+Genet.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_c_genet_a9981762197271e0c997303497b2cf1a1}\label{class_c_genet_a9981762197271e0c997303497b2cf1a1}} 
+\mbox{\hyperlink{class_c_genet_a9981762197271e0c997303497b2cf1a1}{C\+Genet}} ()
+\begin{DoxyCompactList}\small\item\em constructor \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_c_genet_adfef4562d1de06546fc1c2b18a006e1d}\label{class_c_genet_adfef4562d1de06546fc1c2b18a006e1d}} 
+\mbox{\hyperlink{class_c_genet_adfef4562d1de06546fc1c2b18a006e1d}{$\sim$\+C\+Genet}} ()
+\begin{DoxyCompactList}\small\item\em destructor \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_genet_a4cc99b416ede10fdb87dff1c8c820f37}{ResshareA}} ()
+\begin{DoxyCompactList}\small\item\em share above-\/ground resources \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_genet_a2bc46111b9623273b6cfbf1944d063c1}{ResshareB}} ()
+\begin{DoxyCompactList}\small\item\em share below-\/ground resources \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_c_genet_aab2770b59f3d35395cf5adf88e7cbef0}\label{class_c_genet_aab2770b59f3d35395cf5adf88e7cbef0}} 
+vector$<$ \mbox{\hyperlink{class_c_plant}{C\+Plant}} $\ast$ $>$ \mbox{\hyperlink{class_c_genet_aab2770b59f3d35395cf5adf88e7cbef0}{All\+Ramet\+List}}
+\begin{DoxyCompactList}\small\item\em list of ramets \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_c_genet_a2f04d690fc0ecd0ddf95e11a399c8828}\label{class_c_genet_a2f04d690fc0ecd0ddf95e11a399c8828}} 
+int \mbox{\hyperlink{class_c_genet_a2f04d690fc0ecd0ddf95e11a399c8828}{number}}
+\begin{DoxyCompactList}\small\item\em ID of genet. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_c_genet_a4c3508a17453c43b88eafe503d1ad41d}\label{class_c_genet_a4c3508a17453c43b88eafe503d1ad41d}} 
+static int {\bfseries static\+ID} =0
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class organizing ramets of a genet. 
+
+Definition at line 15 of file C\+Genet.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_c_genet_a4cc99b416ede10fdb87dff1c8c820f37}\label{class_c_genet_a4cc99b416ede10fdb87dff1c8c820f37}} 
+\index{CGenet@{CGenet}!ResshareA@{ResshareA}}
+\index{ResshareA@{ResshareA}!CGenet@{CGenet}}
+\subsubsection{\texorpdfstring{ResshareA()}{ResshareA()}}
+{\footnotesize\ttfamily void C\+Genet\+::\+ResshareA (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+share above-\/ground resources 
+
+Calculate the mean of the shared aboveground uptakes of one genet and save this as the uptake for each plant of this genet. 
+
+Definition at line 15 of file C\+Genet.\+cpp.
+
+\mbox{\Hypertarget{class_c_genet_a2bc46111b9623273b6cfbf1944d063c1}\label{class_c_genet_a2bc46111b9623273b6cfbf1944d063c1}} 
+\index{CGenet@{CGenet}!ResshareB@{ResshareB}}
+\index{ResshareB@{ResshareB}!CGenet@{CGenet}}
+\subsubsection{\texorpdfstring{ResshareB()}{ResshareB()}}
+{\footnotesize\ttfamily void C\+Genet\+::\+ResshareB (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+share below-\/ground resources 
+
+Calculate the mean of the shared belowground uptakes of one genet and save this as the uptake for each plant of this genet. 
+
+Definition at line 49 of file C\+Genet.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+I\+B\+Cgrass\+G\+U\+I.\+git/trunk/\+Model-\/files/\mbox{\hyperlink{_c_genet_8h}{C\+Genet.\+h}}\item 
+D\+:/\+I\+B\+Cgrass\+G\+U\+I.\+git/trunk/\+Model-\/files/\mbox{\hyperlink{_c_genet_8cpp}{C\+Genet.\+cpp}}\end{DoxyCompactItemize}

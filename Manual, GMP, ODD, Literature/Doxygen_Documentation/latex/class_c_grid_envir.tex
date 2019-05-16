@@ -1,0 +1,360 @@
+\hypertarget{class_c_grid_envir}{}\section{C\+Grid\+Envir Class Reference}
+\label{class_c_grid_envir}\index{CGridEnvir@{CGridEnvir}}
+
+
+simulation service class including grid-\/, result-\/ and environmental information  
+
+
+
+
+{\ttfamily \#include $<$C\+Grid\+Envir.\+h$>$}
+
+Inheritance diagram for C\+Grid\+Envir\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_c_grid_envir}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_c_grid_envir_ab3cf850b9fa815748dd555bd1704441d}{C\+Grid\+Envir}} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_c_grid_envir_a825ef1eb30d856e0ecee1f429a202314}{$\sim$\+C\+Grid\+Envir}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{Indent}\textbf{ core simulating Functions}\par
+{\em Init\+Run (from \mbox{\hyperlink{class_c_envir}{C\+Envir}}) }\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_c_grid_envir_a5db9b9b5fb26f6f6cbc3b3904ace0b68}{Init\+Run}} ()
+\item 
+\mbox{\Hypertarget{class_c_grid_envir_ae7d159245558c84daa3eadd057c31c4e}\label{class_c_grid_envir_ae7d159245558c84daa3eadd057c31c4e}} 
+void \mbox{\hyperlink{class_c_grid_envir_ae7d159245558c84daa3eadd057c31c4e}{One\+Year}} ()
+\begin{DoxyCompactList}\small\item\em One year function. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_grid_envir_ab44b39db400c6fae4cfa623546f7fe4a}{One\+Run}} ()
+\begin{DoxyCompactList}\small\item\em One run function. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_grid_envir_a5c5cde58adbcee3ec3fd54c734228bf6}{One\+Week}} ()
+\begin{DoxyCompactList}\small\item\em One week function. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_c_grid_envir_aed2b467efa481b601ef4147cc990debc}{Pft\+Survival}} ()
+\begin{DoxyCompactList}\small\item\em get surviving P\+F\+Ts (from \mbox{\hyperlink{class_c_envir}{C\+Envir}}) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ collect general results}\par
+{\em get model output }\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_c_grid_envir_ad14451529b1a3f9b7591f4d5b4e321c5}{Get\+Output}} ()
+\item 
+void \mbox{\hyperlink{class_c_grid_envir_a858b8e8281f1a80dc0b0a72b2b9a4346}{Get\+Clon\+Output}} (\mbox{\hyperlink{struct_s_grid_out}{S\+Grid\+Out}} \&Grid\+Data)
+\begin{DoxyCompactList}\small\item\em get model output for clonal attributes \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_grid_envir_abc5ce523f3821da0a39e1eefa6068946}{Get\+Output\+Cutted}} ()
+\begin{DoxyCompactList}\small\item\em get annually cutted biomass after week 22 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ init new Individuals/\+Seeds}\par
+{\em initialization of individuals on grid }\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_c_grid_envir_adbc322fcf9a2e78a6be9a313a6c3dc05}\label{class_c_grid_envir_adbc322fcf9a2e78a6be9a313a6c3dc05}} 
+void {\bfseries Init\+Inds} ()
+\item 
+virtual void \mbox{\hyperlink{class_c_grid_envir_a0b5b1fcf08b608c6aed31fea9325c62b}{Init\+Inds}} (string file, int n=-\/1)
+\begin{DoxyCompactList}\small\item\em intitialize individuals from one file \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_c_grid_envir_a6e2ae4e3971d36cbabf8f1a602dd0f84}\label{class_c_grid_envir_a6e2ae4e3971d36cbabf8f1a602dd0f84}} 
+void \mbox{\hyperlink{class_c_grid_envir_a6e2ae4e3971d36cbabf8f1a602dd0f84}{Init\+Seeds}} (int)
+\begin{DoxyCompactList}\small\item\em initialization of seeds on grid \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_grid_envir_a7ade5ae05bab7f0fd7f6edef26001686}{Init\+Seeds}} (string, int)
+\begin{DoxyCompactList}\small\item\em initialize P\+FT seeds \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\subsection*{Functions to get Acover and Bcover of cells.}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_c_grid_envir_a73e33cf0609fdd81d5b7e04ca7a02f12}{get\+A\+Cover}} (int x, int y)
+\item 
+int \mbox{\hyperlink{class_c_grid_envir_af90026b4979069e8b4aa262ffa124190}{get\+B\+Cover}} (int x, int y)
+\begin{DoxyCompactList}\small\item\em get belowground cover \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_c_grid_envir_a9f8abae7df32c801895f3e7ff7f967cf}{get\+Type\+Cover}} (const string type) const
+\begin{DoxyCompactList}\small\item\em get P\+FT cover \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+simulation service class including grid-\/, result-\/ and environmental information 
+
+The class collects simulation environment with clonal properties. C\+Gridclonal and \mbox{\hyperlink{class_c_envir}{C\+Envir}} are connected, and some Clonal-\/specific result-\/variables added. 
+
+Definition at line 21 of file C\+Grid\+Envir.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_c_grid_envir_ab3cf850b9fa815748dd555bd1704441d}\label{class_c_grid_envir_ab3cf850b9fa815748dd555bd1704441d}} 
+\index{CGridEnvir@{CGridEnvir}!CGridEnvir@{CGridEnvir}}
+\index{CGridEnvir@{CGridEnvir}!CGridEnvir@{CGridEnvir}}
+\subsubsection{\texorpdfstring{CGridEnvir()}{CGridEnvir()}}
+{\footnotesize\ttfamily C\+Grid\+Envir\+::\+C\+Grid\+Envir (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+constructor 
+
+Definition at line 14 of file C\+Grid\+Envir.\+cpp.
+
+\mbox{\Hypertarget{class_c_grid_envir_a825ef1eb30d856e0ecee1f429a202314}\label{class_c_grid_envir_a825ef1eb30d856e0ecee1f429a202314}} 
+\index{CGridEnvir@{CGridEnvir}!````~CGridEnvir@{$\sim$CGridEnvir}}
+\index{````~CGridEnvir@{$\sim$CGridEnvir}!CGridEnvir@{CGridEnvir}}
+\subsubsection{\texorpdfstring{$\sim$CGridEnvir()}{~CGridEnvir()}}
+{\footnotesize\ttfamily C\+Grid\+Envir\+::$\sim$\+C\+Grid\+Envir (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Destructor. 
+
+delete clonal\+Traits;
+
+destructor 
+
+Definition at line 22 of file C\+Grid\+Envir.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_c_grid_envir_a73e33cf0609fdd81d5b7e04ca7a02f12}\label{class_c_grid_envir_a73e33cf0609fdd81d5b7e04ca7a02f12}} 
+\index{CGridEnvir@{CGridEnvir}!getACover@{getACover}}
+\index{getACover@{getACover}!CGridEnvir@{CGridEnvir}}
+\subsubsection{\texorpdfstring{getACover()}{getACover()}}
+{\footnotesize\ttfamily int C\+Grid\+Envir\+::get\+A\+Cover (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+It is assumed that coordinates/indices match grid size. Functions have to be called after function \mbox{\hyperlink{class_c_grid_a4192c45a00e1b07e475e0f20bc87e67d}{C\+Grid\+::\+Cover\+Cells}} and before first function calling delete for established plants in the same week. else undefined behavior including access violation is possible. \begin{DoxyNote}{Note}
+depends (at least) on an inherited subclass of C\+Gridget aboveground cover
+\end{DoxyNote}
+get aboveground cover in cell 
+\begin{DoxyParams}{Parameters}
+{\em x,y} & cell location \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 303 of file C\+Grid\+Envir.\+cpp.
+
+\mbox{\Hypertarget{class_c_grid_envir_af90026b4979069e8b4aa262ffa124190}\label{class_c_grid_envir_af90026b4979069e8b4aa262ffa124190}} 
+\index{CGridEnvir@{CGridEnvir}!getBCover@{getBCover}}
+\index{getBCover@{getBCover}!CGridEnvir@{CGridEnvir}}
+\subsubsection{\texorpdfstring{getBCover()}{getBCover()}}
+{\footnotesize\ttfamily int C\+Grid\+Envir\+::get\+B\+Cover (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+
+
+get belowground cover 
+
+get the belowground cover
+
+get belowground cover in cell 
+\begin{DoxyParams}{Parameters}
+{\em x,y} & cell location \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 310 of file C\+Grid\+Envir.\+cpp.
+
+\mbox{\Hypertarget{class_c_grid_envir_a858b8e8281f1a80dc0b0a72b2b9a4346}\label{class_c_grid_envir_a858b8e8281f1a80dc0b0a72b2b9a4346}} 
+\index{CGridEnvir@{CGridEnvir}!GetClonOutput@{GetClonOutput}}
+\index{GetClonOutput@{GetClonOutput}!CGridEnvir@{CGridEnvir}}
+\subsubsection{\texorpdfstring{GetClonOutput()}{GetClonOutput()}}
+{\footnotesize\ttfamily void C\+Grid\+Envir\+::\+Get\+Clon\+Output (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_s_grid_out}{S\+Grid\+Out}} \&}]{Grid\+Data }\end{DoxyParamCaption})}
+
+
+
+get model output for clonal attributes 
+
+get clonal variables (grid wide) 
+\begin{DoxyParams}{Parameters}
+{\em Grid\+Data} & structure which stores the variables of the grid \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 269 of file C\+Grid\+Envir.\+cpp.
+
+\mbox{\Hypertarget{class_c_grid_envir_ad14451529b1a3f9b7591f4d5b4e321c5}\label{class_c_grid_envir_ad14451529b1a3f9b7591f4d5b4e321c5}} 
+\index{CGridEnvir@{CGridEnvir}!GetOutput@{GetOutput}}
+\index{GetOutput@{GetOutput}!CGridEnvir@{CGridEnvir}}
+\subsubsection{\texorpdfstring{GetOutput()}{GetOutput()}}
+{\footnotesize\ttfamily void C\+Grid\+Envir\+::\+Get\+Output (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+calculate Output-\/variables and store in intern \textquotesingle{}database\textquotesingle{} 
+
+Implements \mbox{\hyperlink{class_c_envir_a0327292c6ae32487c4fdde023f4302d5}{C\+Envir}}.
+
+
+
+Definition at line 132 of file C\+Grid\+Envir.\+cpp.
+
+\mbox{\Hypertarget{class_c_grid_envir_abc5ce523f3821da0a39e1eefa6068946}\label{class_c_grid_envir_abc5ce523f3821da0a39e1eefa6068946}} 
+\index{CGridEnvir@{CGridEnvir}!GetOutputCutted@{GetOutputCutted}}
+\index{GetOutputCutted@{GetOutputCutted}!CGridEnvir@{CGridEnvir}}
+\subsubsection{\texorpdfstring{GetOutputCutted()}{GetOutputCutted()}}
+{\footnotesize\ttfamily void C\+Grid\+Envir\+::\+Get\+Output\+Cutted (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+get annually cutted biomass after week 22 
+
+get and reset amount of cutted biomass
+
+Appends Output struct 
+
+Definition at line 259 of file C\+Grid\+Envir.\+cpp.
+
+\mbox{\Hypertarget{class_c_grid_envir_a9f8abae7df32c801895f3e7ff7f967cf}\label{class_c_grid_envir_a9f8abae7df32c801895f3e7ff7f967cf}} 
+\index{CGridEnvir@{CGridEnvir}!getTypeCover@{getTypeCover}}
+\index{getTypeCover@{getTypeCover}!CGridEnvir@{CGridEnvir}}
+\subsubsection{\texorpdfstring{getTypeCover()}{getTypeCover()}}
+{\footnotesize\ttfamily double C\+Grid\+Envir\+::get\+Type\+Cover (\begin{DoxyParamCaption}\item[{const string}]{type }\end{DoxyParamCaption}) const}
+
+
+
+get P\+FT cover 
+
+get cover per P\+FT
+
+get cover of a given P\+FT in grid 
+\begin{DoxyParams}{Parameters}
+{\em type} & P\+FT type \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 329 of file C\+Grid\+Envir.\+cpp.
+
+\mbox{\Hypertarget{class_c_grid_envir_a0b5b1fcf08b608c6aed31fea9325c62b}\label{class_c_grid_envir_a0b5b1fcf08b608c6aed31fea9325c62b}} 
+\index{CGridEnvir@{CGridEnvir}!InitInds@{InitInds}}
+\index{InitInds@{InitInds}!CGridEnvir@{CGridEnvir}}
+\subsubsection{\texorpdfstring{InitInds()}{InitInds()}}
+{\footnotesize\ttfamily void C\+Grid\+Envir\+::\+Init\+Inds (\begin{DoxyParamCaption}\item[{string}]{file,  }\item[{int}]{n = {\ttfamily -\/1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+intitialize individuals from one file 
+
+this function reads a file, introduces P\+F\+Ts and initializes seeds on grid after file data. Each P\+FT on file gets 20 seeds randomly set on grid. 
+\begin{DoxyParams}{Parameters}
+{\em n} & position of type \\
+\hline
+{\em file} & name of P\+FT file \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{class_c_herbicide_effect_env_a4382fa3250eb3b44613707fdffd77838}{C\+Herbicide\+Effect\+Env}}.
+
+
+
+Definition at line 46 of file C\+Grid\+Envir.\+cpp.
+
+\mbox{\Hypertarget{class_c_grid_envir_a5db9b9b5fb26f6f6cbc3b3904ace0b68}\label{class_c_grid_envir_a5db9b9b5fb26f6f6cbc3b3904ace0b68}} 
+\index{CGridEnvir@{CGridEnvir}!InitRun@{InitRun}}
+\index{InitRun@{InitRun}!CGridEnvir@{CGridEnvir}}
+\subsubsection{\texorpdfstring{InitRun()}{InitRun()}}
+{\footnotesize\ttfamily void C\+Grid\+Envir\+::\+Init\+Run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Initiate new Run\+: reset grid and randomly set initial individuals. 
+
+Reimplemented from \mbox{\hyperlink{class_c_envir_af361384ae8ac1d909c2be355ecb19987}{C\+Envir}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{class_c_herbicide_effect_env_a307a82e619105086fd02eca98c48f8b6}{C\+Herbicide\+Effect\+Env}}.
+
+
+
+Definition at line 28 of file C\+Grid\+Envir.\+cpp.
+
+\mbox{\Hypertarget{class_c_grid_envir_a7ade5ae05bab7f0fd7f6edef26001686}\label{class_c_grid_envir_a7ade5ae05bab7f0fd7f6edef26001686}} 
+\index{CGridEnvir@{CGridEnvir}!InitSeeds@{InitSeeds}}
+\index{InitSeeds@{InitSeeds}!CGridEnvir@{CGridEnvir}}
+\subsubsection{\texorpdfstring{InitSeeds()}{InitSeeds()}}
+{\footnotesize\ttfamily void C\+Grid\+Envir\+::\+Init\+Seeds (\begin{DoxyParamCaption}\item[{string}]{type,  }\item[{int}]{number }\end{DoxyParamCaption})}
+
+
+
+initialize P\+FT seeds 
+
+This function initiates a number of seeds of the specified type on the grid.
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & string naming the type to be set \\
+\hline
+{\em number} & number of seeds to set \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 54 of file C\+Grid\+Envir.\+cpp.
+
+\mbox{\Hypertarget{class_c_grid_envir_ab44b39db400c6fae4cfa623546f7fe4a}\label{class_c_grid_envir_ab44b39db400c6fae4cfa623546f7fe4a}} 
+\index{CGridEnvir@{CGridEnvir}!OneRun@{OneRun}}
+\index{OneRun@{OneRun}!CGridEnvir@{CGridEnvir}}
+\subsubsection{\texorpdfstring{OneRun()}{OneRun()}}
+{\footnotesize\ttfamily void C\+Grid\+Envir\+::\+One\+Run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+One run function. 
+
+one run of simulations environmental prefenences are stored in \mbox{\hyperlink{struct_s_run_para_a3e7797ad861d93d0d7dd6ce23ff259b7}{S\+Run\+Para\+::\+Run\+Para}} 
+
+Implements \mbox{\hyperlink{class_c_envir_a36cbe82b70ac3bd8741bc6baf0baac84}{C\+Envir}}.
+
+
+
+Definition at line 60 of file C\+Grid\+Envir.\+cpp.
+
+\mbox{\Hypertarget{class_c_grid_envir_a5c5cde58adbcee3ec3fd54c734228bf6}\label{class_c_grid_envir_a5c5cde58adbcee3ec3fd54c734228bf6}} 
+\index{CGridEnvir@{CGridEnvir}!OneWeek@{OneWeek}}
+\index{OneWeek@{OneWeek}!CGridEnvir@{CGridEnvir}}
+\subsubsection{\texorpdfstring{OneWeek()}{OneWeek()}}
+{\footnotesize\ttfamily void C\+Grid\+Envir\+::\+One\+Week (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+One week function. 
+
+calculation of one week\textquotesingle{}s processes 
+
+Implements \mbox{\hyperlink{class_c_envir_aaf79409fdf193613b40fb45a66dba4ee}{C\+Envir}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{class_c_herbicide_effect_env_a82fba7cb44890dd47d5e594f72803241}{C\+Herbicide\+Effect\+Env}}.
+
+
+
+Definition at line 105 of file C\+Grid\+Envir.\+cpp.
+
+\mbox{\Hypertarget{class_c_grid_envir_aed2b467efa481b601ef4147cc990debc}\label{class_c_grid_envir_aed2b467efa481b601ef4147cc990debc}} 
+\index{CGridEnvir@{CGridEnvir}!PftSurvival@{PftSurvival}}
+\index{PftSurvival@{PftSurvival}!CGridEnvir@{CGridEnvir}}
+\subsubsection{\texorpdfstring{PftSurvival()}{PftSurvival()}}
+{\footnotesize\ttfamily int C\+Grid\+Envir\+::\+Pft\+Survival (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+get surviving P\+F\+Ts (from \mbox{\hyperlink{class_c_envir}{C\+Envir}}) 
+
+Saves Pft survival times and returns number of surviving P\+F\+Ts \begin{DoxyReturn}{Returns}
+number of surviving P\+F\+Ts 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_c_envir_a03a7a06d46020790e16f68e52469471a}{C\+Envir}}.
+
+
+
+Definition at line 283 of file C\+Grid\+Envir.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+I\+B\+Cgrass\+G\+U\+I.\+git/trunk/\+Model-\/files/C\+Grid\+Envir.\+h\item 
+D\+:/\+I\+B\+Cgrass\+G\+U\+I.\+git/trunk/\+Model-\/files/\mbox{\hyperlink{_c_grid_envir_8cpp}{C\+Grid\+Envir.\+cpp}}\end{DoxyCompactItemize}

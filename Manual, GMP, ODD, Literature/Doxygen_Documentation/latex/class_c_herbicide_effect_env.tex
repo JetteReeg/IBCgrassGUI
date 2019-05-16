@@ -1,0 +1,363 @@
+\hypertarget{class_c_herbicide_effect_env}{}\section{C\+Herbicide\+Effect\+Env Class Reference}
+\label{class_c_herbicide_effect_env}\index{CHerbicideEffectEnv@{CHerbicideEffectEnv}}
+
+
+wrapping class for herbicide-\/induced effects Wrapping class to temporally change trait parameters depending on year, week and P\+FT.  
+
+
+
+
+{\ttfamily \#include $<$C\+Herb\+Eff.\+h$>$}
+
+Inheritance diagram for C\+Herbicide\+Effect\+Env\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_c_herbicide_effect_env}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+shared\+\_\+ptr$<$ \mbox{\hyperlink{class_s_pft_traits}{S\+Pft\+Traits}} $>$ \mbox{\hyperlink{class_c_herbicide_effect_env_a8377e1b8408118491b7822e92c1bf87e}{get\+Pft\+LinkH}} (string type)
+\begin{DoxyCompactList}\small\item\em get link to pft definitions \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_c_herbicide_effect_env_a1e3eefe650a003c1677f359654615062}\label{class_c_herbicide_effect_env_a1e3eefe650a003c1677f359654615062}} 
+\mbox{\hyperlink{class_c_herbicide_effect_env_a1e3eefe650a003c1677f359654615062}{C\+Herbicide\+Effect\+Env}} ()
+\begin{DoxyCompactList}\small\item\em constructor \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_c_herbicide_effect_env_a94c7b9988c21de1f06feec7cfd01eade}\label{class_c_herbicide_effect_env_a94c7b9988c21de1f06feec7cfd01eade}} 
+\mbox{\hyperlink{class_c_herbicide_effect_env_a94c7b9988c21de1f06feec7cfd01eade}{$\sim$\+C\+Herbicide\+Effect\+Env}} ()
+\begin{DoxyCompactList}\small\item\em destructor \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_c_herbicide_effect_env_a5eda0374f9c03399979b1c41a8539933}{Init\+T\+D\+Seeds}} (shared\+\_\+ptr$<$ \mbox{\hyperlink{class_s_pft_traits}{S\+Pft\+Traits}} $>$ traits, const int n, double estab=1.\+0)
+\begin{DoxyCompactList}\small\item\em initalization of seeds \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_c_herbicide_effect_env_a4382fa3250eb3b44613707fdffd77838}{Init\+Inds}} (string file, int n=-\/1)
+\begin{DoxyCompactList}\small\item\em initialization of inds based on file data \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_c_herbicide_effect_env_a6c75efbe3b28138bbe417e52d5a3f523}{Estab\+Lott\+\_\+help}} (\mbox{\hyperlink{class_c_seed}{C\+Seed}} $\ast$)
+\begin{DoxyCompactList}\small\item\em establishmend of initial seeds \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_c_herbicide_effect_env_aebf7af3b70caeba866e3ca2c8c0262f7}{new\+Seed}} (\mbox{\hyperlink{class_c_plant}{C\+Plant}} $\ast$, \mbox{\hyperlink{class_c_cell}{C\+Cell}} $\ast$)
+\begin{DoxyCompactList}\small\item\em set new seeds in cell \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_c_herbicide_effect_env_ae8dbbf008905283e45fef1ed10d4ce3b}\label{class_c_herbicide_effect_env_ae8dbbf008905283e45fef1ed10d4ce3b}} 
+void \mbox{\hyperlink{class_c_herbicide_effect_env_ae8dbbf008905283e45fef1ed10d4ce3b}{Delete\+Plant}} (\mbox{\hyperlink{class_c_plant}{C\+Plant}} $\ast$plant1)
+\begin{DoxyCompactList}\small\item\em delete plant \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_c_herbicide_effect_env_aa325ab8688e1e1bbe060da4b2031cd44}{Seed\+Mort}} ()
+\begin{DoxyCompactList}\small\item\em base seed mortality \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_herbicide_effect_env_a88180a174d738b7a5e2e3bdcdd4b8635}{Seed\+Mort\+Herb}} ()
+\begin{DoxyCompactList}\small\item\em herbicide induced seed mortality \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_herbicide_effect_env_a5832c475d9cda7d106b1750ce197843d}{Init\+Seeds}} (string type, int number)
+\begin{DoxyCompactList}\small\item\em initialise seeds on grid \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_herbicide_effect_env_a307a82e619105086fd02eca98c48f8b6}{Init\+Run}} ()
+\begin{DoxyCompactList}\small\item\em initialize run \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_c_herbicide_effect_env_a1e9b8f090c78342e9e8314c95fcca8ba}\label{class_c_herbicide_effect_env_a1e9b8f090c78342e9e8314c95fcca8ba}} 
+void \mbox{\hyperlink{class_c_herbicide_effect_env_a1e9b8f090c78342e9e8314c95fcca8ba}{reset\+Global\+Traits}} ()
+\begin{DoxyCompactList}\small\item\em reset standard trait settings \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_herbicide_effect_env_ac62e9a406dcb24c30798bff6a369282b}{One\+Year}} ()
+\begin{DoxyCompactList}\small\item\em run one year \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_herbicide_effect_env_a82fba7cb44890dd47d5e594f72803241}{One\+Week}} ()
+\begin{DoxyCompactList}\small\item\em run one week \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_c_herbicide_effect_env_aa9c583edf2b6c9d2d5c45bd9c96258a8}\label{class_c_herbicide_effect_env_aa9c583edf2b6c9d2d5c45bd9c96258a8}} 
+static string \mbox{\hyperlink{class_c_herbicide_effect_env_aa9c583edf2b6c9d2d5c45bd9c96258a8}{Effect\+Type}} =\char`\"{} \char`\"{}
+\begin{DoxyCompactList}\small\item\em only needed if there is only one affected P\+FT -\/ however this can be also done via susceptibility parameter \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_c_plant}{C\+Plant}} $\ast$ \mbox{\hyperlink{class_c_herbicide_effect_env_ae76943414d4aeded838e98dea916084d}{new\+Spacer}} (const int x, const int y, \mbox{\hyperlink{class_c_plant}{C\+Plant}} $\ast$plant)
+\begin{DoxyCompactList}\small\item\em start new spacer of a clonal plant \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_herbicide_effect_env_a96c854b6a445c32ba2780ed0869b5e17}{convert\+Inds2\+TD}} ()
+\begin{DoxyCompactList}\small\item\em convert inds and seeds to td plants and seeds \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+wrapping class for herbicide-\/induced effects Wrapping class to temporally change trait parameters depending on year, week and P\+FT. 
+
+Definition at line 19 of file C\+Herb\+Eff.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_c_herbicide_effect_env_a96c854b6a445c32ba2780ed0869b5e17}\label{class_c_herbicide_effect_env_a96c854b6a445c32ba2780ed0869b5e17}} 
+\index{CHerbicideEffectEnv@{CHerbicideEffectEnv}!convertInds2TD@{convertInds2TD}}
+\index{convertInds2TD@{convertInds2TD}!CHerbicideEffectEnv@{CHerbicideEffectEnv}}
+\subsubsection{\texorpdfstring{convertInds2TD()}{convertInds2TD()}}
+{\footnotesize\ttfamily void C\+Herbicide\+Effect\+Env\+::convert\+Inds2\+TD (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+convert inds and seeds to td plants and seeds 
+
+Convert Plants and Seeds of older Versions to T\+D-\/\+Versions. \begin{DoxyNote}{Note}
+the new T\+D-\/\+Individuals have no herbicide history. 
+\end{DoxyNote}
+
+
+Definition at line 32 of file C\+Herb\+Eff.\+cpp.
+
+\mbox{\Hypertarget{class_c_herbicide_effect_env_a6c75efbe3b28138bbe417e52d5a3f523}\label{class_c_herbicide_effect_env_a6c75efbe3b28138bbe417e52d5a3f523}} 
+\index{CHerbicideEffectEnv@{CHerbicideEffectEnv}!EstabLott\_help@{EstabLott\_help}}
+\index{EstabLott\_help@{EstabLott\_help}!CHerbicideEffectEnv@{CHerbicideEffectEnv}}
+\subsubsection{\texorpdfstring{EstabLott\_help()}{EstabLott\_help()}}
+{\footnotesize\ttfamily void C\+Herbicide\+Effect\+Env\+::\+Estab\+Lott\+\_\+help (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_c_seed}{C\+Seed}} $\ast$}]{seed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+establishmend of initial seeds 
+
+Establishment of the winning seedling. If herbicide acts after germination, juveniles potentially suffer from herbicide (survival and biomass)
+
+
+\begin{DoxyParams}{Parameters}
+{\em seed} & seed that establishes \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_c_grid_a9cf3315cee571708d8b2db65611eb324}{C\+Grid}}.
+
+
+
+Definition at line 157 of file C\+Herb\+Eff.\+cpp.
+
+\mbox{\Hypertarget{class_c_herbicide_effect_env_a8377e1b8408118491b7822e92c1bf87e}\label{class_c_herbicide_effect_env_a8377e1b8408118491b7822e92c1bf87e}} 
+\index{CHerbicideEffectEnv@{CHerbicideEffectEnv}!getPftLinkH@{getPftLinkH}}
+\index{getPftLinkH@{getPftLinkH}!CHerbicideEffectEnv@{CHerbicideEffectEnv}}
+\subsubsection{\texorpdfstring{getPftLinkH()}{getPftLinkH()}}
+{\footnotesize\ttfamily shared\+\_\+ptr$<$\mbox{\hyperlink{class_s_pft_traits}{S\+Pft\+Traits}}$>$ C\+Herbicide\+Effect\+Env\+::get\+Pft\+LinkH (\begin{DoxyParamCaption}\item[{string}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get link to pft definitions 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & string of P\+F\+T-\/\+ID \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+address of P\+FT definition 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_s_pft_traits}{S\+Pft\+Traits}} 
+\end{DoxySeeAlso}
+
+
+Definition at line 38 of file C\+Herb\+Eff.\+h.
+
+\mbox{\Hypertarget{class_c_herbicide_effect_env_a4382fa3250eb3b44613707fdffd77838}\label{class_c_herbicide_effect_env_a4382fa3250eb3b44613707fdffd77838}} 
+\index{CHerbicideEffectEnv@{CHerbicideEffectEnv}!InitInds@{InitInds}}
+\index{InitInds@{InitInds}!CHerbicideEffectEnv@{CHerbicideEffectEnv}}
+\subsubsection{\texorpdfstring{InitInds()}{InitInds()}}
+{\footnotesize\ttfamily void C\+Herbicide\+Effect\+Env\+::\+Init\+Inds (\begin{DoxyParamCaption}\item[{string}]{file,  }\item[{int}]{n = {\ttfamily -\/1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+initialization of inds based on file data 
+
+This function reads a file and initializes seeds on grid after file data. Each P\+FT on file gets 20 seeds randomly set on grid. 
+\begin{DoxyParams}{Parameters}
+{\em file} & file name of P\+FT definitions \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_c_grid_envir_a0b5b1fcf08b608c6aed31fea9325c62b}{C\+Grid\+Envir}}.
+
+
+
+Definition at line 87 of file C\+Herb\+Eff.\+cpp.
+
+\mbox{\Hypertarget{class_c_herbicide_effect_env_a307a82e619105086fd02eca98c48f8b6}\label{class_c_herbicide_effect_env_a307a82e619105086fd02eca98c48f8b6}} 
+\index{CHerbicideEffectEnv@{CHerbicideEffectEnv}!InitRun@{InitRun}}
+\index{InitRun@{InitRun}!CHerbicideEffectEnv@{CHerbicideEffectEnv}}
+\subsubsection{\texorpdfstring{InitRun()}{InitRun()}}
+{\footnotesize\ttfamily void C\+Herbicide\+Effect\+Env\+::\+Init\+Run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+initialize run 
+
+Initiate new Run\+: reset grid and randomly set initial individuals. read in necessary files
+
+for specific effect intensities\+: Herb\+Fact.\+txt
+
+for dose responses\+: App\+Rate.\+txt 
+
+Reimplemented from \mbox{\hyperlink{class_c_grid_envir_a5db9b9b5fb26f6f6cbc3b3904ace0b68}{C\+Grid\+Envir}}.
+
+
+
+Definition at line 69 of file C\+Herb\+Eff.\+cpp.
+
+\mbox{\Hypertarget{class_c_herbicide_effect_env_a5832c475d9cda7d106b1750ce197843d}\label{class_c_herbicide_effect_env_a5832c475d9cda7d106b1750ce197843d}} 
+\index{CHerbicideEffectEnv@{CHerbicideEffectEnv}!InitSeeds@{InitSeeds}}
+\index{InitSeeds@{InitSeeds}!CHerbicideEffectEnv@{CHerbicideEffectEnv}}
+\subsubsection{\texorpdfstring{InitSeeds()}{InitSeeds()}}
+{\footnotesize\ttfamily void C\+Herbicide\+Effect\+Env\+::\+Init\+Seeds (\begin{DoxyParamCaption}\item[{string}]{type,  }\item[{int}]{number }\end{DoxyParamCaption})}
+
+
+
+initialise seeds on grid 
+
+Initiate seeds of a given P\+FT on grid. 
+\begin{DoxyParams}{Parameters}
+{\em type} & ID string of P\+FT to disperse \\
+\hline
+{\em number} & number of seeds to disperse \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 287 of file C\+Herb\+Eff.\+cpp.
+
+\mbox{\Hypertarget{class_c_herbicide_effect_env_a5eda0374f9c03399979b1c41a8539933}\label{class_c_herbicide_effect_env_a5eda0374f9c03399979b1c41a8539933}} 
+\index{CHerbicideEffectEnv@{CHerbicideEffectEnv}!InitTDSeeds@{InitTDSeeds}}
+\index{InitTDSeeds@{InitTDSeeds}!CHerbicideEffectEnv@{CHerbicideEffectEnv}}
+\subsubsection{\texorpdfstring{InitTDSeeds()}{InitTDSeeds()}}
+{\footnotesize\ttfamily void C\+Herbicide\+Effect\+Env\+::\+Init\+T\+D\+Seeds (\begin{DoxyParamCaption}\item[{shared\+\_\+ptr$<$ \mbox{\hyperlink{class_s_pft_traits}{S\+Pft\+Traits}} $>$}]{traits,  }\item[{const int}]{n,  }\item[{double}]{estab = {\ttfamily 1.0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+initalization of seeds 
+
+Randomly disperse seeds of a given P\+FT on grid. 
+\begin{DoxyParams}{Parameters}
+{\em traits} & P\+FT to seed \\
+\hline
+{\em n} & number of seeds to disperse \\
+\hline
+{\em estab} & germination rate of dispersed seeds \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 135 of file C\+Herb\+Eff.\+cpp.
+
+\mbox{\Hypertarget{class_c_herbicide_effect_env_aebf7af3b70caeba866e3ca2c8c0262f7}\label{class_c_herbicide_effect_env_aebf7af3b70caeba866e3ca2c8c0262f7}} 
+\index{CHerbicideEffectEnv@{CHerbicideEffectEnv}!newSeed@{newSeed}}
+\index{newSeed@{newSeed}!CHerbicideEffectEnv@{CHerbicideEffectEnv}}
+\subsubsection{\texorpdfstring{newSeed()}{newSeed()}}
+{\footnotesize\ttfamily void C\+Herbicide\+Effect\+Env\+::new\+Seed (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_c_plant}{C\+Plant}} $\ast$}]{plant,  }\item[{\mbox{\hyperlink{class_c_cell}{C\+Cell}} $\ast$}]{cell }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+set new seeds in cell 
+
+Create a new (plant produced) seed in a cell 
+\begin{DoxyParams}{Parameters}
+{\em plant} & plant which produced seed \\
+\hline
+{\em cell} & cell of seed \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_c_grid_ae1d81bdcd569d928ccf01d8f1c495e2d}{C\+Grid}}.
+
+
+
+Definition at line 186 of file C\+Herb\+Eff.\+cpp.
+
+\mbox{\Hypertarget{class_c_herbicide_effect_env_ae76943414d4aeded838e98dea916084d}\label{class_c_herbicide_effect_env_ae76943414d4aeded838e98dea916084d}} 
+\index{CHerbicideEffectEnv@{CHerbicideEffectEnv}!newSpacer@{newSpacer}}
+\index{newSpacer@{newSpacer}!CHerbicideEffectEnv@{CHerbicideEffectEnv}}
+\subsubsection{\texorpdfstring{newSpacer()}{newSpacer()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_c_plant}{C\+Plant}} $\ast$ C\+Herbicide\+Effect\+Env\+::new\+Spacer (\begin{DoxyParamCaption}\item[{const int}]{x,  }\item[{const int}]{y,  }\item[{\mbox{\hyperlink{class_c_plant}{C\+Plant}} $\ast$}]{plant }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+start new spacer of a clonal plant 
+
+Start a new spacer of a clonal \mbox{\hyperlink{class_c_t_d_plant}{C\+T\+D\+Plant}}. 
+\begin{DoxyParams}{Parameters}
+{\em x} & coordinate on grid \\
+\hline
+{\em y} & coordinate on grid \\
+\hline
+{\em plant} & mother plant \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+address of new plant object 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{class_c_grid_afadbdedcfbe006bf9009308e3631028c}{C\+Grid}}.
+
+
+
+Definition at line 301 of file C\+Herb\+Eff.\+cpp.
+
+\mbox{\Hypertarget{class_c_herbicide_effect_env_a82fba7cb44890dd47d5e594f72803241}\label{class_c_herbicide_effect_env_a82fba7cb44890dd47d5e594f72803241}} 
+\index{CHerbicideEffectEnv@{CHerbicideEffectEnv}!OneWeek@{OneWeek}}
+\index{OneWeek@{OneWeek}!CHerbicideEffectEnv@{CHerbicideEffectEnv}}
+\subsubsection{\texorpdfstring{OneWeek()}{OneWeek()}}
+{\footnotesize\ttfamily void C\+Herbicide\+Effect\+Env\+::\+One\+Week (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+run one week 
+
+Adds time dependent trait-\/parameter change to the base function of class \mbox{\hyperlink{class_c_grid_envir}{C\+Grid\+Envir}}. calls one week function 
+
+Reimplemented from \mbox{\hyperlink{class_c_grid_envir_a5c5cde58adbcee3ec3fd54c734228bf6}{C\+Grid\+Envir}}.
+
+
+
+Definition at line 251 of file C\+Herb\+Eff.\+cpp.
+
+\mbox{\Hypertarget{class_c_herbicide_effect_env_ac62e9a406dcb24c30798bff6a369282b}\label{class_c_herbicide_effect_env_ac62e9a406dcb24c30798bff6a369282b}} 
+\index{CHerbicideEffectEnv@{CHerbicideEffectEnv}!OneYear@{OneYear}}
+\index{OneYear@{OneYear}!CHerbicideEffectEnv@{CHerbicideEffectEnv}}
+\subsubsection{\texorpdfstring{OneYear()}{OneYear()}}
+{\footnotesize\ttfamily void C\+Herbicide\+Effect\+Env\+::\+One\+Year (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+run one year 
+
+Adds seed rain to the base function of class \mbox{\hyperlink{class_c_grid_envir}{C\+Grid\+Envir}} and calls base One\+Year function 
+
+Reimplemented from \mbox{\hyperlink{class_c_grid_envir_ae7d159245558c84daa3eadd057c31c4e}{C\+Grid\+Envir}}.
+
+
+
+Definition at line 263 of file C\+Herb\+Eff.\+cpp.
+
+\mbox{\Hypertarget{class_c_herbicide_effect_env_aa325ab8688e1e1bbe060da4b2031cd44}\label{class_c_herbicide_effect_env_aa325ab8688e1e1bbe060da4b2031cd44}} 
+\index{CHerbicideEffectEnv@{CHerbicideEffectEnv}!SeedMort@{SeedMort}}
+\index{SeedMort@{SeedMort}!CHerbicideEffectEnv@{CHerbicideEffectEnv}}
+\subsubsection{\texorpdfstring{SeedMort()}{SeedMort()}}
+{\footnotesize\ttfamily void C\+Herbicide\+Effect\+Env\+::\+Seed\+Mort (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+base seed mortality 
+
+Overall seed mortality. and call of herbicide-\/based mortality on seeds. 
+
+Reimplemented from \mbox{\hyperlink{class_c_grid_ad39e5ec82353d218a0a6d469ce2a88e1}{C\+Grid}}.
+
+
+
+Definition at line 219 of file C\+Herb\+Eff.\+cpp.
+
+\mbox{\Hypertarget{class_c_herbicide_effect_env_a88180a174d738b7a5e2e3bdcdd4b8635}\label{class_c_herbicide_effect_env_a88180a174d738b7a5e2e3bdcdd4b8635}} 
+\index{CHerbicideEffectEnv@{CHerbicideEffectEnv}!SeedMortHerb@{SeedMortHerb}}
+\index{SeedMortHerb@{SeedMortHerb}!CHerbicideEffectEnv@{CHerbicideEffectEnv}}
+\subsubsection{\texorpdfstring{SeedMortHerb()}{SeedMortHerb()}}
+{\footnotesize\ttfamily void C\+Herbicide\+Effect\+Env\+::\+Seed\+Mort\+Herb (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+herbicide induced seed mortality 
+
+Herbicide induced seed mortality. Each seed on grid is tested. 
+
+Definition at line 228 of file C\+Herb\+Eff.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+I\+B\+Cgrass\+G\+U\+I.\+git/trunk/\+Model-\/files/\mbox{\hyperlink{_c_herb_eff_8h}{C\+Herb\+Eff.\+h}}\item 
+D\+:/\+I\+B\+Cgrass\+G\+U\+I.\+git/trunk/\+Model-\/files/\mbox{\hyperlink{_c_herb_eff_8cpp}{C\+Herb\+Eff.\+cpp}}\end{DoxyCompactItemize}

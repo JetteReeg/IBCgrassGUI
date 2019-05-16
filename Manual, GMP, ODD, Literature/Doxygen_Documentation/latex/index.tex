@@ -1,0 +1,90 @@
+\begin{DoxyAuthor}{Author}
+Felix May (basic model, Z\+OI, cutting option) and Ines Steinhauer (clonal option) 
+
+Katrin Koerner (revision and rebuilt Felix\textquotesingle{} grazing experiments, belowground grazing) 
+
+Jette Reeg (herbicide disturbances)
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2008-\/02-\/13 (first version of the model) 
+
+2009-\/05 (revision) 
+
+2010-\/01 (Felix\textquotesingle{} grazing rebuilt and belowground grazing) 
+
+2010-\/03 (Ines\textquotesingle{} clonal plants\textquotesingle{} rebuilt) 
+
+2010-\/07 (Lina\textquotesingle{}s real-\/\+P\+FT Simulations) 
+
+2013-\/07 (Jette\textquotesingle{}s herbicide risk assessment)
+\end{DoxyDate}
+\begin{DoxyParagraph}{Verbal description of what the code does\+:}
+This code runs real (field-\/observed) P\+F\+T-\/combinations with or without considering herbicide effects
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Licence}
+Copyright © 2019 Jette Reeg This program is free software\+: you can redistribute it and/or modify it under the terms of the G\+NU General Public License as published by the Free Software Foundation, either version 3 of the License, or any later version. This program is distributed in the hope that it will be useful, but W\+I\+T\+H\+O\+UT A\+NY W\+A\+R\+R\+A\+N\+TY; without even the implied warranty of M\+E\+R\+C\+H\+A\+N\+T\+A\+B\+I\+L\+I\+TY or F\+I\+T\+N\+E\+SS F\+OR A P\+A\+R\+T\+I\+C\+U\+L\+AR P\+U\+R\+P\+O\+SE. See the G\+NU General Public License for more details. You should have received a copy of the G\+NU General Public License along with this program. If not, see \href{http://www.gnu.org/licenses/}{\texttt{ http\+://www.\+gnu.\+org/licenses/}}.
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Type (function, class, unit, form, ...)\+:}
+c++ written application with different classes
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Flow chart (for complex code)\+:}
+Flowchart of I\+B\+C-\/grass incl. herbicide induced processes.
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Expected input (type and range of values, units)\+:}
+
+\begin{DoxyItemize}
+\item input file for definitions of plant types initially used
+\item a list of program arguments
+\item input file of herbicide effects if read from txt-\/file Input files and program arguments are defined by the G\+UI built in R
+\end{DoxyItemize}
+\end{DoxyParagraph}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_g_m_herbicide_effect_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main()}} for program arguments
+\end{DoxySeeAlso}
+\begin{DoxyParagraph}{Output (type and range of values, units)\+:}
+
+\begin{DoxyItemize}
+\item A\+S\+C\+I\+I-\/coded $\ast$.txt-\/files with weekly variables P\+FT specific or summarized over the whole grid
+\end{DoxyItemize}
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Requirements and environment (libraries, headers)\+:}
+
+\begin{DoxyItemize}
+\item standard C++ -\/ compatible compiler needed (working I\+DE is eclipse)
+\item G\+UI uses g++ compiler
+\end{DoxyItemize}
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Sensitivity analysis (reference to publication)\+:}
+
+\begin{DoxyItemize}
+\item Weiss et al. (2014)
+\item with regard to herbicide effects\+: Reeg et al. (2018a)
+\end{DoxyItemize}
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Validation (reference to publication)\+:}
+
+\begin{DoxyItemize}
+\item Weiss et al. (2014)
+\item Reeg et al. (2018b)
+\end{DoxyItemize}
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Sources or reasons for parameter values, methods, equations\+:}
+see publications of May(2008), Steinhauer(2008), Weiss et al (2014), Reeg et al (2017, 2018a, 2018b)
+\end{DoxyParagraph}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000001}{Bug}}]see additional page for solved and unsolved bugs\end{DoxyRefDesc}
+
+
+\begin{DoxyParagraph}{Publications or applications referring to the code\+:}
+
+\begin{DoxyItemize}
+\item Reeg J, Heine S, Mihan C, Mc\+Gee S, Preuss TG, Jeltsch F. 2018b. Simulation of herbicide impacts on a plant community\+: comparing model predictions of the plant community model I\+B\+C-\/grass to empirical data. Environ Sci Eur. 30\+:44. doi\+: 10.\+1186/s12302-\/018-\/0174-\/9
+\item Reeg J, Heine S, Mihan C, Preuss TG, Mc\+Gee S, Jeltsch F. 2018a. Potential impact of effects on reproductive attributes induced by herbicides on a plant community. Environmental Toxicology and Chemistry. doi\+: 10.\+1002/etc.4122
+\item Reeg, J., Schad, T., Preuss, T.\+G., Solga, A., Koerner, K., Mihan, C., Jeltsch, F., 2017. Modelling direct and indirect effects of herbicides on non-\/target grassland communities. Ecol. Modell. 348, 44-\/55. doi\+:10.\+1016/j.ecolmodel.\+2017.\+01.\+010
+\item Weiss L, H Pfestorf, F May, K Koerner, S Boch, M Fischer, J Mueller, D Prati, S Socher , F Jeltsch (2014) Grazing response patterns indicate isolation of semi-\/natural European grasslands. Oikos
+\item Koerner, K., Pfestorf, H., May, F., Jeltsch, F., 2014. Modelling the effect of belowground herbivory on grassland diversity. Ecological Modelling 273, 79-\/85.
+\item May, Felix, Grimm, Volker and Jeltsch, Florian (2009)\+: Reversed effects of grazing on plant diversity\+: the role of belowground competition and size symmetry. Oikos 118\+: 1830-\/1843.
+\item Steinhauer, Ines (2008)\+: K\+O\+E\+X\+I\+S\+T\+E\+NZ IN G\+R\+A\+S\+L\+A\+N\+D\+G\+E\+S\+E\+L\+L\+S\+C\+H\+A\+F\+T\+EN -\/ Modellgestuetzte Untersuchungen unter Beruecksichtigung klonaler Arten. Diplomarbeit Universitaet Potsdam
+\item May, Felix (2008)\+: Modelling coexistence of plant functional types in grassland communities -\/ the role of above-\/ and below-\/ground competition. Diploma thesis Potsdam University. 
+\end{DoxyItemize}
+\end{DoxyParagraph}

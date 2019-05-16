@@ -1,0 +1,99 @@
+\hypertarget{class_random_generator}{}\section{Random\+Generator Class Reference}
+\label{class_random_generator}\index{RandomGenerator@{RandomGenerator}}
+
+
+class for random number generator  
+
+
+
+
+{\ttfamily \#include $<$L\+C\+G.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_random_generator_a31e96453c7e88653190a31537f0402eb}{get\+Uniform\+Int}} (int thru)
+\begin{DoxyCompactList}\small\item\em get uniform distributed random int \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_random_generator_a19c38cf91e2081794c3fba0c4e15292e}{get01}} ()
+\begin{DoxyCompactList}\small\item\em get uniform distributed random double between 0 and 1 \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_random_generator_a3b3fb0a7f79a648b1dd8a9c52791408b}{get\+Gaussian}} (double mean, double sd)
+\begin{DoxyCompactList}\small\item\em get gaussian distributedn random double \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_random_generator_ad2b3256e634878160c7d8b6e865341b2}\label{class_random_generator_ad2b3256e634878160c7d8b6e865341b2}} 
+\mbox{\hyperlink{class_random_generator_ad2b3256e634878160c7d8b6e865341b2}{Random\+Generator}} ()
+\begin{DoxyCompactList}\small\item\em constructor \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_random_generator_a8f3daae6f71121a736c5d52d16027270}\label{class_random_generator_a8f3daae6f71121a736c5d52d16027270}} 
+std\+::mt19937 {\bfseries rng}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+class for random number generator 
+
+Definition at line 10 of file L\+C\+G.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_random_generator_a19c38cf91e2081794c3fba0c4e15292e}\label{class_random_generator_a19c38cf91e2081794c3fba0c4e15292e}} 
+\index{RandomGenerator@{RandomGenerator}!get01@{get01}}
+\index{get01@{get01}!RandomGenerator@{RandomGenerator}}
+\subsubsection{\texorpdfstring{get01()}{get01()}}
+{\footnotesize\ttfamily double Random\+Generator\+::get01 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+get uniform distributed random double between 0 and 1 
+
+get uniformly distributed random double between 0 and 1 
+
+Definition at line 22 of file L\+C\+G.\+cpp.
+
+\mbox{\Hypertarget{class_random_generator_a3b3fb0a7f79a648b1dd8a9c52791408b}\label{class_random_generator_a3b3fb0a7f79a648b1dd8a9c52791408b}} 
+\index{RandomGenerator@{RandomGenerator}!getGaussian@{getGaussian}}
+\index{getGaussian@{getGaussian}!RandomGenerator@{RandomGenerator}}
+\subsubsection{\texorpdfstring{getGaussian()}{getGaussian()}}
+{\footnotesize\ttfamily double Random\+Generator\+::get\+Gaussian (\begin{DoxyParamCaption}\item[{double}]{mean,  }\item[{double}]{sd }\end{DoxyParamCaption})}
+
+
+
+get gaussian distributedn random double 
+
+get gaussian distributed random double 
+\begin{DoxyParams}{Parameters}
+{\em mean} & mean of the distribution \\
+\hline
+{\em sd} & standard deviation of the distribution \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 33 of file L\+C\+G.\+cpp.
+
+\mbox{\Hypertarget{class_random_generator_a31e96453c7e88653190a31537f0402eb}\label{class_random_generator_a31e96453c7e88653190a31537f0402eb}} 
+\index{RandomGenerator@{RandomGenerator}!getUniformInt@{getUniformInt}}
+\index{getUniformInt@{getUniformInt}!RandomGenerator@{RandomGenerator}}
+\subsubsection{\texorpdfstring{getUniformInt()}{getUniformInt()}}
+{\footnotesize\ttfamily int Random\+Generator\+::get\+Uniform\+Int (\begin{DoxyParamCaption}\item[{int}]{thru }\end{DoxyParamCaption})}
+
+
+
+get uniform distributed random int 
+
+get uniformly distributed random integer 
+\begin{DoxyParams}{Parameters}
+{\em thru} & maximal value \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 14 of file L\+C\+G.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+I\+B\+Cgrass\+G\+U\+I.\+git/trunk/\+Model-\/files/L\+C\+G.\+h\item 
+D\+:/\+I\+B\+Cgrass\+G\+U\+I.\+git/trunk/\+Model-\/files/\mbox{\hyperlink{_l_c_g_8cpp}{L\+C\+G.\+cpp}}\end{DoxyCompactItemize}

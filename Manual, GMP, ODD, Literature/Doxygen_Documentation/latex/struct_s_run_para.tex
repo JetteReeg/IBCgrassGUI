@@ -1,0 +1,340 @@
+\hypertarget{struct_s_run_para}{}\section{S\+Run\+Para Struct Reference}
+\label{struct_s_run_para}\index{SRunPara@{SRunPara}}
+
+
+Structure with all scenario parameters.  
+
+
+
+
+{\ttfamily \#include $<$Run\+Para.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_s_run_para_a98ac754a6dfdc060af1d68b45501b40f}{S\+Run\+Para}} ()
+\begin{DoxyCompactList}\small\item\em constructor \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{struct_s_run_para_aa435d77725d635497f967256011bdd58}\label{struct_s_run_para_aa435d77725d635497f967256011bdd58}} 
+double \mbox{\hyperlink{struct_s_run_para_aa435d77725d635497f967256011bdd58}{Cell\+Scale}} ()
+\begin{DoxyCompactList}\small\item\em calculates the cell scale (normally 1cm) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{struct_s_run_para_ae0585b8e54ab34d2863c096311bb7e7f}\label{struct_s_run_para_ae0585b8e54ab34d2863c096311bb7e7f}} 
+unsigned int \mbox{\hyperlink{struct_s_run_para_ae0585b8e54ab34d2863c096311bb7e7f}{Get\+Grid\+Size}} () const
+\begin{DoxyCompactList}\small\item\em grid size \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{struct_s_run_para_a84761082af964b7d0528ee9bf4fc8274}\label{struct_s_run_para_a84761082af964b7d0528ee9bf4fc8274}} 
+unsigned int \mbox{\hyperlink{struct_s_run_para_a84761082af964b7d0528ee9bf4fc8274}{Get\+Sum\+Cells}} () const
+\begin{DoxyCompactList}\small\item\em sum of grid cells \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{struct_s_run_para_ac365498be97ac6c0cf59c57fda1039e7}{get\+Run\+ID}} ()
+\begin{DoxyCompactList}\small\item\em creating a run ID \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_s_run_para_acf1525d16d8ef494371eeedd5633cfdd}\label{struct_s_run_para_acf1525d16d8ef494371eeedd5633cfdd}} 
+\mbox{\hyperlink{_run_para_8h_ab256e359929ebfa9774c7b73de3101cf}{Comp\+Mode}} \mbox{\hyperlink{struct_s_run_para_acf1525d16d8ef494371eeedd5633cfdd}{Above\+Comp\+Mode}}
+\begin{DoxyCompactList}\small\item\em mode of resource competition for aboveground resources\+: 0 = symmetric; 1 = partial asymmetry; 2 = total asymmetry \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{struct_s_run_para_a9faef9be652ad7554a01e95744682394}\label{struct_s_run_para_a9faef9be652ad7554a01e95744682394}} 
+\mbox{\hyperlink{_run_para_8h_ab256e359929ebfa9774c7b73de3101cf}{Comp\+Mode}} \mbox{\hyperlink{struct_s_run_para_a9faef9be652ad7554a01e95744682394}{Below\+Comp\+Mode}}
+\begin{DoxyCompactList}\small\item\em mode of resource competition for belowground resources\+: 0 = symmetric; 1 = partial asymmetry; 2 = total asymmetry \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_run_para_8h_aab4f91abfa6a0969e1cae8d7666e4d3a}{Comp\+Version}} \mbox{\hyperlink{struct_s_run_para_a7958c75a9866d1ec4ce0230e3940363b}{Version}}
+\begin{DoxyCompactList}\small\item\em niche differentiation \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{struct_s_run_para_a7a2de3ca3c66de322585506a367a4aa3}{Model\+Version}}
+\item 
+\mbox{\Hypertarget{struct_s_run_para_a45f783f391506297b8e8912a83e302ac}\label{struct_s_run_para_a45f783f391506297b8e8912a83e302ac}} 
+int \mbox{\hyperlink{struct_s_run_para_a45f783f391506297b8e8912a83e302ac}{Grid\+Size}}
+\begin{DoxyCompactList}\small\item\em side length of grid in cm \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{struct_s_run_para_ad2804a9533c7cb66fa5d9821d473133d}\label{struct_s_run_para_ad2804a9533c7cb66fa5d9821d473133d}} 
+int \mbox{\hyperlink{struct_s_run_para_ad2804a9533c7cb66fa5d9821d473133d}{Cell\+Num}}
+\begin{DoxyCompactList}\small\item\em side length in cells; normally 1cell=1cm \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{struct_s_run_para_a5263aaa9db4f6fef014ba59f734ee79f}\label{struct_s_run_para_a5263aaa9db4f6fef014ba59f734ee79f}} 
+bool \mbox{\hyperlink{struct_s_run_para_a5263aaa9db4f6fef014ba59f734ee79f}{torus}}
+\begin{DoxyCompactList}\small\item\em boundary behaviour \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{struct_s_run_para_a94a7d9a7401f8b65b9a2622a3d7d9ea2}\label{struct_s_run_para_a94a7d9a7401f8b65b9a2622a3d7d9ea2}} 
+int \mbox{\hyperlink{struct_s_run_para_a94a7d9a7401f8b65b9a2622a3d7d9ea2}{Tmax}}
+\begin{DoxyCompactList}\small\item\em maximal simulation time \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{struct_s_run_para_a53fb7524510bfb7c62897a2c49c0b0cf}\label{struct_s_run_para_a53fb7524510bfb7c62897a2c49c0b0cf}} 
+int \mbox{\hyperlink{struct_s_run_para_a53fb7524510bfb7c62897a2c49c0b0cf}{Tinit}}
+\begin{DoxyCompactList}\small\item\em initialization time \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{struct_s_run_para_a4890726d20d225767a9cb5ff226c2690}\label{struct_s_run_para_a4890726d20d225767a9cb5ff226c2690}} 
+int \mbox{\hyperlink{struct_s_run_para_a4890726d20d225767a9cb5ff226c2690}{week\+\_\+start}}
+\begin{DoxyCompactList}\small\item\em week of herbicide application in the year \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{struct_s_run_para_a69bd9832725caf0a38f697786fe561fb}\label{struct_s_run_para_a69bd9832725caf0a38f697786fe561fb}} 
+int \mbox{\hyperlink{struct_s_run_para_a69bd9832725caf0a38f697786fe561fb}{N\+Pft}}
+\begin{DoxyCompactList}\small\item\em number of plant functional types \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{struct_s_run_para_acb3f49d4569ed7107b7f078c7e1ab4b5}\label{struct_s_run_para_acb3f49d4569ed7107b7f078c7e1ab4b5}} 
+double \mbox{\hyperlink{struct_s_run_para_acb3f49d4569ed7107b7f078c7e1ab4b5}{mort\+\_\+seeds}}
+\begin{DoxyCompactList}\small\item\em seed mortality per year (in winter) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{struct_s_run_para_ae0686e627e9e4e98269cc792602ef5f3}\label{struct_s_run_para_ae0686e627e9e4e98269cc792602ef5f3}} 
+double \mbox{\hyperlink{struct_s_run_para_ae0686e627e9e4e98269cc792602ef5f3}{Dieback\+Winter}}
+\begin{DoxyCompactList}\small\item\em portion of aboveground biomass to be removed in winter \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{struct_s_run_para_aa6e9dab0a2184ffa7dc21f42851b9542}\label{struct_s_run_para_aa6e9dab0a2184ffa7dc21f42851b9542}} 
+double \mbox{\hyperlink{struct_s_run_para_aa6e9dab0a2184ffa7dc21f42851b9542}{mort\+\_\+base}}
+\begin{DoxyCompactList}\small\item\em basic mortality per week \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{struct_s_run_para_ab13a068a057e9bb737c667b2cbe243bd}\label{struct_s_run_para_ab13a068a057e9bb737c667b2cbe243bd}} 
+double \mbox{\hyperlink{struct_s_run_para_ab13a068a057e9bb737c667b2cbe243bd}{Litter\+Decomp}}
+\begin{DoxyCompactList}\small\item\em weekly litter decomposition rate \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{struct_s_run_para_a50c04c8a6a8a9cc18a9fe2f8874bc9c6}\label{struct_s_run_para_a50c04c8a6a8a9cc18a9fe2f8874bc9c6}} 
+double \mbox{\hyperlink{struct_s_run_para_a50c04c8a6a8a9cc18a9fe2f8874bc9c6}{mean\+A\+Res}}
+\begin{DoxyCompactList}\small\item\em mean above-\/ground resource availability \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{struct_s_run_para_ac1e1f72d5cfc338d66d392e6c153178d}\label{struct_s_run_para_ac1e1f72d5cfc338d66d392e6c153178d}} 
+double \mbox{\hyperlink{struct_s_run_para_ac1e1f72d5cfc338d66d392e6c153178d}{mean\+B\+Res}}
+\begin{DoxyCompactList}\small\item\em mean below-\/ground resource availability \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{struct_s_run_para_a8302b2997efb0a71d57511192a6d1643}\label{struct_s_run_para_a8302b2997efb0a71d57511192a6d1643}} 
+double \mbox{\hyperlink{struct_s_run_para_a8302b2997efb0a71d57511192a6d1643}{Aampl}}
+\begin{DoxyCompactList}\small\item\em amplitude for within year above-\/ground resource variation \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{struct_s_run_para_a82412884bc5ccf7fa9008c2167c24d8b}\label{struct_s_run_para_a82412884bc5ccf7fa9008c2167c24d8b}} 
+double \mbox{\hyperlink{struct_s_run_para_a82412884bc5ccf7fa9008c2167c24d8b}{Bampl}}
+\begin{DoxyCompactList}\small\item\em amplitude for within year below-\/ground resource variation (currently not used) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{struct_s_run_para_a7bc9175a4469a39f1453b890699ad8ee}\label{struct_s_run_para_a7bc9175a4469a39f1453b890699ad8ee}} 
+double \mbox{\hyperlink{struct_s_run_para_a7bc9175a4469a39f1453b890699ad8ee}{I\+T\+Vsd}}
+\begin{DoxyCompactList}\small\item\em standard deviation for intraspecific trait variability \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{struct_s_run_para_ab172e974e5363cd027eb38a56f6aebea}\label{struct_s_run_para_ab172e974e5363cd027eb38a56f6aebea}} 
+double \mbox{\hyperlink{struct_s_run_para_ab172e974e5363cd027eb38a56f6aebea}{Estab\+Ramet}}
+\begin{DoxyCompactList}\small\item\em probability of ramet establishment (1) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{struct_s_run_para_a01c83df122c37d33f9b629ad0c293cb9}\label{struct_s_run_para_a01c83df122c37d33f9b629ad0c293cb9}} 
+int \mbox{\hyperlink{struct_s_run_para_a01c83df122c37d33f9b629ad0c293cb9}{seeds\+Per\+Type}}
+\begin{DoxyCompactList}\small\item\em seed input per year \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{struct_s_run_para_a2a27f5c7f845060ffbb177fb4ba08ed8}{M\+Crun}}
+\end{DoxyCompactItemize}
+\begin{Indent}\textbf{ Graz\+Param}\par
+{\em Grazing parameters }\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{struct_s_run_para_acb13e5adf214fe475adadcdf188f7edf}{Graz\+Prob}}
+\item 
+\mbox{\Hypertarget{struct_s_run_para_a8a375f190fcd09bbe28973dc2505c830}\label{struct_s_run_para_a8a375f190fcd09bbe28973dc2505c830}} 
+double \mbox{\hyperlink{struct_s_run_para_a8a375f190fcd09bbe28973dc2505c830}{Prop\+Remove}}
+\begin{DoxyCompactList}\small\item\em proportion of above ground mass removed by grazing \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{struct_s_run_para_a18028f4c3dc8a81ad5e06d7203f771e2}\label{struct_s_run_para_a18028f4c3dc8a81ad5e06d7203f771e2}} 
+double \mbox{\hyperlink{struct_s_run_para_a18028f4c3dc8a81ad5e06d7203f771e2}{Bit\+Size}}
+\begin{DoxyCompactList}\small\item\em Bit size of macro-\/herbivore. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Herb\+Param}\par
+{\em Herbicide parameters }\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{struct_s_run_para_aa2c8bf31288f1259299ddbcee53e114c}{Herb\+Duration}}
+\item 
+\mbox{\Hypertarget{struct_s_run_para_aab221bcd968825446c9f5b68d419cb2d}\label{struct_s_run_para_aab221bcd968825446c9f5b68d419cb2d}} 
+int \mbox{\hyperlink{struct_s_run_para_aab221bcd968825446c9f5b68d419cb2d}{Herb\+Effect\+Type}}
+\begin{DoxyCompactList}\small\item\em treatment (=1) or control (=0) simulation \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{struct_s_run_para_a4998a2b8af0bb80b191e7b66c23f310e}\label{struct_s_run_para_a4998a2b8af0bb80b191e7b66c23f310e}} 
+int \mbox{\hyperlink{struct_s_run_para_a4998a2b8af0bb80b191e7b66c23f310e}{Effect\+Model}}
+\begin{DoxyCompactList}\small\item\em where to get the effects from? 0\+: txt-\/file, 2\+: dose response for each P\+FT \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{struct_s_run_para_a1d3de6ce20a7d139d3b08016ff84dd46}\label{struct_s_run_para_a1d3de6ce20a7d139d3b08016ff84dd46}} 
+std\+::string \mbox{\hyperlink{struct_s_run_para_a1d3de6ce20a7d139d3b08016ff84dd46}{Generation}}
+\begin{DoxyCompactList}\small\item\em switch whether F1 generation is also affected (\char`\"{}\+F0\char`\"{} only parent generation; \char`\"{}\+F1\char`\"{} also F1 generation) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{struct_s_run_para_ae4e8c3cde067719e2149965bebdaf260}\label{struct_s_run_para_ae4e8c3cde067719e2149965bebdaf260}} 
+int \mbox{\hyperlink{struct_s_run_para_ae4e8c3cde067719e2149965bebdaf260}{scenario}}
+\begin{DoxyCompactList}\small\item\em number of scenario \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Cut\+Param}\par
+{\em Cutting parameters }\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{struct_s_run_para_a79daf0a2044bb5df53350c0b99250ae5}{Cut\+Mass}}
+\item 
+\mbox{\Hypertarget{struct_s_run_para_a3e6e6b64677e69b6cad5fc23f6e631c5}\label{struct_s_run_para_a3e6e6b64677e69b6cad5fc23f6e631c5}} 
+int \mbox{\hyperlink{struct_s_run_para_a3e6e6b64677e69b6cad5fc23f6e631c5}{N\+Cut}}
+\begin{DoxyCompactList}\small\item\em number cuts per year \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::string \mbox{\hyperlink{struct_s_run_para_a9c98a63b836012a827e9fe97f440dae1}{Name\+Pft\+File}} =\char`\"{}Fieldedge.\+txt\char`\"{}
+\begin{DoxyCompactList}\small\item\em Filename of Pft\+Trait-\/\+File. \end{DoxyCompactList}\item 
+static std\+::string \mbox{\hyperlink{struct_s_run_para_a185a1dfe4962cec31af4b3328d12c8e8}{Name\+Herb\+Effect\+File}} =\char`\"{}Herb\+Fact.\+txt\char`\"{}
+\begin{DoxyCompactList}\small\item\em Filename of Pft\+Herb\+Effect-\/\+File (if effect is based on a txt file) \end{DoxyCompactList}\item 
+static std\+::string \mbox{\hyperlink{struct_s_run_para_af084c204866b0f3137a70730bebe7e4a}{Name\+App\+Rate\+File}} =\char`\"{}App\+Rate.\+txt\char`\"{}
+\begin{DoxyCompactList}\small\item\em Filename of Application Rate File. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{struct_s_run_para}{S\+Run\+Para}} \mbox{\hyperlink{struct_s_run_para_a3e7797ad861d93d0d7dd6ce23ff259b7}{Run\+Para}} =\mbox{\hyperlink{struct_s_run_para}{S\+Run\+Para}}()
+\begin{DoxyCompactList}\small\item\em scenario parameters \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Trampling\+Param}
+\label{_amgrp008167ccfacd060642d340399e086a5c}%
+Trampling parameters \begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{struct_s_run_para_ade224470f81d526ed1959c826ba4664c}{Dist\+Area\+Year}}
+\item 
+\mbox{\Hypertarget{struct_s_run_para_a8113a5ac131494ba3af5bfccf804df2d}\label{struct_s_run_para_a8113a5ac131494ba3af5bfccf804df2d}} 
+double \mbox{\hyperlink{struct_s_run_para_a8113a5ac131494ba3af5bfccf804df2d}{Area\+Event}}
+\begin{DoxyCompactList}\small\item\em fraction of grid area disturbed in one event \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{struct_s_run_para_a244bdc3b72c2435d7f7b479abd6ad9bf}\label{struct_s_run_para_a244bdc3b72c2435d7f7b479abd6ad9bf}} 
+double \mbox{\hyperlink{struct_s_run_para_a244bdc3b72c2435d7f7b479abd6ad9bf}{Dist\+Prob}} ()
+\begin{DoxyCompactList}\small\item\em disturbance probability \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Structure with all scenario parameters. 
+
+Definition at line 30 of file Run\+Para.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{struct_s_run_para_a98ac754a6dfdc060af1d68b45501b40f}\label{struct_s_run_para_a98ac754a6dfdc060af1d68b45501b40f}} 
+\index{SRunPara@{SRunPara}!SRunPara@{SRunPara}}
+\index{SRunPara@{SRunPara}!SRunPara@{SRunPara}}
+\subsubsection{\texorpdfstring{SRunPara()}{SRunPara()}}
+{\footnotesize\ttfamily S\+Run\+Para\+::\+S\+Run\+Para (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+constructor 
+
+constructor with example values 
+
+Definition at line 26 of file Run\+Para.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{struct_s_run_para_ac365498be97ac6c0cf59c57fda1039e7}\label{struct_s_run_para_ac365498be97ac6c0cf59c57fda1039e7}} 
+\index{SRunPara@{SRunPara}!getRunID@{getRunID}}
+\index{getRunID@{getRunID}!SRunPara@{SRunPara}}
+\subsubsection{\texorpdfstring{getRunID()}{getRunID()}}
+{\footnotesize\ttfamily std\+::string S\+Run\+Para\+::get\+Run\+ID (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+creating a run ID 
+
+function to get Run\+ID
+
+create name of simulation file 
+
+Definition at line 41 of file Run\+Para.\+cpp.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_s_run_para_a79daf0a2044bb5df53350c0b99250ae5}\label{struct_s_run_para_a79daf0a2044bb5df53350c0b99250ae5}} 
+\index{SRunPara@{SRunPara}!CutMass@{CutMass}}
+\index{CutMass@{CutMass}!SRunPara@{SRunPara}}
+\subsubsection{\texorpdfstring{CutMass}{CutMass}}
+{\footnotesize\ttfamily double S\+Run\+Para\+::\+Cut\+Mass}
+
+plant aboveground biomass for plants with L\+MR = 1.\+0 
+
+Definition at line 125 of file Run\+Para.\+h.
+
+\mbox{\Hypertarget{struct_s_run_para_ade224470f81d526ed1959c826ba4664c}\label{struct_s_run_para_ade224470f81d526ed1959c826ba4664c}} 
+\index{SRunPara@{SRunPara}!DistAreaYear@{DistAreaYear}}
+\index{DistAreaYear@{DistAreaYear}!SRunPara@{SRunPara}}
+\subsubsection{\texorpdfstring{DistAreaYear}{DistAreaYear}}
+{\footnotesize\ttfamily double S\+Run\+Para\+::\+Dist\+Area\+Year}
+
+fraction of grid area disturbed per year; 
+
+Definition at line 135 of file Run\+Para.\+h.
+
+\mbox{\Hypertarget{struct_s_run_para_acb13e5adf214fe475adadcdf188f7edf}\label{struct_s_run_para_acb13e5adf214fe475adadcdf188f7edf}} 
+\index{SRunPara@{SRunPara}!GrazProb@{GrazProb}}
+\index{GrazProb@{GrazProb}!SRunPara@{SRunPara}}
+\subsubsection{\texorpdfstring{GrazProb}{GrazProb}}
+{\footnotesize\ttfamily double S\+Run\+Para\+::\+Graz\+Prob}
+
+grazing probability per week 
+
+Definition at line 97 of file Run\+Para.\+h.
+
+\mbox{\Hypertarget{struct_s_run_para_aa2c8bf31288f1259299ddbcee53e114c}\label{struct_s_run_para_aa2c8bf31288f1259299ddbcee53e114c}} 
+\index{SRunPara@{SRunPara}!HerbDuration@{HerbDuration}}
+\index{HerbDuration@{HerbDuration}!SRunPara@{SRunPara}}
+\subsubsection{\texorpdfstring{HerbDuration}{HerbDuration}}
+{\footnotesize\ttfamily int S\+Run\+Para\+::\+Herb\+Duration}
+
+number of consecutive years of herbicide application 
+
+Definition at line 109 of file Run\+Para.\+h.
+
+\mbox{\Hypertarget{struct_s_run_para_a2a27f5c7f845060ffbb177fb4ba08ed8}\label{struct_s_run_para_a2a27f5c7f845060ffbb177fb4ba08ed8}} 
+\index{SRunPara@{SRunPara}!MCrun@{MCrun}}
+\index{MCrun@{MCrun}!SRunPara@{SRunPara}}
+\subsubsection{\texorpdfstring{MCrun}{MCrun}}
+{\footnotesize\ttfamily int S\+Run\+Para\+::\+M\+Crun}
+
+number of monte carlo simulations 
+
+Definition at line 142 of file Run\+Para.\+h.
+
+\mbox{\Hypertarget{struct_s_run_para_a7a2de3ca3c66de322585506a367a4aa3}\label{struct_s_run_para_a7a2de3ca3c66de322585506a367a4aa3}} 
+\index{SRunPara@{SRunPara}!ModelVersion@{ModelVersion}}
+\index{ModelVersion@{ModelVersion}!SRunPara@{SRunPara}}
+\subsubsection{\texorpdfstring{ModelVersion}{ModelVersion}}
+{\footnotesize\ttfamily int S\+Run\+Para\+::\+Model\+Version}
+
+intensity of density dependent mortality (and increasing intraspecific competition) 1\+: strong, 2\+: moderate (only density dependent mortality), 3\+: normal mortality and competition 
+
+Definition at line 54 of file Run\+Para.\+h.
+
+\mbox{\Hypertarget{struct_s_run_para_af084c204866b0f3137a70730bebe7e4a}\label{struct_s_run_para_af084c204866b0f3137a70730bebe7e4a}} 
+\index{SRunPara@{SRunPara}!NameAppRateFile@{NameAppRateFile}}
+\index{NameAppRateFile@{NameAppRateFile}!SRunPara@{SRunPara}}
+\subsubsection{\texorpdfstring{NameAppRateFile}{NameAppRateFile}}
+{\footnotesize\ttfamily std\+::string S\+Run\+Para\+::\+Name\+App\+Rate\+File =\char`\"{}App\+Rate.\+txt\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Filename of Application Rate File. 
+
+Application rates per year. 
+
+Definition at line 39 of file Run\+Para.\+h.
+
+\mbox{\Hypertarget{struct_s_run_para_a185a1dfe4962cec31af4b3328d12c8e8}\label{struct_s_run_para_a185a1dfe4962cec31af4b3328d12c8e8}} 
+\index{SRunPara@{SRunPara}!NameHerbEffectFile@{NameHerbEffectFile}}
+\index{NameHerbEffectFile@{NameHerbEffectFile}!SRunPara@{SRunPara}}
+\subsubsection{\texorpdfstring{NameHerbEffectFile}{NameHerbEffectFile}}
+{\footnotesize\ttfamily std\+::string S\+Run\+Para\+::\+Name\+Herb\+Effect\+File =\char`\"{}Herb\+Fact.\+txt\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Filename of Pft\+Herb\+Effect-\/\+File (if effect is based on a txt file) 
+
+effect file for herbicide induced impacts based on a txt file 
+
+Definition at line 37 of file Run\+Para.\+h.
+
+\mbox{\Hypertarget{struct_s_run_para_a9c98a63b836012a827e9fe97f440dae1}\label{struct_s_run_para_a9c98a63b836012a827e9fe97f440dae1}} 
+\index{SRunPara@{SRunPara}!NamePftFile@{NamePftFile}}
+\index{NamePftFile@{NamePftFile}!SRunPara@{SRunPara}}
+\subsubsection{\texorpdfstring{NamePftFile}{NamePftFile}}
+{\footnotesize\ttfamily std\+::string S\+Run\+Para\+::\+Name\+Pft\+File =\char`\"{}Fieldedge.\+txt\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Filename of Pft\+Trait-\/\+File. 
+
+trait file for P\+FT community 
+
+Definition at line 35 of file Run\+Para.\+h.
+
+\mbox{\Hypertarget{struct_s_run_para_a3e7797ad861d93d0d7dd6ce23ff259b7}\label{struct_s_run_para_a3e7797ad861d93d0d7dd6ce23ff259b7}} 
+\index{SRunPara@{SRunPara}!RunPara@{RunPara}}
+\index{RunPara@{RunPara}!SRunPara@{SRunPara}}
+\subsubsection{\texorpdfstring{RunPara}{RunPara}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_s_run_para}{S\+Run\+Para}} S\+Run\+Para\+::\+Run\+Para =\mbox{\hyperlink{struct_s_run_para}{S\+Run\+Para}}()\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+scenario parameters 
+
+parameters of specific run 
+
+Definition at line 41 of file Run\+Para.\+h.
+
+\mbox{\Hypertarget{struct_s_run_para_a7958c75a9866d1ec4ce0230e3940363b}\label{struct_s_run_para_a7958c75a9866d1ec4ce0230e3940363b}} 
+\index{SRunPara@{SRunPara}!Version@{Version}}
+\index{Version@{Version}!SRunPara@{SRunPara}}
+\subsubsection{\texorpdfstring{Version}{Version}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_run_para_8h_aab4f91abfa6a0969e1cae8d7666e4d3a}{Comp\+Version}} S\+Run\+Para\+::\+Version}
+
+
+
+niche differentiation 
+
+0 = no difference between intra-\/ and interspecific competition 1 = higher effects of intraspecific competition 2 = lower resource availability for intraspecific competition 
+
+Definition at line 51 of file Run\+Para.\+h.
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+I\+B\+Cgrass\+G\+U\+I.\+git/trunk/\+Model-\/files/\mbox{\hyperlink{_run_para_8h}{Run\+Para.\+h}}\item 
+D\+:/\+I\+B\+Cgrass\+G\+U\+I.\+git/trunk/\+Model-\/files/\mbox{\hyperlink{_run_para_8cpp}{Run\+Para.\+cpp}}\end{DoxyCompactItemize}

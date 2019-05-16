@@ -5,10 +5,18 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.15"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>IBCgrass GUI: Model-files/CGrid.cpp File Reference</title>
+<title>IBC-grass: D:/IBCgrassGUI.git/trunk/Model-files/CGrid.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -20,11 +28,11 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
-  <td id="projectlogo"><img alt="Logo" src="ZOIWaterEff_IBCGrass 3cm.gif"/></td>
+  <td id="projectlogo"><img alt="Logo" src="SchemeIBCgrass.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">IBCgrass GUI
-   &#160;<span id="projectnumber">0.1.0</span>
+   <div id="projectname">IBC-grass
    </div>
+   <div id="projectbrief">herbicide risk assessment</div>
   </td>
  </tr>
  </tbody>
@@ -47,6 +55,23 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('_c_grid_8cpp.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -61,11 +86,6 @@ $(function() {
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_acf2c1351bb56fb6848d3f53c458da61.html">Model-files</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#func-members">Functions</a>  </div>
@@ -81,7 +101,9 @@ $(function() {
 <code>#include &lt;iostream&gt;</code><br />
 <code>#include &lt;map&gt;</code><br />
 <code>#include &lt;algorithm&gt;</code><br />
-</div><table class="memberdecls">
+</div>
+<p><a href="_c_grid_8cpp_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:ac165a1ab000bd69cb99e739dc9dad02b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_c_grid_8cpp.html#ac165a1ab000bd69cb99e739dc9dad02b">getTargetCell</a> (int &amp;xx, int &amp;yy, const float mean, const float sd, double cellscale)</td></tr>
@@ -102,6 +124,8 @@ Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>functions of class <a class="el" href="class_c_grid.html" title="Class with all spatial algorithms where plant individuals interact in space.">CGrid</a> </p>
+
+<p class="definition">Definition in file <a class="el" href="_c_grid_8cpp_source.html">CGrid.cpp</a>.</p>
 </div><h2 class="groupheader">Function Documentation</h2>
 <a id="ad5d7237e8d7dcb63dbc0baa51a4d4523"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad5d7237e8d7dcb63dbc0baa51a4d4523">&#9670;&nbsp;</a></span>Boundary()</h2>
@@ -138,6 +162,8 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
+<p class="definition">Definition at line <a class="el" href="_c_grid_8cpp_source.html#l00957">957</a> of file <a class="el" href="_c_grid_8cpp_source.html">CGrid.cpp</a>.</p>
+
 </div>
 </div>
 <a id="a56d6d4b540ec115ed019ada684ba75ff"></a>
@@ -173,6 +199,8 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+<p class="definition">Definition at line <a class="el" href="_c_grid_8cpp_source.html#l00944">944</a> of file <a class="el" href="_c_grid_8cpp_source.html">CGrid.cpp</a>.</p>
 
 </div>
 </div>
@@ -223,6 +251,8 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>eucledian distance between two pairs of coordinates (xx,yy) and (x,y) </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="_c_grid_8cpp_source.html#l00935">935</a> of file <a class="el" href="_c_grid_8cpp_source.html">CGrid.cpp</a>.</p>
+
 </div>
 </div>
 <a id="a6faf9661168bf330da6399218cf47d52"></a>
@@ -259,6 +289,8 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+<p class="definition">Definition at line <a class="el" href="_c_grid_8cpp_source.html#l00970">970</a> of file <a class="el" href="_c_grid_8cpp_source.html">CGrid.cpp</a>.</p>
 
 </div>
 </div>
@@ -318,14 +350,20 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
+<p class="definition">Definition at line <a class="el" href="_c_grid_8cpp_source.html#l00142">142</a> of file <a class="el" href="_c_grid_8cpp_source.html">CGrid.cpp</a>.</p>
+
 </div>
 </div>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.15
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_acf2c1351bb56fb6848d3f53c458da61.html">Model-files</a></li><li class="navelem"><a class="el" href="_c_grid_8cpp.html">CGrid.cpp</a></li>
+    <li class="footer">Generated by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.15 </li>
+  </ul>
+</div>
 </body>
 </html>

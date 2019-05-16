@@ -1,0 +1,527 @@
+\hypertarget{class_c_envir}{}\section{C\+Envir Class Reference}
+\label{class_c_envir}\index{CEnvir@{CEnvir}}
+
+
+virtual Basic Results Class with general static simulation parameters  
+
+
+
+
+{\ttfamily \#include $<$C\+Envir.\+h$>$}
+
+Inheritance diagram for C\+Envir\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_c_envir}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_c_envir_ae4ba8d566cbfd0e6ae7066f88172e982}{C\+Envir}} ()
+\begin{DoxyCompactList}\small\item\em constructor \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_c_envir_ad6755aa813da52b40a7c8a6a10030a73}{$\sim$\+C\+Envir}} ()
+\begin{DoxyCompactList}\small\item\em destrcutor \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_c_envir_a4bc4e364b290d8c388bcdb04b352fb51}{Get\+Mean\+Shannon}} (int years)
+\begin{DoxyCompactList}\small\item\em get mean Shannon diversity over several years \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_c_envir_ae5d8d6a172ebea8d8ce8d2e1b6c75ee7}{Get\+Mean\+N\+P\+FT}} (int years)
+\begin{DoxyCompactList}\small\item\em get mean number of types \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_c_envir_ac680039ac2dad8a7df749a73b556d5fc}{Get\+Curr\+Pop\+Size}} (string pft)
+\begin{DoxyCompactList}\small\item\em get current Pop\+Size of type pft \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{Indent}\textbf{ core simulation functions (virtual)}\par
+{\em Functions needed for simulation runs. To be defined in inheriting classes. }\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_c_envir_af361384ae8ac1d909c2be355ecb19987}{Init\+Run}} ()
+\begin{DoxyCompactList}\small\item\em init a new run \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_c_envir_aaf79409fdf193613b40fb45a66dba4ee}\label{class_c_envir_aaf79409fdf193613b40fb45a66dba4ee}} 
+virtual void \mbox{\hyperlink{class_c_envir_aaf79409fdf193613b40fb45a66dba4ee}{One\+Week}} ()=0
+\begin{DoxyCompactList}\small\item\em calls all weekly processes \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_c_envir_a7c643b8a91e5bd850632afb4b7572a35}\label{class_c_envir_a7c643b8a91e5bd850632afb4b7572a35}} 
+virtual void \mbox{\hyperlink{class_c_envir_a7c643b8a91e5bd850632afb4b7572a35}{One\+Year}} ()=0
+\begin{DoxyCompactList}\small\item\em runs one year in default mode \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_c_envir_a36cbe82b70ac3bd8741bc6baf0baac84}\label{class_c_envir_a36cbe82b70ac3bd8741bc6baf0baac84}} 
+virtual void \mbox{\hyperlink{class_c_envir_a36cbe82b70ac3bd8741bc6baf0baac84}{One\+Run}} ()=0
+\begin{DoxyCompactList}\small\item\em runs one simulation run in default mode \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_c_envir_a0327292c6ae32487c4fdde023f4302d5}\label{class_c_envir_a0327292c6ae32487c4fdde023f4302d5}} 
+virtual void \mbox{\hyperlink{class_c_envir_a0327292c6ae32487c4fdde023f4302d5}{Get\+Output}} ()=0
+\begin{DoxyCompactList}\small\item\em collect and write Output to an output-\/file \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{class_c_envir_a03a7a06d46020790e16f68e52469471a}{Pft\+Survival}} ()=0
+\begin{DoxyCompactList}\small\item\em returns number of surviving P\+F\+Ts \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ File Output}\par
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_c_envir_a6360f8dae599cd805953dc8b62983d73}{Write\+O\+Files}} ()
+\begin{DoxyCompactList}\small\item\em collect file output \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_envir_a627610c9f063c305c7f945ed4dfad005}{Write\+Grid\+Complete}} (bool all\+Years=true)
+\begin{DoxyCompactList}\small\item\em writes detailed data for the modeled community to output file \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_envir_ab95d6a59533857595e6a02fa25e825f3}{Write\+Pft\+Complete}} (unsigned int all\+Years=1)
+\begin{DoxyCompactList}\small\item\em writes detailed data for each P\+FT to output file \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_envir_ac6a13eb1c2df8737cc912fd7b33aa103}{Write\+Ind\+Complete}} (unsigned int all\+Years=1)
+\begin{DoxyCompactList}\small\item\em writes detailed data for each individual to output file \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_c_envir_a40fc9c5737af9c6c7e073009a64c498f}{Read\+Landscape}} ()
+\begin{DoxyCompactList}\small\item\em read in fractal below-\/ground resource distribution (not used) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_c_envir_ad1cd925ddd41b53753c740fbfe58c0b1}\label{class_c_envir_ad1cd925ddd41b53753c740fbfe58c0b1}} 
+static int \mbox{\hyperlink{class_c_envir_ad1cd925ddd41b53753c740fbfe58c0b1}{GetT}} ()
+\begin{DoxyCompactList}\small\item\em returns absolute time horizon \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_c_envir_a79f12aff0ce709cd4ec67a8e0ef38300}\label{class_c_envir_a79f12aff0ce709cd4ec67a8e0ef38300}} 
+static void \mbox{\hyperlink{class_c_envir_a79f12aff0ce709cd4ec67a8e0ef38300}{ResetT}} ()
+\begin{DoxyCompactList}\small\item\em reset time \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_c_envir_ae78fbaa4dc8592dc3a833c7f83cc2ff6}\label{class_c_envir_ae78fbaa4dc8592dc3a833c7f83cc2ff6}} 
+static void \mbox{\hyperlink{class_c_envir_ae78fbaa4dc8592dc3a833c7f83cc2ff6}{New\+Week}} ()
+\begin{DoxyCompactList}\small\item\em set new week \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{Indent}\textbf{ math and random help functions}\par
+\begin{DoxyCompactItemize}
+\item 
+static int \mbox{\hyperlink{class_c_envir_adacbfd0480f38cded2d6b18ea2114405}{Round}} (const double \&a)
+\item 
+\mbox{\Hypertarget{class_c_envir_ac0081e2d6bf3d0aa1a2cac6a0ff11dab}\label{class_c_envir_ac0081e2d6bf3d0aa1a2cac6a0ff11dab}} 
+static int \mbox{\hyperlink{class_c_envir_ac0081e2d6bf3d0aa1a2cac6a0ff11dab}{nrand}} (int n)
+\begin{DoxyCompactList}\small\item\em get a uniformly distributed random number (0-\/n) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_c_envir_ab880593eb314a63743c72a5252b46cfb}\label{class_c_envir_ab880593eb314a63743c72a5252b46cfb}} 
+static double \mbox{\hyperlink{class_c_envir_ab880593eb314a63743c72a5252b46cfb}{rand01}} ()
+\begin{DoxyCompactList}\small\item\em get a uniformly distributed random number (0-\/1) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_c_envir_a15f2a3b32f4946dcdc29d347dbde0673}\label{class_c_envir_a15f2a3b32f4946dcdc29d347dbde0673}} 
+static double \mbox{\hyperlink{class_c_envir_a15f2a3b32f4946dcdc29d347dbde0673}{normrand}} (double mean, double sd)
+\begin{DoxyCompactList}\small\item\em get a uniformly distributed random number (0-\/1) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_c_envir_aad319ec2d20fdd415f1d9d5e64d69aa6}\label{class_c_envir_aad319ec2d20fdd415f1d9d5e64d69aa6}} 
+bool \mbox{\hyperlink{class_c_envir_aad319ec2d20fdd415f1d9d5e64d69aa6}{endofrun}}
+\begin{DoxyCompactList}\small\item\em end of simulation reached? (flag) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_c_envir_ad2d296257d6ecc2199197fcd283b9793}\label{class_c_envir_ad2d296257d6ecc2199197fcd283b9793}} 
+int \mbox{\hyperlink{class_c_envir_ad2d296257d6ecc2199197fcd283b9793}{init}}
+\begin{DoxyCompactList}\small\item\em flag for simulation issue (init time) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_c_envir_ae1f003b7e476e6cc334c91296be37870}\label{class_c_envir_ae1f003b7e476e6cc334c91296be37870}} 
+vector$<$ \mbox{\hyperlink{struct_s_pft_out}{S\+Pft\+Out}} $\ast$ $>$ \mbox{\hyperlink{class_c_envir_ae1f003b7e476e6cc334c91296be37870}{Pft\+Out\+Data}}
+\begin{DoxyCompactList}\small\item\em Vector for Pft output data. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_c_envir_ab4616b4a1f470fc8a0d6a5b2f29a7f44}\label{class_c_envir_ab4616b4a1f470fc8a0d6a5b2f29a7f44}} 
+vector$<$ \mbox{\hyperlink{struct_s_grid_out}{S\+Grid\+Out}} $\ast$ $>$ \mbox{\hyperlink{class_c_envir_ab4616b4a1f470fc8a0d6a5b2f29a7f44}{Grid\+Out\+Data}}
+\begin{DoxyCompactList}\small\item\em Vector for Grid output data. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_c_envir_a6069779962f20bd7962b3efb20d375ac}\label{class_c_envir_a6069779962f20bd7962b3efb20d375ac}} 
+vector$<$ \mbox{\hyperlink{struct_s_ind_out}{S\+Ind\+Out}} $\ast$ $>$ \mbox{\hyperlink{class_c_envir_a6069779962f20bd7962b3efb20d375ac}{Ind\+Out\+Data}}
+\begin{DoxyCompactList}\small\item\em Vector for Grid output data. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_c_envir_a22976cfa98129cb169e8ebe2f9d6459b}\label{class_c_envir_a22976cfa98129cb169e8ebe2f9d6459b}} 
+vector$<$ int $>$ \mbox{\hyperlink{class_c_envir_a22976cfa98129cb169e8ebe2f9d6459b}{A\+Cover}}
+\begin{DoxyCompactList}\small\item\em aboveground cover of the cell (int coded) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_c_envir_a2f00dd63c360e8b5b3ad2f044a69f8a5}\label{class_c_envir_a2f00dd63c360e8b5b3ad2f044a69f8a5}} 
+vector$<$ int $>$ \mbox{\hyperlink{class_c_envir_a2f00dd63c360e8b5b3ad2f044a69f8a5}{B\+Cover}}
+\begin{DoxyCompactList}\small\item\em belowground cover of the cell (int coded) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_c_envir_af48975b9f3e0baebf84b045e5af5027c}\label{class_c_envir_af48975b9f3e0baebf84b045e5af5027c}} 
+map$<$ string, double $>$ \mbox{\hyperlink{class_c_envir_af48975b9f3e0baebf84b045e5af5027c}{Pft\+Cover}}
+\begin{DoxyCompactList}\small\item\em current Grid-\/cover of Pfts used \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_c_envir_a41042c073c600ed8e77c68b7382a8b34}\label{class_c_envir_a41042c073c600ed8e77c68b7382a8b34}} 
+double \mbox{\hyperlink{class_c_envir_a41042c073c600ed8e77c68b7382a8b34}{N\+Cells\+Acover}}
+\begin{DoxyCompactList}\small\item\em Number of Cells shaded by plants on ground. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_c_envir_af8a3ebb5f8193fa7a6878c1103de80b7}\label{class_c_envir_af8a3ebb5f8193fa7a6878c1103de80b7}} 
+static \mbox{\hyperlink{class_random_generator}{Random\+Generator}} \mbox{\hyperlink{class_c_envir_af8a3ebb5f8193fa7a6878c1103de80b7}{rng}}
+\begin{DoxyCompactList}\small\item\em random number generator \end{DoxyCompactList}\item 
+static string \mbox{\hyperlink{class_c_envir_aabd557ac751d71e57f93b02b429d2386}{Name\+Pft\+Out\+File}} = \char`\"{}Pft\+Out.\+txt\char`\"{}
+\begin{DoxyCompactList}\small\item\em Filename of Pft-\/\+Output. \end{DoxyCompactList}\item 
+static string \mbox{\hyperlink{class_c_envir_af43d5a1d6cc67cc053a34fb4f2730cfd}{Name\+Ind\+Out\+File}} = \char`\"{}Ind\+Out.\+txt\char`\"{}
+\begin{DoxyCompactList}\small\item\em Filename of Ind-\/\+Output. \end{DoxyCompactList}\item 
+static string \mbox{\hyperlink{class_c_envir_a6ed76bed8230a347eb5cd456f9d12764}{Name\+Grid\+Out\+File}} = \char`\"{}Grid\+Out.\+txt\char`\"{}
+\begin{DoxyCompactList}\small\item\em Filename of Grid-\/\+Output. \end{DoxyCompactList}\item 
+static vector$<$ double $>$ \mbox{\hyperlink{class_c_envir_aab3dd27f5abbda28435498855d39e985}{A\+Res\+Muster}}
+\begin{DoxyCompactList}\small\item\em mean below-\/ground resource availability \mbox{[}resource units per cm2\mbox{]} \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_c_envir_ab634a5c5b528f42035f9bc76afb4161c}\label{class_c_envir_ab634a5c5b528f42035f9bc76afb4161c}} 
+static vector$<$ double $>$ \mbox{\hyperlink{class_c_envir_ab634a5c5b528f42035f9bc76afb4161c}{B\+Res\+Muster}}
+\begin{DoxyCompactList}\small\item\em belowground resources \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{class_c_envir_a947969beb1b553371357e2ebf51b5234}{week}} =0
+\begin{DoxyCompactList}\small\item\em current week (0-\/30) \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{class_c_envir_ae5d7965547f76a4a9191e85e953737e6}{year}} =1
+\begin{DoxyCompactList}\small\item\em current year \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_c_envir_aa20c2d3262d9c75624d0bec58d8a6949}\label{class_c_envir_aa20c2d3262d9c75624d0bec58d8a6949}} 
+static int \mbox{\hyperlink{class_c_envir_aa20c2d3262d9c75624d0bec58d8a6949}{Weeks\+Per\+Year}} =30
+\begin{DoxyCompactList}\small\item\em nb of weeks per year \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_c_envir_aeaed4f1f486b5324d6b16bad0c0b0230}\label{class_c_envir_aeaed4f1f486b5324d6b16bad0c0b0230}} 
+map$<$ string, int $>$ \mbox{\hyperlink{class_c_envir_aeaed4f1f486b5324d6b16bad0c0b0230}{Pft\+Surv\+Time}}
+\begin{DoxyCompactList}\small\item\em array for survival times of P\+F\+Ts \mbox{[}years\mbox{]}; \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_c_envir_acc30eeae2fd0bf37db469356c1ab4729}\label{class_c_envir_acc30eeae2fd0bf37db469356c1ab4729}} 
+static map$<$ string, long $>$ \mbox{\hyperlink{class_c_envir_acc30eeae2fd0bf37db469356c1ab4729}{Pft\+Init\+List}}
+\begin{DoxyCompactList}\small\item\em list of Pfts used \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+virtual Basic Results Class with general static simulation parameters 
+
+The class contains
+\begin{DoxyItemize}
+\item simulation-\/wide (static) information on
+\begin{DoxyItemize}
+\item Names of in-\/ and output-\/files,
+\item an Random Number Generator (plus some service functions), and
+\item a template for above-\/and belowground resources as well as
+\item current simulation status (current year, week etc.)
+\end{DoxyItemize}
+\item variables storing result information on grid and single pfts
+\item functions
+\begin{DoxyItemize}
+\item collecting and writing results to output-\/files
+\item reading-\/in Resource data
+\item core function \mbox{\hyperlink{class_c_envir_aaf79409fdf193613b40fb45a66dba4ee}{One\+Week()}}, running a week of the simulation \begin{DoxyParagraph}{time scales of the simulations\+:}
+
+\end{DoxyParagraph}
+
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+1 step = 1 week
+\begin{DoxyItemize}
+\item 1 year = 30 weeks 
+\end{DoxyItemize}
+
+Definition at line 32 of file C\+Envir.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_c_envir_ae4ba8d566cbfd0e6ae7066f88172e982}\label{class_c_envir_ae4ba8d566cbfd0e6ae7066f88172e982}} 
+\index{CEnvir@{CEnvir}!CEnvir@{CEnvir}}
+\index{CEnvir@{CEnvir}!CEnvir@{CEnvir}}
+\subsubsection{\texorpdfstring{CEnvir()}{CEnvir()}}
+{\footnotesize\ttfamily C\+Envir\+::\+C\+Envir (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+constructor 
+
+constructor for virtual class set the landscape
+
+set aboveground cover to zero
+
+set belowground cover to zero 
+
+Definition at line 39 of file C\+Envir.\+cpp.
+
+\mbox{\Hypertarget{class_c_envir_ad6755aa813da52b40a7c8a6a10030a73}\label{class_c_envir_ad6755aa813da52b40a7c8a6a10030a73}} 
+\index{CEnvir@{CEnvir}!````~CEnvir@{$\sim$CEnvir}}
+\index{````~CEnvir@{$\sim$CEnvir}!CEnvir@{CEnvir}}
+\subsubsection{\texorpdfstring{$\sim$CEnvir()}{~CEnvir()}}
+{\footnotesize\ttfamily C\+Envir\+::$\sim$\+C\+Envir (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+destrcutor 
+
+destructor -\/ free summarizing data sets 
+
+Definition at line 54 of file C\+Envir.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_c_envir_ac680039ac2dad8a7df749a73b556d5fc}\label{class_c_envir_ac680039ac2dad8a7df749a73b556d5fc}} 
+\index{CEnvir@{CEnvir}!GetCurrPopSize@{GetCurrPopSize}}
+\index{GetCurrPopSize@{GetCurrPopSize}!CEnvir@{CEnvir}}
+\subsubsection{\texorpdfstring{GetCurrPopSize()}{GetCurrPopSize()}}
+{\footnotesize\ttfamily double C\+Envir\+::\+Get\+Curr\+Pop\+Size (\begin{DoxyParamCaption}\item[{string}]{pft }\end{DoxyParamCaption})}
+
+
+
+get current Pop\+Size of type pft 
+
+extract current population size 
+\begin{DoxyParams}{Parameters}
+{\em pft} & P\+FT asked for \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+population size of P\+FT pft 
+\end{DoxyReturn}
+
+
+Definition at line 274 of file C\+Envir.\+cpp.
+
+\mbox{\Hypertarget{class_c_envir_ae5d8d6a172ebea8d8ce8d2e1b6c75ee7}\label{class_c_envir_ae5d8d6a172ebea8d8ce8d2e1b6c75ee7}} 
+\index{CEnvir@{CEnvir}!GetMeanNPFT@{GetMeanNPFT}}
+\index{GetMeanNPFT@{GetMeanNPFT}!CEnvir@{CEnvir}}
+\subsubsection{\texorpdfstring{GetMeanNPFT()}{GetMeanNPFT()}}
+{\footnotesize\ttfamily double C\+Envir\+::\+Get\+Mean\+N\+P\+FT (\begin{DoxyParamCaption}\item[{int}]{years }\end{DoxyParamCaption})}
+
+
+
+get mean number of types 
+
+extract mean P\+FT number 
+\begin{DoxyParams}{Parameters}
+{\em years} & time steps to accumulate \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+number of P\+F\+Ts 
+\end{DoxyReturn}
+
+
+Definition at line 256 of file C\+Envir.\+cpp.
+
+\mbox{\Hypertarget{class_c_envir_a4bc4e364b290d8c388bcdb04b352fb51}\label{class_c_envir_a4bc4e364b290d8c388bcdb04b352fb51}} 
+\index{CEnvir@{CEnvir}!GetMeanShannon@{GetMeanShannon}}
+\index{GetMeanShannon@{GetMeanShannon}!CEnvir@{CEnvir}}
+\subsubsection{\texorpdfstring{GetMeanShannon()}{GetMeanShannon()}}
+{\footnotesize\ttfamily double C\+Envir\+::\+Get\+Mean\+Shannon (\begin{DoxyParamCaption}\item[{int}]{years }\end{DoxyParamCaption})}
+
+
+
+get mean Shannon diversity over several years 
+
+extract mean Shannon Diversity 
+\begin{DoxyParams}{Parameters}
+{\em years} & time steps to accumulate \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Shannon Diversity value 
+\end{DoxyReturn}
+
+
+Definition at line 237 of file C\+Envir.\+cpp.
+
+\mbox{\Hypertarget{class_c_envir_af361384ae8ac1d909c2be355ecb19987}\label{class_c_envir_af361384ae8ac1d909c2be355ecb19987}} 
+\index{CEnvir@{CEnvir}!InitRun@{InitRun}}
+\index{InitRun@{InitRun}!CEnvir@{CEnvir}}
+\subsubsection{\texorpdfstring{InitRun()}{InitRun()}}
+{\footnotesize\ttfamily void C\+Envir\+::\+Init\+Run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+init a new run 
+
+initializes a new run clears Out\+Data structures, P\+F\+Tinitlist, P\+F\+Tsurvtime, and sets endofrun to false set resources 
+
+Reimplemented in \mbox{\hyperlink{class_c_herbicide_effect_env_a307a82e619105086fd02eca98c48f8b6}{C\+Herbicide\+Effect\+Env}}, and \mbox{\hyperlink{class_c_grid_envir_a5db9b9b5fb26f6f6cbc3b3904ace0b68}{C\+Grid\+Envir}}.
+
+
+
+Definition at line 80 of file C\+Envir.\+cpp.
+
+\mbox{\Hypertarget{class_c_envir_a03a7a06d46020790e16f68e52469471a}\label{class_c_envir_a03a7a06d46020790e16f68e52469471a}} 
+\index{CEnvir@{CEnvir}!PftSurvival@{PftSurvival}}
+\index{PftSurvival@{PftSurvival}!CEnvir@{CEnvir}}
+\subsubsection{\texorpdfstring{PftSurvival()}{PftSurvival()}}
+{\footnotesize\ttfamily virtual int C\+Envir\+::\+Pft\+Survival (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+returns number of surviving P\+F\+Ts 
+
+a P\+FT is condsidered as a survivor if individuals or at least seeds are still there 
+
+Implemented in \mbox{\hyperlink{class_c_grid_envir_aed2b467efa481b601ef4147cc990debc}{C\+Grid\+Envir}}.
+
+\mbox{\Hypertarget{class_c_envir_a40fc9c5737af9c6c7e073009a64c498f}\label{class_c_envir_a40fc9c5737af9c6c7e073009a64c498f}} 
+\index{CEnvir@{CEnvir}!ReadLandscape@{ReadLandscape}}
+\index{ReadLandscape@{ReadLandscape}!CEnvir@{CEnvir}}
+\subsubsection{\texorpdfstring{ReadLandscape()}{ReadLandscape()}}
+{\footnotesize\ttfamily void C\+Envir\+::\+Read\+Landscape (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+read in fractal below-\/ground resource distribution (not used) 
+
+Function defined global muster resources, set to gridcells at beginning of each Year. At the moment only evenly distributed single values for above-\/ and belowground resources are implemented. Later the function can read source files of values $<$100\% autocorrelated or generate some noise around fixed values etc.. set aboveground resources to mean\+A\+Res value
+
+set belowground resources to mean\+B\+Res value 
+
+Definition at line 66 of file C\+Envir.\+cpp.
+
+\mbox{\Hypertarget{class_c_envir_adacbfd0480f38cded2d6b18ea2114405}\label{class_c_envir_adacbfd0480f38cded2d6b18ea2114405}} 
+\index{CEnvir@{CEnvir}!Round@{Round}}
+\index{Round@{Round}!CEnvir@{CEnvir}}
+\subsubsection{\texorpdfstring{Round()}{Round()}}
+{\footnotesize\ttfamily static int C\+Envir\+::\+Round (\begin{DoxyParamCaption}\item[{const double \&}]{a }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+round a double value 
+
+Definition at line 101 of file C\+Envir.\+h.
+
+\mbox{\Hypertarget{class_c_envir_a627610c9f063c305c7f945ed4dfad005}\label{class_c_envir_a627610c9f063c305c7f945ed4dfad005}} 
+\index{CEnvir@{CEnvir}!WriteGridComplete@{WriteGridComplete}}
+\index{WriteGridComplete@{WriteGridComplete}!CEnvir@{CEnvir}}
+\subsubsection{\texorpdfstring{WriteGridComplete()}{WriteGridComplete()}}
+{\footnotesize\ttfamily void C\+Envir\+::\+Write\+Grid\+Complete (\begin{DoxyParamCaption}\item[{bool}]{all\+Years = {\ttfamily true} }\end{DoxyParamCaption})}
+
+
+
+writes detailed data for the modeled community to output file 
+
+File Output -\/ grid-\/wide summaries 
+\begin{DoxyParams}{Parameters}
+{\em all\+Years} & write all data or only the last entry? \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 113 of file C\+Envir.\+cpp.
+
+\mbox{\Hypertarget{class_c_envir_ac6a13eb1c2df8737cc912fd7b33aa103}\label{class_c_envir_ac6a13eb1c2df8737cc912fd7b33aa103}} 
+\index{CEnvir@{CEnvir}!WriteIndComplete@{WriteIndComplete}}
+\index{WriteIndComplete@{WriteIndComplete}!CEnvir@{CEnvir}}
+\subsubsection{\texorpdfstring{WriteIndComplete()}{WriteIndComplete()}}
+{\footnotesize\ttfamily void C\+Envir\+::\+Write\+Ind\+Complete (\begin{DoxyParamCaption}\item[{unsigned int}]{all\+Years = {\ttfamily 1} }\end{DoxyParamCaption})}
+
+
+
+writes detailed data for each individual to output file 
+
+File output -\/ summarizing Ind information 
+\begin{DoxyParams}{Parameters}
+{\em all\+Years} & years to be included in output \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+currently not active 
+\end{DoxyNote}
+
+
+Definition at line 205 of file C\+Envir.\+cpp.
+
+\mbox{\Hypertarget{class_c_envir_a6360f8dae599cd805953dc8b62983d73}\label{class_c_envir_a6360f8dae599cd805953dc8b62983d73}} 
+\index{CEnvir@{CEnvir}!WriteOFiles@{WriteOFiles}}
+\index{WriteOFiles@{WriteOFiles}!CEnvir@{CEnvir}}
+\subsubsection{\texorpdfstring{WriteOFiles()}{WriteOFiles()}}
+{\footnotesize\ttfamily void C\+Envir\+::\+Write\+O\+Files (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+collect file output 
+
+File Output.. writes the output of the P\+FT, G\+RD and/or Ind files over the whole period of simulation at the end of the run
+
+write grid file
+
+write P\+FT file
+
+may write Ind file 
+
+Definition at line 97 of file C\+Envir.\+cpp.
+
+\mbox{\Hypertarget{class_c_envir_ab95d6a59533857595e6a02fa25e825f3}\label{class_c_envir_ab95d6a59533857595e6a02fa25e825f3}} 
+\index{CEnvir@{CEnvir}!WritePftComplete@{WritePftComplete}}
+\index{WritePftComplete@{WritePftComplete}!CEnvir@{CEnvir}}
+\subsubsection{\texorpdfstring{WritePftComplete()}{WritePftComplete()}}
+{\footnotesize\ttfamily void C\+Envir\+::\+Write\+Pft\+Complete (\begin{DoxyParamCaption}\item[{unsigned int}]{all\+Years = {\ttfamily 1} }\end{DoxyParamCaption})}
+
+
+
+writes detailed data for each P\+FT to output file 
+
+File output -\/ summarizing P\+FT information 
+\begin{DoxyParams}{Parameters}
+{\em all\+Years} & years to be included in output \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 163 of file C\+Envir.\+cpp.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_c_envir_aab3dd27f5abbda28435498855d39e985}\label{class_c_envir_aab3dd27f5abbda28435498855d39e985}} 
+\index{CEnvir@{CEnvir}!AResMuster@{AResMuster}}
+\index{AResMuster@{AResMuster}!CEnvir@{CEnvir}}
+\subsubsection{\texorpdfstring{AResMuster}{AResMuster}}
+{\footnotesize\ttfamily vector$<$ double $>$ C\+Envir\+::\+A\+Res\+Muster\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+mean below-\/ground resource availability \mbox{[}resource units per cm2\mbox{]} 
+
+aboveground resources 
+
+Definition at line 50 of file C\+Envir.\+h.
+
+\mbox{\Hypertarget{class_c_envir_a6ed76bed8230a347eb5cd456f9d12764}\label{class_c_envir_a6ed76bed8230a347eb5cd456f9d12764}} 
+\index{CEnvir@{CEnvir}!NameGridOutFile@{NameGridOutFile}}
+\index{NameGridOutFile@{NameGridOutFile}!CEnvir@{CEnvir}}
+\subsubsection{\texorpdfstring{NameGridOutFile}{NameGridOutFile}}
+{\footnotesize\ttfamily string C\+Envir\+::\+Name\+Grid\+Out\+File = \char`\"{}Grid\+Out.\+txt\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Filename of Grid-\/\+Output. 
+
+output for grid
+
+mean above-\/ground resource availability \mbox{[}resource units per cm2\mbox{]} 
+
+Definition at line 48 of file C\+Envir.\+h.
+
+\mbox{\Hypertarget{class_c_envir_af43d5a1d6cc67cc053a34fb4f2730cfd}\label{class_c_envir_af43d5a1d6cc67cc053a34fb4f2730cfd}} 
+\index{CEnvir@{CEnvir}!NameIndOutFile@{NameIndOutFile}}
+\index{NameIndOutFile@{NameIndOutFile}!CEnvir@{CEnvir}}
+\subsubsection{\texorpdfstring{NameIndOutFile}{NameIndOutFile}}
+{\footnotesize\ttfamily string C\+Envir\+::\+Name\+Ind\+Out\+File = \char`\"{}Ind\+Out.\+txt\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Filename of Ind-\/\+Output. 
+
+output for individuals 
+
+Definition at line 46 of file C\+Envir.\+h.
+
+\mbox{\Hypertarget{class_c_envir_aabd557ac751d71e57f93b02b429d2386}\label{class_c_envir_aabd557ac751d71e57f93b02b429d2386}} 
+\index{CEnvir@{CEnvir}!NamePftOutFile@{NamePftOutFile}}
+\index{NamePftOutFile@{NamePftOutFile}!CEnvir@{CEnvir}}
+\subsubsection{\texorpdfstring{NamePftOutFile}{NamePftOutFile}}
+{\footnotesize\ttfamily string C\+Envir\+::\+Name\+Pft\+Out\+File = \char`\"{}Pft\+Out.\+txt\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Filename of Pft-\/\+Output. 
+
+output for P\+FT 
+
+Definition at line 44 of file C\+Envir.\+h.
+
+\mbox{\Hypertarget{class_c_envir_a947969beb1b553371357e2ebf51b5234}\label{class_c_envir_a947969beb1b553371357e2ebf51b5234}} 
+\index{CEnvir@{CEnvir}!week@{week}}
+\index{week@{week}!CEnvir@{CEnvir}}
+\subsubsection{\texorpdfstring{week}{week}}
+{\footnotesize\ttfamily int C\+Envir\+::week =0\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+current week (0-\/30) 
+
+week 
+
+Definition at line 54 of file C\+Envir.\+h.
+
+\mbox{\Hypertarget{class_c_envir_ae5d7965547f76a4a9191e85e953737e6}\label{class_c_envir_ae5d7965547f76a4a9191e85e953737e6}} 
+\index{CEnvir@{CEnvir}!year@{year}}
+\index{year@{year}!CEnvir@{CEnvir}}
+\subsubsection{\texorpdfstring{year}{year}}
+{\footnotesize\ttfamily int C\+Envir\+::year =1\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+current year 
+
+year 
+
+Definition at line 56 of file C\+Envir.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+I\+B\+Cgrass\+G\+U\+I.\+git/trunk/\+Model-\/files/\mbox{\hyperlink{_c_envir_8h}{C\+Envir.\+h}}\item 
+D\+:/\+I\+B\+Cgrass\+G\+U\+I.\+git/trunk/\+Model-\/files/\mbox{\hyperlink{_c_envir_8cpp}{C\+Envir.\+cpp}}\end{DoxyCompactItemize}

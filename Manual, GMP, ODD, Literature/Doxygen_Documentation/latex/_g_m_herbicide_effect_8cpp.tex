@@ -1,0 +1,78 @@
+\hypertarget{_g_m_herbicide_effect_8cpp}{}\section{D\+:/\+I\+B\+Cgrass\+G\+UI.git/trunk/\+Model-\/files/\+G\+M\+Herbicide\+Effect.cpp File Reference}
+\label{_g_m_herbicide_effect_8cpp}\index{D:/IBCgrassGUI.git/trunk/Model-\/files/GMHerbicideEffect.cpp@{D:/IBCgrassGUI.git/trunk/Model-\/files/GMHerbicideEffect.cpp}}
+
+
+entry file  
+
+
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}C\+Herb\+Eff.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}C\+T\+Kmodel.\+h\char`\"{}}\newline
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{_g_m_herbicide_effect_8cpp_a1e3b6d38df0786ccf7f938d60e386aae}\label{_g_m_herbicide_effect_8cpp_a1e3b6d38df0786ccf7f938d60e386aae}} 
+void {\bfseries Init} ()
+\item 
+\mbox{\Hypertarget{_g_m_herbicide_effect_8cpp_aa3eca255b6be227d7d901cc2a72017a5}\label{_g_m_herbicide_effect_8cpp_aa3eca255b6be227d7d901cc2a72017a5}} 
+void {\bfseries Run} ()
+\item 
+\mbox{\Hypertarget{_g_m_herbicide_effect_8cpp_a61fab9eb75083fe0738e5614d8b4f421}\label{_g_m_herbicide_effect_8cpp_a61fab9eb75083fe0738e5614d8b4f421}} 
+time\+\_\+t {\bfseries Get\+Sec} ()
+\item 
+int \mbox{\hyperlink{_g_m_herbicide_effect_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main}} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em entry point \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{_g_m_herbicide_effect_8cpp_a2656e3cdeae06fa1dcf83caeef937d7b}\label{_g_m_herbicide_effect_8cpp_a2656e3cdeae06fa1dcf83caeef937d7b}} 
+\mbox{\hyperlink{class_c_herbicide_effect_env}{C\+Herbicide\+Effect\+Env}} $\ast$ \mbox{\hyperlink{_g_m_herbicide_effect_8cpp_a2656e3cdeae06fa1dcf83caeef937d7b}{Envir}}
+\begin{DoxyCompactList}\small\item\em environment in which simulations are run \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+entry file 
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{_g_m_herbicide_effect_8cpp_a0ddf1224851353fc92bfbff6f499fa97}\label{_g_m_herbicide_effect_8cpp_a0ddf1224851353fc92bfbff6f499fa97}} 
+\index{GMHerbicideEffect.cpp@{GMHerbicideEffect.cpp}!main@{main}}
+\index{main@{main}!GMHerbicideEffect.cpp@{GMHerbicideEffect.cpp}}
+\subsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+entry point 
+
+The experimental design is read from program arguments (sample values in brackets)\+: general parameters
+\begin{DoxyEnumerate}
+\item Model\+Version (3); // mode of density denpendent mortality and competition
+\item Cell\+Num (173); // grid size (cm)
+\item Tmax (100); // maximal number of years simulated
+\item Tinit (50); // initial years before herbicide effects are simulated
+\item Name\+Pft\+File (\char`\"{}\+Fieldedge.\+txt\char`\"{}); // P\+FT list
+\item seeds\+Per\+Type (10); // degree of isolation as number of seed input per year resources
+\item mean\+B\+Res (90); // belowground resources
+\item mean\+A\+Res (100); // aboveground resources
+\item Aampl (0.\+7); // amplitude of seasonal distribution of aboveground resources (based on day length)
+\item Bampl (0); // amplitude of seasonal distribution of belowground resources disturbances
+\item Area\+Event (0.\+1); // amount of area trampled per year
+\item Graz\+Prob (0.\+01); // amount of area grazed per year
+\item N\+Cut (1); // number of cutting events per year herbicide impact parameter
+\item week\+\_\+start (1); // week of application of herbicide
+\item Generation (\char`\"{}\+F0\char`\"{}); // affected generation
+\item Herb\+Duration (30); // number of years simulated with herbicide effect
+\item Herb\+Effect\+Type (1); // defines simulation run as treatment of control (1 -\/ treatment; 0 -\/ control)
+\item Effect\+Model (0); // defines on which input herbicide effects are based (0 -\/ txt file 2 -\/ dose response)
+\item scenario (1); // number of scenario
+\item M\+Crun (1); // number of monte carlo runs
+\end{DoxyEnumerate}
+
+Output file names are given for each run individually. 
+
+Definition at line 167 of file G\+M\+Herbicide\+Effect.\+cpp.
+

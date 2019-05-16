@@ -1,0 +1,66 @@
+\hypertarget{_run_para_8h}{}\section{D\+:/\+I\+B\+Cgrass\+G\+UI.git/trunk/\+Model-\/files/\+Run\+Para.h File Reference}
+\label{_run_para_8h}\index{D:/IBCgrassGUI.git/trunk/Model-\/files/RunPara.h@{D:/IBCgrassGUI.git/trunk/Model-\/files/RunPara.h}}
+
+
+definition of struct \mbox{\hyperlink{struct_s_run_para}{S\+Run\+Para}} and enums Comp\+Mode and Comp\+Version  
+
+
+{\ttfamily \#include $<$string$>$}\newline
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_s_run_para}{S\+Run\+Para}}
+\begin{DoxyCompactList}\small\item\em Structure with all scenario parameters. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{_run_para_8h_ab256e359929ebfa9774c7b73de3101cf}{Comp\+Mode}} \{ {\bfseries sym}, 
+{\bfseries asympart}, 
+{\bfseries asymtot}
+ \}
+\begin{DoxyCompactList}\small\item\em Enumeration type to specify size asymmetry/symmetry of competition. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{_run_para_8h_aab4f91abfa6a0969e1cae8d7666e4d3a}{Comp\+Version}} \{ {\bfseries version1}, 
+{\bfseries version2}, 
+{\bfseries version3}
+ \}
+\begin{DoxyCompactList}\small\item\em Enumeration type to specify the competition version describing interspecific niche differentiation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+definition of struct \mbox{\hyperlink{struct_s_run_para}{S\+Run\+Para}} and enums Comp\+Mode and Comp\+Version 
+
+
+
+\subsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{_run_para_8h_ab256e359929ebfa9774c7b73de3101cf}\label{_run_para_8h_ab256e359929ebfa9774c7b73de3101cf}} 
+\index{RunPara.h@{RunPara.h}!CompMode@{CompMode}}
+\index{CompMode@{CompMode}!RunPara.h@{RunPara.h}}
+\subsubsection{\texorpdfstring{CompMode}{CompMode}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_run_para_8h_ab256e359929ebfa9774c7b73de3101cf}{Comp\+Mode}}}
+
+
+
+Enumeration type to specify size asymmetry/symmetry of competition. 
+
+\begin{DoxyItemize}
+\item sym {\ttfamily symmetric} resource sharing between plant individuals \item asympart {\ttfamily partially} symmetric resource sharing (taller, bigger plants get more resources) \item asymtot {\ttfamily tallest/biggest} plant gets all resources \end{DoxyItemize}
+
+
+Definition at line 17 of file Run\+Para.\+h.
+
+\mbox{\Hypertarget{_run_para_8h_aab4f91abfa6a0969e1cae8d7666e4d3a}\label{_run_para_8h_aab4f91abfa6a0969e1cae8d7666e4d3a}} 
+\index{RunPara.h@{RunPara.h}!CompVersion@{CompVersion}}
+\index{CompVersion@{CompVersion}!RunPara.h@{RunPara.h}}
+\subsubsection{\texorpdfstring{CompVersion}{CompVersion}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_run_para_8h_aab4f91abfa6a0969e1cae8d7666e4d3a}{Comp\+Version}}}
+
+
+
+Enumeration type to specify the competition version describing interspecific niche differentiation. 
+
+\begin{DoxyItemize}
+\item version1 {\ttfamily no} difference between intra-\/ and interspecific competition \item version2 {\ttfamily higher} effects of intraspecific competition \item version3 {\ttfamily lower} resource availability for intraspecific competition \end{DoxyItemize}
+
+
+Definition at line 26 of file Run\+Para.\+h.
+

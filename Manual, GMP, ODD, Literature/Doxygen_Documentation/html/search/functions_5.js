@@ -4,6 +4,7 @@ var searchData=
   ['get01',['get01',['../class_random_generator.html#a19c38cf91e2081794c3fba0c4e15292e',1,'RandomGenerator']]],
   ['getacover',['getACover',['../class_c_grid_envir.html#a73e33cf0609fdd81d5b7e04ca7a02f12',1,'CGridEnvir']]],
   ['getage',['GetAge',['../class_c_t_d_plant.html#ac93a9be9717f2ceeeb1b53e96139308b',1,'CTDPlant']]],
+  ['getapprates',['GetAppRates',['../class_c_t_kmodel.html#a20c6e31e81095343abfc3b844c0b1645',1,'CTKmodel']]],
   ['getbcover',['getBCover',['../class_c_grid_envir.html#af90026b4979069e8b4aa262ffa124190',1,'CGridEnvir']]],
   ['getcell',['getCell',['../class_c_seed.html#a0c916c710b1325761ebd268d9ed4a560',1,'CSeed::getCell()'],['../class_c_plant.html#ac8dd4dc4797ecb0881131f9c44d3cd4d',1,'CPlant::getCell()']]],
   ['getclonoutput',['GetClonOutput',['../class_c_grid_envir.html#a858b8e8281f1a80dc0b0a72b2b9a4346',1,'CGridEnvir']]],

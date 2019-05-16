@@ -1,0 +1,92 @@
+\hypertarget{_l_c_g_8cpp}{}\section{D\+:/\+I\+B\+Cgrass\+G\+UI.git/trunk/\+Model-\/files/\+L\+CG.cpp File Reference}
+\label{_l_c_g_8cpp}\index{D:/IBCgrassGUI.git/trunk/Model-\/files/LCG.cpp@{D:/IBCgrassGUI.git/trunk/Model-\/files/LCG.cpp}}
+
+
+\mbox{\hyperlink{_l_c_g_8cpp}{L\+C\+G.\+cpp}} random number generator source\+: \href{http://www.c-plusplus.de/forum/39335-full}{\texttt{ http\+://www.\+c-\/plusplus.\+de/forum/39335-\/full}} (posted by Mady 12\+:54\+:00 15.\+12.\+2002)  
+
+
+{\ttfamily \#include \char`\"{}L\+C\+G.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$random$>$}\newline
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{_l_c_g_8cpp_a12512eb6ac692ee222b11da734ce0059}\label{_l_c_g_8cpp_a12512eb6ac692ee222b11da734ce0059}} 
+\#define {\bfseries M\+O\+D\+M\+U\+LT}(a,  b,  c,  m,  s)~q = s/a; s = b$\ast$(s-\/a$\ast$q)-\/c$\ast$q; if (s $<$ 0) s += m;
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{_l_c_g_8cpp_a1804e1adc8f3568b3ffaa21d9387986e}{combined\+L\+CG}} (void)
+\begin{DoxyCompactList}\small\item\em uniformly distributed random number between 0 and 1 \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{_l_c_g_8cpp_ae27e667b5e872e91e293f8034c8dd897}{normc\+L\+CG}} (double mean, double sd)
+\begin{DoxyCompactList}\small\item\em normal distributed random number with mean and sd \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_l_c_g_8cpp_aa2f338e23efacb13e4c6acac869476d4}{init\+L\+CG}} (long init\+\_\+s1, long init\+\_\+s2)
+\begin{DoxyCompactList}\small\item\em init random number generator with two large integers \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\mbox{\hyperlink{_l_c_g_8cpp}{L\+C\+G.\+cpp}} random number generator source\+: \href{http://www.c-plusplus.de/forum/39335-full}{\texttt{ http\+://www.\+c-\/plusplus.\+de/forum/39335-\/full}} (posted by Mady 12\+:54\+:00 15.\+12.\+2002) 
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{_l_c_g_8cpp_a1804e1adc8f3568b3ffaa21d9387986e}\label{_l_c_g_8cpp_a1804e1adc8f3568b3ffaa21d9387986e}} 
+\index{LCG.cpp@{LCG.cpp}!combinedLCG@{combinedLCG}}
+\index{combinedLCG@{combinedLCG}!LCG.cpp@{LCG.cpp}}
+\subsubsection{\texorpdfstring{combinedLCG()}{combinedLCG()}}
+{\footnotesize\ttfamily double combined\+L\+CG (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+uniformly distributed random number between 0 and 1 
+
+get uniformly distributed random double between 0 and 1 
+
+Definition at line 50 of file L\+C\+G.\+cpp.
+
+\mbox{\Hypertarget{_l_c_g_8cpp_aa2f338e23efacb13e4c6acac869476d4}\label{_l_c_g_8cpp_aa2f338e23efacb13e4c6acac869476d4}} 
+\index{LCG.cpp@{LCG.cpp}!initLCG@{initLCG}}
+\index{initLCG@{initLCG}!LCG.cpp@{LCG.cpp}}
+\subsubsection{\texorpdfstring{initLCG()}{initLCG()}}
+{\footnotesize\ttfamily void init\+L\+CG (\begin{DoxyParamCaption}\item[{long}]{init\+\_\+s1,  }\item[{long}]{init\+\_\+s2 }\end{DoxyParamCaption})}
+
+
+
+init random number generator with two large integers 
+
+init random number generator with two large integers 
+\begin{DoxyParams}{Parameters}
+{\em init\+\_\+s1} & large integer \\
+\hline
+{\em init\+\_\+s2} & large integer \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 85 of file L\+C\+G.\+cpp.
+
+\mbox{\Hypertarget{_l_c_g_8cpp_ae27e667b5e872e91e293f8034c8dd897}\label{_l_c_g_8cpp_ae27e667b5e872e91e293f8034c8dd897}} 
+\index{LCG.cpp@{LCG.cpp}!normcLCG@{normcLCG}}
+\index{normcLCG@{normcLCG}!LCG.cpp@{LCG.cpp}}
+\subsubsection{\texorpdfstring{normcLCG()}{normcLCG()}}
+{\footnotesize\ttfamily double normc\+L\+CG (\begin{DoxyParamCaption}\item[{double}]{mean,  }\item[{double}]{sd }\end{DoxyParamCaption})}
+
+
+
+normal distributed random number with mean and sd 
+
+\begin{DoxyReturn}{Returns}
+normally distributed random numbers
+\end{DoxyReturn}
+Follows the algorithm of the \textquotesingle{}Marsaglia polar method\textquotesingle{}, an modification of the \textquotesingle{}Box-\/\+Muller\textquotesingle{} algorithm. 
+\begin{DoxyParams}{Parameters}
+{\em mean} & mean \\
+\hline
+{\em sd} & standard deviation \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 70 of file L\+C\+G.\+cpp.
+

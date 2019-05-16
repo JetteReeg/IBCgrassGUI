@@ -1,0 +1,339 @@
+\hypertarget{class_s_pft_traits}{}\section{S\+Pft\+Traits Class Reference}
+\label{class_s_pft_traits}\index{SPftTraits@{SPftTraits}}
+
+
+Structure to store all P\+FT Parameters.  
+
+
+
+
+{\ttfamily \#include $<$S\+Pft\+Traits.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_s_pft_traits_ae44be63aad86c06fb232ee93ebb1455a}\label{class_s_pft_traits_ae44be63aad86c06fb232ee93ebb1455a}} 
+double \mbox{\hyperlink{class_s_pft_traits_ae44be63aad86c06fb232ee93ebb1455a}{Comp\+PowerA}} () const
+\begin{DoxyCompactList}\small\item\em above-\/ground competitive ability \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_s_pft_traits_ae3ed4a674e7d004a4bdace378c4df6ff}\label{class_s_pft_traits_ae3ed4a674e7d004a4bdace378c4df6ff}} 
+double \mbox{\hyperlink{class_s_pft_traits_ae3ed4a674e7d004a4bdace378c4df6ff}{Comp\+PowerB}} () const
+\begin{DoxyCompactList}\small\item\em below-\/ground competitive ability \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_s_pft_traits_a66b412aa004c42502be7a73f0b5f3782}\label{class_s_pft_traits_a66b412aa004c42502be7a73f0b5f3782}} 
+double \mbox{\hyperlink{class_s_pft_traits_a66b412aa004c42502be7a73f0b5f3782}{Graz\+Fac}} () const
+\begin{DoxyCompactList}\small\item\em fraction of above-\/ground biomass removal if a plant is grazed \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_s_pft_traits_a832b7b9af357d2e0638352ff4960f1d9}{S\+Pft\+Traits}} ()
+\begin{DoxyCompactList}\small\item\em constructor \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_s_pft_traits_add5e06f116e344c1a2bd0ab6181fc0da}\label{class_s_pft_traits_add5e06f116e344c1a2bd0ab6181fc0da}} 
+\mbox{\hyperlink{class_s_pft_traits_add5e06f116e344c1a2bd0ab6181fc0da}{S\+Pft\+Traits}} (const \mbox{\hyperlink{class_s_pft_traits}{S\+Pft\+Traits}} \&s)
+\begin{DoxyCompactList}\small\item\em constructor \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_s_pft_traits_aaaf6c9c81762e5b4e75822a56f6a76f5}\label{class_s_pft_traits_aaaf6c9c81762e5b4e75822a56f6a76f5}} 
+void \mbox{\hyperlink{class_s_pft_traits_aaaf6c9c81762e5b4e75822a56f6a76f5}{vary\+Traits}} ()
+\begin{DoxyCompactList}\small\item\em for I\+TV\+: variation of mean trait values (intraspecific trait variability) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_s_pft_traits_ac79f86169db7e8dc48cd7d3ac8890a63}{Read\+P\+F\+T\+Def}} (const string \&file)
+\begin{DoxyCompactList}\small\item\em read the P\+FT definitions from a file \end{DoxyCompactList}\item 
+static std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_s_pft_traits}{S\+Pft\+Traits}} $>$ \mbox{\hyperlink{class_s_pft_traits_a45c12aa12c09c72da36d303a646fc645}{get\+Pft\+Link}} (std\+::string type)
+\begin{DoxyCompactList}\small\item\em get basic type according to string \end{DoxyCompactList}\item 
+static std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_s_pft_traits}{S\+Pft\+Traits}} $>$ \mbox{\hyperlink{class_s_pft_traits_ad5ae63e54ff232f592ef14d18f961368}{create\+Trait\+Set\+From\+Pft\+Type}} (std\+::string type)
+\begin{DoxyCompactList}\small\item\em get the set of traits for a specific type \end{DoxyCompactList}\item 
+static std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_s_pft_traits}{S\+Pft\+Traits}} $>$ \mbox{\hyperlink{class_s_pft_traits_a66a9a088f4d2d7779d6a1fdb1461c117}{copy\+Trait\+Set}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_s_pft_traits}{S\+Pft\+Traits}} $>$ t)
+\begin{DoxyCompactList}\small\item\em copy a set of traits of a specific type \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_s_pft_traits_a691c7422ba130ac025a4916f60f56e50}\label{class_s_pft_traits_a691c7422ba130ac025a4916f60f56e50}} 
+int \mbox{\hyperlink{class_s_pft_traits_a691c7422ba130ac025a4916f60f56e50}{Type\+ID}}
+\begin{DoxyCompactList}\small\item\em P\+FT ID same number for all individuals of one P\+FT. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_s_pft_traits_a5639574a1141f9b4c570a7632c9a1792}\label{class_s_pft_traits_a5639574a1141f9b4c570a7632c9a1792}} 
+string \mbox{\hyperlink{class_s_pft_traits_a5639574a1141f9b4c570a7632c9a1792}{name}}
+\begin{DoxyCompactList}\small\item\em name of P\+FT \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_s_pft_traits_a7475629bec8e6b2f82381214d26ff73a}\label{class_s_pft_traits_a7475629bec8e6b2f82381214d26ff73a}} 
+int \mbox{\hyperlink{class_s_pft_traits_a7475629bec8e6b2f82381214d26ff73a}{Max\+Age}}
+\begin{DoxyCompactList}\small\item\em maximum age of plants \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_s_pft_traits_a20431cf9b504e1bdd41efa42185753f1}\label{class_s_pft_traits_a20431cf9b504e1bdd41efa42185753f1}} 
+double \mbox{\hyperlink{class_s_pft_traits_a20431cf9b504e1bdd41efa42185753f1}{L\+MR}}
+\begin{DoxyCompactList}\small\item\em leaf mass ratio (L\+MR) (leaf mass per shoot mass) \mbox{[}0;1\mbox{]} 1 -\/$>$ only leafs, 0 -\/$>$ only stem \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_s_pft_traits_aa9072251334bf5a4b1fde276ff6134a4}\label{class_s_pft_traits_aa9072251334bf5a4b1fde276ff6134a4}} 
+double \mbox{\hyperlink{class_s_pft_traits_aa9072251334bf5a4b1fde276ff6134a4}{S\+LA}}
+\begin{DoxyCompactList}\small\item\em specific leaf area (S\+LA) equal to cshoot in the model description (leaf area per leaf mass) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_s_pft_traits_a9ccddac1b8b23fef2877358ae5d437f2}\label{class_s_pft_traits_a9ccddac1b8b23fef2877358ae5d437f2}} 
+double \mbox{\hyperlink{class_s_pft_traits_a9ccddac1b8b23fef2877358ae5d437f2}{R\+AR}}
+\begin{DoxyCompactList}\small\item\em root area ratio (root area per root mass) equal to croot in the model description \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_s_pft_traits_a76c5874c85567183b15a13674e534aca}\label{class_s_pft_traits_a76c5874c85567183b15a13674e534aca}} 
+double \mbox{\hyperlink{class_s_pft_traits_a76c5874c85567183b15a13674e534aca}{m0}}
+\begin{DoxyCompactList}\small\item\em initial masses of root and shoot \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_s_pft_traits_a04103d3034330444141c2761d1dd53be}\label{class_s_pft_traits_a04103d3034330444141c2761d1dd53be}} 
+double \mbox{\hyperlink{class_s_pft_traits_a04103d3034330444141c2761d1dd53be}{Max\+Mass}}
+\begin{DoxyCompactList}\small\item\em maximum individual mass \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_s_pft_traits_a32918473478e469e7e3a26bd3d9b1acd}\label{class_s_pft_traits_a32918473478e469e7e3a26bd3d9b1acd}} 
+double \mbox{\hyperlink{class_s_pft_traits_a32918473478e469e7e3a26bd3d9b1acd}{Alloc\+Seed}}
+\begin{DoxyCompactList}\small\item\em constant proportion that is allocated to seeds between Flower\+Week and Disp\+Week \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_s_pft_traits_a047dfe2892cc9a321b1cd6a99f69bd18}\label{class_s_pft_traits_a047dfe2892cc9a321b1cd6a99f69bd18}} 
+double \mbox{\hyperlink{class_s_pft_traits_a047dfe2892cc9a321b1cd6a99f69bd18}{Seed\+Mass}}
+\begin{DoxyCompactList}\small\item\em Seed mass (mass of O\+NE seed) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_s_pft_traits_adcfae284d5d7d0ca0f4be2190c659966}\label{class_s_pft_traits_adcfae284d5d7d0ca0f4be2190c659966}} 
+double \mbox{\hyperlink{class_s_pft_traits_adcfae284d5d7d0ca0f4be2190c659966}{Dist}}
+\begin{DoxyCompactList}\small\item\em mean dispersal distance (and standard deviation of the dispersal kernel \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_s_pft_traits_af8664396e4d5dd27f444fe114988e0e3}\label{class_s_pft_traits_af8664396e4d5dd27f444fe114988e0e3}} 
+int \mbox{\hyperlink{class_s_pft_traits_af8664396e4d5dd27f444fe114988e0e3}{Dorm}}
+\begin{DoxyCompactList}\small\item\em maximum seed longevity \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_s_pft_traits_a67a3dd8f5ad81dfd21d6a0f65e1016a9}\label{class_s_pft_traits_a67a3dd8f5ad81dfd21d6a0f65e1016a9}} 
+double \mbox{\hyperlink{class_s_pft_traits_a67a3dd8f5ad81dfd21d6a0f65e1016a9}{p\+Estab}}
+\begin{DoxyCompactList}\small\item\em annual probability of seed establishment \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_s_pft_traits_a2696ba31c6746b189f57c218b06e5549}{Gmax}}
+\begin{DoxyCompactList}\small\item\em $<$ maximal resource utilization per Z\+OI area per time step \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_s_pft_traits_aa0f84234647835b7a4e93dc0b8a144bf}\label{class_s_pft_traits_aa0f84234647835b7a4e93dc0b8a144bf}} 
+double \mbox{\hyperlink{class_s_pft_traits_aa0f84234647835b7a4e93dc0b8a144bf}{comp\+\_\+power}}
+\begin{DoxyCompactList}\small\item\em competitive ability of perennials and annuals \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_s_pft_traits_a2c17d7aa3fa389a95a78563acca445df}\label{class_s_pft_traits_a2c17d7aa3fa389a95a78563acca445df}} 
+double \mbox{\hyperlink{class_s_pft_traits_a2c17d7aa3fa389a95a78563acca445df}{allocroot}}
+\begin{DoxyCompactList}\small\item\em higher resource allocation into shoots; different from normal \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_s_pft_traits_a343818fc987d00c8a4018cb9316be78c}\label{class_s_pft_traits_a343818fc987d00c8a4018cb9316be78c}} 
+double \mbox{\hyperlink{class_s_pft_traits_a343818fc987d00c8a4018cb9316be78c}{allocshoot}}
+\begin{DoxyCompactList}\small\item\em higher resource allocation into roots; different from normal \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_s_pft_traits_a46b25852e248d4e9d7415c8a65b83698}\label{class_s_pft_traits_a46b25852e248d4e9d7415c8a65b83698}} 
+double \mbox{\hyperlink{class_s_pft_traits_a46b25852e248d4e9d7415c8a65b83698}{palat}}
+\begin{DoxyCompactList}\small\item\em Palatability -\/$>$ susceptability towards grazing. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_s_pft_traits_a20e26fab4451ca789976a54a72bf882c}\label{class_s_pft_traits_a20e26fab4451ca789976a54a72bf882c}} 
+int \mbox{\hyperlink{class_s_pft_traits_a20e26fab4451ca789976a54a72bf882c}{memory}}
+\begin{DoxyCompactList}\small\item\em equal to surv\+\_\+max in the model description -\/$>$ maximal time of survival under stress \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_s_pft_traits_ae285db0958ed2a5e13b1add0d0663f35}\label{class_s_pft_traits_ae285db0958ed2a5e13b1add0d0663f35}} 
+double \mbox{\hyperlink{class_s_pft_traits_ae285db0958ed2a5e13b1add0d0663f35}{m\+Thres}}
+\begin{DoxyCompactList}\small\item\em Fraction of maximum uptake that is considered as resource stress. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_s_pft_traits_a8e4a70516dad4ce97ad5df9caaf70bc7}\label{class_s_pft_traits_a8e4a70516dad4ce97ad5df9caaf70bc7}} 
+double \mbox{\hyperlink{class_s_pft_traits_a8e4a70516dad4ce97ad5df9caaf70bc7}{growth}}
+\begin{DoxyCompactList}\small\item\em coersion rate resource -\/$>$ biomass \mbox{[}mass/resource unit\mbox{]} \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_s_pft_traits_a50a419d8d60294c78f7122e0e7c02639}\label{class_s_pft_traits_a50a419d8d60294c78f7122e0e7c02639}} 
+double \mbox{\hyperlink{class_s_pft_traits_a50a419d8d60294c78f7122e0e7c02639}{herb}}
+\begin{DoxyCompactList}\small\item\em herbicide susceptibility \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_s_pft_traits_a3e60bc8f7c177aaf12ba01ee7d55471f}\label{class_s_pft_traits_a3e60bc8f7c177aaf12ba01ee7d55471f}} 
+double \mbox{\hyperlink{class_s_pft_traits_a3e60bc8f7c177aaf12ba01ee7d55471f}{E\+C50\+\_\+biomass}}
+\begin{DoxyCompactList}\small\item\em E\+C50 for effect on biomass. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_s_pft_traits_a8367414be5599b78625b3e0f944631cf}\label{class_s_pft_traits_a8367414be5599b78625b3e0f944631cf}} 
+double \mbox{\hyperlink{class_s_pft_traits_a8367414be5599b78625b3e0f944631cf}{E\+C50\+\_\+\+S\+Ebiomass}}
+\begin{DoxyCompactList}\small\item\em E\+C50 for effect on seedling biomass. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_s_pft_traits_a7816894696a9c03360f15ccf8750072f}\label{class_s_pft_traits_a7816894696a9c03360f15ccf8750072f}} 
+double \mbox{\hyperlink{class_s_pft_traits_a7816894696a9c03360f15ccf8750072f}{E\+C50\+\_\+survival}}
+\begin{DoxyCompactList}\small\item\em E\+C50 for effect on survival. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_s_pft_traits_ac4294400a204e7fb372369c7ed6b7bd5}\label{class_s_pft_traits_ac4294400a204e7fb372369c7ed6b7bd5}} 
+double \mbox{\hyperlink{class_s_pft_traits_ac4294400a204e7fb372369c7ed6b7bd5}{E\+C50\+\_\+establishment}}
+\begin{DoxyCompactList}\small\item\em E\+C50 for effect on establishment. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_s_pft_traits_a242eb61bbeccfadbd395d532e31c4289}\label{class_s_pft_traits_a242eb61bbeccfadbd395d532e31c4289}} 
+double \mbox{\hyperlink{class_s_pft_traits_a242eb61bbeccfadbd395d532e31c4289}{E\+C50\+\_\+sterility}}
+\begin{DoxyCompactList}\small\item\em E\+C50 for effect on seed sterility. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_s_pft_traits_a11d2ca96d92dce1fdf398255797362f7}\label{class_s_pft_traits_a11d2ca96d92dce1fdf398255797362f7}} 
+double \mbox{\hyperlink{class_s_pft_traits_a11d2ca96d92dce1fdf398255797362f7}{E\+C50\+\_\+seednumber}}
+\begin{DoxyCompactList}\small\item\em E\+C50 for effect on seed number. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_s_pft_traits_a77b76cf8ffd01c1deaa3ed5448d4f8df}\label{class_s_pft_traits_a77b76cf8ffd01c1deaa3ed5448d4f8df}} 
+double \mbox{\hyperlink{class_s_pft_traits_a77b76cf8ffd01c1deaa3ed5448d4f8df}{slope\+\_\+biomass}}
+\begin{DoxyCompactList}\small\item\em slope for effect on biomass \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_s_pft_traits_a9a7401f29cbdc47dad979961643804ec}\label{class_s_pft_traits_a9a7401f29cbdc47dad979961643804ec}} 
+double \mbox{\hyperlink{class_s_pft_traits_a9a7401f29cbdc47dad979961643804ec}{slope\+\_\+\+S\+Ebiomass}}
+\begin{DoxyCompactList}\small\item\em slope for effect on seedling biomass \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_s_pft_traits_a001fc5fd777315a2f843edc5f873db79}\label{class_s_pft_traits_a001fc5fd777315a2f843edc5f873db79}} 
+double \mbox{\hyperlink{class_s_pft_traits_a001fc5fd777315a2f843edc5f873db79}{slope\+\_\+survival}}
+\begin{DoxyCompactList}\small\item\em slope for effect on survival \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_s_pft_traits_a50725d00d8ae8594196023252156e10b}\label{class_s_pft_traits_a50725d00d8ae8594196023252156e10b}} 
+double \mbox{\hyperlink{class_s_pft_traits_a50725d00d8ae8594196023252156e10b}{slope\+\_\+establishment}}
+\begin{DoxyCompactList}\small\item\em slope for effect on establishment \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_s_pft_traits_a9663572021811c14f9554fdc15494e14}\label{class_s_pft_traits_a9663572021811c14f9554fdc15494e14}} 
+double \mbox{\hyperlink{class_s_pft_traits_a9663572021811c14f9554fdc15494e14}{slope\+\_\+sterility}}
+\begin{DoxyCompactList}\small\item\em slope for effect on seed sterility \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_s_pft_traits_a25807de41bdb25894687d3f1f209fc79}\label{class_s_pft_traits_a25807de41bdb25894687d3f1f209fc79}} 
+double \mbox{\hyperlink{class_s_pft_traits_a25807de41bdb25894687d3f1f209fc79}{slope\+\_\+seednumber}}
+\begin{DoxyCompactList}\small\item\em slope for effect on seed number \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_s_pft_traits_ad243e2e5e50ff060faaa309d725b9f6a}\label{class_s_pft_traits_ad243e2e5e50ff060faaa309d725b9f6a}} 
+int \mbox{\hyperlink{class_s_pft_traits_ad243e2e5e50ff060faaa309d725b9f6a}{Flower\+Week}}
+\begin{DoxyCompactList}\small\item\em week of start of seed production \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_s_pft_traits_a70c4556ffc078da147f2c7a977fdb396}\label{class_s_pft_traits_a70c4556ffc078da147f2c7a977fdb396}} 
+int \mbox{\hyperlink{class_s_pft_traits_a70c4556ffc078da147f2c7a977fdb396}{Disp\+Week}}
+\begin{DoxyCompactList}\small\item\em week of seed dispersal (and end of seed production) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_s_pft_traits_abcc1a7d5b3099b4ab22f56daaa0a7d70}\label{class_s_pft_traits_abcc1a7d5b3099b4ab22f56daaa0a7d70}} 
+int \mbox{\hyperlink{class_s_pft_traits_abcc1a7d5b3099b4ab22f56daaa0a7d70}{Germ\+Period}}
+\begin{DoxyCompactList}\small\item\em week of seed dispersal (and end of seed production) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_s_pft_traits_aa223f173e18bfae737db1ede7806d56b}\label{class_s_pft_traits_aa223f173e18bfae737db1ede7806d56b}} 
+int \mbox{\hyperlink{class_s_pft_traits_aa223f173e18bfae737db1ede7806d56b}{overwintering}}
+\begin{DoxyCompactList}\small\item\em overwintering of plants yes (1) or no (0); important for annuals \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_s_pft_traits_a37b91c6f410774b1e8953364eb1aa01f}\label{class_s_pft_traits_a37b91c6f410774b1e8953364eb1aa01f}} 
+bool \mbox{\hyperlink{class_s_pft_traits_a37b91c6f410774b1e8953364eb1aa01f}{clonal}}
+\begin{DoxyCompactList}\small\item\em is this plant clonal at all? \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_s_pft_traits_a8ba6bda1e985856e57dd8cde29f755f2}\label{class_s_pft_traits_a8ba6bda1e985856e57dd8cde29f755f2}} 
+double \mbox{\hyperlink{class_s_pft_traits_a8ba6bda1e985856e57dd8cde29f755f2}{Prop\+Sex}}
+\begin{DoxyCompactList}\small\item\em allocation to sexual reproduction during time of seed production \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_s_pft_traits_a272403e9be0b736d37f30a3891ffbff0}\label{class_s_pft_traits_a272403e9be0b736d37f30a3891ffbff0}} 
+double \mbox{\hyperlink{class_s_pft_traits_a272403e9be0b736d37f30a3891ffbff0}{mean\+Spacerlength}}
+\begin{DoxyCompactList}\small\item\em mean spacer length \mbox{[}cm\mbox{]} \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_s_pft_traits_a85289ca459526d898c777db2e88c65f2}\label{class_s_pft_traits_a85289ca459526d898c777db2e88c65f2}} 
+double \mbox{\hyperlink{class_s_pft_traits_a85289ca459526d898c777db2e88c65f2}{sd\+Spacerlength}}
+\begin{DoxyCompactList}\small\item\em sd spacer length \mbox{[}cm\mbox{]} \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_s_pft_traits_a51ab5cddc07b00e4503211f7f9aa6766}\label{class_s_pft_traits_a51ab5cddc07b00e4503211f7f9aa6766}} 
+double \mbox{\hyperlink{class_s_pft_traits_a51ab5cddc07b00e4503211f7f9aa6766}{Alloc\+Spacer}}
+\begin{DoxyCompactList}\small\item\em proportion of resource invested in ramet growth -\/$>$ for annual and biannual species this should not be=Alloc\+Seed, because this is then way to high \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_s_pft_traits_aa45d6adb471357506db921078429845e}\label{class_s_pft_traits_aa45d6adb471357506db921078429845e}} 
+bool \mbox{\hyperlink{class_s_pft_traits_aa45d6adb471357506db921078429845e}{Resshare}}
+\begin{DoxyCompactList}\small\item\em do established ramets share their resources? \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_s_pft_traits_aba851aa2c86f0a498bc8476c14d46e77}\label{class_s_pft_traits_aba851aa2c86f0a498bc8476c14d46e77}} 
+double \mbox{\hyperlink{class_s_pft_traits_aba851aa2c86f0a498bc8476c14d46e77}{m\+Spacer}}
+\begin{DoxyCompactList}\small\item\em resources for 1 cm spacer (default=70) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static map$<$ string, shared\+\_\+ptr$<$ \mbox{\hyperlink{class_s_pft_traits}{S\+Pft\+Traits}} $>$ $>$ \mbox{\hyperlink{class_s_pft_traits_a01285892bf49cb3af31aad380de299ef}{Pft\+Link\+List}} = map$<$ string, shared\+\_\+ptr$<$\mbox{\hyperlink{class_s_pft_traits}{S\+Pft\+Traits}}$>$ $>$()
+\begin{DoxyCompactList}\small\item\em links of Pfts(\+S\+Pft\+Trais) used \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Structure to store all P\+FT Parameters. 
+
+Structure to store all P\+FT Parameters 
+
+Definition at line 20 of file S\+Pft\+Traits.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_s_pft_traits_a832b7b9af357d2e0638352ff4960f1d9}\label{class_s_pft_traits_a832b7b9af357d2e0638352ff4960f1d9}} 
+\index{SPftTraits@{SPftTraits}!SPftTraits@{SPftTraits}}
+\index{SPftTraits@{SPftTraits}!SPftTraits@{SPftTraits}}
+\subsubsection{\texorpdfstring{SPftTraits()}{SPftTraits()}}
+{\footnotesize\ttfamily S\+Pft\+Traits\+::\+S\+Pft\+Traits (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+constructor 
+
+constructor 
+
+Definition at line 27 of file S\+Pft\+Traits.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_s_pft_traits_a66a9a088f4d2d7779d6a1fdb1461c117}\label{class_s_pft_traits_a66a9a088f4d2d7779d6a1fdb1461c117}} 
+\index{SPftTraits@{SPftTraits}!copyTraitSet@{copyTraitSet}}
+\index{copyTraitSet@{copyTraitSet}!SPftTraits@{SPftTraits}}
+\subsubsection{\texorpdfstring{copyTraitSet()}{copyTraitSet()}}
+{\footnotesize\ttfamily shared\+\_\+ptr$<$ \mbox{\hyperlink{class_s_pft_traits}{S\+Pft\+Traits}} $>$ S\+Pft\+Traits\+::copy\+Trait\+Set (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_s_pft_traits}{S\+Pft\+Traits}} $>$}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+copy a set of traits of a specific type 
+
+for I\+TV
+
+Get -\/ the instance (pass by value) of a specific P\+FT (as defined by its name) 
+\begin{DoxyParams}{Parameters}
+{\em type} & P\+FT asked for \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Object instance defining a P\+FT. 
+\end{DoxyReturn}
+
+
+Definition at line 106 of file S\+Pft\+Traits.\+cpp.
+
+\mbox{\Hypertarget{class_s_pft_traits_ad5ae63e54ff232f592ef14d18f961368}\label{class_s_pft_traits_ad5ae63e54ff232f592ef14d18f961368}} 
+\index{SPftTraits@{SPftTraits}!createTraitSetFromPftType@{createTraitSetFromPftType}}
+\index{createTraitSetFromPftType@{createTraitSetFromPftType}!SPftTraits@{SPftTraits}}
+\subsubsection{\texorpdfstring{createTraitSetFromPftType()}{createTraitSetFromPftType()}}
+{\footnotesize\ttfamily shared\+\_\+ptr$<$ \mbox{\hyperlink{class_s_pft_traits}{S\+Pft\+Traits}} $>$ S\+Pft\+Traits\+::create\+Trait\+Set\+From\+Pft\+Type (\begin{DoxyParamCaption}\item[{std\+::string}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+get the set of traits for a specific type 
+
+Get -\/ the instance (pass by value) of a specific P\+FT (as defined by its name) 
+\begin{DoxyParams}{Parameters}
+{\em type} & P\+FT asked for \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Object instance defining a P\+FT. 
+\end{DoxyReturn}
+
+
+Definition at line 89 of file S\+Pft\+Traits.\+cpp.
+
+\mbox{\Hypertarget{class_s_pft_traits_a45c12aa12c09c72da36d303a646fc645}\label{class_s_pft_traits_a45c12aa12c09c72da36d303a646fc645}} 
+\index{SPftTraits@{SPftTraits}!getPftLink@{getPftLink}}
+\index{getPftLink@{getPftLink}!SPftTraits@{SPftTraits}}
+\subsubsection{\texorpdfstring{getPftLink()}{getPftLink()}}
+{\footnotesize\ttfamily shared\+\_\+ptr$<$ \mbox{\hyperlink{class_s_pft_traits}{S\+Pft\+Traits}} $>$ S\+Pft\+Traits\+::get\+Pft\+Link (\begin{DoxyParamCaption}\item[{std\+::string}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+get basic type according to string 
+
+Get -\/ link for specific P\+FT 
+\begin{DoxyParams}{Parameters}
+{\em type} & P\+FT asked for \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Object pointer to P\+FT definition 
+\end{DoxyReturn}
+
+
+Definition at line 70 of file S\+Pft\+Traits.\+cpp.
+
+\mbox{\Hypertarget{class_s_pft_traits_ac79f86169db7e8dc48cd7d3ac8890a63}\label{class_s_pft_traits_ac79f86169db7e8dc48cd7d3ac8890a63}} 
+\index{SPftTraits@{SPftTraits}!ReadPFTDef@{ReadPFTDef}}
+\index{ReadPFTDef@{ReadPFTDef}!SPftTraits@{SPftTraits}}
+\subsubsection{\texorpdfstring{ReadPFTDef()}{ReadPFTDef()}}
+{\footnotesize\ttfamily void S\+Pft\+Traits\+::\+Read\+P\+F\+T\+Def (\begin{DoxyParamCaption}\item[{const string \&}]{file }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+read the P\+FT definitions from a file 
+
+Read definition of P\+F\+Ts used in the simulation 
+\begin{DoxyParams}{Parameters}
+{\em file} & file containing P\+FT definitions \\
+\hline
+{\em n} & default=-\/1; \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 117 of file S\+Pft\+Traits.\+cpp.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_s_pft_traits_a2696ba31c6746b189f57c218b06e5549}\label{class_s_pft_traits_a2696ba31c6746b189f57c218b06e5549}} 
+\index{SPftTraits@{SPftTraits}!Gmax@{Gmax}}
+\index{Gmax@{Gmax}!SPftTraits@{SPftTraits}}
+\subsubsection{\texorpdfstring{Gmax}{Gmax}}
+{\footnotesize\ttfamily double S\+Pft\+Traits\+::\+Gmax}
+
+
+
+$<$ maximal resource utilization per Z\+OI area per time step 
+
+$<$ (optimum uptake for two layers \+: Lim\+Res=2$\ast$\+Gmax) (optimum uptake for one layer \+: Lim\+Res=Gmax) 
+
+Definition at line 61 of file S\+Pft\+Traits.\+h.
+
+\mbox{\Hypertarget{class_s_pft_traits_a01285892bf49cb3af31aad380de299ef}\label{class_s_pft_traits_a01285892bf49cb3af31aad380de299ef}} 
+\index{SPftTraits@{SPftTraits}!PftLinkList@{PftLinkList}}
+\index{PftLinkList@{PftLinkList}!SPftTraits@{SPftTraits}}
+\subsubsection{\texorpdfstring{PftLinkList}{PftLinkList}}
+{\footnotesize\ttfamily map$<$ string, shared\+\_\+ptr$<$ \mbox{\hyperlink{class_s_pft_traits}{S\+Pft\+Traits}} $>$ $>$ S\+Pft\+Traits\+::\+Pft\+Link\+List = map$<$ string, shared\+\_\+ptr$<$\mbox{\hyperlink{class_s_pft_traits}{S\+Pft\+Traits}}$>$ $>$()\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+links of Pfts(\+S\+Pft\+Trais) used 
+
+structure of P\+FT traits 
+
+Definition at line 24 of file S\+Pft\+Traits.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+I\+B\+Cgrass\+G\+U\+I.\+git/trunk/\+Model-\/files/\mbox{\hyperlink{_s_pft_traits_8h}{S\+Pft\+Traits.\+h}}\item 
+D\+:/\+I\+B\+Cgrass\+G\+U\+I.\+git/trunk/\+Model-\/files/\mbox{\hyperlink{_s_pft_traits_8cpp}{S\+Pft\+Traits.\+cpp}}\end{DoxyCompactItemize}

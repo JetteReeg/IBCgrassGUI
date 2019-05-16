@@ -1,0 +1,795 @@
+\hypertarget{class_c_plant}{}\section{C\+Plant Class Reference}
+\label{class_c_plant}\index{CPlant@{CPlant}}
+
+
+Class that describes plant individuals.  
+
+
+
+
+{\ttfamily \#include $<$Plant.\+h$>$}
+
+Inheritance diagram for C\+Plant\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_c_plant}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_c_plant_a85565035b648d0771cb8344e018c362b}{C\+Plant}} (double x, double y, shared\+\_\+ptr$<$ \mbox{\hyperlink{class_s_pft_traits}{S\+Pft\+Traits}} $>$ \mbox{\hyperlink{class_c_plant_aab480753ce36094220b0c38fbc2b69eb}{Traits}})
+\begin{DoxyCompactList}\small\item\em constructor for plant objects \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_c_plant_a8942a3b196d81a7498b8bb4a40e57bfd}{C\+Plant}} (\mbox{\hyperlink{class_c_seed}{C\+Seed}} $\ast$seed)
+\begin{DoxyCompactList}\small\item\em make a plant from a seed object \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_c_plant_ad52ea5533d1cefc5db609f1d2754f47f}{$\sim$\+C\+Plant}} ()
+\begin{DoxyCompactList}\small\item\em destructor \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_c_plant_ac539d50780b1d39e9426786f9b9917c2}{C\+Plant}} (double x, double y, \mbox{\hyperlink{class_c_plant}{C\+Plant}} $\ast$plant)
+\begin{DoxyCompactList}\small\item\em initalization of one plant on specific location \end{DoxyCompactList}\item 
+virtual string \mbox{\hyperlink{class_c_plant_a6f01bbbf4d15243a1e00e85ce1a9de5b}{type}} ()
+\begin{DoxyCompactList}\small\item\em get type of plant \end{DoxyCompactList}\item 
+virtual string \mbox{\hyperlink{class_c_plant_a911d2b301b01fc5a37945fbca57e96b3}{pft}} ()
+\begin{DoxyCompactList}\small\item\em get P\+FT name of plant \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_c_plant_a45e9f6a89368ab3ac990471ebf2bf6a1}{Area\+\_\+shoot}} ()
+\begin{DoxyCompactList}\small\item\em Z\+OI area aboveground. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_c_plant_a9cc752efa2b7d548f47bba881be6e764}{Area\+\_\+root}} ()
+\begin{DoxyCompactList}\small\item\em Z\+OI area belowground. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_c_plant_a9a3ec11bb76d2264c31d0e0154df03a8}{Radius\+\_\+shoot}} ()
+\begin{DoxyCompactList}\small\item\em Z\+OI radius aboveground. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_c_plant_a865e74078ea231ec3e4b9396f50bff61}{Radius\+\_\+root}} ()
+\begin{DoxyCompactList}\small\item\em Z\+OI radius belowground. \end{DoxyCompactList}\item 
+virtual double \mbox{\hyperlink{class_c_plant_af0b2cca25cc5a0a623d344a2c48ac73a}{dm\+Grow}} (double Assim, double Resp)
+\begin{DoxyCompactList}\small\item\em growth \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_c_plant_a89014f14d398abf7965cbe3c3231a742}\label{class_c_plant_a89014f14d398abf7965cbe3c3231a742}} 
+virtual double \mbox{\hyperlink{class_c_plant_a89014f14d398abf7965cbe3c3231a742}{Ad\+Bio\+Red}} ()
+\begin{DoxyCompactList}\small\item\em herbicide effect\+: reduction in biomass \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_c_plant_a7ff3db7c0854b2d92269bf48e3925ec0}\label{class_c_plant_a7ff3db7c0854b2d92269bf48e3925ec0}} 
+virtual double \mbox{\hyperlink{class_c_plant_a7ff3db7c0854b2d92269bf48e3925ec0}{Alloc\+Seed\+Red}} ()
+\begin{DoxyCompactList}\small\item\em herbicide effect\+: reduction in resource allocation to seed production \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_c_plant_a8b9c9c25a8aabf4275e206810b9c62e3}\label{class_c_plant_a8b9c9c25a8aabf4275e206810b9c62e3}} 
+virtual double \mbox{\hyperlink{class_c_plant_a8b9c9c25a8aabf4275e206810b9c62e3}{Alloc\+Spacer\+Red}} ()
+\begin{DoxyCompactList}\small\item\em herbicide effect\+: reduction in resource allocation to spacer production \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_c_plant_aa9b9a4a1be9df4e507144ba3bfde8f50}{comp\+\_\+coef}} (const int layer, const int symmetry) const
+\begin{DoxyCompactList}\small\item\em competition coefficient for a plant -\/needed for Above\+Comp and Below\+Comp \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{class_c_plant_a49fa0d1fb6b432339c5156fe31cabf58}{stressed}} ()
+\begin{DoxyCompactList}\small\item\em return true if plant is stressed \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_c_plant_ad250486a6947c14ef3766126f452a65c}\label{class_c_plant_ad250486a6947c14ef3766126f452a65c}} 
+virtual double \mbox{\hyperlink{class_c_plant_ad250486a6947c14ef3766126f452a65c}{minresA}} ()
+\begin{DoxyCompactList}\small\item\em lower threshold of aboveground resource uptake (light stress thresh.) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_c_plant_a7af7dce0a3ad9b168850f88dd85d6952}\label{class_c_plant_a7af7dce0a3ad9b168850f88dd85d6952}} 
+virtual double \mbox{\hyperlink{class_c_plant_a7af7dce0a3ad9b168850f88dd85d6952}{minresB}} ()
+\begin{DoxyCompactList}\small\item\em lower threshold of belowground resource uptake (nutrient stress thresh.) \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_c_plant_a475e1b0149b52abca2a699f20960c552}{Grow}} ()
+\begin{DoxyCompactList}\small\item\em shoot-\/root resource allocation and plant growth in two layers \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_c_plant_a79fb5e9ec6b21eb939a25252c8cca2e2}{Kill}} ()
+\begin{DoxyCompactList}\small\item\em Mortality due to resource shortage or at random. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_plant_a85a5028cbe8028f6c5222f2d32fb21da}{Decompose\+Dead}} ()
+\begin{DoxyCompactList}\small\item\em calculate mass decomposition of dead plants \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_plant_a1e8eb53d535dea92050fcb19dcbb9538}{Winter\+Loss}} ()
+\begin{DoxyCompactList}\small\item\em removal of above-\/ground biomass in winter \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_plant_a80e89c9f8cefee43ac3020974ae0850b}{Overwintering}} ()
+\begin{DoxyCompactList}\small\item\em removal of plants not able to overwinter (for annual plants) \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_c_plant_aa39451abceca77342e6bdbc90ebf425e}{Remove\+Mass}} ()
+\begin{DoxyCompactList}\small\item\em removal of above-\/ground biomass by grazing \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_plant_a8e9f7d1261306165ecca0cf951f50505}{set\+Cell}} (\mbox{\hyperlink{class_c_cell}{C\+Cell}} $\ast$\mbox{\hyperlink{class_c_plant_aa4e3f8bc03674d5017a44b6bc01faf4e}{cell}})
+\begin{DoxyCompactList}\small\item\em define cell for plant \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_c_plant_ac8dd4dc4797ecb0881131f9c44d3cd4d}\label{class_c_plant_ac8dd4dc4797ecb0881131f9c44d3cd4d}} 
+\mbox{\hyperlink{class_c_cell}{C\+Cell}} $\ast$ \mbox{\hyperlink{class_c_plant_ac8dd4dc4797ecb0881131f9c44d3cd4d}{get\+Cell}} ()
+\begin{DoxyCompactList}\small\item\em returns central cell \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_c_plant_a70c98d3af1bfd3095d2dd0e7880597ac}\label{class_c_plant_a70c98d3af1bfd3095d2dd0e7880597ac}} 
+double \mbox{\hyperlink{class_c_plant_a70c98d3af1bfd3095d2dd0e7880597ac}{Get\+Mass}} ()
+\begin{DoxyCompactList}\small\item\em returns plant mass \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{class_c_plant_a0e6da4d0343dc1cceae34118ca8e2a3f}{Get\+N\+Seeds}} ()
+\begin{DoxyCompactList}\small\item\em returns number of seeds of one plant individual \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_plant_a214050cfb40ec3f179633ba29e594ddf}{set\+Genet}} (\mbox{\hyperlink{class_c_genet}{C\+Genet}} $\ast$\mbox{\hyperlink{class_c_plant_acb01afeb25e9427226da1c823f479776}{genet}})
+\begin{DoxyCompactList}\small\item\em set genet and add ramet to its list \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_c_plant_a16f1ef81fc73af23d8576a386c70637d}\label{class_c_plant_a16f1ef81fc73af23d8576a386c70637d}} 
+\mbox{\hyperlink{class_c_genet}{C\+Genet}} $\ast$ \mbox{\hyperlink{class_c_plant_a16f1ef81fc73af23d8576a386c70637d}{get\+Genet}} ()
+\begin{DoxyCompactList}\small\item\em get the genet \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_plant_abc8381f34cb7dd169a60d886ced465be}{Spacer\+Grow}} ()
+\begin{DoxyCompactList}\small\item\em spacer growth \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{class_c_plant_a4f815871e13536e1e4f78a34e7ed2ef3}{Get\+N\+Ramets}} ()
+\begin{DoxyCompactList}\small\item\em return number of ramets \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_c_plant_a48f2f4cffe534b07514e3048e0d01db6}\label{class_c_plant_a48f2f4cffe534b07514e3048e0d01db6}} 
+bool \mbox{\hyperlink{class_c_plant_a48f2f4cffe534b07514e3048e0d01db6}{Get\+Plant\+Remove}} ()
+\begin{DoxyCompactList}\small\item\em return true if plant should be removed (necessary to apply algorithms from S\+TL) \end{DoxyCompactList}\item 
+virtual double \mbox{\hyperlink{class_c_plant_a045f39f51bcafabb15d0e16bdd58b017}{get\+Mort\+Base}} ()
+\item 
+virtual double \mbox{\hyperlink{class_c_plant_a7f215cff30196620f8a22e494f5f61ca}{get\+Mort\+Herb}} ()
+\item 
+virtual void \mbox{\hyperlink{class_c_plant_a6e71f471594572aee0216d0958b893e8}{set\+Mort\+Base}} (double mort\+Base)
+\item 
+virtual double \mbox{\hyperlink{class_c_plant_a5ab0a36c3e58898c7c750db485eca653}{getp\+Estab\+Ramet}} ()
+\begin{DoxyCompactList}\small\item\em get current ramet establishment probability \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_c_plant_a2620b453aa5e8f60eff16a0d879c192a}\label{class_c_plant_a2620b453aa5e8f60eff16a0d879c192a}} 
+static bool \mbox{\hyperlink{class_c_plant_a2620b453aa5e8f60eff16a0d879c192a}{Compare\+Palat}} (const \mbox{\hyperlink{class_c_plant}{C\+Plant}} $\ast$plant1, const \mbox{\hyperlink{class_c_plant}{C\+Plant}} $\ast$plant2)
+\begin{DoxyCompactList}\small\item\em sort plant individuals descending after shoot size $\ast$ palatability \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_c_plant_a2bbc402aa0bb50fcace262cb1bcf8136}\label{class_c_plant_a2bbc402aa0bb50fcace262cb1bcf8136}} 
+static bool \mbox{\hyperlink{class_c_plant_a2bbc402aa0bb50fcace262cb1bcf8136}{Compare\+Shoot}} (const \mbox{\hyperlink{class_c_plant}{C\+Plant}} $\ast$plant1, const \mbox{\hyperlink{class_c_plant}{C\+Plant}} $\ast$plant2)
+\begin{DoxyCompactList}\small\item\em sort plants descending after shoot size (mass$\ast$1/\+L\+MR) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_c_plant_a1cdae9aa7ef08c0f0fc70fc7de765e82}\label{class_c_plant_a1cdae9aa7ef08c0f0fc70fc7de765e82}} 
+static bool \mbox{\hyperlink{class_c_plant_a1cdae9aa7ef08c0f0fc70fc7de765e82}{Compare\+Root}} (const \mbox{\hyperlink{class_c_plant}{C\+Plant}} $\ast$plant1, const \mbox{\hyperlink{class_c_plant}{C\+Plant}} $\ast$plant2)
+\begin{DoxyCompactList}\small\item\em sort plants descending after root mass \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_c_plant_aab480753ce36094220b0c38fbc2b69eb}\label{class_c_plant_aab480753ce36094220b0c38fbc2b69eb}} 
+shared\+\_\+ptr$<$ \mbox{\hyperlink{class_s_pft_traits}{S\+Pft\+Traits}} $>$ \mbox{\hyperlink{class_c_plant_aab480753ce36094220b0c38fbc2b69eb}{Traits}}
+\begin{DoxyCompactList}\small\item\em P\+FT Traits. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_c_plant_ab62bab7acf579a6c916f5b48ce9a74ee}\label{class_c_plant_ab62bab7acf579a6c916f5b48ce9a74ee}} 
+int \mbox{\hyperlink{class_c_plant_ab62bab7acf579a6c916f5b48ce9a74ee}{Age}}
+\begin{DoxyCompactList}\small\item\em Variable that takes track of plant age yearly! \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_c_plant_ac2b543810530a9f6c17568b6b10b1f24}\label{class_c_plant_ac2b543810530a9f6c17568b6b10b1f24}} 
+double \mbox{\hyperlink{class_c_plant_ac2b543810530a9f6c17568b6b10b1f24}{xcoord}}
+\begin{DoxyCompactList}\small\item\em location of plant\textquotesingle{}s central point \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_c_plant_a9fe81fee2c6f6493abe9d4e425f53a47}\label{class_c_plant_a9fe81fee2c6f6493abe9d4e425f53a47}} 
+double \mbox{\hyperlink{class_c_plant_a9fe81fee2c6f6493abe9d4e425f53a47}{ycoord}}
+\begin{DoxyCompactList}\small\item\em location of plant\textquotesingle{}s central point \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_c_plant_a3e5389c084caf629364f78d9b2209f34}\label{class_c_plant_a3e5389c084caf629364f78d9b2209f34}} 
+double \mbox{\hyperlink{class_c_plant_a3e5389c084caf629364f78d9b2209f34}{mshoot}}
+\begin{DoxyCompactList}\small\item\em shoot mass \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_c_plant_a3b1293200e1f09e278520105de1a67c8}\label{class_c_plant_a3b1293200e1f09e278520105de1a67c8}} 
+double \mbox{\hyperlink{class_c_plant_a3b1293200e1f09e278520105de1a67c8}{mroot}}
+\begin{DoxyCompactList}\small\item\em root mass \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_c_plant_a1e22d888338d37dfc7c86f87f005683a}\label{class_c_plant_a1e22d888338d37dfc7c86f87f005683a}} 
+double \mbox{\hyperlink{class_c_plant_a1e22d888338d37dfc7c86f87f005683a}{m\+Repro}}
+\begin{DoxyCompactList}\small\item\em reproductive mass (which is converted to seeds) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_c_plant_a134e8549742713b7c106e8ddcef2b372}\label{class_c_plant_a134e8549742713b7c106e8ddcef2b372}} 
+double \mbox{\hyperlink{class_c_plant_a134e8549742713b7c106e8ddcef2b372}{Ash\+\_\+disc}}
+\begin{DoxyCompactList}\small\item\em discrete above-\/ground Z\+OI area \mbox{[}number of cells covered $\ast$ area of one cell\mbox{]} \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_c_plant_acce1e7f485dd0b6a3f78931be402e4b3}\label{class_c_plant_acce1e7f485dd0b6a3f78931be402e4b3}} 
+double \mbox{\hyperlink{class_c_plant_acce1e7f485dd0b6a3f78931be402e4b3}{Art\+\_\+disc}}
+\begin{DoxyCompactList}\small\item\em discrete below-\/ground Z\+OI area \mbox{[}number of cells covered $\ast$ area of one cell\mbox{]} \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_c_plant_a6f8811a202b607fe3c0b0fee1e3f9880}\label{class_c_plant_a6f8811a202b607fe3c0b0fee1e3f9880}} 
+double \mbox{\hyperlink{class_c_plant_a6f8811a202b607fe3c0b0fee1e3f9880}{Aroots\+\_\+all}}
+\begin{DoxyCompactList}\small\item\em area of all species\textquotesingle{} roots in Z\+OI \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_c_plant_a732da37520b82a5000e50c0b0699a136}\label{class_c_plant_a732da37520b82a5000e50c0b0699a136}} 
+double \mbox{\hyperlink{class_c_plant_a732da37520b82a5000e50c0b0699a136}{Aroots\+\_\+type}}
+\begin{DoxyCompactList}\small\item\em area of all P\+FT\textquotesingle{}s roots in Z\+OI \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_c_plant_a9a4beaf344a1aaf6bdd387f759102c45}\label{class_c_plant_a9a4beaf344a1aaf6bdd387f759102c45}} 
+double \mbox{\hyperlink{class_c_plant_a9a4beaf344a1aaf6bdd387f759102c45}{Auptake}}
+\begin{DoxyCompactList}\small\item\em uptake of above-\/ground resource in one time step \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_c_plant_a90e173d63c152397bae17e82500b35ca}\label{class_c_plant_a90e173d63c152397bae17e82500b35ca}} 
+double \mbox{\hyperlink{class_c_plant_a90e173d63c152397bae17e82500b35ca}{Buptake}}
+\begin{DoxyCompactList}\small\item\em uptake below-\/ground resource one time step \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_c_plant_a14abe37dd7e7052c872c683569ff7739}\label{class_c_plant_a14abe37dd7e7052c872c683569ff7739}} 
+bool \mbox{\hyperlink{class_c_plant_a14abe37dd7e7052c872c683569ff7739}{dead}}
+\begin{DoxyCompactList}\small\item\em plant dead or alive? \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_c_plant_a8476399d04c4691af6a8e6b506c43bb5}\label{class_c_plant_a8476399d04c4691af6a8e6b506c43bb5}} 
+bool {\bfseries remove}
+\item 
+\mbox{\Hypertarget{class_c_plant_a07717aaec80286b5f1ef2d081557ce5a}\label{class_c_plant_a07717aaec80286b5f1ef2d081557ce5a}} 
+int \mbox{\hyperlink{class_c_plant_a07717aaec80286b5f1ef2d081557ce5a}{stress}}
+\begin{DoxyCompactList}\small\item\em counter for weeks with resource stress exposure \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_c_plant_a2b183ca2f8c69cb3dfebf7c15e0cac62}\label{class_c_plant_a2b183ca2f8c69cb3dfebf7c15e0cac62}} 
+double \mbox{\hyperlink{class_c_plant_a2b183ca2f8c69cb3dfebf7c15e0cac62}{mort\+\_\+base}}
+\begin{DoxyCompactList}\small\item\em pft-\/density -\/ based base mortality (annually updated in \mbox{\hyperlink{class_c_envir_a0327292c6ae32487c4fdde023f4302d5}{C\+Envir\+::\+Get\+Output()}}) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_c_plant_a9b5628f2be93537e40854163a64f84a7}\label{class_c_plant_a9b5628f2be93537e40854163a64f84a7}} 
+vector$<$ \mbox{\hyperlink{class_c_plant}{C\+Plant}} $\ast$ $>$ \mbox{\hyperlink{class_c_plant_a9b5628f2be93537e40854163a64f84a7}{growing\+Spacer\+List}}
+\begin{DoxyCompactList}\small\item\em List of growing Spacer. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_c_plant_a092e24ced7e34fea929b9052be7fcf22}\label{class_c_plant_a092e24ced7e34fea929b9052be7fcf22}} 
+double \mbox{\hyperlink{class_c_plant_a092e24ced7e34fea929b9052be7fcf22}{Spacerlength}}
+\begin{DoxyCompactList}\small\item\em real spacer length \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_c_plant_ac2dde78768981780f31a3f1b3cb123d9}\label{class_c_plant_ac2dde78768981780f31a3f1b3cb123d9}} 
+double \mbox{\hyperlink{class_c_plant_ac2dde78768981780f31a3f1b3cb123d9}{Spacerdirection}}
+\begin{DoxyCompactList}\small\item\em spacer direction \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_c_plant_a2ae900661d34fd71f521d27cb975198b}\label{class_c_plant_a2ae900661d34fd71f521d27cb975198b}} 
+double \mbox{\hyperlink{class_c_plant_a2ae900661d34fd71f521d27cb975198b}{Spacerlength\+To\+Grow}}
+\begin{DoxyCompactList}\small\item\em length to grow \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_c_plant_a04b662ffff21d1dc66082594a3695c27}\label{class_c_plant_a04b662ffff21d1dc66082594a3695c27}} 
+int \mbox{\hyperlink{class_c_plant_a04b662ffff21d1dc66082594a3695c27}{Generation}}
+\begin{DoxyCompactList}\small\item\em clonal generation \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual double \mbox{\hyperlink{class_c_plant_a250f847e35537bb60a94cf5d3ce90812}{Repro\+Grow}} (double uptake)
+\begin{DoxyCompactList}\small\item\em resource allocation to reproduction + reproductive growth \end{DoxyCompactList}\item 
+virtual double \mbox{\hyperlink{class_c_plant_a04fa48b79241a419192d035a3d28f839}{Shoot\+Grow}} (double shres)
+\begin{DoxyCompactList}\small\item\em shoot growth function \end{DoxyCompactList}\item 
+virtual double \mbox{\hyperlink{class_c_plant_a724f5a844253dac46311e85e37cc46fd}{Root\+Grow}} (double rres)
+\begin{DoxyCompactList}\small\item\em root growth function \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_c_cell}{C\+Cell}} $\ast$ \mbox{\hyperlink{class_c_plant_aa4e3f8bc03674d5017a44b6bc01faf4e}{cell}}
+\begin{DoxyCompactList}\small\item\em cell of the stem of the plant \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_c_plant_a348c853c2ff4525eb7435beb66a2b80f}\label{class_c_plant_a348c853c2ff4525eb7435beb66a2b80f}} 
+double \mbox{\hyperlink{class_c_plant_a348c853c2ff4525eb7435beb66a2b80f}{m\+Repro\+Ramets}}
+\begin{DoxyCompactList}\small\item\em resources for ramet growth \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_c_plant_acb01afeb25e9427226da1c823f479776}\label{class_c_plant_acb01afeb25e9427226da1c823f479776}} 
+\mbox{\hyperlink{class_c_genet}{C\+Genet}} $\ast$ \mbox{\hyperlink{class_c_plant_acb01afeb25e9427226da1c823f479776}{genet}}
+\begin{DoxyCompactList}\small\item\em genet of the clonal plant \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class that describes plant individuals. 
+
+Definition at line 18 of file Plant.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_c_plant_a85565035b648d0771cb8344e018c362b}\label{class_c_plant_a85565035b648d0771cb8344e018c362b}} 
+\index{CPlant@{CPlant}!CPlant@{CPlant}}
+\index{CPlant@{CPlant}!CPlant@{CPlant}}
+\subsubsection{\texorpdfstring{CPlant()}{CPlant()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily C\+Plant\+::\+C\+Plant (\begin{DoxyParamCaption}\item[{double}]{x,  }\item[{double}]{y,  }\item[{shared\+\_\+ptr$<$ \mbox{\hyperlink{class_s_pft_traits}{S\+Pft\+Traits}} $>$}]{Traits }\end{DoxyParamCaption})}
+
+
+
+constructor for plant objects 
+
+constructor 
+\begin{DoxyParams}{Parameters}
+{\em x} & location on grid \\
+\hline
+{\em y} & location on grid \\
+\hline
+{\em Traits} & trait characteristics \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 19 of file Plant.\+cpp.
+
+\mbox{\Hypertarget{class_c_plant_a8942a3b196d81a7498b8bb4a40e57bfd}\label{class_c_plant_a8942a3b196d81a7498b8bb4a40e57bfd}} 
+\index{CPlant@{CPlant}!CPlant@{CPlant}}
+\index{CPlant@{CPlant}!CPlant@{CPlant}}
+\subsubsection{\texorpdfstring{CPlant()}{CPlant()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily C\+Plant\+::\+C\+Plant (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_c_seed}{C\+Seed}} $\ast$}]{seed }\end{DoxyParamCaption})}
+
+
+
+make a plant from a seed object 
+
+constructor -\/ germination
+
+If a seed germinates, the new plant inherits its parameters. Genet has to be defined externally. 
+\begin{DoxyParams}{Parameters}
+{\em seed} & seed to be established \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 36 of file Plant.\+cpp.
+
+\mbox{\Hypertarget{class_c_plant_ad52ea5533d1cefc5db609f1d2754f47f}\label{class_c_plant_ad52ea5533d1cefc5db609f1d2754f47f}} 
+\index{CPlant@{CPlant}!````~CPlant@{$\sim$CPlant}}
+\index{````~CPlant@{$\sim$CPlant}!CPlant@{CPlant}}
+\subsubsection{\texorpdfstring{$\sim$CPlant()}{~CPlant()}}
+{\footnotesize\ttfamily C\+Plant\+::$\sim$\+C\+Plant (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+destructor 
+
+destructor 
+
+Definition at line 80 of file Plant.\+cpp.
+
+\mbox{\Hypertarget{class_c_plant_ac539d50780b1d39e9426786f9b9917c2}\label{class_c_plant_ac539d50780b1d39e9426786f9b9917c2}} 
+\index{CPlant@{CPlant}!CPlant@{CPlant}}
+\index{CPlant@{CPlant}!CPlant@{CPlant}}
+\subsubsection{\texorpdfstring{CPlant()}{CPlant()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily C\+Plant\+::\+C\+Plant (\begin{DoxyParamCaption}\item[{double}]{x,  }\item[{double}]{y,  }\item[{\mbox{\hyperlink{class_c_plant}{C\+Plant}} $\ast$}]{plant }\end{DoxyParamCaption})}
+
+
+
+initalization of one plant on specific location 
+
+Clonal Growth -\/ The new Plant inherits its parameters from \textquotesingle{}plant\textquotesingle{}. Genet is the same as for plant, Generation is by one larger than that of plant.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & location on grid \\
+\hline
+{\em y} & location on grid \\
+\hline
+{\em plant} & plant\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+For clonal growth\+: cell has to be set and plant has to be added to genet list when ramet establishes. 
+\end{DoxyNote}
+
+
+Definition at line 66 of file Plant.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_c_plant_a9cc752efa2b7d548f47bba881be6e764}\label{class_c_plant_a9cc752efa2b7d548f47bba881be6e764}} 
+\index{CPlant@{CPlant}!Area\_root@{Area\_root}}
+\index{Area\_root@{Area\_root}!CPlant@{CPlant}}
+\subsubsection{\texorpdfstring{Area\_root()}{Area\_root()}}
+{\footnotesize\ttfamily double C\+Plant\+::\+Area\+\_\+root (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Z\+OI area belowground. 
+
+get the area of the root 
+
+Definition at line 492 of file Plant.\+cpp.
+
+\mbox{\Hypertarget{class_c_plant_a45e9f6a89368ab3ac990471ebf2bf6a1}\label{class_c_plant_a45e9f6a89368ab3ac990471ebf2bf6a1}} 
+\index{CPlant@{CPlant}!Area\_shoot@{Area\_shoot}}
+\index{Area\_shoot@{Area\_shoot}!CPlant@{CPlant}}
+\subsubsection{\texorpdfstring{Area\_shoot()}{Area\_shoot()}}
+{\footnotesize\ttfamily double C\+Plant\+::\+Area\+\_\+shoot (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Z\+OI area aboveground. 
+
+get the area of the shoot 
+
+Definition at line 485 of file Plant.\+cpp.
+
+\mbox{\Hypertarget{class_c_plant_aa9b9a4a1be9df4e507144ba3bfde8f50}\label{class_c_plant_aa9b9a4a1be9df4e507144ba3bfde8f50}} 
+\index{CPlant@{CPlant}!comp\_coef@{comp\_coef}}
+\index{comp\_coef@{comp\_coef}!CPlant@{CPlant}}
+\subsubsection{\texorpdfstring{comp\_coef()}{comp\_coef()}}
+{\footnotesize\ttfamily double C\+Plant\+::comp\+\_\+coef (\begin{DoxyParamCaption}\item[{const int}]{layer,  }\item[{const int}]{symmetry }\end{DoxyParamCaption}) const}
+
+
+
+competition coefficient for a plant -\/needed for Above\+Comp and Below\+Comp 
+
+Competitive strength of plant. 
+\begin{DoxyParams}{Parameters}
+{\em layer} & above-\/ (1) or belowground (2) Z\+OI \\
+\hline
+{\em symmetry} & Symmetry of competition (symmetric, partial asymmetric, complete asymmetric )\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+competitive strength 
+\end{DoxyReturn}
+
+
+Definition at line 504 of file Plant.\+cpp.
+
+\mbox{\Hypertarget{class_c_plant_a85a5028cbe8028f6c5222f2d32fb21da}\label{class_c_plant_a85a5028cbe8028f6c5222f2d32fb21da}} 
+\index{CPlant@{CPlant}!DecomposeDead@{DecomposeDead}}
+\index{DecomposeDead@{DecomposeDead}!CPlant@{CPlant}}
+\subsubsection{\texorpdfstring{DecomposeDead()}{DecomposeDead()}}
+{\footnotesize\ttfamily void C\+Plant\+::\+Decompose\+Dead (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+calculate mass decomposition of dead plants 
+
+Litter decomposition with deletion at 10mg. 
+
+Definition at line 364 of file Plant.\+cpp.
+
+\mbox{\Hypertarget{class_c_plant_af0b2cca25cc5a0a623d344a2c48ac73a}\label{class_c_plant_af0b2cca25cc5a0a623d344a2c48ac73a}} 
+\index{CPlant@{CPlant}!dmGrow@{dmGrow}}
+\index{dmGrow@{dmGrow}!CPlant@{CPlant}}
+\subsubsection{\texorpdfstring{dmGrow()}{dmGrow()}}
+{\footnotesize\ttfamily double C\+Plant\+::dm\+Grow (\begin{DoxyParamCaption}\item[{double}]{Assim,  }\item[{double}]{Resp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+growth 
+
+Calculates net growth as difference of assimilation and respiration. Negative net growth is prohibited.
+
+
+\begin{DoxyParams}{Parameters}
+{\em Assim} & assimilated biomass \\
+\hline
+{\em Resp} & biomass costs \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+net difference with zero minimum 
+\end{DoxyReturn}
+
+
+Definition at line 229 of file Plant.\+cpp.
+
+\mbox{\Hypertarget{class_c_plant_a045f39f51bcafabb15d0e16bdd58b017}\label{class_c_plant_a045f39f51bcafabb15d0e16bdd58b017}} 
+\index{CPlant@{CPlant}!getMortBase@{getMortBase}}
+\index{getMortBase@{getMortBase}!CPlant@{CPlant}}
+\subsubsection{\texorpdfstring{getMortBase()}{getMortBase()}}
+{\footnotesize\ttfamily virtual double C\+Plant\+::get\+Mort\+Base (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+get constant base mortality \begin{DoxyReturn}{Returns}
+base mortality 
+\end{DoxyReturn}
+
+
+Definition at line 177 of file Plant.\+h.
+
+\mbox{\Hypertarget{class_c_plant_a7f215cff30196620f8a22e494f5f61ca}\label{class_c_plant_a7f215cff30196620f8a22e494f5f61ca}} 
+\index{CPlant@{CPlant}!getMortHerb@{getMortHerb}}
+\index{getMortHerb@{getMortHerb}!CPlant@{CPlant}}
+\subsubsection{\texorpdfstring{getMortHerb()}{getMortHerb()}}
+{\footnotesize\ttfamily virtual double C\+Plant\+::get\+Mort\+Herb (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+get herbicide mortality \begin{DoxyReturn}{Returns}
+herbicide mortality 
+\end{DoxyReturn}
+
+
+Definition at line 183 of file Plant.\+h.
+
+\mbox{\Hypertarget{class_c_plant_a4f815871e13536e1e4f78a34e7ed2ef3}\label{class_c_plant_a4f815871e13536e1e4f78a34e7ed2ef3}} 
+\index{CPlant@{CPlant}!GetNRamets@{GetNRamets}}
+\index{GetNRamets@{GetNRamets}!CPlant@{CPlant}}
+\subsubsection{\texorpdfstring{GetNRamets()}{GetNRamets()}}
+{\footnotesize\ttfamily int C\+Plant\+::\+Get\+N\+Ramets (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+return number of ramets 
+
+returns the number of new spacer to set\+: currently
+\begin{DoxyItemize}
+\item 1 if there are clonal-\/growth-\/resources and spacer-\/lisdt is empty, and
+\item 0 otherwise \begin{DoxyReturn}{Returns}
+the number of new spacer to set Unlike \mbox{\hyperlink{class_c_plant_a0e6da4d0343dc1cceae34118ca8e2a3f}{C\+Plant\+::\+Get\+N\+Seeds()}} no resources are reset due to ongoing growth 
+\end{DoxyReturn}
+
+\end{DoxyItemize}
+
+Definition at line 417 of file Plant.\+cpp.
+
+\mbox{\Hypertarget{class_c_plant_a0e6da4d0343dc1cceae34118ca8e2a3f}\label{class_c_plant_a0e6da4d0343dc1cceae34118ca8e2a3f}} 
+\index{CPlant@{CPlant}!GetNSeeds@{GetNSeeds}}
+\index{GetNSeeds@{GetNSeeds}!CPlant@{CPlant}}
+\subsubsection{\texorpdfstring{GetNSeeds()}{GetNSeeds()}}
+{\footnotesize\ttfamily int C\+Plant\+::\+Get\+N\+Seeds (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+returns number of seeds of one plant individual 
+
+If the plant is alive and it is dispersal time, the function returns the number of seeds produced during the last weeks. Subsequently the allocated resources are reset to zero. 
+
+Definition at line 385 of file Plant.\+cpp.
+
+\mbox{\Hypertarget{class_c_plant_a5ab0a36c3e58898c7c750db485eca653}\label{class_c_plant_a5ab0a36c3e58898c7c750db485eca653}} 
+\index{CPlant@{CPlant}!getpEstabRamet@{getpEstabRamet}}
+\index{getpEstabRamet@{getpEstabRamet}!CPlant@{CPlant}}
+\subsubsection{\texorpdfstring{getpEstabRamet()}{getpEstabRamet()}}
+{\footnotesize\ttfamily double C\+Plant\+::getp\+Estab\+Ramet (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+get current ramet establishment probability 
+
+get current establishment probability for ramets 
+
+Reimplemented in \mbox{\hyperlink{class_c_t_d_plant_a19bab3a7643e23e1bdbf1f3b9a5fdf8b}{C\+T\+D\+Plant}}.
+
+
+
+Definition at line 520 of file Plant.\+cpp.
+
+\mbox{\Hypertarget{class_c_plant_a475e1b0149b52abca2a699f20960c552}\label{class_c_plant_a475e1b0149b52abca2a699f20960c552}} 
+\index{CPlant@{CPlant}!Grow@{Grow}}
+\index{Grow@{Grow}!CPlant@{CPlant}}
+\subsubsection{\texorpdfstring{Grow()}{Grow()}}
+{\footnotesize\ttfamily void C\+Plant\+::\+Grow (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+shoot-\/root resource allocation and plant growth in two layers 
+
+two-\/layer growth
+\begin{DoxyEnumerate}
+\item Resources for fecundity are allocated
+\item According to the resources allocated and the respiration needs shoot-\/ and root-\/growth are calculated.
+\item Stress-\/value is in-\/ or decreased according to the uptake
+\end{DoxyEnumerate}
+
+adapted growth formula with correction factor for the conversion rate \textbackslash{}function dm/dt = growth$\ast$(c$\ast$m$^\wedge$p -\/ m$^\wedge$q / m\+\_\+max$^\wedge$r) function\+: 
+
+Definition at line 244 of file Plant.\+cpp.
+
+\mbox{\Hypertarget{class_c_plant_a79fb5e9ec6b21eb939a25252c8cca2e2}\label{class_c_plant_a79fb5e9ec6b21eb939a25252c8cca2e2}} 
+\index{CPlant@{CPlant}!Kill@{Kill}}
+\index{Kill@{Kill}!CPlant@{CPlant}}
+\subsubsection{\texorpdfstring{Kill()}{Kill()}}
+{\footnotesize\ttfamily void C\+Plant\+::\+Kill (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Mortality due to resource shortage or at random. 
+
+Calculate weekly individual mortality. We assume an base mortality of 0.\+007 and add a stress dependent mortality. This is a stochastic process (mortality rate is interpreted as probability here). If the Plant is killed, it gets the status dead=true. Subsequently the litter gets decomposed weekly. 
+
+Definition at line 349 of file Plant.\+cpp.
+
+\mbox{\Hypertarget{class_c_plant_a80e89c9f8cefee43ac3020974ae0850b}\label{class_c_plant_a80e89c9f8cefee43ac3020974ae0850b}} 
+\index{CPlant@{CPlant}!Overwintering@{Overwintering}}
+\index{Overwintering@{Overwintering}!CPlant@{CPlant}}
+\subsubsection{\texorpdfstring{Overwintering()}{Overwintering()}}
+{\footnotesize\ttfamily void C\+Plant\+::\+Overwintering (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+removal of plants not able to overwinter (for annual plants) 
+
+Overwintering of plants 
+
+Definition at line 462 of file Plant.\+cpp.
+
+\mbox{\Hypertarget{class_c_plant_a911d2b301b01fc5a37945fbca57e96b3}\label{class_c_plant_a911d2b301b01fc5a37945fbca57e96b3}} 
+\index{CPlant@{CPlant}!pft@{pft}}
+\index{pft@{pft}!CPlant@{CPlant}}
+\subsubsection{\texorpdfstring{pft()}{pft()}}
+{\footnotesize\ttfamily string C\+Plant\+::pft (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+get P\+FT name of plant 
+
+Say, what P\+FT you are \begin{DoxyReturn}{Returns}
+P\+FT name 
+\end{DoxyReturn}
+
+
+Definition at line 121 of file Plant.\+cpp.
+
+\mbox{\Hypertarget{class_c_plant_a865e74078ea231ec3e4b9396f50bff61}\label{class_c_plant_a865e74078ea231ec3e4b9396f50bff61}} 
+\index{CPlant@{CPlant}!Radius\_root@{Radius\_root}}
+\index{Radius\_root@{Radius\_root}!CPlant@{CPlant}}
+\subsubsection{\texorpdfstring{Radius\_root()}{Radius\_root()}}
+{\footnotesize\ttfamily double C\+Plant\+::\+Radius\+\_\+root (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Z\+OI radius belowground. 
+
+get the radius of the root 
+
+Definition at line 478 of file Plant.\+cpp.
+
+\mbox{\Hypertarget{class_c_plant_a9a3ec11bb76d2264c31d0e0154df03a8}\label{class_c_plant_a9a3ec11bb76d2264c31d0e0154df03a8}} 
+\index{CPlant@{CPlant}!Radius\_shoot@{Radius\_shoot}}
+\index{Radius\_shoot@{Radius\_shoot}!CPlant@{CPlant}}
+\subsubsection{\texorpdfstring{Radius\_shoot()}{Radius\_shoot()}}
+{\footnotesize\ttfamily double C\+Plant\+::\+Radius\+\_\+shoot (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Z\+OI radius aboveground. 
+
+get the radius of the shoot 
+
+Definition at line 471 of file Plant.\+cpp.
+
+\mbox{\Hypertarget{class_c_plant_aa39451abceca77342e6bdbc90ebf425e}\label{class_c_plant_aa39451abceca77342e6bdbc90ebf425e}} 
+\index{CPlant@{CPlant}!RemoveMass@{RemoveMass}}
+\index{RemoveMass@{RemoveMass}!CPlant@{CPlant}}
+\subsubsection{\texorpdfstring{RemoveMass()}{RemoveMass()}}
+{\footnotesize\ttfamily double C\+Plant\+::\+Remove\+Mass (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+removal of above-\/ground biomass by grazing 
+
+Remove half shoot mass and seed mass from a plant. for grazing 
+
+Definition at line 433 of file Plant.\+cpp.
+
+\mbox{\Hypertarget{class_c_plant_a250f847e35537bb60a94cf5d3ce90812}\label{class_c_plant_a250f847e35537bb60a94cf5d3ce90812}} 
+\index{CPlant@{CPlant}!ReproGrow@{ReproGrow}}
+\index{ReproGrow@{ReproGrow}!CPlant@{CPlant}}
+\subsubsection{\texorpdfstring{ReproGrow()}{ReproGrow()}}
+{\footnotesize\ttfamily double C\+Plant\+::\+Repro\+Grow (\begin{DoxyParamCaption}\item[{double}]{uptake }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+resource allocation to reproduction + reproductive growth 
+
+Growth of reproductive organs (seeds and spacer).
+
+Function adapted to annual plants with Alloc\+Seed of 1. 
+\begin{DoxyParams}{Parameters}
+{\em uptake} & Resource uptake of plant object. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+resources available for individual needs. 
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Author}
+FM, IS adapted by HP 
+\end{DoxyAuthor}
+\begin{DoxyNote}{Note}
+no \textquotesingle{}respiration\textquotesingle{} costs for reproduction 
+\end{DoxyNote}
+
+
+Definition at line 134 of file Plant.\+cpp.
+
+\mbox{\Hypertarget{class_c_plant_a724f5a844253dac46311e85e37cc46fd}\label{class_c_plant_a724f5a844253dac46311e85e37cc46fd}} 
+\index{CPlant@{CPlant}!RootGrow@{RootGrow}}
+\index{RootGrow@{RootGrow}!CPlant@{CPlant}}
+\subsubsection{\texorpdfstring{RootGrow()}{RootGrow()}}
+{\footnotesize\ttfamily double C\+Plant\+::\+Root\+Grow (\begin{DoxyParamCaption}\item[{double}]{rres }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+root growth function 
+
+root growth dm/dt = growth$\ast$(c$\ast$m$^\wedge$p -\/ m$^\wedge$q / m\+\_\+max$^\wedge$r) 
+\begin{DoxyParams}{Parameters}
+{\em rres} & resources for root growth \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 319 of file Plant.\+cpp.
+
+\mbox{\Hypertarget{class_c_plant_a8e9f7d1261306165ecca0cf951f50505}\label{class_c_plant_a8e9f7d1261306165ecca0cf951f50505}} 
+\index{CPlant@{CPlant}!setCell@{setCell}}
+\index{setCell@{setCell}!CPlant@{CPlant}}
+\subsubsection{\texorpdfstring{setCell()}{setCell()}}
+{\footnotesize\ttfamily void C\+Plant\+::set\+Cell (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_c_cell}{C\+Cell}} $\ast$}]{cell }\end{DoxyParamCaption})}
+
+
+
+define cell for plant 
+
+join cell to plant object
+
+
+\begin{DoxyParams}{Parameters}
+{\em cell} & current cell \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 102 of file Plant.\+cpp.
+
+\mbox{\Hypertarget{class_c_plant_a214050cfb40ec3f179633ba29e594ddf}\label{class_c_plant_a214050cfb40ec3f179633ba29e594ddf}} 
+\index{CPlant@{CPlant}!setGenet@{setGenet}}
+\index{setGenet@{setGenet}!CPlant@{CPlant}}
+\subsubsection{\texorpdfstring{setGenet()}{setGenet()}}
+{\footnotesize\ttfamily void C\+Plant\+::set\+Genet (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_c_genet}{C\+Genet}} $\ast$}]{genet }\end{DoxyParamCaption})}
+
+
+
+set genet and add ramet to its list 
+
+set genet and add ramet to its list 
+\begin{DoxyParams}{Parameters}
+{\em genet} & genet of the plant \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 90 of file Plant.\+cpp.
+
+\mbox{\Hypertarget{class_c_plant_a6e71f471594572aee0216d0958b893e8}\label{class_c_plant_a6e71f471594572aee0216d0958b893e8}} 
+\index{CPlant@{CPlant}!setMortBase@{setMortBase}}
+\index{setMortBase@{setMortBase}!CPlant@{CPlant}}
+\subsubsection{\texorpdfstring{setMortBase()}{setMortBase()}}
+{\footnotesize\ttfamily virtual void C\+Plant\+::set\+Mort\+Base (\begin{DoxyParamCaption}\item[{double}]{mort\+Base }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+set base mortality 
+\begin{DoxyParams}{Parameters}
+{\em mort\+Base} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 189 of file Plant.\+h.
+
+\mbox{\Hypertarget{class_c_plant_a04fa48b79241a419192d035a3d28f839}\label{class_c_plant_a04fa48b79241a419192d035a3d28f839}} 
+\index{CPlant@{CPlant}!ShootGrow@{ShootGrow}}
+\index{ShootGrow@{ShootGrow}!CPlant@{CPlant}}
+\subsubsection{\texorpdfstring{ShootGrow()}{ShootGrow()}}
+{\footnotesize\ttfamily double C\+Plant\+::\+Shoot\+Grow (\begin{DoxyParamCaption}\item[{double}]{shres }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+shoot growth function 
+
+shoot growth dm/dt = growth$\ast$(c$\ast$m$^\wedge$p -\/ m$^\wedge$q / m\+\_\+max$^\wedge$r) 
+\begin{DoxyParams}{Parameters}
+{\em shres} & resources for shoot growth \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 300 of file Plant.\+cpp.
+
+\mbox{\Hypertarget{class_c_plant_abc8381f34cb7dd169a60d886ced465be}\label{class_c_plant_abc8381f34cb7dd169a60d886ced465be}} 
+\index{CPlant@{CPlant}!SpacerGrow@{SpacerGrow}}
+\index{SpacerGrow@{SpacerGrow}!CPlant@{CPlant}}
+\subsubsection{\texorpdfstring{SpacerGrow()}{SpacerGrow()}}
+{\footnotesize\ttfamily void C\+Plant\+::\+Spacer\+Grow (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+spacer growth 
+
+Growth of the spacer. 
+
+Definition at line 174 of file Plant.\+cpp.
+
+\mbox{\Hypertarget{class_c_plant_a49fa0d1fb6b432339c5156fe31cabf58}\label{class_c_plant_a49fa0d1fb6b432339c5156fe31cabf58}} 
+\index{CPlant@{CPlant}!stressed@{stressed}}
+\index{stressed@{stressed}!CPlant@{CPlant}}
+\subsubsection{\texorpdfstring{stressed()}{stressed()}}
+{\footnotesize\ttfamily bool C\+Plant\+::stressed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+return true if plant is stressed 
+
+identify resource stressing situation \begin{DoxyReturn}{Returns}
+true if plant is stressed 
+\end{DoxyReturn}
+
+
+Definition at line 336 of file Plant.\+cpp.
+
+\mbox{\Hypertarget{class_c_plant_a6f01bbbf4d15243a1e00e85ce1a9de5b}\label{class_c_plant_a6f01bbbf4d15243a1e00e85ce1a9de5b}} 
+\index{CPlant@{CPlant}!type@{type}}
+\index{type@{type}!CPlant@{CPlant}}
+\subsubsection{\texorpdfstring{type()}{type()}}
+{\footnotesize\ttfamily string C\+Plant\+::type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+get type of plant 
+
+say what type you are 
+
+Reimplemented from \mbox{\hyperlink{class_c_object_aa734daa745223aa287c3fdfb8dfca1ed}{C\+Object}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{class_c_t_d_plant_a4bed9454fd2fd6fa37109b544017361b}{C\+T\+D\+Plant}}.
+
+
+
+Definition at line 113 of file Plant.\+cpp.
+
+\mbox{\Hypertarget{class_c_plant_a1e8eb53d535dea92050fcb19dcbb9538}\label{class_c_plant_a1e8eb53d535dea92050fcb19dcbb9538}} 
+\index{CPlant@{CPlant}!WinterLoss@{WinterLoss}}
+\index{WinterLoss@{WinterLoss}!CPlant@{CPlant}}
+\subsubsection{\texorpdfstring{WinterLoss()}{WinterLoss()}}
+{\footnotesize\ttfamily void C\+Plant\+::\+Winter\+Loss (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+removal of above-\/ground biomass in winter 
+
+Winter dieback of aboveground biomass. Ageing of Plant. 
+
+Definition at line 449 of file Plant.\+cpp.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_c_plant_aa4e3f8bc03674d5017a44b6bc01faf4e}\label{class_c_plant_aa4e3f8bc03674d5017a44b6bc01faf4e}} 
+\index{CPlant@{CPlant}!cell@{cell}}
+\index{cell@{cell}!CPlant@{CPlant}}
+\subsubsection{\texorpdfstring{cell}{cell}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_c_cell}{C\+Cell}}$\ast$ C\+Plant\+::cell\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+cell of the stem of the plant 
+
+cell where it sits 
+
+Definition at line 22 of file Plant.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+I\+B\+Cgrass\+G\+U\+I.\+git/trunk/\+Model-\/files/Plant.\+h\item 
+D\+:/\+I\+B\+Cgrass\+G\+U\+I.\+git/trunk/\+Model-\/files/\mbox{\hyperlink{_plant_8cpp}{Plant.\+cpp}}\end{DoxyCompactItemize}

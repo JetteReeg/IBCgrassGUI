@@ -1,0 +1,396 @@
+\hypertarget{class_c_cell}{}\section{C\+Cell Class Reference}
+\label{class_c_cell}\index{CCell@{CCell}}
+
+
+class for cell objects (surprisingly)  
+
+
+
+
+{\ttfamily \#include $<$Cell.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_c_cell_a0b6846606bd1c95525d050ac697e1ae2}{get\+Cover}} (const int layer) const
+\begin{DoxyCompactList}\small\item\em returns cell-\/cover (int-\/coded) \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_c_cell_ae47dee0b8740b16d54d5dd5f7e56a910}{get\+Cover}} (const string type) const
+\begin{DoxyCompactList}\small\item\em returns cell\textquotesingle{}s cover of the given type \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_c_cell_a1de6b6c2ee4ef46f458833aba37a8018}{C\+Cell}} (const unsigned int xx, const unsigned int yy, double ares=0, double bres=0)
+\item 
+virtual \mbox{\hyperlink{class_c_cell_a297edd2839a64d14a8ffffb915bbf18c}{$\sim$\+C\+Cell}} ()
+\begin{DoxyCompactList}\small\item\em destructor \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_cell_a8983be7ad0586cbf9b0327761fb5b0f0}{clear}} ()
+\begin{DoxyCompactList}\small\item\em reset \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_cell_a3a37e68bb48fe43cc14f8417ea93327b}{Set\+Resource}} (double Ares, double Bres)
+\begin{DoxyCompactList}\small\item\em set resources \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_c_cell_ac1a582012f1d54a21b9b7252d4b06f8f}{Germinate}} ()
+\begin{DoxyCompactList}\small\item\em on-\/cell germination \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_cell_ab23766c8c30b500992b53535088f204f}{Remove\+Seedlings}} ()
+\begin{DoxyCompactList}\small\item\em remove dead seedlings \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_cell_a4e261cc154f9f96eeb96772e354a1b34}{Remove\+Seeds}} ()
+\begin{DoxyCompactList}\small\item\em remove dead seeds \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_cell_a5a6f6346ee1e347e67ceddffd7295e6a}{Get\+N\+Pft}} ()
+\begin{DoxyCompactList}\small\item\em calculates number of individuals of each P\+FT \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_c_cell_a48c7bf623f025697d0875ee282b8c75b}{Above\+Comp}} ()
+\begin{DoxyCompactList}\small\item\em competition function for size symmetric above-\/ground resource competition \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_c_cell_aab26e9d4c0150cee0bbc7f836f0d6b34}{Below\+Comp}} ()
+\begin{DoxyCompactList}\small\item\em competition function for size symmetric below-\/ground resource competition \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_c_cell_a6fb57406cb9aeeabe9feecbfc7625da4}{prop\+\_\+res}} (const string type, const int layer, const int version) const
+\begin{DoxyCompactList}\small\item\em portion cell resources the plant is gaining \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_c_cell_a0f4f3df4d42062241eea927a245e27c2}\label{class_c_cell_a0f4f3df4d42062241eea927a245e27c2}} 
+int \mbox{\hyperlink{class_c_cell_a0f4f3df4d42062241eea927a245e27c2}{x}}
+\begin{DoxyCompactList}\small\item\em x location \mbox{[}grid cells\mbox{]} \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_c_cell_af60864331a2ee351332aaae53a8a760f}\label{class_c_cell_af60864331a2ee351332aaae53a8a760f}} 
+int \mbox{\hyperlink{class_c_cell_af60864331a2ee351332aaae53a8a760f}{y}}
+\begin{DoxyCompactList}\small\item\em y location \mbox{[}grid cells\mbox{]} \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_c_cell_adfde4942fc0aff8308b959ef7483e81e}\label{class_c_cell_adfde4942fc0aff8308b959ef7483e81e}} 
+double \mbox{\hyperlink{class_c_cell_adfde4942fc0aff8308b959ef7483e81e}{A\+Res\+Conc}}
+\begin{DoxyCompactList}\small\item\em above-\/ground resource availability in resource units per cm2 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_c_cell_a1e0dc56f353fd05fae67c21424e1c341}\label{class_c_cell_a1e0dc56f353fd05fae67c21424e1c341}} 
+double \mbox{\hyperlink{class_c_cell_a1e0dc56f353fd05fae67c21424e1c341}{B\+Res\+Conc}}
+\begin{DoxyCompactList}\small\item\em below-\/ground resource availability in resource units per cm2 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_c_cell_a7cd34f199fac6f625761f8880edf1717}\label{class_c_cell_a7cd34f199fac6f625761f8880edf1717}} 
+bool \mbox{\hyperlink{class_c_cell_a7cd34f199fac6f625761f8880edf1717}{occupied}}
+\begin{DoxyCompactList}\small\item\em is the cell occupied by any plant? (its stem) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_c_cell_a1d0487f95b5a709a4e764a7d1ff643ca}\label{class_c_cell_a1d0487f95b5a709a4e764a7d1ff643ca}} 
+\mbox{\hyperlink{class_c_plant}{C\+Plant}} $\ast$ \mbox{\hyperlink{class_c_cell_a1d0487f95b5a709a4e764a7d1ff643ca}{Plant\+In\+Cell}}
+\begin{DoxyCompactList}\small\item\em pointer to plant individual that has its central point in the cell (if any) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_c_cell_ae1c4804658e4ec8b4ea2fd5ed19608bb}\label{class_c_cell_ae1c4804658e4ec8b4ea2fd5ed19608bb}} 
+vector$<$ \mbox{\hyperlink{class_c_plant}{C\+Plant}} $\ast$ $>$ \mbox{\hyperlink{class_c_cell_ae1c4804658e4ec8b4ea2fd5ed19608bb}{Above\+Plant\+List}}
+\begin{DoxyCompactList}\small\item\em List of all plant individuals that cover the cell A\+B\+O\+VE ground. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_c_cell_a76c0bac7ae956fe7e969fc5eb35c3370}\label{class_c_cell_a76c0bac7ae956fe7e969fc5eb35c3370}} 
+vector$<$ \mbox{\hyperlink{class_c_plant}{C\+Plant}} $\ast$ $>$ \mbox{\hyperlink{class_c_cell_a76c0bac7ae956fe7e969fc5eb35c3370}{Below\+Plant\+List}}
+\begin{DoxyCompactList}\small\item\em List of all plant individuals that cover the cell B\+E\+L\+OW ground. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_c_cell_a3cf9e5bdc58c5e75289133832f1b8dd2}\label{class_c_cell_a3cf9e5bdc58c5e75289133832f1b8dd2}} 
+vector$<$ \mbox{\hyperlink{class_c_seed}{C\+Seed}} $\ast$ $>$ \mbox{\hyperlink{class_c_cell_a3cf9e5bdc58c5e75289133832f1b8dd2}{Seed\+Bank\+List}}
+\begin{DoxyCompactList}\small\item\em List of all (ungerminated) seeds in the cell. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_c_cell_a9a9290c141cc35f1308b98ec4bd59998}\label{class_c_cell_a9a9290c141cc35f1308b98ec4bd59998}} 
+vector$<$ \mbox{\hyperlink{class_c_seed}{C\+Seed}} $\ast$ $>$ \mbox{\hyperlink{class_c_cell_a9a9290c141cc35f1308b98ec4bd59998}{Seedling\+List}}
+\begin{DoxyCompactList}\small\item\em List of all freshly germinated seedlings in the cell. \end{DoxyCompactList}\item 
+map$<$ string, int $>$ \mbox{\hyperlink{class_c_cell_af1774af6aa1b91f512a27782763f4948}{Pft\+N\+IndA}}
+\begin{DoxyCompactList}\small\item\em array with individual numbers of each P\+FT covering the cell above-\/ground \end{DoxyCompactList}\item 
+map$<$ string, int $>$ \mbox{\hyperlink{class_c_cell_a5be92efe8245f6833c68885913dab5ea}{Pft\+N\+IndB}}
+\begin{DoxyCompactList}\small\item\em array with individual numbers of each P\+FT covering the cell below-\/ground \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_c_cell_a7cc70952c5e55e4939d8a5adf509ec0b}\label{class_c_cell_a7cc70952c5e55e4939d8a5adf509ec0b}} 
+map$<$ string, int $>$ \mbox{\hyperlink{class_c_cell_a7cc70952c5e55e4939d8a5adf509ec0b}{Pft\+N\+Seedling}}
+\begin{DoxyCompactList}\small\item\em array of seedling number of each P\+FT \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_c_cell_a26b61055f1bd6e49407af5dafeda7a41}{N\+PftA}}
+\begin{DoxyCompactList}\small\item\em number of different P\+F\+Ts covering the cell above-\/ground \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_c_cell_af6d864155d2f2db766b6a4a37f42d7c1}{N\+PftB}}
+\begin{DoxyCompactList}\small\item\em number of different P\+F\+Ts covering the cell \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+class for cell objects (surprisingly) 
+
+Definition at line 21 of file Cell.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_c_cell_a1de6b6c2ee4ef46f458833aba37a8018}\label{class_c_cell_a1de6b6c2ee4ef46f458833aba37a8018}} 
+\index{CCell@{CCell}!CCell@{CCell}}
+\index{CCell@{CCell}!CCell@{CCell}}
+\subsubsection{\texorpdfstring{CCell()}{CCell()}}
+{\footnotesize\ttfamily C\+Cell\+::\+C\+Cell (\begin{DoxyParamCaption}\item[{const unsigned int}]{xx,  }\item[{const unsigned int}]{yy,  }\item[{double}]{ares = {\ttfamily 0},  }\item[{double}]{bres = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+constructor 
+\begin{DoxyParams}{Parameters}
+{\em xx} & x-\/coordinate on grid \\
+\hline
+{\em yy} & y-\/coordinate on grid \\
+\hline
+{\em ares} & aboveground resources \\
+\hline
+{\em bres} & belowground resources \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 23 of file Cell.\+cpp.
+
+\mbox{\Hypertarget{class_c_cell_a297edd2839a64d14a8ffffb915bbf18c}\label{class_c_cell_a297edd2839a64d14a8ffffb915bbf18c}} 
+\index{CCell@{CCell}!````~CCell@{$\sim$CCell}}
+\index{````~CCell@{$\sim$CCell}!CCell@{CCell}}
+\subsubsection{\texorpdfstring{$\sim$CCell()}{~CCell()}}
+{\footnotesize\ttfamily C\+Cell\+::$\sim$\+C\+Cell (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+destructor 
+
+destructor 
+
+Definition at line 63 of file Cell.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_c_cell_a48c7bf623f025697d0875ee282b8c75b}\label{class_c_cell_a48c7bf623f025697d0875ee282b8c75b}} 
+\index{CCell@{CCell}!AboveComp@{AboveComp}}
+\index{AboveComp@{AboveComp}!CCell@{CCell}}
+\subsubsection{\texorpdfstring{AboveComp()}{AboveComp()}}
+{\footnotesize\ttfamily void C\+Cell\+::\+Above\+Comp (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+competition function for size symmetric above-\/ground resource competition 
+
+function is overwritten if inherited class with different competitive size-\/asymmetry of niche differentiation is used
+
+A\+B\+O\+V\+Eground competition takes global information on symmetry and version to distribute the cell\textquotesingle{}s resources. Version is 1
+
+virtual function will be substituted by comp function from sub class 
+
+Definition at line 303 of file Cell.\+cpp.
+
+\mbox{\Hypertarget{class_c_cell_aab26e9d4c0150cee0bbc7f836f0d6b34}\label{class_c_cell_aab26e9d4c0150cee0bbc7f836f0d6b34}} 
+\index{CCell@{CCell}!BelowComp@{BelowComp}}
+\index{BelowComp@{BelowComp}!CCell@{CCell}}
+\subsubsection{\texorpdfstring{BelowComp()}{BelowComp()}}
+{\footnotesize\ttfamily void C\+Cell\+::\+Below\+Comp (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+competition function for size symmetric below-\/ground resource competition 
+
+function is overwritten if inherited class with different competitive size-\/asymmetry of niche differentiation is used
+
+B\+E\+L\+O\+Wground competition takes global information on symmetry and version to distribute the cell\textquotesingle{}s resources. Version is 1.
+
+virtual function will be substituted by comp function from sub class 
+
+Definition at line 359 of file Cell.\+cpp.
+
+\mbox{\Hypertarget{class_c_cell_a8983be7ad0586cbf9b0327761fb5b0f0}\label{class_c_cell_a8983be7ad0586cbf9b0327761fb5b0f0}} 
+\index{CCell@{CCell}!clear@{clear}}
+\index{clear@{clear}!CCell@{CCell}}
+\subsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily void C\+Cell\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+reset 
+
+reset cell properties 
+
+Definition at line 44 of file Cell.\+cpp.
+
+\mbox{\Hypertarget{class_c_cell_ac1a582012f1d54a21b9b7252d4b06f8f}\label{class_c_cell_ac1a582012f1d54a21b9b7252d4b06f8f}} 
+\index{CCell@{CCell}!Germinate@{Germinate}}
+\index{Germinate@{Germinate}!CCell@{CCell}}
+\subsubsection{\texorpdfstring{Germinate()}{Germinate()}}
+{\footnotesize\ttfamily double C\+Cell\+::\+Germinate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+on-\/cell germination 
+
+Germination on cell. 4 options for seed germination\+: in spring and late summer, in spring, in late summer or during the whole year defined as a P\+FT trait \begin{DoxyReturn}{Returns}
+biomass of germinated seeds 
+\end{DoxyReturn}
+
+
+Definition at line 93 of file Cell.\+cpp.
+
+\mbox{\Hypertarget{class_c_cell_a0b6846606bd1c95525d050ac697e1ae2}\label{class_c_cell_a0b6846606bd1c95525d050ac697e1ae2}} 
+\index{CCell@{CCell}!getCover@{getCover}}
+\index{getCover@{getCover}!CCell@{CCell}}
+\subsubsection{\texorpdfstring{getCover()}{getCover()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int C\+Cell\+::get\+Cover (\begin{DoxyParamCaption}\item[{const int}]{layer }\end{DoxyParamCaption}) const}
+
+
+
+returns cell-\/cover (int-\/coded) 
+
+Returns cellstate. To adapt for individual use. 
+\begin{DoxyParams}{Parameters}
+{\em layer} & one is for aboveground, two for belowground Layer\# \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+returns int coded cover for the grid 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+has to be called before dead plants are deleted (access-\/violation else because Cell\textquotesingle{}s Above-\/ and Below\+Plant\+Lists are used) 
+\end{DoxyNote}
+
+
+Definition at line 271 of file Cell.\+cpp.
+
+\mbox{\Hypertarget{class_c_cell_ae47dee0b8740b16d54d5dd5f7e56a910}\label{class_c_cell_ae47dee0b8740b16d54d5dd5f7e56a910}} 
+\index{CCell@{CCell}!getCover@{getCover}}
+\index{getCover@{getCover}!CCell@{CCell}}
+\subsubsection{\texorpdfstring{getCover()}{getCover()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily double C\+Cell\+::get\+Cover (\begin{DoxyParamCaption}\item[{const string}]{type }\end{DoxyParamCaption}) const}
+
+
+
+returns cell\textquotesingle{}s cover of the given type 
+
+Returns the cell-\/cover of the plant type given (only aboveground). 
+\begin{DoxyParams}{Parameters}
+{\em type} & name of P\+FT to look for \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 232 of file Cell.\+cpp.
+
+\mbox{\Hypertarget{class_c_cell_a5a6f6346ee1e347e67ceddffd7295e6a}\label{class_c_cell_a5a6f6346ee1e347e67ceddffd7295e6a}} 
+\index{CCell@{CCell}!GetNPft@{GetNPft}}
+\index{GetNPft@{GetNPft}!CCell@{CCell}}
+\subsubsection{\texorpdfstring{GetNPft()}{GetNPft()}}
+{\footnotesize\ttfamily void C\+Cell\+::\+Get\+N\+Pft (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+calculates number of individuals of each P\+FT 
+
+Updates Numbers of Plant functional traits on grid (refreshes N\+PftA and N\+PftB) 
+
+Definition at line 220 of file Cell.\+cpp.
+
+\mbox{\Hypertarget{class_c_cell_a6fb57406cb9aeeabe9feecbfc7625da4}\label{class_c_cell_a6fb57406cb9aeeabe9feecbfc7625da4}} 
+\index{CCell@{CCell}!prop\_res@{prop\_res}}
+\index{prop\_res@{prop\_res}!CCell@{CCell}}
+\subsubsection{\texorpdfstring{prop\_res()}{prop\_res()}}
+{\footnotesize\ttfamily double C\+Cell\+::prop\+\_\+res (\begin{DoxyParamCaption}\item[{const string}]{type,  }\item[{const int}]{layer,  }\item[{const int}]{version }\end{DoxyParamCaption}) const}
+
+
+
+portion cell resources the plant is gaining 
+
+portion of cell resources the plant is gaining 
+\begin{DoxyParams}{Parameters}
+{\em type} & Plant\+\_\+functional\+\_\+\+Type-\/\+ID \\
+\hline
+{\em layer} & above(1)-\/ or below(2)ground \\
+\hline
+{\em version} & one of \mbox{[}0,1,2\mbox{]} standard is 1 \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 407 of file Cell.\+cpp.
+
+\mbox{\Hypertarget{class_c_cell_ab23766c8c30b500992b53535088f204f}\label{class_c_cell_ab23766c8c30b500992b53535088f204f}} 
+\index{CCell@{CCell}!RemoveSeedlings@{RemoveSeedlings}}
+\index{RemoveSeedlings@{RemoveSeedlings}!CCell@{CCell}}
+\subsubsection{\texorpdfstring{RemoveSeedlings()}{RemoveSeedlings()}}
+{\footnotesize\ttfamily void C\+Cell\+::\+Remove\+Seedlings (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+remove dead seedlings 
+
+removes the seedlings from the cell 
+
+Definition at line 187 of file Cell.\+cpp.
+
+\mbox{\Hypertarget{class_c_cell_a4e261cc154f9f96eeb96772e354a1b34}\label{class_c_cell_a4e261cc154f9f96eeb96772e354a1b34}} 
+\index{CCell@{CCell}!RemoveSeeds@{RemoveSeeds}}
+\index{RemoveSeeds@{RemoveSeeds}!CCell@{CCell}}
+\subsubsection{\texorpdfstring{RemoveSeeds()}{RemoveSeeds()}}
+{\footnotesize\ttfamily void C\+Cell\+::\+Remove\+Seeds (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+remove dead seeds 
+
+removes the dead seeds from the seedbank list 
+
+Definition at line 204 of file Cell.\+cpp.
+
+\mbox{\Hypertarget{class_c_cell_a3a37e68bb48fe43cc14f8417ea93327b}\label{class_c_cell_a3a37e68bb48fe43cc14f8417ea93327b}} 
+\index{CCell@{CCell}!SetResource@{SetResource}}
+\index{SetResource@{SetResource}!CCell@{CCell}}
+\subsubsection{\texorpdfstring{SetResource()}{SetResource()}}
+{\footnotesize\ttfamily void C\+Cell\+::\+Set\+Resource (\begin{DoxyParamCaption}\item[{double}]{Ares,  }\item[{double}]{Bres }\end{DoxyParamCaption})}
+
+
+
+set resources 
+
+Set cell resources
+
+
+\begin{DoxyParams}{Parameters}
+{\em Ares} & aboveground \\
+\hline
+{\em Bres} & belowground \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 80 of file Cell.\+cpp.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_c_cell_a26b61055f1bd6e49407af5dafeda7a41}\label{class_c_cell_a26b61055f1bd6e49407af5dafeda7a41}} 
+\index{CCell@{CCell}!NPftA@{NPftA}}
+\index{NPftA@{NPftA}!CCell@{CCell}}
+\subsubsection{\texorpdfstring{NPftA}{NPftA}}
+{\footnotesize\ttfamily int C\+Cell\+::\+N\+PftA}
+
+
+
+number of different P\+F\+Ts covering the cell above-\/ground 
+
+necessary for niche differentiation version 3 
+
+Definition at line 60 of file Cell.\+h.
+
+\mbox{\Hypertarget{class_c_cell_af6d864155d2f2db766b6a4a37f42d7c1}\label{class_c_cell_af6d864155d2f2db766b6a4a37f42d7c1}} 
+\index{CCell@{CCell}!NPftB@{NPftB}}
+\index{NPftB@{NPftB}!CCell@{CCell}}
+\subsubsection{\texorpdfstring{NPftB}{NPftB}}
+{\footnotesize\ttfamily int C\+Cell\+::\+N\+PftB}
+
+
+
+number of different P\+F\+Ts covering the cell 
+
+necessary for niche differentiation version 3 constructor 
+
+Definition at line 63 of file Cell.\+h.
+
+\mbox{\Hypertarget{class_c_cell_af1774af6aa1b91f512a27782763f4948}\label{class_c_cell_af1774af6aa1b91f512a27782763f4948}} 
+\index{CCell@{CCell}!PftNIndA@{PftNIndA}}
+\index{PftNIndA@{PftNIndA}!CCell@{CCell}}
+\subsubsection{\texorpdfstring{PftNIndA}{PftNIndA}}
+{\footnotesize\ttfamily map$<$string,int$>$ C\+Cell\+::\+Pft\+N\+IndA}
+
+
+
+array with individual numbers of each P\+FT covering the cell above-\/ground 
+
+necessary for niche differentiation version 2 
+
+Definition at line 51 of file Cell.\+h.
+
+\mbox{\Hypertarget{class_c_cell_a5be92efe8245f6833c68885913dab5ea}\label{class_c_cell_a5be92efe8245f6833c68885913dab5ea}} 
+\index{CCell@{CCell}!PftNIndB@{PftNIndB}}
+\index{PftNIndB@{PftNIndB}!CCell@{CCell}}
+\subsubsection{\texorpdfstring{PftNIndB}{PftNIndB}}
+{\footnotesize\ttfamily map$<$string,int$>$ C\+Cell\+::\+Pft\+N\+IndB}
+
+
+
+array with individual numbers of each P\+FT covering the cell below-\/ground 
+
+necessary for niche differentiation version 2 
+
+Definition at line 55 of file Cell.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+I\+B\+Cgrass\+G\+U\+I.\+git/trunk/\+Model-\/files/\mbox{\hyperlink{_cell_8h}{Cell.\+h}}\item 
+D\+:/\+I\+B\+Cgrass\+G\+U\+I.\+git/trunk/\+Model-\/files/\mbox{\hyperlink{_cell_8cpp}{Cell.\+cpp}}\end{DoxyCompactItemize}

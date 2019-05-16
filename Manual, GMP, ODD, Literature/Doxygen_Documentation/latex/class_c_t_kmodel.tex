@@ -1,0 +1,168 @@
+\hypertarget{class_c_t_kmodel}{}\section{C\+T\+Kmodel Class Reference}
+\label{class_c_t_kmodel}\index{CTKmodel@{CTKmodel}}
+
+
+toxicokinetic environment  
+
+
+
+
+{\ttfamily \#include $<$C\+T\+Kmodel.\+h$>$}
+
+Inheritance diagram for C\+T\+Kmodel\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_c_t_kmodel}
+\end{center}
+\end{figure}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static double \mbox{\hyperlink{class_c_t_kmodel_a4bfc81ccf5bc7355642eb526b4375fb5}{Get\+Herb\+Eff}} (const int pos1=0, string file=Name\+Herb\+File)
+\begin{DoxyCompactList}\small\item\em reading txt-\/file with effect intensities \end{DoxyCompactList}\item 
+static double \mbox{\hyperlink{class_c_t_kmodel_a20c6e31e81095343abfc3b844c0b1645}{Get\+App\+Rates}} (const int pos1=0, string file=Name\+App\+File)
+\begin{DoxyCompactList}\small\item\em reading txt file with application rates \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_c_t_kmodel_aa6c4ebbda118cc0fc523c69ceff75908}{set\+P\+F\+Tsensi}} (string P\+FT)
+\begin{DoxyCompactList}\small\item\em set P\+FT sensitivities \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_s_eff_profile}{S\+Eff\+Profile}} $\ast$ \mbox{\hyperlink{class_c_t_kmodel_a1840a4b16c95c07995f55e317c23497e}{get\+Profile\+Proxy}} (string P\+FT, int year)
+\begin{DoxyCompactList}\small\item\em get correction factors for model parameters depending on P\+F\+Tsensi for plants \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_s_eff_profile}{S\+Eff\+Profile}} $\ast$ \mbox{\hyperlink{class_c_t_kmodel_a561adaf724a7bdf1f55b509aec457c96}{get\+Profile\+Proxy\+Seeds}} (string P\+FT, int year)
+\begin{DoxyCompactList}\small\item\em get correction factors for model parameters depending on P\+F\+Tsensi for seeds \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+toxicokinetic environment 
+
+Definition at line 85 of file C\+T\+Kmodel.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_c_t_kmodel_a20c6e31e81095343abfc3b844c0b1645}\label{class_c_t_kmodel_a20c6e31e81095343abfc3b844c0b1645}} 
+\index{CTKmodel@{CTKmodel}!GetAppRates@{GetAppRates}}
+\index{GetAppRates@{GetAppRates}!CTKmodel@{CTKmodel}}
+\subsubsection{\texorpdfstring{GetAppRates()}{GetAppRates()}}
+{\footnotesize\ttfamily double C\+T\+Kmodel\+::\+Get\+App\+Rates (\begin{DoxyParamCaption}\item[{const int}]{pos1 = {\ttfamily 0},  }\item[{string}]{file = {\ttfamily NameAppFile} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+reading txt file with application rates 
+
+reading txt-\/file which contains application rates for several years 
+\begin{DoxyParams}{Parameters}
+{\em pos1} & file position to start reading \\
+\hline
+{\em file} & file name of txt file to be read \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+App\+Rate timeline 
+\end{DoxyReturn}
+
+
+Definition at line 93 of file C\+T\+Kmodel.\+cpp.
+
+\mbox{\Hypertarget{class_c_t_kmodel_a4bfc81ccf5bc7355642eb526b4375fb5}\label{class_c_t_kmodel_a4bfc81ccf5bc7355642eb526b4375fb5}} 
+\index{CTKmodel@{CTKmodel}!GetHerbEff@{GetHerbEff}}
+\index{GetHerbEff@{GetHerbEff}!CTKmodel@{CTKmodel}}
+\subsubsection{\texorpdfstring{GetHerbEff()}{GetHerbEff()}}
+{\footnotesize\ttfamily double C\+T\+Kmodel\+::\+Get\+Herb\+Eff (\begin{DoxyParamCaption}\item[{const int}]{pos1 = {\ttfamily 0},  }\item[{string}]{file = {\ttfamily NameHerbFile} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+reading txt-\/file with effect intensities 
+
+reading txt-\/file which contains effect profiles for several years (correction factors) 
+\begin{DoxyParams}{Parameters}
+{\em pos1} & file position to start reading \\
+\hline
+{\em file} & file name of txt file to be read \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Effect timeline 
+\end{DoxyReturn}
+
+
+Definition at line 55 of file C\+T\+Kmodel.\+cpp.
+
+\mbox{\Hypertarget{class_c_t_kmodel_a1840a4b16c95c07995f55e317c23497e}\label{class_c_t_kmodel_a1840a4b16c95c07995f55e317c23497e}} 
+\index{CTKmodel@{CTKmodel}!getProfileProxy@{getProfileProxy}}
+\index{getProfileProxy@{getProfileProxy}!CTKmodel@{CTKmodel}}
+\subsubsection{\texorpdfstring{getProfileProxy()}{getProfileProxy()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_s_eff_profile}{S\+Eff\+Profile}} $\ast$ C\+T\+Kmodel\+::get\+Profile\+Proxy (\begin{DoxyParamCaption}\item[{string}]{P\+FT,  }\item[{int}]{year }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+get correction factors for model parameters depending on P\+F\+Tsensi for plants 
+
+Get one herbicide effect profile, i.\+e. correction factors for model parameters
+
+Corrects for P\+FT specific sensitivity 
+\begin{DoxyParams}{Parameters}
+{\em P\+FT} & P\+FT to be asked for \\
+\hline
+{\em year} & current year \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+link to a set of factors (\mbox{\hyperlink{struct_s_eff_profile}{S\+Eff\+Profile}}) 
+\end{DoxyReturn}
+
+
+Definition at line 126 of file C\+T\+Kmodel.\+cpp.
+
+\mbox{\Hypertarget{class_c_t_kmodel_a561adaf724a7bdf1f55b509aec457c96}\label{class_c_t_kmodel_a561adaf724a7bdf1f55b509aec457c96}} 
+\index{CTKmodel@{CTKmodel}!getProfileProxySeeds@{getProfileProxySeeds}}
+\index{getProfileProxySeeds@{getProfileProxySeeds}!CTKmodel@{CTKmodel}}
+\subsubsection{\texorpdfstring{getProfileProxySeeds()}{getProfileProxySeeds()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_s_eff_profile}{S\+Eff\+Profile}} $\ast$ C\+T\+Kmodel\+::get\+Profile\+Proxy\+Seeds (\begin{DoxyParamCaption}\item[{string}]{P\+FT,  }\item[{int}]{year }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+get correction factors for model parameters depending on P\+F\+Tsensi for seeds 
+
+Get one herbicide effect profile, i.\+e. correction factors for model parameters
+
+Corrects for P\+FT specific sensitivity 
+\begin{DoxyParams}{Parameters}
+{\em P\+FT} & P\+FT to be asked for \\
+\hline
+{\em year} & current year \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+link to a set of factors (\mbox{\hyperlink{struct_s_eff_profile}{S\+Eff\+Profile}}) 
+\end{DoxyReturn}
+
+
+Definition at line 226 of file C\+T\+Kmodel.\+cpp.
+
+\mbox{\Hypertarget{class_c_t_kmodel_aa6c4ebbda118cc0fc523c69ceff75908}\label{class_c_t_kmodel_aa6c4ebbda118cc0fc523c69ceff75908}} 
+\index{CTKmodel@{CTKmodel}!setPFTsensi@{setPFTsensi}}
+\index{setPFTsensi@{setPFTsensi}!CTKmodel@{CTKmodel}}
+\subsubsection{\texorpdfstring{setPFTsensi()}{setPFTsensi()}}
+{\footnotesize\ttfamily void C\+T\+Kmodel\+::set\+P\+F\+Tsensi (\begin{DoxyParamCaption}\item[{string}]{P\+FT }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+set P\+FT sensitivities 
+
+set sensitivity of type P\+FT 
+\begin{DoxyParams}{Parameters}
+{\em P\+FT} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 113 of file C\+T\+Kmodel.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+I\+B\+Cgrass\+G\+U\+I.\+git/trunk/\+Model-\/files/C\+T\+Kmodel.\+h\item 
+D\+:/\+I\+B\+Cgrass\+G\+U\+I.\+git/trunk/\+Model-\/files/\mbox{\hyperlink{_c_t_kmodel_8cpp}{C\+T\+Kmodel.\+cpp}}\end{DoxyCompactItemize}

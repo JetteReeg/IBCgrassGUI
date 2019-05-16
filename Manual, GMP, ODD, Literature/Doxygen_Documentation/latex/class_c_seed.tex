@@ -1,0 +1,260 @@
+\hypertarget{class_c_seed}{}\section{C\+Seed Class Reference}
+\label{class_c_seed}\index{CSeed@{CSeed}}
+
+
+class of seed individuals  
+
+
+
+
+{\ttfamily \#include $<$C\+Seed.\+h$>$}
+
+Inheritance diagram for C\+Seed\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_c_seed}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual std\+::string \mbox{\hyperlink{class_c_seed_a0e10c5ee3d7a6bf14226de5a5728b2a4}{type}} ()
+\begin{DoxyCompactList}\small\item\em P\+FT type ID. \end{DoxyCompactList}\item 
+virtual std\+::string \mbox{\hyperlink{class_c_seed_a6e0601a2fd06a652e34e57916dbdacb9}{pft}} ()
+\begin{DoxyCompactList}\small\item\em P\+FT type string. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_c_seed_a9d8bb7aa1750b4e2fe36fced4178ced1}{C\+Seed}} (double x, double y, \mbox{\hyperlink{class_c_plant}{C\+Plant}} $\ast$plant)
+\begin{DoxyCompactList}\small\item\em create seed from plant \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_c_seed_a8dd3a324256d2e93c8d9d19cf764a00d}{C\+Seed}} (\mbox{\hyperlink{class_c_plant}{C\+Plant}} $\ast$plant, \mbox{\hyperlink{class_c_cell}{C\+Cell}} $\ast$\mbox{\hyperlink{class_c_seed_a93f258be6fe7841d52daa4e9e362c00e}{cell}})
+\begin{DoxyCompactList}\small\item\em create seed from plant \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_c_seed_af06007d535b031246ea2b1af0ce78aa7}{C\+Seed}} (double x, double y, double \mbox{\hyperlink{class_c_seed_ae9b71bc4ff10218aade80211c89fedaf}{estab}}, shared\+\_\+ptr$<$ \mbox{\hyperlink{class_s_pft_traits}{S\+Pft\+Traits}} $>$ traits)
+\begin{DoxyCompactList}\small\item\em create seed from establishment \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_c_seed_a0eb923b3779ba947b2fc7a5bb1a36fa8}{C\+Seed}} (double \mbox{\hyperlink{class_c_seed_ae9b71bc4ff10218aade80211c89fedaf}{estab}}, shared\+\_\+ptr$<$ \mbox{\hyperlink{class_s_pft_traits}{S\+Pft\+Traits}} $>$ traits, \mbox{\hyperlink{class_c_cell}{C\+Cell}} $\ast$\mbox{\hyperlink{class_c_seed_a93f258be6fe7841d52daa4e9e362c00e}{cell}})
+\begin{DoxyCompactList}\small\item\em create seed from establishment \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_c_seed_a29d4e2c3d5f3baa52534ba739f93cb4d}\label{class_c_seed_a29d4e2c3d5f3baa52534ba739f93cb4d}} 
+virtual \mbox{\hyperlink{class_c_seed_a29d4e2c3d5f3baa52534ba739f93cb4d}{$\sim$\+C\+Seed}} ()
+\begin{DoxyCompactList}\small\item\em destructor \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_seed_a54b3d0dad6fbbaf13731df172190454f}{set\+Cell}} (\mbox{\hyperlink{class_c_cell}{C\+Cell}} $\ast$\mbox{\hyperlink{class_c_seed_a93f258be6fe7841d52daa4e9e362c00e}{cell}})
+\begin{DoxyCompactList}\small\item\em define cell (only if none defined yet) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_c_seed_a0c916c710b1325761ebd268d9ed4a560}\label{class_c_seed_a0c916c710b1325761ebd268d9ed4a560}} 
+\mbox{\hyperlink{class_c_cell}{C\+Cell}} $\ast$ \mbox{\hyperlink{class_c_seed_a0c916c710b1325761ebd268d9ed4a560}{get\+Cell}} ()
+\begin{DoxyCompactList}\small\item\em return address of cell \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_c_seed_a4da6513ccd7dc241729d0f98fc20f7f7}\label{class_c_seed_a4da6513ccd7dc241729d0f98fc20f7f7}} 
+virtual bool \mbox{\hyperlink{class_c_seed_a4da6513ccd7dc241729d0f98fc20f7f7}{is\+Clonal}} ()
+\begin{DoxyCompactList}\small\item\em return if seed is from clonal P\+FT \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_c_seed_a0d8fa2429de3dbf628c1928197e8530b}\label{class_c_seed_a0d8fa2429de3dbf628c1928197e8530b}} 
+bool \mbox{\hyperlink{class_c_seed_a0d8fa2429de3dbf628c1928197e8530b}{Seed\+Of\+Type}} (string \mbox{\hyperlink{class_c_seed_a0e10c5ee3d7a6bf14226de5a5728b2a4}{type}})
+\begin{DoxyCompactList}\small\item\em return type affiliation(necessary to apply algorithms from S\+T\+L) \end{DoxyCompactList}\item 
+virtual double \mbox{\hyperlink{class_c_seed_a6845f39091b1c9d8c31a9ee87ca8f8f0}{getp\+Estab}} ()
+\begin{DoxyCompactList}\small\item\em get current establishment probability \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_c_seed_a538975a8caa9dedbc77143146fad1c38}\label{class_c_seed_a538975a8caa9dedbc77143146fad1c38}} 
+shared\+\_\+ptr$<$ \mbox{\hyperlink{class_s_pft_traits}{S\+Pft\+Traits}} $>$ \mbox{\hyperlink{class_c_seed_a538975a8caa9dedbc77143146fad1c38}{Traits}}
+\begin{DoxyCompactList}\small\item\em container for traits \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_c_seed_a25f9e474c81f03b03fcc63eeb268b8db}\label{class_c_seed_a25f9e474c81f03b03fcc63eeb268b8db}} 
+double \mbox{\hyperlink{class_c_seed_a25f9e474c81f03b03fcc63eeb268b8db}{mass}}
+\begin{DoxyCompactList}\small\item\em seed mass \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_c_seed_ae9b71bc4ff10218aade80211c89fedaf}\label{class_c_seed_ae9b71bc4ff10218aade80211c89fedaf}} 
+double \mbox{\hyperlink{class_c_seed_ae9b71bc4ff10218aade80211c89fedaf}{estab}}
+\begin{DoxyCompactList}\small\item\em estab-\/probability (may differ from type-\/specific value) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_c_seed_ac54637f36f1c5ffbbc43a5cf84298ec3}\label{class_c_seed_ac54637f36f1c5ffbbc43a5cf84298ec3}} 
+double \mbox{\hyperlink{class_c_seed_ac54637f36f1c5ffbbc43a5cf84298ec3}{xcoord}}
+\begin{DoxyCompactList}\small\item\em x position on the grid \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_c_seed_a965add8cd635b902a1777371e6a1d1b4}\label{class_c_seed_a965add8cd635b902a1777371e6a1d1b4}} 
+double \mbox{\hyperlink{class_c_seed_a965add8cd635b902a1777371e6a1d1b4}{ycoord}}
+\begin{DoxyCompactList}\small\item\em y position on the grid \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_c_seed_acd19aea25a481eda44351b6a2ea868c3}\label{class_c_seed_acd19aea25a481eda44351b6a2ea868c3}} 
+int \mbox{\hyperlink{class_c_seed_acd19aea25a481eda44351b6a2ea868c3}{Age}}
+\begin{DoxyCompactList}\small\item\em seed age \mbox{[}years\mbox{]} \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_c_seed_a5b8ca1bf3f81e494460c72474054a667}\label{class_c_seed_a5b8ca1bf3f81e494460c72474054a667}} 
+bool \mbox{\hyperlink{class_c_seed_a5b8ca1bf3f81e494460c72474054a667}{remove}}
+\begin{DoxyCompactList}\small\item\em should the seed be removed? (because it is dead) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_c_seed_a93f258be6fe7841d52daa4e9e362c00e}\label{class_c_seed_a93f258be6fe7841d52daa4e9e362c00e}} 
+\mbox{\hyperlink{class_c_cell}{C\+Cell}} $\ast$ \mbox{\hyperlink{class_c_seed_a93f258be6fe7841d52daa4e9e362c00e}{cell}}
+\begin{DoxyCompactList}\small\item\em defines a cell \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+class of seed individuals 
+
+Definition at line 14 of file C\+Seed.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_c_seed_a9d8bb7aa1750b4e2fe36fced4178ced1}\label{class_c_seed_a9d8bb7aa1750b4e2fe36fced4178ced1}} 
+\index{CSeed@{CSeed}!CSeed@{CSeed}}
+\index{CSeed@{CSeed}!CSeed@{CSeed}}
+\subsubsection{\texorpdfstring{CSeed()}{CSeed()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily C\+Seed\+::\+C\+Seed (\begin{DoxyParamCaption}\item[{double}]{x,  }\item[{double}]{y,  }\item[{\mbox{\hyperlink{class_c_plant}{C\+Plant}} $\ast$}]{plant }\end{DoxyParamCaption})}
+
+
+
+create seed from plant 
+
+constructor of seed (produced by a plant a distributed on the grid) 
+\begin{DoxyParams}{Parameters}
+{\em x} & location of seed \\
+\hline
+{\em y} & location of seed \\
+\hline
+{\em plant} & plant which produced seed \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 15 of file C\+Seed.\+cpp.
+
+\mbox{\Hypertarget{class_c_seed_a8dd3a324256d2e93c8d9d19cf764a00d}\label{class_c_seed_a8dd3a324256d2e93c8d9d19cf764a00d}} 
+\index{CSeed@{CSeed}!CSeed@{CSeed}}
+\index{CSeed@{CSeed}!CSeed@{CSeed}}
+\subsubsection{\texorpdfstring{CSeed()}{CSeed()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily C\+Seed\+::\+C\+Seed (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_c_plant}{C\+Plant}} $\ast$}]{plant,  }\item[{\mbox{\hyperlink{class_c_cell}{C\+Cell}} $\ast$}]{cell }\end{DoxyParamCaption})}
+
+
+
+create seed from plant 
+
+constructor of a seed in a cell by a specified plant 
+\begin{DoxyParams}{Parameters}
+{\em plant} & plant which produced seed \\
+\hline
+{\em cell} & cell of new seed \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 25 of file C\+Seed.\+cpp.
+
+\mbox{\Hypertarget{class_c_seed_af06007d535b031246ea2b1af0ce78aa7}\label{class_c_seed_af06007d535b031246ea2b1af0ce78aa7}} 
+\index{CSeed@{CSeed}!CSeed@{CSeed}}
+\index{CSeed@{CSeed}!CSeed@{CSeed}}
+\subsubsection{\texorpdfstring{CSeed()}{CSeed()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily C\+Seed\+::\+C\+Seed (\begin{DoxyParamCaption}\item[{double}]{x,  }\item[{double}]{y,  }\item[{double}]{estab,  }\item[{shared\+\_\+ptr$<$ \mbox{\hyperlink{class_s_pft_traits}{S\+Pft\+Traits}} $>$}]{traits }\end{DoxyParamCaption})}
+
+
+
+create seed from establishment 
+
+constructor of a seed in a x,y cell with specific traits 
+\begin{DoxyParams}{Parameters}
+{\em x} & location on grid \\
+\hline
+{\em y} & location on grid \\
+\hline
+{\em establ} & establishment probability \\
+\hline
+{\em traits} & trait characteristics \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 57 of file C\+Seed.\+cpp.
+
+\mbox{\Hypertarget{class_c_seed_a0eb923b3779ba947b2fc7a5bb1a36fa8}\label{class_c_seed_a0eb923b3779ba947b2fc7a5bb1a36fa8}} 
+\index{CSeed@{CSeed}!CSeed@{CSeed}}
+\index{CSeed@{CSeed}!CSeed@{CSeed}}
+\subsubsection{\texorpdfstring{CSeed()}{CSeed()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily C\+Seed\+::\+C\+Seed (\begin{DoxyParamCaption}\item[{double}]{estab,  }\item[{shared\+\_\+ptr$<$ \mbox{\hyperlink{class_s_pft_traits}{S\+Pft\+Traits}} $>$}]{traits,  }\item[{\mbox{\hyperlink{class_c_cell}{C\+Cell}} $\ast$}]{cell }\end{DoxyParamCaption})}
+
+
+
+create seed from establishment 
+
+constructor of a seed in a cell with specific traits 
+\begin{DoxyParams}{Parameters}
+{\em estab} & establishment probability \\
+\hline
+{\em cell} & location of cell \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 39 of file C\+Seed.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_c_seed_a6845f39091b1c9d8c31a9ee87ca8f8f0}\label{class_c_seed_a6845f39091b1c9d8c31a9ee87ca8f8f0}} 
+\index{CSeed@{CSeed}!getpEstab@{getpEstab}}
+\index{getpEstab@{getpEstab}!CSeed@{CSeed}}
+\subsubsection{\texorpdfstring{getpEstab()}{getpEstab()}}
+{\footnotesize\ttfamily double C\+Seed\+::getp\+Estab (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+get current establishment probability 
+
+get current establishment probability 
+
+Reimplemented in \mbox{\hyperlink{class_c_t_d_seed_a0e62cd8894a79f484cdacfb026839609}{C\+T\+D\+Seed}}.
+
+
+
+Definition at line 106 of file C\+Seed.\+cpp.
+
+\mbox{\Hypertarget{class_c_seed_a6e0601a2fd06a652e34e57916dbdacb9}\label{class_c_seed_a6e0601a2fd06a652e34e57916dbdacb9}} 
+\index{CSeed@{CSeed}!pft@{pft}}
+\index{pft@{pft}!CSeed@{CSeed}}
+\subsubsection{\texorpdfstring{pft()}{pft()}}
+{\footnotesize\ttfamily std\+::string C\+Seed\+::pft (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+P\+FT type string. 
+
+returns to which pft the seed belongs 
+
+Definition at line 99 of file C\+Seed.\+cpp.
+
+\mbox{\Hypertarget{class_c_seed_a54b3d0dad6fbbaf13731df172190454f}\label{class_c_seed_a54b3d0dad6fbbaf13731df172190454f}} 
+\index{CSeed@{CSeed}!setCell@{setCell}}
+\index{setCell@{setCell}!CSeed@{CSeed}}
+\subsubsection{\texorpdfstring{setCell()}{setCell()}}
+{\footnotesize\ttfamily void C\+Seed\+::set\+Cell (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_c_cell}{C\+Cell}} $\ast$}]{cell }\end{DoxyParamCaption})}
+
+
+
+define cell (only if none defined yet) 
+
+defines a cell if none is defined yet 
+\begin{DoxyParams}{Parameters}
+{\em cell} & location of cell on grid \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 70 of file C\+Seed.\+cpp.
+
+\mbox{\Hypertarget{class_c_seed_a0e10c5ee3d7a6bf14226de5a5728b2a4}\label{class_c_seed_a0e10c5ee3d7a6bf14226de5a5728b2a4}} 
+\index{CSeed@{CSeed}!type@{type}}
+\index{type@{type}!CSeed@{CSeed}}
+\subsubsection{\texorpdfstring{type()}{type()}}
+{\footnotesize\ttfamily std\+::string C\+Seed\+::type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+P\+FT type ID. 
+
+returns the type of the seed 
+
+Reimplemented from \mbox{\hyperlink{class_c_object_aa734daa745223aa287c3fdfb8dfca1ed}{C\+Object}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{class_c_t_d_seed_af15f2e2f2ce991668da778d421b8a4ee}{C\+T\+D\+Seed}}.
+
+
+
+Definition at line 92 of file C\+Seed.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+I\+B\+Cgrass\+G\+U\+I.\+git/trunk/\+Model-\/files/\mbox{\hyperlink{_c_seed_8h}{C\+Seed.\+h}}\item 
+D\+:/\+I\+B\+Cgrass\+G\+U\+I.\+git/trunk/\+Model-\/files/\mbox{\hyperlink{_c_seed_8cpp}{C\+Seed.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,46 @@
+
+\begin{DoxyParams}{Parameters}
+{\em year} & specific year \\
+\hline
+{\em sensitivity} & herbicide susceptibility of P\+FT individual \\
+\hline
+{\em app\+\_\+rate} & application rate for dose responses \\
+\hline
+{\em \mbox{\hyperlink{struct_s_eff_profile}{S\+Eff\+Profile}}} & individual effect profile where effects on different plat attributes are stored\\
+\hline
+\end{DoxyParams}
+\begin{DoxyParagraph}{}
+Herbicide effects can be calculated in 2 different ways\+:
+\begin{DoxyEnumerate}
+\item via a simple txt-\/file with each row containing effect for the specific year
+\begin{DoxyItemize}
+\item txt file includes 6 different columns for the herbicide induced effects on\+:
+\begin{DoxyItemize}
+\item establishment
+\item seedling biomass
+\item seed mortality
+\item resource allocation to reproduction
+\item plant mortality
+\item plant growth
+\end{DoxyItemize}
+\end{DoxyItemize}
+\item via a dose response function
+\begin{DoxyItemize}
+\item trait file includes traits for the E\+C50 and slope of the dose responses
+\begin{DoxyItemize}
+\item dose responses can be calculated for\+:
+\begin{DoxyItemize}
+\item establishment
+\item seedling biomass
+\item seed mortalitiy (i.\+e. seed fertility)
+\item seed production
+\item plant mortality
+\item plant growth
+\end{DoxyItemize}
+\end{DoxyItemize}
+\item simulation parameter app\+\_\+rate gives the specific application rate
+\item calculation of effect\+: app\+\_\+rate$^\wedge$slope/(app\+\_\+rate$^\wedge$slope + E\+C50$^\wedge$slope)
+\end{DoxyItemize}
+\end{DoxyEnumerate}
+\end{DoxyParagraph}
+Independent of the way, effects are stored as effect profiles for each plant and seed individual effect profile which is part of the plant and seed characteristics. 

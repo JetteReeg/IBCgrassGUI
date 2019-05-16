@@ -5,10 +5,18 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.15"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>IBCgrass GUI: Member List</title>
+<title>IBC-grass: Member List</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -20,11 +28,11 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
-  <td id="projectlogo"><img alt="Logo" src="ZOIWaterEff_IBCGrass 3cm.gif"/></td>
+  <td id="projectlogo"><img alt="Logo" src="SchemeIBCgrass.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">IBCgrass GUI
-   &#160;<span id="projectnumber">0.1.0</span>
+   <div id="projectname">IBC-grass
    </div>
+   <div id="projectbrief">herbicide risk assessment</div>
   </td>
  </tr>
  </tbody>
@@ -47,6 +55,23 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('class_c_t_d_seed.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -61,7 +86,6 @@ $(function() {
 </iframe>
 </div>
 
-</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">CTDSeed Member List</div>  </div>
@@ -83,39 +107,43 @@ $(function() {
   <tr class="even"><td class="entry"><a class="el" href="class_c_t_d_seed.html#a841c2982bb3efbeabf29250ed489c2bc">CTDSeed</a>(CTDPlant *plant, CCell *cell)</td><td class="entry"><a class="el" href="class_c_t_d_seed.html">CTDSeed</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="class_c_t_d_seed.html#a39546c855452a998baab6661f0c9f49a">CTDSeed</a>(CSeed *seed)</td><td class="entry"><a class="el" href="class_c_t_d_seed.html">CTDSeed</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_c_seed.html#ae9b71bc4ff10218aade80211c89fedaf">estab</a></td><td class="entry"><a class="el" href="class_c_seed.html">CSeed</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="class_c_seed.html#a0c916c710b1325761ebd268d9ed4a560">getCell</a>()</td><td class="entry"><a class="el" href="class_c_seed.html">CSeed</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_c_t_kmodel.html#a4bfc81ccf5bc7355642eb526b4375fb5">GetHerbEff</a>(const int pos1=0, string file=NameHerbFile)</td><td class="entry"><a class="el" href="class_c_t_kmodel.html">CTKmodel</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr><td class="entry"><a class="el" href="class_c_t_d_seed.html#ac7360b069cae2fffcf17c0b7b1f482cd">getHexposed</a>() const</td><td class="entry"><a class="el" href="class_c_t_d_seed.html">CTDSeed</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_c_t_d_seed.html#a0e62cd8894a79f484cdacfb026839609">getpEstab</a>()</td><td class="entry"><a class="el" href="class_c_t_d_seed.html">CTDSeed</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr><td class="entry"><a class="el" href="class_c_t_d_seed.html#a94a46b8a2c8b176f3b39ee6671dd16bf">getpEstabMort</a>()</td><td class="entry"><a class="el" href="class_c_t_d_seed.html">CTDSeed</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_c_t_d_seed.html#ac7aa40e91c58574297dfa46fafd5bd14">getpMort</a>()</td><td class="entry"><a class="el" href="class_c_t_d_seed.html">CTDSeed</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">virtual</span></td></tr>
-  <tr><td class="entry"><a class="el" href="class_c_t_d_seed.html#a93b488e96ce97a9b6f780ccc0c72e25c">GetProfile</a>(int year)</td><td class="entry"><a class="el" href="class_c_t_d_seed.html">CTDSeed</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_c_t_kmodel.html#a1840a4b16c95c07995f55e317c23497e">getProfileProxy</a>(string PFT, int year)</td><td class="entry"><a class="el" href="class_c_t_kmodel.html">CTKmodel</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr><td class="entry"><a class="el" href="class_c_t_kmodel.html#a561adaf724a7bdf1f55b509aec457c96">getProfileProxySeeds</a>(string PFT, int year)</td><td class="entry"><a class="el" href="class_c_t_kmodel.html">CTKmodel</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_c_t_d_seed.html#ab1e3207c5f88dc7fafc8a3fbcbcc1e70">Hexposed</a></td><td class="entry"><a class="el" href="class_c_t_d_seed.html">CTDSeed</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="class_c_seed.html#a4da6513ccd7dc241729d0f98fc20f7f7">isClonal</a>()</td><td class="entry"><a class="el" href="class_c_seed.html">CSeed</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">virtual</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_c_t_d_seed.html#ac1fbe05e6ccd86a88cd397f1c504fe36">JuvBioRed</a>()</td><td class="entry"><a class="el" href="class_c_t_d_seed.html">CTDSeed</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">virtual</span></td></tr>
-  <tr><td class="entry"><a class="el" href="class_c_seed.html#a25f9e474c81f03b03fcc63eeb268b8db">mass</a></td><td class="entry"><a class="el" href="class_c_seed.html">CSeed</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_c_seed.html#a6e0601a2fd06a652e34e57916dbdacb9">pft</a>()</td><td class="entry"><a class="el" href="class_c_seed.html">CSeed</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr><td class="entry"><a class="el" href="class_c_seed.html#a5b8ca1bf3f81e494460c72474054a667">remove</a></td><td class="entry"><a class="el" href="class_c_seed.html">CSeed</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_c_seed.html#a0d8fa2429de3dbf628c1928197e8530b">SeedOfType</a>(string type)</td><td class="entry"><a class="el" href="class_c_seed.html">CSeed</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr><td class="entry"><a class="el" href="class_c_seed.html#a54b3d0dad6fbbaf13731df172190454f">setCell</a>(CCell *cell)</td><td class="entry"><a class="el" href="class_c_seed.html">CSeed</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_c_t_d_seed.html#a8f9ec854146a44f5921cbc8a361c0b1e">setHexposed</a>(double hexposed=1)</td><td class="entry"><a class="el" href="class_c_t_d_seed.html">CTDSeed</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr><td class="entry"><a class="el" href="class_c_t_kmodel.html#aa6c4ebbda118cc0fc523c69ceff75908">setPFTsensi</a>(string PFT)</td><td class="entry"><a class="el" href="class_c_t_kmodel.html">CTKmodel</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_c_seed.html#a538975a8caa9dedbc77143146fad1c38">Traits</a></td><td class="entry"><a class="el" href="class_c_seed.html">CSeed</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="class_c_t_d_seed.html#af15f2e2f2ce991668da778d421b8a4ee">type</a>()</td><td class="entry"><a class="el" href="class_c_t_d_seed.html">CTDSeed</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">virtual</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_c_t_d_seed.html#a18357a43ccce34ed0fe7360455902352">wasHexposed</a>()</td><td class="entry"><a class="el" href="class_c_t_d_seed.html">CTDSeed</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr><td class="entry"><a class="el" href="class_c_seed.html#ac54637f36f1c5ffbbc43a5cf84298ec3">xcoord</a></td><td class="entry"><a class="el" href="class_c_seed.html">CSeed</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_c_seed.html#a965add8cd635b902a1777371e6a1d1b4">ycoord</a></td><td class="entry"><a class="el" href="class_c_seed.html">CSeed</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="class_c_object.html#adab4f75d2863e088087cd4556f8f37ad">~CObject</a>()</td><td class="entry"><a class="el" href="class_c_object.html">CObject</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">virtual</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_c_seed.html#a29d4e2c3d5f3baa52534ba739f93cb4d">~CSeed</a>()</td><td class="entry"><a class="el" href="class_c_seed.html">CSeed</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">virtual</span></td></tr>
-  <tr><td class="entry"><a class="el" href="class_c_t_d_seed.html#a31471ab40e10d17abf1c633f2db3159a">~CTDSeed</a>()</td><td class="entry"><a class="el" href="class_c_t_d_seed.html">CTDSeed</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_c_t_kmodel.html#a20c6e31e81095343abfc3b844c0b1645">GetAppRates</a>(const int pos1=0, string file=NameAppFile)</td><td class="entry"><a class="el" href="class_c_t_kmodel.html">CTKmodel</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_c_seed.html#a0c916c710b1325761ebd268d9ed4a560">getCell</a>()</td><td class="entry"><a class="el" href="class_c_seed.html">CSeed</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_c_t_kmodel.html#a4bfc81ccf5bc7355642eb526b4375fb5">GetHerbEff</a>(const int pos1=0, string file=NameHerbFile)</td><td class="entry"><a class="el" href="class_c_t_kmodel.html">CTKmodel</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_c_t_d_seed.html#ac7360b069cae2fffcf17c0b7b1f482cd">getHexposed</a>() const</td><td class="entry"><a class="el" href="class_c_t_d_seed.html">CTDSeed</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_c_t_d_seed.html#a0e62cd8894a79f484cdacfb026839609">getpEstab</a>()</td><td class="entry"><a class="el" href="class_c_t_d_seed.html">CTDSeed</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_c_t_d_seed.html#a94a46b8a2c8b176f3b39ee6671dd16bf">getpEstabMort</a>()</td><td class="entry"><a class="el" href="class_c_t_d_seed.html">CTDSeed</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_c_t_d_seed.html#ac7aa40e91c58574297dfa46fafd5bd14">getpMort</a>()</td><td class="entry"><a class="el" href="class_c_t_d_seed.html">CTDSeed</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_c_t_d_seed.html#a93b488e96ce97a9b6f780ccc0c72e25c">GetProfile</a>(int year)</td><td class="entry"><a class="el" href="class_c_t_d_seed.html">CTDSeed</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="class_c_t_kmodel.html#a1840a4b16c95c07995f55e317c23497e">getProfileProxy</a>(string PFT, int year)</td><td class="entry"><a class="el" href="class_c_t_kmodel.html">CTKmodel</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_c_t_kmodel.html#a561adaf724a7bdf1f55b509aec457c96">getProfileProxySeeds</a>(string PFT, int year)</td><td class="entry"><a class="el" href="class_c_t_kmodel.html">CTKmodel</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_c_t_d_seed.html#ab1e3207c5f88dc7fafc8a3fbcbcc1e70">Hexposed</a></td><td class="entry"><a class="el" href="class_c_t_d_seed.html">CTDSeed</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_c_seed.html#a4da6513ccd7dc241729d0f98fc20f7f7">isClonal</a>()</td><td class="entry"><a class="el" href="class_c_seed.html">CSeed</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">virtual</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_c_t_d_seed.html#ac1fbe05e6ccd86a88cd397f1c504fe36">JuvBioRed</a>()</td><td class="entry"><a class="el" href="class_c_t_d_seed.html">CTDSeed</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_c_seed.html#a25f9e474c81f03b03fcc63eeb268b8db">mass</a></td><td class="entry"><a class="el" href="class_c_seed.html">CSeed</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="class_c_seed.html#a6e0601a2fd06a652e34e57916dbdacb9">pft</a>()</td><td class="entry"><a class="el" href="class_c_seed.html">CSeed</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_c_seed.html#a5b8ca1bf3f81e494460c72474054a667">remove</a></td><td class="entry"><a class="el" href="class_c_seed.html">CSeed</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="class_c_seed.html#a0d8fa2429de3dbf628c1928197e8530b">SeedOfType</a>(string type)</td><td class="entry"><a class="el" href="class_c_seed.html">CSeed</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_c_seed.html#a54b3d0dad6fbbaf13731df172190454f">setCell</a>(CCell *cell)</td><td class="entry"><a class="el" href="class_c_seed.html">CSeed</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="class_c_t_d_seed.html#a8f9ec854146a44f5921cbc8a361c0b1e">setHexposed</a>(double hexposed=1)</td><td class="entry"><a class="el" href="class_c_t_d_seed.html">CTDSeed</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_c_t_kmodel.html#aa6c4ebbda118cc0fc523c69ceff75908">setPFTsensi</a>(string PFT)</td><td class="entry"><a class="el" href="class_c_t_kmodel.html">CTKmodel</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_c_seed.html#a538975a8caa9dedbc77143146fad1c38">Traits</a></td><td class="entry"><a class="el" href="class_c_seed.html">CSeed</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_c_t_d_seed.html#af15f2e2f2ce991668da778d421b8a4ee">type</a>()</td><td class="entry"><a class="el" href="class_c_t_d_seed.html">CTDSeed</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">virtual</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_c_t_d_seed.html#a18357a43ccce34ed0fe7360455902352">wasHexposed</a>()</td><td class="entry"><a class="el" href="class_c_t_d_seed.html">CTDSeed</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_c_seed.html#ac54637f36f1c5ffbbc43a5cf84298ec3">xcoord</a></td><td class="entry"><a class="el" href="class_c_seed.html">CSeed</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="class_c_seed.html#a965add8cd635b902a1777371e6a1d1b4">ycoord</a></td><td class="entry"><a class="el" href="class_c_seed.html">CSeed</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_c_object.html#adab4f75d2863e088087cd4556f8f37ad">~CObject</a>()</td><td class="entry"><a class="el" href="class_c_object.html">CObject</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">virtual</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_c_seed.html#a29d4e2c3d5f3baa52534ba739f93cb4d">~CSeed</a>()</td><td class="entry"><a class="el" href="class_c_seed.html">CSeed</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_c_t_d_seed.html#a31471ab40e10d17abf1c633f2db3159a">~CTDSeed</a>()</td><td class="entry"><a class="el" href="class_c_t_d_seed.html">CTDSeed</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
 </table></div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.15
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.15 </li>
+  </ul>
+</div>
 </body>
 </html>

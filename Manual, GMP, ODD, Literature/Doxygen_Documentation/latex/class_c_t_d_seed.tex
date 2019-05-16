@@ -1,0 +1,279 @@
+\hypertarget{class_c_t_d_seed}{}\section{C\+T\+D\+Seed Class Reference}
+\label{class_c_t_d_seed}\index{CTDSeed@{CTDSeed}}
+
+
+Class that describes herbicide impacts on seeds.  
+
+
+
+
+{\ttfamily \#include $<$C\+T\+D\+Seed.\+h$>$}
+
+Inheritance diagram for C\+T\+D\+Seed\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_c_t_d_seed}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_c_t_d_seed_ae61028e9e3f2dd60cb797a83d6ce760f}{C\+T\+D\+Seed}} (double x, double y, double \mbox{\hyperlink{class_c_seed_ae9b71bc4ff10218aade80211c89fedaf}{estab}}, shared\+\_\+ptr$<$ \mbox{\hyperlink{class_s_pft_traits}{S\+Pft\+Traits}} $>$ traits)
+\begin{DoxyCompactList}\small\item\em construct seed based on location, establishment probability and traits \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_c_t_d_seed_a8c1cfc19bd45961b268dbaf3a1441d92}{C\+T\+D\+Seed}} (double \mbox{\hyperlink{class_c_seed_ae9b71bc4ff10218aade80211c89fedaf}{estab}}, shared\+\_\+ptr$<$ \mbox{\hyperlink{class_s_pft_traits}{S\+Pft\+Traits}} $>$ traits, \mbox{\hyperlink{class_c_cell}{C\+Cell}} $\ast$\mbox{\hyperlink{class_c_seed_a93f258be6fe7841d52daa4e9e362c00e}{cell}})
+\begin{DoxyCompactList}\small\item\em construct seed based establishment probability, traits and cell \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_c_t_d_seed_a841c2982bb3efbeabf29250ed489c2bc}{C\+T\+D\+Seed}} (\mbox{\hyperlink{class_c_t_d_plant}{C\+T\+D\+Plant}} $\ast$plant, \mbox{\hyperlink{class_c_cell}{C\+Cell}} $\ast$\mbox{\hyperlink{class_c_seed_a93f258be6fe7841d52daa4e9e362c00e}{cell}})
+\begin{DoxyCompactList}\small\item\em construct seed based on plant and cell \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_c_t_d_seed_a39546c855452a998baab6661f0c9f49a}{C\+T\+D\+Seed}} (\mbox{\hyperlink{class_c_seed}{C\+Seed}} $\ast$seed)
+\begin{DoxyCompactList}\small\item\em turn a normal seed into a C\+TD seed \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_c_t_d_seed_a31471ab40e10d17abf1c633f2db3159a}{$\sim$\+C\+T\+D\+Seed}} ()
+\begin{DoxyCompactList}\small\item\em destructor \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_c_t_d_seed_af15f2e2f2ce991668da778d421b8a4ee}\label{class_c_t_d_seed_af15f2e2f2ce991668da778d421b8a4ee}} 
+virtual string \mbox{\hyperlink{class_c_t_d_seed_af15f2e2f2ce991668da778d421b8a4ee}{type}} ()
+\begin{DoxyCompactList}\small\item\em say what type you are \end{DoxyCompactList}\item 
+virtual double \mbox{\hyperlink{class_c_t_d_seed_a0e62cd8894a79f484cdacfb026839609}{getp\+Estab}} ()
+\begin{DoxyCompactList}\small\item\em get (herbicide induced) establishment probability \end{DoxyCompactList}\item 
+virtual double \mbox{\hyperlink{class_c_t_d_seed_a94a46b8a2c8b176f3b39ee6671dd16bf}{getp\+Estab\+Mort}} ()
+\begin{DoxyCompactList}\small\item\em herbicide incuded mortality of established plant \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_c_t_d_seed_ac7aa40e91c58574297dfa46fafd5bd14}\label{class_c_t_d_seed_ac7aa40e91c58574297dfa46fafd5bd14}} 
+virtual double \mbox{\hyperlink{class_c_t_d_seed_ac7aa40e91c58574297dfa46fafd5bd14}{getp\+Mort}} ()
+\begin{DoxyCompactList}\small\item\em herbicide induced seed mortality \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_c_t_d_seed_ac1fbe05e6ccd86a88cd397f1c504fe36}\label{class_c_t_d_seed_ac1fbe05e6ccd86a88cd397f1c504fe36}} 
+virtual double \mbox{\hyperlink{class_c_t_d_seed_ac1fbe05e6ccd86a88cd397f1c504fe36}{Juv\+Bio\+Red}} ()
+\begin{DoxyCompactList}\small\item\em herbicide induced seedling mortality \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_t_d_seed_a93b488e96ce97a9b6f780ccc0c72e25c}{Get\+Profile}} (int year)
+\begin{DoxyCompactList}\small\item\em get herbicide profile of a plant/seed and append to history \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_c_t_d_seed_ac7360b069cae2fffcf17c0b7b1f482cd}\label{class_c_t_d_seed_ac7360b069cae2fffcf17c0b7b1f482cd}} 
+double \mbox{\hyperlink{class_c_t_d_seed_ac7360b069cae2fffcf17c0b7b1f482cd}{get\+Hexposed}} () const
+\begin{DoxyCompactList}\small\item\em get herbicide exposition -\/$>$ if the seed was exposed \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_t_d_seed_a8f9ec854146a44f5921cbc8a361c0b1e}{set\+Hexposed}} (double hexposed=1)
+\begin{DoxyCompactList}\small\item\em set herbicide exposition \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_c_t_d_seed_a18357a43ccce34ed0fe7360455902352}\label{class_c_t_d_seed_a18357a43ccce34ed0fe7360455902352}} 
+bool \mbox{\hyperlink{class_c_t_d_seed_a18357a43ccce34ed0fe7360455902352}{was\+Hexposed}} ()
+\begin{DoxyCompactList}\small\item\em was seed exposed? \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_c_t_d_seed_a409c71778006fd90fde48fcb9a6ae287}\label{class_c_t_d_seed_a409c71778006fd90fde48fcb9a6ae287}} 
+\mbox{\hyperlink{struct_s_eff_profile}{S\+Eff\+Profile}} $\ast$ \mbox{\hyperlink{class_c_t_d_seed_a409c71778006fd90fde48fcb9a6ae287}{Cexposition}}
+\begin{DoxyCompactList}\small\item\em current herbicide exposition \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_c_t_d_seed_ab1e3207c5f88dc7fafc8a3fbcbcc1e70}\label{class_c_t_d_seed_ab1e3207c5f88dc7fafc8a3fbcbcc1e70}} 
+double \mbox{\hyperlink{class_c_t_d_seed_ab1e3207c5f88dc7fafc8a3fbcbcc1e70}{Hexposed}}
+\begin{DoxyCompactList}\small\item\em herbicide exposition flag \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Class that describes herbicide impacts on seeds. 
+
+Definition at line 24 of file C\+T\+D\+Seed.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_c_t_d_seed_ae61028e9e3f2dd60cb797a83d6ce760f}\label{class_c_t_d_seed_ae61028e9e3f2dd60cb797a83d6ce760f}} 
+\index{CTDSeed@{CTDSeed}!CTDSeed@{CTDSeed}}
+\index{CTDSeed@{CTDSeed}!CTDSeed@{CTDSeed}}
+\subsubsection{\texorpdfstring{CTDSeed()}{CTDSeed()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily C\+T\+D\+Seed\+::\+C\+T\+D\+Seed (\begin{DoxyParamCaption}\item[{double}]{x,  }\item[{double}]{y,  }\item[{double}]{estab,  }\item[{shared\+\_\+ptr$<$ \mbox{\hyperlink{class_s_pft_traits}{S\+Pft\+Traits}} $>$}]{traits }\end{DoxyParamCaption})}
+
+
+
+construct seed based on location, establishment probability and traits 
+
+constructor
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & x coordinate on grid \\
+\hline
+{\em y} & y coordinate on grid \\
+\hline
+{\em estab} & weekly germination rate \\
+\hline
+{\em traits} & link to P\+FT definition \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 44 of file C\+T\+D\+Seed.\+cpp.
+
+\mbox{\Hypertarget{class_c_t_d_seed_a8c1cfc19bd45961b268dbaf3a1441d92}\label{class_c_t_d_seed_a8c1cfc19bd45961b268dbaf3a1441d92}} 
+\index{CTDSeed@{CTDSeed}!CTDSeed@{CTDSeed}}
+\index{CTDSeed@{CTDSeed}!CTDSeed@{CTDSeed}}
+\subsubsection{\texorpdfstring{CTDSeed()}{CTDSeed()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily C\+T\+D\+Seed\+::\+C\+T\+D\+Seed (\begin{DoxyParamCaption}\item[{double}]{estab,  }\item[{shared\+\_\+ptr$<$ \mbox{\hyperlink{class_s_pft_traits}{S\+Pft\+Traits}} $>$}]{traits,  }\item[{\mbox{\hyperlink{class_c_cell}{C\+Cell}} $\ast$}]{cell }\end{DoxyParamCaption})}
+
+
+
+construct seed based establishment probability, traits and cell 
+
+constructor Used in initialisation to set initial seed bank.
+
+
+\begin{DoxyParams}{Parameters}
+{\em estab} & weekly germination rate \\
+\hline
+{\em traits} & link to P\+FT definition \\
+\hline
+{\em cell} & link to position on grid (i.\+e. cell containing seed) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 61 of file C\+T\+D\+Seed.\+cpp.
+
+\mbox{\Hypertarget{class_c_t_d_seed_a841c2982bb3efbeabf29250ed489c2bc}\label{class_c_t_d_seed_a841c2982bb3efbeabf29250ed489c2bc}} 
+\index{CTDSeed@{CTDSeed}!CTDSeed@{CTDSeed}}
+\index{CTDSeed@{CTDSeed}!CTDSeed@{CTDSeed}}
+\subsubsection{\texorpdfstring{CTDSeed()}{CTDSeed()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily C\+T\+D\+Seed\+::\+C\+T\+D\+Seed (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_c_t_d_plant}{C\+T\+D\+Plant}} $\ast$}]{plant,  }\item[{\mbox{\hyperlink{class_c_cell}{C\+Cell}} $\ast$}]{cell }\end{DoxyParamCaption})}
+
+
+
+construct seed based on plant and cell 
+
+constructor Generates a seed as produced by a plant. Seed\+Set
+
+
+\begin{DoxyParams}{Parameters}
+{\em plant} & mother plant \\
+\hline
+{\em cell} & dropping cell \\
+\hline
+{\em Cexposition} & inherit exposed from mother plant \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 77 of file C\+T\+D\+Seed.\+cpp.
+
+\mbox{\Hypertarget{class_c_t_d_seed_a39546c855452a998baab6661f0c9f49a}\label{class_c_t_d_seed_a39546c855452a998baab6661f0c9f49a}} 
+\index{CTDSeed@{CTDSeed}!CTDSeed@{CTDSeed}}
+\index{CTDSeed@{CTDSeed}!CTDSeed@{CTDSeed}}
+\subsubsection{\texorpdfstring{CTDSeed()}{CTDSeed()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily C\+T\+D\+Seed\+::\+C\+T\+D\+Seed (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_c_seed}{C\+Seed}} $\ast$}]{seed }\end{DoxyParamCaption})}
+
+
+
+turn a normal seed into a C\+TD seed 
+
+constructor Transform a Cclonal\+Seed to C\+D\+T\+Seed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em seed} & Seed to transform \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 26 of file C\+T\+D\+Seed.\+cpp.
+
+\mbox{\Hypertarget{class_c_t_d_seed_a31471ab40e10d17abf1c633f2db3159a}\label{class_c_t_d_seed_a31471ab40e10d17abf1c633f2db3159a}} 
+\index{CTDSeed@{CTDSeed}!````~CTDSeed@{$\sim$CTDSeed}}
+\index{````~CTDSeed@{$\sim$CTDSeed}!CTDSeed@{CTDSeed}}
+\subsubsection{\texorpdfstring{$\sim$CTDSeed()}{~CTDSeed()}}
+{\footnotesize\ttfamily C\+T\+D\+Seed\+::$\sim$\+C\+T\+D\+Seed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+destructor 
+
+destructor delete resources at heap.. 
+
+Definition at line 18 of file C\+T\+D\+Seed.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_c_t_d_seed_a0e62cd8894a79f484cdacfb026839609}\label{class_c_t_d_seed_a0e62cd8894a79f484cdacfb026839609}} 
+\index{CTDSeed@{CTDSeed}!getpEstab@{getpEstab}}
+\index{getpEstab@{getpEstab}!CTDSeed@{CTDSeed}}
+\subsubsection{\texorpdfstring{getpEstab()}{getpEstab()}}
+{\footnotesize\ttfamily double C\+T\+D\+Seed\+::getp\+Estab (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+get (herbicide induced) establishment probability 
+
+Get germination rate depending on P\+FT and herbicide application. If the effect should act on the winning seedling \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_c_t_d_seed_a94a46b8a2c8b176f3b39ee6671dd16bf}{getp\+Estab\+Mort}}. 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+germination probability 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{class_c_seed_a6845f39091b1c9d8c31a9ee87ca8f8f0}{C\+Seed}}.
+
+
+
+Definition at line 98 of file C\+T\+D\+Seed.\+cpp.
+
+\mbox{\Hypertarget{class_c_t_d_seed_a94a46b8a2c8b176f3b39ee6671dd16bf}\label{class_c_t_d_seed_a94a46b8a2c8b176f3b39ee6671dd16bf}} 
+\index{CTDSeed@{CTDSeed}!getpEstabMort@{getpEstabMort}}
+\index{getpEstabMort@{getpEstabMort}!CTDSeed@{CTDSeed}}
+\subsubsection{\texorpdfstring{getpEstabMort()}{getpEstabMort()}}
+{\footnotesize\ttfamily double C\+T\+D\+Seed\+::getp\+Estab\+Mort (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+herbicide incuded mortality of established plant 
+
+Return the mortality for the winning seedling, if the herb effect acts on it. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_c_t_d_seed_a0e62cd8894a79f484cdacfb026839609}{getp\+Estab}} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+winning seedling mortality rate 
+\end{DoxyReturn}
+
+
+Definition at line 116 of file C\+T\+D\+Seed.\+cpp.
+
+\mbox{\Hypertarget{class_c_t_d_seed_a93b488e96ce97a9b6f780ccc0c72e25c}\label{class_c_t_d_seed_a93b488e96ce97a9b6f780ccc0c72e25c}} 
+\index{CTDSeed@{CTDSeed}!GetProfile@{GetProfile}}
+\index{GetProfile@{GetProfile}!CTDSeed@{CTDSeed}}
+\subsubsection{\texorpdfstring{GetProfile()}{GetProfile()}}
+{\footnotesize\ttfamily void C\+T\+D\+Seed\+::\+Get\+Profile (\begin{DoxyParamCaption}\item[{int}]{year }\end{DoxyParamCaption})}
+
+
+
+get herbicide profile of a plant/seed and append to history 
+
+get effect profile for specific P\+FT, year and week \begin{DoxyNote}{Note}
+very time consuming -\/ optimize! 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em year} & current year \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 133 of file C\+T\+D\+Seed.\+cpp.
+
+\mbox{\Hypertarget{class_c_t_d_seed_a8f9ec854146a44f5921cbc8a361c0b1e}\label{class_c_t_d_seed_a8f9ec854146a44f5921cbc8a361c0b1e}} 
+\index{CTDSeed@{CTDSeed}!setHexposed@{setHexposed}}
+\index{setHexposed@{setHexposed}!CTDSeed@{CTDSeed}}
+\subsubsection{\texorpdfstring{setHexposed()}{setHexposed()}}
+{\footnotesize\ttfamily void C\+T\+D\+Seed\+::set\+Hexposed (\begin{DoxyParamCaption}\item[{double}]{hexposed = {\ttfamily 1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+set herbicide exposition 
+
+Set the exposition flag. if seed was exposed 
+\begin{DoxyParams}{Parameters}
+{\em hexposed} & value of exposition (default=1) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 61 of file C\+T\+D\+Seed.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+I\+B\+Cgrass\+G\+U\+I.\+git/trunk/\+Model-\/files/\mbox{\hyperlink{_c_t_d_seed_8h}{C\+T\+D\+Seed.\+h}}\item 
+D\+:/\+I\+B\+Cgrass\+G\+U\+I.\+git/trunk/\+Model-\/files/\mbox{\hyperlink{_c_t_d_seed_8cpp}{C\+T\+D\+Seed.\+cpp}}\end{DoxyCompactItemize}

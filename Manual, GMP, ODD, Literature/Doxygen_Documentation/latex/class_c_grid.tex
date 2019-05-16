@@ -1,0 +1,800 @@
+\hypertarget{class_c_grid}{}\section{C\+Grid Class Reference}
+\label{class_c_grid}\index{CGrid@{CGrid}}
+
+
+Class with all spatial algorithms where plant individuals interact in space.  
+
+
+
+
+{\ttfamily \#include $<$C\+Grid.\+h$>$}
+
+Inheritance diagram for C\+Grid\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_c_grid}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_c_grid_a061e223431ef4fb00b020539f34d1289}{C\+Grid}} ()
+\begin{DoxyCompactList}\small\item\em constructor \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_c_grid_a80640e70ebece5aab78c8445d7aef7a4}{$\sim$\+C\+Grid}} ()
+\begin{DoxyCompactList}\small\item\em destructor \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_c_grid_a58eceb70207b1b651a99c70154163237}{reset\+Grid}} ()
+\begin{DoxyCompactList}\small\item\em reset grid \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_c_grid_aa58b9aaf0e6cfd45f2c2e66b83281a95}{Init\+Plants}} (shared\+\_\+ptr$<$ \mbox{\hyperlink{class_s_pft_traits}{S\+Pft\+Traits}} $>$ traits, const int n)
+\begin{DoxyCompactList}\small\item\em initalization of plants \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_c_grid_ae0a9a816e779f46c43031a30a02f0763}{Init\+Seeds}} (shared\+\_\+ptr$<$ \mbox{\hyperlink{class_s_pft_traits}{S\+Pft\+Traits}} $>$ traits, const int n, double estab=1.\+0)
+\begin{DoxyCompactList}\small\item\em initalization of seeds \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_c_grid_af126d98388ed732180a51b4ed8e4731a}{Init\+Seeds}} (shared\+\_\+ptr$<$ \mbox{\hyperlink{class_s_pft_traits}{S\+Pft\+Traits}} $>$ traits, const int n, int x, int y, double estab=1.\+0)
+\begin{DoxyCompactList}\small\item\em initalization of seeds \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_c_grid_ae1d81bdcd569d928ccf01d8f1c495e2d}{new\+Seed}} (\mbox{\hyperlink{class_c_plant}{C\+Plant}} $\ast$plant, \mbox{\hyperlink{class_c_cell}{C\+Cell}} $\ast$cell)
+\begin{DoxyCompactList}\small\item\em new seed in cell \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_c_grid_a20d51ae5f6a594b95dfe5ec97270ef51}\label{class_c_grid_a20d51ae5f6a594b95dfe5ec97270ef51}} 
+void \mbox{\hyperlink{class_c_grid_a20d51ae5f6a594b95dfe5ec97270ef51}{add\+L\+D\+D\+Seeds}} (string pft, int nb)
+\begin{DoxyCompactList}\small\item\em add seeds to ldd-\/pool of grid \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_c_grid_aa3775d2ec564755fb14af3a741a29db1}\label{class_c_grid_aa3775d2ec564755fb14af3a741a29db1}} 
+map$<$ string, long $>$ $\ast$ \mbox{\hyperlink{class_c_grid_aa3775d2ec564755fb14af3a741a29db1}{get\+L\+D\+D\+Seeds}} ()
+\begin{DoxyCompactList}\small\item\em get ldd-\/pool of grid and clear buffer \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_c_grid_aeebd8667b390483d51581270a1ddbd0b}\label{class_c_grid_aeebd8667b390483d51581270a1ddbd0b}} 
+void \mbox{\hyperlink{class_c_grid_aeebd8667b390483d51581270a1ddbd0b}{Get\+Pft\+N\+Ind}} (vector$<$ int $>$ \&)
+\begin{DoxyCompactList}\small\item\em get number if individuals per P\+FT \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_c_grid_aa502096734551e3553e23ac68ca698d0}\label{class_c_grid_aa502096734551e3553e23ac68ca698d0}} 
+void \mbox{\hyperlink{class_c_grid_aa502096734551e3553e23ac68ca698d0}{Get\+Pft\+N\+Seed}} (vector$<$ int $>$ \&)
+\begin{DoxyCompactList}\small\item\em get number of seeds per P\+FT \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_c_grid_a237aa93c67eb4495357f6f61596aa943}\label{class_c_grid_a237aa93c67eb4495357f6f61596aa943}} 
+void \mbox{\hyperlink{class_c_grid_a237aa93c67eb4495357f6f61596aa943}{reset\+Cutted\+BM}} ()
+\begin{DoxyCompactList}\small\item\em reset cutted biomass \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_c_grid_aec4af87103ae1d7455712599e145749f}\label{class_c_grid_aec4af87103ae1d7455712599e145749f}} 
+double \mbox{\hyperlink{class_c_grid_aec4af87103ae1d7455712599e145749f}{get\+Cutted\+BM}} ()
+\begin{DoxyCompactList}\small\item\em get cutted biomass \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_c_grid_a85e0652f78cdac67875f9a9b2aec4280}{Get\+Total\+Above\+Mass}} ()
+\begin{DoxyCompactList}\small\item\em get total aboveground biomass \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_c_grid_acf196b7d4489de11ccfbbd0702590afd}{Get\+Total\+Below\+Mass}} ()
+\begin{DoxyCompactList}\small\item\em get total belowground biomass \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_grid_a2a233420c6bd8f36c2d6816ecba32238}{Dispers\+Ramets}} (\mbox{\hyperlink{class_c_plant}{C\+Plant}} $\ast$plant)
+\begin{DoxyCompactList}\small\item\em initiate new ramets \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_c_genet}{C\+Genet}} $\ast$ \mbox{\hyperlink{class_c_grid_afc63d393dc268e26e868e4933c054fb2}{add\+Genet}} (int id=0)
+\begin{DoxyCompactList}\small\item\em add a genet \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_c_grid_a62dd33a6d713a6343789d45fe8719908}{Get\+Nclonal\+Plants}} ()
+\begin{DoxyCompactList}\small\item\em number of living clonal plants \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_c_grid_acbe2c97f551e2bd528dbff579f646b4f}{Get\+N\+Plants}} ()
+\begin{DoxyCompactList}\small\item\em number of living non-\/clonal plants \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_c_grid_a11d826c05cb7ba0dafc93f313c201f05}{Get\+N\+Mother\+Plants}} ()
+\begin{DoxyCompactList}\small\item\em number of living genets \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_c_grid_af64fad225f96ed6803dac04aea30c96f}\label{class_c_grid_af64fad225f96ed6803dac04aea30c96f}} 
+int \mbox{\hyperlink{class_c_grid_af64fad225f96ed6803dac04aea30c96f}{Get\+Ndead\+Plants}} ()
+\begin{DoxyCompactList}\small\item\em number of dead plants \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_c_grid_ae18d00e3bedcd99aed40a406da832c4e}{Get\+Covered\+Cells}} ()
+\begin{DoxyCompactList}\small\item\em number of cells covered \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_c_grid_abbde03e5a6555775bee0c4260f311857}{Get\+N\+Generation}} ()
+\begin{DoxyCompactList}\small\item\em number of Generations \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_c_grid_a9f63ab565806f6c1574b2180dc3df6e4}\label{class_c_grid_a9f63ab565806f6c1574b2180dc3df6e4}} 
+vector$<$ \mbox{\hyperlink{class_c_plant}{C\+Plant}} $\ast$ $>$ \mbox{\hyperlink{class_c_grid_a9f63ab565806f6c1574b2180dc3df6e4}{Plant\+List}}
+\begin{DoxyCompactList}\small\item\em List of plant individuals. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_c_grid_ae9b3dff6a4b9a42b56960471a1fbc5eb}\label{class_c_grid_ae9b3dff6a4b9a42b56960471a1fbc5eb}} 
+vector$<$ \mbox{\hyperlink{class_c_cell}{C\+Cell}} $\ast$ $>$ \mbox{\hyperlink{class_c_grid_ae9b3dff6a4b9a42b56960471a1fbc5eb}{Cell\+List}}
+\begin{DoxyCompactList}\small\item\em array of pointers to \mbox{\hyperlink{class_c_cell}{C\+Cell}} \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_c_grid_a4192c45a00e1b07e475e0f20bc87e67d}{Cover\+Cells}} ()
+\begin{DoxyCompactList}\small\item\em assigns grid cells to plants -\/ which cell is covered by which plant \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_c_grid_a7171b0bfab7bb77fe6afe69264d38111}{Remove\+Plants}} ()
+\begin{DoxyCompactList}\small\item\em removes dead plants from the grid and deletes them \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_c_grid_aef853cd1fc7971b946aa2724e09341c0}{Delete\+Plant}} (\mbox{\hyperlink{class_c_plant}{C\+Plant}} $\ast$plant1)
+\begin{DoxyCompactList}\small\item\em delete plant object \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_c_grid_ad1258e316e92fd63a0efa7f594cefbf3}{Plant\+Loop}} ()
+\begin{DoxyCompactList}\small\item\em loop over all plants including growth, seed dispersal and mortality \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_c_grid_a51b5f510fc52d65bf24ae5272992f22e}{Distrib\+Resource}} ()
+\begin{DoxyCompactList}\small\item\em distributes resource to each plant -\/-\/$>$ calls competition functions \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{class_c_grid_aa95eae161d68dea277b7683d9d0fef0d}{Dispers\+Seeds}} (\mbox{\hyperlink{class_c_plant}{C\+Plant}} $\ast$plant)
+\begin{DoxyCompactList}\small\item\em seed dispersal \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_c_grid_af762d179a32b74b78502ed926cfd35ed}{Estab\+Lottery}} ()
+\begin{DoxyCompactList}\small\item\em lottery competition for seedling establishment \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_c_grid_a9cf3315cee571708d8b2db65611eb324}{Estab\+Lott\+\_\+help}} (\mbox{\hyperlink{class_c_seed}{C\+Seed}} $\ast$seed)
+\begin{DoxyCompactList}\small\item\em generates new juveniles \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_c_grid_a9ef602766345b51cd53326211b4e2ca9}{Winter}} ()
+\begin{DoxyCompactList}\small\item\em calls seed mortality and mass removal of plants \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_grid_ad18ff5c3a42c370966e07d02daadb8b0}{Reset\+Weekly\+Variables}} ()
+\begin{DoxyCompactList}\small\item\em clears list of plants that cover each cell \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_c_grid_ad39e5ec82353d218a0a6d469ce2a88e1}{Seed\+Mort}} ()
+\begin{DoxyCompactList}\small\item\em seed mortality \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_grid_a311160491d289235434e66cfd44dc1ad}{Seed\+Mort\+Age}} ()
+\begin{DoxyCompactList}\small\item\em seed mortality due to dormancy \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_grid_a1b7df3a661a97e171bb7ac215848265a}{Seed\+Mort\+Winter}} ()
+\begin{DoxyCompactList}\small\item\em random seed mortality in winter \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_c_grid_a684a34a53f8210acbd15926830d706c2}{Disturb}} ()
+\begin{DoxyCompactList}\small\item\em disturbance -\/-\/$>$ calls grazing and gap formation functions \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_grid_a816b11d543422eeffc27e56c44b30d43}{Grazing}} ()
+\begin{DoxyCompactList}\small\item\em simulates aboveground herbivory \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_grid_a99267b09aab13f05bb87dd93bddf11bb}{Trampling}} ()
+\item 
+void \mbox{\hyperlink{class_c_grid_aeb32e3d96362cead28fd24871e47a087}{Cutting}} ()
+\begin{DoxyCompactList}\small\item\em cutting of all plants to equal aboveground mass \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_grid_a125b246c642761eb04d552af332875ff}{Cells\+Init}} ()
+\begin{DoxyCompactList}\small\item\em initalization of cells \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_grid_aefbb8b3705148ab6a0baaa094276a62d}{Set\+Cell\+Resource}} ()
+\begin{DoxyCompactList}\small\item\em set amount of resources the cells serve \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_c_plant}{C\+Plant}} $\ast$ \mbox{\hyperlink{class_c_grid_afadbdedcfbe006bf9009308e3631028c}{new\+Spacer}} (const int x, const int y, \mbox{\hyperlink{class_c_plant}{C\+Plant}} $\ast$plant)
+\begin{DoxyCompactList}\small\item\em create a new spacer \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class with all spatial algorithms where plant individuals interact in space. 
+
+Functions for competition and plant growth are overwritten by inherited classes to include different degrees of size asymmetry and different concepts of niche differentiation 
+
+Definition at line 26 of file C\+Grid.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_c_grid_a061e223431ef4fb00b020539f34d1289}\label{class_c_grid_a061e223431ef4fb00b020539f34d1289}} 
+\index{CGrid@{CGrid}!CGrid@{CGrid}}
+\index{CGrid@{CGrid}!CGrid@{CGrid}}
+\subsubsection{\texorpdfstring{CGrid()}{CGrid()}}
+{\footnotesize\ttfamily C\+Grid\+::\+C\+Grid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+constructor 
+
+Constructor 
+
+Definition at line 15 of file C\+Grid.\+cpp.
+
+\mbox{\Hypertarget{class_c_grid_a80640e70ebece5aab78c8445d7aef7a4}\label{class_c_grid_a80640e70ebece5aab78c8445d7aef7a4}} 
+\index{CGrid@{CGrid}!````~CGrid@{$\sim$CGrid}}
+\index{````~CGrid@{$\sim$CGrid}!CGrid@{CGrid}}
+\subsubsection{\texorpdfstring{$\sim$CGrid()}{~CGrid()}}
+{\footnotesize\ttfamily C\+Grid\+::$\sim$\+C\+Grid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+destructor 
+
+\mbox{\hyperlink{class_c_grid}{C\+Grid}} destructor 
+
+Definition at line 65 of file C\+Grid.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_c_grid_afc63d393dc268e26e868e4933c054fb2}\label{class_c_grid_afc63d393dc268e26e868e4933c054fb2}} 
+\index{CGrid@{CGrid}!addGenet@{addGenet}}
+\index{addGenet@{addGenet}!CGrid@{CGrid}}
+\subsubsection{\texorpdfstring{addGenet()}{addGenet()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_c_genet}{C\+Genet}} $\ast$ C\+Grid\+::add\+Genet (\begin{DoxyParamCaption}\item[{int}]{id = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+add a genet 
+
+add Genets to internal list. new objects are generated. 
+\begin{DoxyParams}{Parameters}
+{\em id} & default=0 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+link to the new or found genet 
+\end{DoxyReturn}
+
+
+Definition at line 1141 of file C\+Grid.\+cpp.
+
+\mbox{\Hypertarget{class_c_grid_a125b246c642761eb04d552af332875ff}\label{class_c_grid_a125b246c642761eb04d552af332875ff}} 
+\index{CGrid@{CGrid}!CellsInit@{CellsInit}}
+\index{CellsInit@{CellsInit}!CGrid@{CGrid}}
+\subsubsection{\texorpdfstring{CellsInit()}{CellsInit()}}
+{\footnotesize\ttfamily void C\+Grid\+::\+Cells\+Init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+initalization of cells 
+
+Initiate grid cells with above and belowground resources \begin{DoxyNote}{Note}
+call only once or delete cell objects before; better reset cells (\mbox{\hyperlink{class_c_grid_a58eceb70207b1b651a99c70154163237}{reset\+Grid()}}) to start a new environment 
+\end{DoxyNote}
+
+
+Definition at line 30 of file C\+Grid.\+cpp.
+
+\mbox{\Hypertarget{class_c_grid_a4192c45a00e1b07e475e0f20bc87e67d}\label{class_c_grid_a4192c45a00e1b07e475e0f20bc87e67d}} 
+\index{CGrid@{CGrid}!CoverCells@{CoverCells}}
+\index{CoverCells@{CoverCells}!CGrid@{CGrid}}
+\subsubsection{\texorpdfstring{CoverCells()}{CoverCells()}}
+{\footnotesize\ttfamily void C\+Grid\+::\+Cover\+Cells (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+assigns grid cells to plants -\/ which cell is covered by which plant 
+
+This function calculates Z\+OI of all plants on grid. Each grid-\/cell gets a list of plants influencing the above-\/ (alive and dead individuals) and belowground (alive plants only) layers.
+
+\begin{DoxyParagraph}{revision}
+Let Z\+OI be defined by a list sorted after ascending distance to center instead of searching a square defined by maximum radius. 
+\end{DoxyParagraph}
+
+
+Definition at line 255 of file C\+Grid.\+cpp.
+
+\mbox{\Hypertarget{class_c_grid_aeb32e3d96362cead28fd24871e47a087}\label{class_c_grid_aeb32e3d96362cead28fd24871e47a087}} 
+\index{CGrid@{CGrid}!Cutting@{Cutting}}
+\index{Cutting@{Cutting}!CGrid@{CGrid}}
+\subsubsection{\texorpdfstring{Cutting()}{Cutting()}}
+{\footnotesize\ttfamily void C\+Grid\+::\+Cutting (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+cutting of all plants to equal aboveground mass 
+
+Cutting of all plants on the patch to a specific level 
+
+Definition at line 693 of file C\+Grid.\+cpp.
+
+\mbox{\Hypertarget{class_c_grid_aef853cd1fc7971b946aa2724e09341c0}\label{class_c_grid_aef853cd1fc7971b946aa2724e09341c0}} 
+\index{CGrid@{CGrid}!DeletePlant@{DeletePlant}}
+\index{DeletePlant@{DeletePlant}!CGrid@{CGrid}}
+\subsubsection{\texorpdfstring{DeletePlant()}{DeletePlant()}}
+{\footnotesize\ttfamily void C\+Grid\+::\+Delete\+Plant (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_c_plant}{C\+Plant}} $\ast$}]{plant1 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+delete plant object 
+
+Delete a plant from the grid and it\textquotesingle{}s references in genet list and grid cell. 
+\begin{DoxyParams}{Parameters}
+{\em plant1} & plant to be removed \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{class_c_herbicide_effect_env_ae8dbbf008905283e45fef1ed10d4ce3b}{C\+Herbicide\+Effect\+Env}}.
+
+
+
+Definition at line 793 of file C\+Grid.\+cpp.
+
+\mbox{\Hypertarget{class_c_grid_a2a233420c6bd8f36c2d6816ecba32238}\label{class_c_grid_a2a233420c6bd8f36c2d6816ecba32238}} 
+\index{CGrid@{CGrid}!DispersRamets@{DispersRamets}}
+\index{DispersRamets@{DispersRamets}!CGrid@{CGrid}}
+\subsubsection{\texorpdfstring{DispersRamets()}{DispersRamets()}}
+{\footnotesize\ttfamily void C\+Grid\+::\+Dispers\+Ramets (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_c_plant}{C\+Plant}} $\ast$}]{plant }\end{DoxyParamCaption})}
+
+
+
+initiate new ramets 
+
+function disperses ramets of a plant 
+\begin{DoxyParams}{Parameters}
+{\em plant} & plant of the ramet \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 206 of file C\+Grid.\+cpp.
+
+\mbox{\Hypertarget{class_c_grid_aa95eae161d68dea277b7683d9d0fef0d}\label{class_c_grid_aa95eae161d68dea277b7683d9d0fef0d}} 
+\index{CGrid@{CGrid}!DispersSeeds@{DispersSeeds}}
+\index{DispersSeeds@{DispersSeeds}!CGrid@{CGrid}}
+\subsubsection{\texorpdfstring{DispersSeeds()}{DispersSeeds()}}
+{\footnotesize\ttfamily int C\+Grid\+::\+Dispers\+Seeds (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_c_plant}{C\+Plant}} $\ast$}]{plant }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+seed dispersal 
+
+Function disperses the seeds produced by a plant when seeds are to be released (at dispersal time -\/ Disp\+Week).
+
+Each Seed is dispersed after an log-\/normal dispersal kernel in function \mbox{\hyperlink{_c_grid_8cpp_ac165a1ab000bd69cb99e739dc9dad02b}{get\+Target\+Cell()}}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em plant} & specific plant\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+list of seeds to dispers per L\+DD 
+\end{DoxyReturn}
+
+
+Definition at line 167 of file C\+Grid.\+cpp.
+
+\mbox{\Hypertarget{class_c_grid_a51b5f510fc52d65bf24ae5272992f22e}\label{class_c_grid_a51b5f510fc52d65bf24ae5272992f22e}} 
+\index{CGrid@{CGrid}!DistribResource@{DistribResource}}
+\index{DistribResource@{DistribResource}!CGrid@{CGrid}}
+\subsubsection{\texorpdfstring{DistribResource()}{DistribResource()}}
+{\footnotesize\ttfamily void C\+Grid\+::\+Distrib\+Resource (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+distributes resource to each plant -\/-\/$>$ calls competition functions 
+
+Distributes local resources according to local competition and shares them between connected ramets of clonal genets. 
+
+Definition at line 338 of file C\+Grid.\+cpp.
+
+\mbox{\Hypertarget{class_c_grid_a684a34a53f8210acbd15926830d706c2}\label{class_c_grid_a684a34a53f8210acbd15926830d706c2}} 
+\index{CGrid@{CGrid}!Disturb@{Disturb}}
+\index{Disturb@{Disturb}!CGrid@{CGrid}}
+\subsubsection{\texorpdfstring{Disturb()}{Disturb()}}
+{\footnotesize\ttfamily bool C\+Grid\+::\+Disturb (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+disturbance -\/-\/$>$ calls grazing and gap formation functions 
+
+Calculate the effects of \mbox{\hyperlink{class_c_grid_a816b11d543422eeffc27e56c44b30d43}{Grazing()}} and \mbox{\hyperlink{class_c_grid_a99267b09aab13f05bb87dd93bddf11bb}{Trampling()}} according to the probabilities \mbox{\hyperlink{struct_s_run_para_acb13e5adf214fe475adadcdf188f7edf}{Graz\+Prob}} and \mbox{\hyperlink{struct_s_run_para_a244bdc3b72c2435d7f7b479abd6ad9bf}{Dist\+Prob}} calculate the effect of cutting after F.\+May(2010) \mbox{\hyperlink{struct_s_run_para_a3e6e6b64677e69b6cad5fc23f6e631c5}{N\+Cut}} 
+
+Definition at line 617 of file C\+Grid.\+cpp.
+
+\mbox{\Hypertarget{class_c_grid_a9cf3315cee571708d8b2db65611eb324}\label{class_c_grid_a9cf3315cee571708d8b2db65611eb324}} 
+\index{CGrid@{CGrid}!EstabLott\_help@{EstabLott\_help}}
+\index{EstabLott\_help@{EstabLott\_help}!CGrid@{CGrid}}
+\subsubsection{\texorpdfstring{EstabLott\_help()}{EstabLott\_help()}}
+{\footnotesize\ttfamily void C\+Grid\+::\+Estab\+Lott\+\_\+help (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_c_seed}{C\+Seed}} $\ast$}]{seed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+generates new juveniles 
+
+Establish new genet. 
+\begin{DoxyParams}{Parameters}
+{\em seed} & seed which germinates. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{class_c_herbicide_effect_env_a6c75efbe3b28138bbe417e52d5a3f523}{C\+Herbicide\+Effect\+Env}}.
+
+
+
+Definition at line 490 of file C\+Grid.\+cpp.
+
+\mbox{\Hypertarget{class_c_grid_af762d179a32b74b78502ed926cfd35ed}\label{class_c_grid_af762d179a32b74b78502ed926cfd35ed}} 
+\index{CGrid@{CGrid}!EstabLottery@{EstabLottery}}
+\index{EstabLottery@{EstabLottery}!CGrid@{CGrid}}
+\subsubsection{\texorpdfstring{EstabLottery()}{EstabLottery()}}
+{\footnotesize\ttfamily void C\+Grid\+::\+Estab\+Lottery (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+lottery competition for seedling establishment 
+
+For each grid cell seeds from seed bank germinate and establish. Seedlings that do not establish will die.
+
+\begin{DoxyNote}{Note}
+this function is {\bfseries{completely}} reimplemented by C\+Gridclonal
+\end{DoxyNote}
+For each plant ramets establish and for each grid cell seeds from seed bank germinate and establish. Seedlings that do not establish will die.
+
+
+\begin{DoxyEnumerate}
+\item ramets establish if goal is reached (Ramet\+Estab())
+\item seeds establish from the seed bank during germination time (weeks 1-\/3, 22-\/25).
+\item seedlings that fail to establish will die 
+\end{DoxyEnumerate}
+
+Definition at line 395 of file C\+Grid.\+cpp.
+
+\mbox{\Hypertarget{class_c_grid_ae18d00e3bedcd99aed40a406da832c4e}\label{class_c_grid_ae18d00e3bedcd99aed40a406da832c4e}} 
+\index{CGrid@{CGrid}!GetCoveredCells@{GetCoveredCells}}
+\index{GetCoveredCells@{GetCoveredCells}!CGrid@{CGrid}}
+\subsubsection{\texorpdfstring{GetCoveredCells()}{GetCoveredCells()}}
+{\footnotesize\ttfamily int C\+Grid\+::\+Get\+Covered\+Cells (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+number of cells covered 
+
+Counts a cell covered if the list of aboveground Z\+O\+Is has length $>$0.
+
+\begin{DoxyNote}{Note}
+Call the function after updating weekly Z\+O\+Is in function \mbox{\hyperlink{class_c_grid_a4192c45a00e1b07e475e0f20bc87e67d}{C\+Grid\+::\+Cover\+Cells()}}
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+the number of covered cells on grid 
+\end{DoxyReturn}
+
+
+Definition at line 1084 of file C\+Grid.\+cpp.
+
+\mbox{\Hypertarget{class_c_grid_a62dd33a6d713a6343789d45fe8719908}\label{class_c_grid_a62dd33a6d713a6343789d45fe8719908}} 
+\index{CGrid@{CGrid}!GetNclonalPlants@{GetNclonalPlants}}
+\index{GetNclonalPlants@{GetNclonalPlants}!CGrid@{CGrid}}
+\subsubsection{\texorpdfstring{GetNclonalPlants()}{GetNclonalPlants()}}
+{\footnotesize\ttfamily int C\+Grid\+::\+Get\+Nclonal\+Plants (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+number of living clonal plants 
+
+\begin{DoxyReturn}{Returns}
+number of clonal plants on grid 
+\end{DoxyReturn}
+
+
+Definition at line 1012 of file C\+Grid.\+cpp.
+
+\mbox{\Hypertarget{class_c_grid_abbde03e5a6555775bee0c4260f311857}\label{class_c_grid_abbde03e5a6555775bee0c4260f311857}} 
+\index{CGrid@{CGrid}!GetNGeneration@{GetNGeneration}}
+\index{GetNGeneration@{GetNGeneration}!CGrid@{CGrid}}
+\subsubsection{\texorpdfstring{GetNGeneration()}{GetNGeneration()}}
+{\footnotesize\ttfamily double C\+Grid\+::\+Get\+N\+Generation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+number of Generations 
+
+calculate the mean number of generations per genet \begin{DoxyReturn}{Returns}
+mean number of generations per genet 
+\end{DoxyReturn}
+
+
+Definition at line 1101 of file C\+Grid.\+cpp.
+
+\mbox{\Hypertarget{class_c_grid_a11d826c05cb7ba0dafc93f313c201f05}\label{class_c_grid_a11d826c05cb7ba0dafc93f313c201f05}} 
+\index{CGrid@{CGrid}!GetNMotherPlants@{GetNMotherPlants}}
+\index{GetNMotherPlants@{GetNMotherPlants}!CGrid@{CGrid}}
+\subsubsection{\texorpdfstring{GetNMotherPlants()}{GetNMotherPlants()}}
+{\footnotesize\ttfamily int C\+Grid\+::\+Get\+N\+Mother\+Plants (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+number of living genets 
+
+\begin{DoxyReturn}{Returns}
+the number of genets with at least one ramet still alive 
+\end{DoxyReturn}
+
+
+Definition at line 1050 of file C\+Grid.\+cpp.
+
+\mbox{\Hypertarget{class_c_grid_acbe2c97f551e2bd528dbff579f646b4f}\label{class_c_grid_acbe2c97f551e2bd528dbff579f646b4f}} 
+\index{CGrid@{CGrid}!GetNPlants@{GetNPlants}}
+\index{GetNPlants@{GetNPlants}!CGrid@{CGrid}}
+\subsubsection{\texorpdfstring{GetNPlants()}{GetNPlants()}}
+{\footnotesize\ttfamily int C\+Grid\+::\+Get\+N\+Plants (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+number of living non-\/clonal plants 
+
+\begin{DoxyReturn}{Returns}
+number of non-\/clonal plants on grid 
+\end{DoxyReturn}
+
+
+Definition at line 1032 of file C\+Grid.\+cpp.
+
+\mbox{\Hypertarget{class_c_grid_a85e0652f78cdac67875f9a9b2aec4280}\label{class_c_grid_a85e0652f78cdac67875f9a9b2aec4280}} 
+\index{CGrid@{CGrid}!GetTotalAboveMass@{GetTotalAboveMass}}
+\index{GetTotalAboveMass@{GetTotalAboveMass}!CGrid@{CGrid}}
+\subsubsection{\texorpdfstring{GetTotalAboveMass()}{GetTotalAboveMass()}}
+{\footnotesize\ttfamily double C\+Grid\+::\+Get\+Total\+Above\+Mass (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+get total aboveground biomass 
+
+\begin{DoxyReturn}{Returns}
+sum of all plants\textquotesingle{} aboveground biomass (shoot and fruit) 
+\end{DoxyReturn}
+
+
+Definition at line 980 of file C\+Grid.\+cpp.
+
+\mbox{\Hypertarget{class_c_grid_acf196b7d4489de11ccfbbd0702590afd}\label{class_c_grid_acf196b7d4489de11ccfbbd0702590afd}} 
+\index{CGrid@{CGrid}!GetTotalBelowMass@{GetTotalBelowMass}}
+\index{GetTotalBelowMass@{GetTotalBelowMass}!CGrid@{CGrid}}
+\subsubsection{\texorpdfstring{GetTotalBelowMass()}{GetTotalBelowMass()}}
+{\footnotesize\ttfamily double C\+Grid\+::\+Get\+Total\+Below\+Mass (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+get total belowground biomass 
+
+\begin{DoxyReturn}{Returns}
+sum of all plants\textquotesingle{} belowground biomass (roots) 
+\end{DoxyReturn}
+
+
+Definition at line 996 of file C\+Grid.\+cpp.
+
+\mbox{\Hypertarget{class_c_grid_a816b11d543422eeffc27e56c44b30d43}\label{class_c_grid_a816b11d543422eeffc27e56c44b30d43}} 
+\index{CGrid@{CGrid}!Grazing@{Grazing}}
+\index{Grazing@{Grazing}!CGrid@{CGrid}}
+\subsubsection{\texorpdfstring{Grazing()}{Grazing()}}
+{\footnotesize\ttfamily void C\+Grid\+::\+Grazing (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+simulates aboveground herbivory 
+
+trampling events
+
+The plants on the whole grid are grazed according to their relative grazing susceptibility until the given \mbox{\hyperlink{struct_s_run_para_a8a375f190fcd09bbe28973dc2505c830}{proportion of removal}} is reached or the grid is completely grazed. (Above ground mass that is ungrazable -\/ see Schwinning and Parsons (1999)\+: 15,3 g/m² $\ast$ 1.\+6641 m² = 25.\+5 g) 
+
+Definition at line 652 of file C\+Grid.\+cpp.
+
+\mbox{\Hypertarget{class_c_grid_aa58b9aaf0e6cfd45f2c2e66b83281a95}\label{class_c_grid_aa58b9aaf0e6cfd45f2c2e66b83281a95}} 
+\index{CGrid@{CGrid}!InitPlants@{InitPlants}}
+\index{InitPlants@{InitPlants}!CGrid@{CGrid}}
+\subsubsection{\texorpdfstring{InitPlants()}{InitPlants()}}
+{\footnotesize\ttfamily void C\+Grid\+::\+Init\+Plants (\begin{DoxyParamCaption}\item[{shared\+\_\+ptr$<$ \mbox{\hyperlink{class_s_pft_traits}{S\+Pft\+Traits}} $>$}]{traits,  }\item[{const int}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+initalization of plants 
+
+Set a number of randomly distributed Plants (\mbox{\hyperlink{class_c_plant}{C\+Plant}}) of a specific trait-\/combination on the grid.
+
+
+\begin{DoxyParams}{Parameters}
+{\em traits} & \mbox{\hyperlink{class_s_pft_traits}{S\+Pft\+Traits}} of the plants to be set \\
+\hline
+{\em n} & number of Individuals to be set \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 870 of file C\+Grid.\+cpp.
+
+\mbox{\Hypertarget{class_c_grid_ae0a9a816e779f46c43031a30a02f0763}\label{class_c_grid_ae0a9a816e779f46c43031a30a02f0763}} 
+\index{CGrid@{CGrid}!InitSeeds@{InitSeeds}}
+\index{InitSeeds@{InitSeeds}!CGrid@{CGrid}}
+\subsubsection{\texorpdfstring{InitSeeds()}{InitSeeds()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void C\+Grid\+::\+Init\+Seeds (\begin{DoxyParamCaption}\item[{shared\+\_\+ptr$<$ \mbox{\hyperlink{class_s_pft_traits}{S\+Pft\+Traits}} $>$}]{traits,  }\item[{const int}]{n,  }\item[{double}]{estab = {\ttfamily 1.0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+initalization of seeds 
+
+Set a number of randomly distributed Seeds (\mbox{\hyperlink{class_c_seed}{C\+Seed}}) of a specific trait-\/combination on the grid.
+
+
+\begin{DoxyParams}{Parameters}
+{\em traits} & \mbox{\hyperlink{class_s_pft_traits}{S\+Pft\+Traits}} of the seeds to be set \\
+\hline
+{\em n} & number of seeds to be set \\
+\hline
+{\em estab} & seed establishment (\mbox{\hyperlink{class_c_seed}{C\+Seed}}) -\/ default is 1 \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 881 of file C\+Grid.\+cpp.
+
+\mbox{\Hypertarget{class_c_grid_af126d98388ed732180a51b4ed8e4731a}\label{class_c_grid_af126d98388ed732180a51b4ed8e4731a}} 
+\index{CGrid@{CGrid}!InitSeeds@{InitSeeds}}
+\index{InitSeeds@{InitSeeds}!CGrid@{CGrid}}
+\subsubsection{\texorpdfstring{InitSeeds()}{InitSeeds()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void C\+Grid\+::\+Init\+Seeds (\begin{DoxyParamCaption}\item[{shared\+\_\+ptr$<$ \mbox{\hyperlink{class_s_pft_traits}{S\+Pft\+Traits}} $>$}]{traits,  }\item[{const int}]{n,  }\item[{int}]{x,  }\item[{int}]{y,  }\item[{double}]{estab = {\ttfamily 1.0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+initalization of seeds 
+
+set a seed with specific location on the grid 
+\begin{DoxyParams}{Parameters}
+{\em traits} & traits of the seed \\
+\hline
+{\em n} & number of seeds \\
+\hline
+{\em x} & x location \\
+\hline
+{\em y} & y location \\
+\hline
+{\em estab} & establishment probability \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 892 of file C\+Grid.\+cpp.
+
+\mbox{\Hypertarget{class_c_grid_ae1d81bdcd569d928ccf01d8f1c495e2d}\label{class_c_grid_ae1d81bdcd569d928ccf01d8f1c495e2d}} 
+\index{CGrid@{CGrid}!newSeed@{newSeed}}
+\index{newSeed@{newSeed}!CGrid@{CGrid}}
+\subsubsection{\texorpdfstring{newSeed()}{newSeed()}}
+{\footnotesize\ttfamily void C\+Grid\+::new\+Seed (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_c_plant}{C\+Plant}} $\ast$}]{plant,  }\item[{\mbox{\hyperlink{class_c_cell}{C\+Cell}} $\ast$}]{cell }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+new seed in cell 
+
+creates new seed of a plant in specific cell 
+\begin{DoxyParams}{Parameters}
+{\em plant} & plant which produced the seed \\
+\hline
+{\em cell} & cell where seed is dispersed to \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{class_c_herbicide_effect_env_aebf7af3b70caeba866e3ca2c8c0262f7}{C\+Herbicide\+Effect\+Env}}.
+
+
+
+Definition at line 199 of file C\+Grid.\+cpp.
+
+\mbox{\Hypertarget{class_c_grid_afadbdedcfbe006bf9009308e3631028c}\label{class_c_grid_afadbdedcfbe006bf9009308e3631028c}} 
+\index{CGrid@{CGrid}!newSpacer@{newSpacer}}
+\index{newSpacer@{newSpacer}!CGrid@{CGrid}}
+\subsubsection{\texorpdfstring{newSpacer()}{newSpacer()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_c_plant}{C\+Plant}} $\ast$ C\+Grid\+::new\+Spacer (\begin{DoxyParamCaption}\item[{const int}]{x,  }\item[{const int}]{y,  }\item[{\mbox{\hyperlink{class_c_plant}{C\+Plant}} $\ast$}]{plant }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+create a new spacer 
+
+create a new spacer 
+\begin{DoxyParams}{Parameters}
+{\em x,y} & location on the grid \\
+\hline
+{\em plant} & plant \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{class_c_herbicide_effect_env_ae76943414d4aeded838e98dea916084d}{C\+Herbicide\+Effect\+Env}}.
+
+
+
+Definition at line 1161 of file C\+Grid.\+cpp.
+
+\mbox{\Hypertarget{class_c_grid_ad1258e316e92fd63a0efa7f594cefbf3}\label{class_c_grid_ad1258e316e92fd63a0efa7f594cefbf3}} 
+\index{CGrid@{CGrid}!PlantLoop@{PlantLoop}}
+\index{PlantLoop@{PlantLoop}!CGrid@{CGrid}}
+\subsubsection{\texorpdfstring{PlantLoop()}{PlantLoop()}}
+{\footnotesize\ttfamily void C\+Grid\+::\+Plant\+Loop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+loop over all plants including growth, seed dispersal and mortality 
+
+The clonal version of Plant\+Loop additionally to the C\+Grid-\/version disperses and grows the clonal ramets Growth (resource allocation and vegetative growth), seed dispersal and mortality of plants. 
+
+Definition at line 102 of file C\+Grid.\+cpp.
+
+\mbox{\Hypertarget{class_c_grid_a7171b0bfab7bb77fe6afe69264d38111}\label{class_c_grid_a7171b0bfab7bb77fe6afe69264d38111}} 
+\index{CGrid@{CGrid}!RemovePlants@{RemovePlants}}
+\index{RemovePlants@{RemovePlants}!CGrid@{CGrid}}
+\subsubsection{\texorpdfstring{RemovePlants()}{RemovePlants()}}
+{\footnotesize\ttfamily void C\+Grid\+::\+Remove\+Plants (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+removes dead plants from the grid and deletes them 
+
+remove dead and trampled plants from the grid 
+
+Definition at line 772 of file C\+Grid.\+cpp.
+
+\mbox{\Hypertarget{class_c_grid_a58eceb70207b1b651a99c70154163237}\label{class_c_grid_a58eceb70207b1b651a99c70154163237}} 
+\index{CGrid@{CGrid}!resetGrid@{resetGrid}}
+\index{resetGrid@{resetGrid}!CGrid@{CGrid}}
+\subsubsection{\texorpdfstring{resetGrid()}{resetGrid()}}
+{\footnotesize\ttfamily void C\+Grid\+::reset\+Grid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+reset grid 
+
+Clears the grid from Plants and resets cells. 
+
+Definition at line 46 of file C\+Grid.\+cpp.
+
+\mbox{\Hypertarget{class_c_grid_ad18ff5c3a42c370966e07d02daadb8b0}\label{class_c_grid_ad18ff5c3a42c370966e07d02daadb8b0}} 
+\index{CGrid@{CGrid}!ResetWeeklyVariables@{ResetWeeklyVariables}}
+\index{ResetWeeklyVariables@{ResetWeeklyVariables}!CGrid@{CGrid}}
+\subsubsection{\texorpdfstring{ResetWeeklyVariables()}{ResetWeeklyVariables()}}
+{\footnotesize\ttfamily void C\+Grid\+::\+Reset\+Weekly\+Variables (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+clears list of plants that cover each cell 
+
+Resets all weekly variables of individual cells and plants (only in Plant\+List) 
+
+Definition at line 311 of file C\+Grid.\+cpp.
+
+\mbox{\Hypertarget{class_c_grid_ad39e5ec82353d218a0a6d469ce2a88e1}\label{class_c_grid_ad39e5ec82353d218a0a6d469ce2a88e1}} 
+\index{CGrid@{CGrid}!SeedMort@{SeedMort}}
+\index{SeedMort@{SeedMort}!CGrid@{CGrid}}
+\subsubsection{\texorpdfstring{SeedMort()}{SeedMort()}}
+{\footnotesize\ttfamily void C\+Grid\+::\+Seed\+Mort (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+seed mortality 
+
+Seed mortality in winter and summer. 
+
+Reimplemented in \mbox{\hyperlink{class_c_herbicide_effect_env_aa325ab8688e1e1bbe060da4b2031cd44}{C\+Herbicide\+Effect\+Env}}.
+
+
+
+Definition at line 814 of file C\+Grid.\+cpp.
+
+\mbox{\Hypertarget{class_c_grid_a311160491d289235434e66cfd44dc1ad}\label{class_c_grid_a311160491d289235434e66cfd44dc1ad}} 
+\index{CGrid@{CGrid}!SeedMortAge@{SeedMortAge}}
+\index{SeedMortAge@{SeedMortAge}!CGrid@{CGrid}}
+\subsubsection{\texorpdfstring{SeedMortAge()}{SeedMortAge()}}
+{\footnotesize\ttfamily void C\+Grid\+::\+Seed\+Mort\+Age (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+seed mortality due to dormancy 
+
+seed dormancy as seed mortality due to age 
+
+Definition at line 581 of file C\+Grid.\+cpp.
+
+\mbox{\Hypertarget{class_c_grid_a1b7df3a661a97e171bb7ac215848265a}\label{class_c_grid_a1b7df3a661a97e171bb7ac215848265a}} 
+\index{CGrid@{CGrid}!SeedMortWinter@{SeedMortWinter}}
+\index{SeedMortWinter@{SeedMortWinter}!CGrid@{CGrid}}
+\subsubsection{\texorpdfstring{SeedMortWinter()}{SeedMortWinter()}}
+{\footnotesize\ttfamily void C\+Grid\+::\+Seed\+Mort\+Winter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+random seed mortality in winter 
+
+seed mortality during winter 
+
+Definition at line 841 of file C\+Grid.\+cpp.
+
+\mbox{\Hypertarget{class_c_grid_aefbb8b3705148ab6a0baaa094276a62d}\label{class_c_grid_aefbb8b3705148ab6a0baaa094276a62d}} 
+\index{CGrid@{CGrid}!SetCellResource@{SetCellResource}}
+\index{SetCellResource@{SetCellResource}!CGrid@{CGrid}}
+\subsubsection{\texorpdfstring{SetCellResource()}{SetCellResource()}}
+{\footnotesize\ttfamily void C\+Grid\+::\+Set\+Cell\+Resource (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+set amount of resources the cells serve 
+
+Weekly sets cell\textquotesingle{}s resources -\/ above-\/ and belowground variation during the year. 
+
+Definition at line 899 of file C\+Grid.\+cpp.
+
+\mbox{\Hypertarget{class_c_grid_a99267b09aab13f05bb87dd93bddf11bb}\label{class_c_grid_a99267b09aab13f05bb87dd93bddf11bb}} 
+\index{CGrid@{CGrid}!Trampling@{Trampling}}
+\index{Trampling@{Trampling}!CGrid@{CGrid}}
+\subsubsection{\texorpdfstring{Trampling()}{Trampling()}}
+{\footnotesize\ttfamily void C\+Grid\+::\+Trampling (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Round gaps are created randomly, and all plants therein are killed, until a certain \mbox{\hyperlink{struct_s_run_para_a8113a5ac131494ba3af5bfccf804df2d}{Area}} is trampled. If a cell is trampled twice it does not influence the number of disturbed patches.
+
+(Radius of disturbance currently is 10cm)
+
+The Z\+OI is defined by a list sorted after ascending distance to center 
+
+Definition at line 728 of file C\+Grid.\+cpp.
+
+\mbox{\Hypertarget{class_c_grid_a9ef602766345b51cd53326211b4e2ca9}\label{class_c_grid_a9ef602766345b51cd53326211b4e2ca9}} 
+\index{CGrid@{CGrid}!Winter@{Winter}}
+\index{Winter@{Winter}!CGrid@{CGrid}}
+\subsubsection{\texorpdfstring{Winter()}{Winter()}}
+{\footnotesize\ttfamily void C\+Grid\+::\+Winter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+calls seed mortality and mass removal of plants 
+
+biomass removal (dieback) in winter time 
+
+Definition at line 824 of file C\+Grid.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+I\+B\+Cgrass\+G\+U\+I.\+git/trunk/\+Model-\/files/\mbox{\hyperlink{_c_grid_8h}{C\+Grid.\+h}}\item 
+D\+:/\+I\+B\+Cgrass\+G\+U\+I.\+git/trunk/\+Model-\/files/\mbox{\hyperlink{_c_grid_8cpp}{C\+Grid.\+cpp}}\end{DoxyCompactItemize}

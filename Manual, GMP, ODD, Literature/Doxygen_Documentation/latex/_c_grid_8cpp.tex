@@ -1,0 +1,143 @@
+\hypertarget{_c_grid_8cpp}{}\section{D\+:/\+I\+B\+Cgrass\+G\+UI.git/trunk/\+Model-\/files/\+C\+Grid.cpp File Reference}
+\label{_c_grid_8cpp}\index{D:/IBCgrassGUI.git/trunk/Model-\/files/CGrid.cpp@{D:/IBCgrassGUI.git/trunk/Model-\/files/CGrid.cpp}}
+
+
+functions of class \mbox{\hyperlink{class_c_grid}{C\+Grid}}  
+
+
+{\ttfamily \#include \char`\"{}C\+Grid.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}C\+Envir.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$map$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_c_grid_8cpp_ac165a1ab000bd69cb99e739dc9dad02b}{get\+Target\+Cell}} (int \&xx, int \&yy, const float mean, const float sd, double cellscale)
+\begin{DoxyCompactList}\small\item\em dispersal kernel for seeds \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{_c_grid_8cpp_af2867187f6555096d75829e4e0a1a423}{Distance}} (const double \&xx, const double \&yy, const double \&x, const double \&y)
+\begin{DoxyCompactList}\small\item\em distance between two points using Pythagoras \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{_c_grid_8cpp_a56d6d4b540ec115ed019ada684ba75ff}{Compare\+Index\+Rel}} (int i1, int i2)
+\begin{DoxyCompactList}\small\item\em compare two index-\/values in their distance to the center of grid \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_c_grid_8cpp_ad5d7237e8d7dcb63dbc0baa51a4d4523}{Boundary}} (int \&xx, int \&yy)
+\begin{DoxyCompactList}\small\item\em periodic boundary conditions \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{_c_grid_8cpp_a6faf9661168bf330da6399218cf47d52}{Emmigrates}} (int \&xx, int \&yy)
+\begin{DoxyCompactList}\small\item\em test for emmigration \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+functions of class \mbox{\hyperlink{class_c_grid}{C\+Grid}} 
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{_c_grid_8cpp_ad5d7237e8d7dcb63dbc0baa51a4d4523}\label{_c_grid_8cpp_ad5d7237e8d7dcb63dbc0baa51a4d4523}} 
+\index{CGrid.cpp@{CGrid.cpp}!Boundary@{Boundary}}
+\index{Boundary@{Boundary}!CGrid.cpp@{CGrid.cpp}}
+\subsubsection{\texorpdfstring{Boundary()}{Boundary()}}
+{\footnotesize\ttfamily void Boundary (\begin{DoxyParamCaption}\item[{int \&}]{xx,  }\item[{int \&}]{yy }\end{DoxyParamCaption})}
+
+
+
+periodic boundary conditions 
+
+periodic boundary conditions 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in,out}}  & {\em xx} & torus correction of x-\/coordinate \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em yy} & torus correction of y-\/coordinate \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 957 of file C\+Grid.\+cpp.
+
+\mbox{\Hypertarget{_c_grid_8cpp_a56d6d4b540ec115ed019ada684ba75ff}\label{_c_grid_8cpp_a56d6d4b540ec115ed019ada684ba75ff}} 
+\index{CGrid.cpp@{CGrid.cpp}!CompareIndexRel@{CompareIndexRel}}
+\index{CompareIndexRel@{CompareIndexRel}!CGrid.cpp@{CGrid.cpp}}
+\subsubsection{\texorpdfstring{CompareIndexRel()}{CompareIndexRel()}}
+{\footnotesize\ttfamily bool Compare\+Index\+Rel (\begin{DoxyParamCaption}\item[{int}]{i1,  }\item[{int}]{i2 }\end{DoxyParamCaption})}
+
+
+
+compare two index-\/values in their distance to the center of grid 
+
+compare two index-\/values in their distance to the center of grid 
+\begin{DoxyParams}{Parameters}
+{\em il1,il2} & index value \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 944 of file C\+Grid.\+cpp.
+
+\mbox{\Hypertarget{_c_grid_8cpp_af2867187f6555096d75829e4e0a1a423}\label{_c_grid_8cpp_af2867187f6555096d75829e4e0a1a423}} 
+\index{CGrid.cpp@{CGrid.cpp}!Distance@{Distance}}
+\index{Distance@{Distance}!CGrid.cpp@{CGrid.cpp}}
+\subsubsection{\texorpdfstring{Distance()}{Distance()}}
+{\footnotesize\ttfamily double Distance (\begin{DoxyParamCaption}\item[{const double \&}]{xx,  }\item[{const double \&}]{yy,  }\item[{const double \&}]{x,  }\item[{const double \&}]{y }\end{DoxyParamCaption})}
+
+
+
+distance between two points using Pythagoras 
+
+calculates the distance between two cells in the grid 
+\begin{DoxyParams}{Parameters}
+{\em xx,yy,x,y} & pairs of coordinates \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+eucledian distance between two pairs of coordinates (xx,yy) and (x,y) 
+\end{DoxyReturn}
+
+
+Definition at line 935 of file C\+Grid.\+cpp.
+
+\mbox{\Hypertarget{_c_grid_8cpp_a6faf9661168bf330da6399218cf47d52}\label{_c_grid_8cpp_a6faf9661168bf330da6399218cf47d52}} 
+\index{CGrid.cpp@{CGrid.cpp}!Emmigrates@{Emmigrates}}
+\index{Emmigrates@{Emmigrates}!CGrid.cpp@{CGrid.cpp}}
+\subsubsection{\texorpdfstring{Emmigrates()}{Emmigrates()}}
+{\footnotesize\ttfamily bool Emmigrates (\begin{DoxyParamCaption}\item[{int \&}]{xx,  }\item[{int \&}]{yy }\end{DoxyParamCaption})}
+
+
+
+test for emmigration 
+
+check for emmigrating seeds 
+\begin{DoxyParams}{Parameters}
+{\em xx} & location of seed \\
+\hline
+{\em yy} & location of seed \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 970 of file C\+Grid.\+cpp.
+
+\mbox{\Hypertarget{_c_grid_8cpp_ac165a1ab000bd69cb99e739dc9dad02b}\label{_c_grid_8cpp_ac165a1ab000bd69cb99e739dc9dad02b}} 
+\index{CGrid.cpp@{CGrid.cpp}!getTargetCell@{getTargetCell}}
+\index{getTargetCell@{getTargetCell}!CGrid.cpp@{CGrid.cpp}}
+\subsubsection{\texorpdfstring{getTargetCell()}{getTargetCell()}}
+{\footnotesize\ttfamily void get\+Target\+Cell (\begin{DoxyParamCaption}\item[{int \&}]{xx,  }\item[{int \&}]{yy,  }\item[{const float}]{mean,  }\item[{const float}]{sd,  }\item[{double}]{cellscale }\end{DoxyParamCaption})}
+
+
+
+dispersal kernel for seeds 
+
+lognormal dispersal kernel Each Seed is dispersed after an log-\/normal dispersal kernel with mean and sd given by plant traits. The dispersal direction has no prevalence. 
+\begin{DoxyParams}{Parameters}
+{\em xx} & location on grid \\
+\hline
+{\em yy} & location on grid \\
+\hline
+{\em mean} & mean dispersal distance \\
+\hline
+{\em sd} & standard deviation of dispersal distance \\
+\hline
+{\em cellscale} & scale of one cell \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 142 of file C\+Grid.\+cpp.
+

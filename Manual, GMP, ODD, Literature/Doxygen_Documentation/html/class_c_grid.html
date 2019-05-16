@@ -5,10 +5,18 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.15"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>IBCgrass GUI: CGrid Class Reference</title>
+<title>IBC-grass: CGrid Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -20,11 +28,11 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
-  <td id="projectlogo"><img alt="Logo" src="ZOIWaterEff_IBCGrass 3cm.gif"/></td>
+  <td id="projectlogo"><img alt="Logo" src="SchemeIBCgrass.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">IBCgrass GUI
-   &#160;<span id="projectnumber">0.1.0</span>
+   <div id="projectname">IBC-grass
    </div>
+   <div id="projectbrief">herbicide risk assessment</div>
   </td>
  </tr>
  </tbody>
@@ -47,6 +55,23 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('class_c_grid.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -61,7 +86,6 @@ $(function() {
 </iframe>
 </div>
 
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
@@ -243,6 +267,8 @@ Protected Member Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class with all spatial algorithms where plant individuals interact in space. </p>
 <p>Functions for competition and plant growth are overwritten by inherited classes to include different degrees of size asymmetry and different concepts of niche differentiation </p>
+
+<p class="definition">Definition at line <a class="el" href="_c_grid_8h_source.html#l00026">26</a> of file <a class="el" href="_c_grid_8h_source.html">CGrid.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a061e223431ef4fb00b020539f34d1289"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a061e223431ef4fb00b020539f34d1289">&#9670;&nbsp;</a></span>CGrid()</h2>
@@ -261,6 +287,8 @@ Protected Member Functions</h2></td></tr>
 
 <p>constructor </p>
 <p>Constructor </p>
+
+<p class="definition">Definition at line <a class="el" href="_c_grid_8cpp_source.html#l00015">15</a> of file <a class="el" href="_c_grid_8cpp_source.html">CGrid.cpp</a>.</p>
 
 </div>
 </div>
@@ -289,6 +317,8 @@ Protected Member Functions</h2></td></tr>
 
 <p>destructor </p>
 <p><a class="el" href="class_c_grid.html" title="Class with all spatial algorithms where plant individuals interact in space.">CGrid</a> destructor </p>
+
+<p class="definition">Definition at line <a class="el" href="_c_grid_8cpp_source.html#l00065">65</a> of file <a class="el" href="_c_grid_8cpp_source.html">CGrid.cpp</a>.</p>
 
 </div>
 </div>
@@ -326,6 +356,8 @@ Protected Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>link to the new or found genet </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="_c_grid_8cpp_source.html#l01141">1141</a> of file <a class="el" href="_c_grid_8cpp_source.html">CGrid.cpp</a>.</p>
+
 </div>
 </div>
 <a id="a125b246c642761eb04d552af332875ff"></a>
@@ -353,6 +385,8 @@ Protected Member Functions</h2></td></tr>
 
 <p>initalization of cells </p>
 <p>Initiate grid cells with above and belowground resources </p><dl class="section note"><dt>Note</dt><dd>call only once or delete cell objects before; better reset cells (<a class="el" href="class_c_grid.html#a58eceb70207b1b651a99c70154163237" title="reset grid">resetGrid()</a>) to start a new environment </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_c_grid_8cpp_source.html#l00030">30</a> of file <a class="el" href="_c_grid_8cpp_source.html">CGrid.cpp</a>.</p>
 
 </div>
 </div>
@@ -383,6 +417,8 @@ Protected Member Functions</h2></td></tr>
 <p>This function calculates ZOI of all plants on grid. Each grid-cell gets a list of plants influencing the above- (alive and dead individuals) and belowground (alive plants only) layers.</p>
 <dl class="section user"><dt>revision</dt><dd>Let ZOI be defined by a list sorted after ascending distance to center instead of searching a square defined by maximum radius. </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="_c_grid_8cpp_source.html#l00255">255</a> of file <a class="el" href="_c_grid_8cpp_source.html">CGrid.cpp</a>.</p>
+
 </div>
 </div>
 <a id="aeb32e3d96362cead28fd24871e47a087"></a>
@@ -410,6 +446,8 @@ Protected Member Functions</h2></td></tr>
 
 <p>cutting of all plants to equal aboveground mass </p>
 <p>Cutting of all plants on the patch to a specific level </p>
+
+<p class="definition">Definition at line <a class="el" href="_c_grid_8cpp_source.html#l00693">693</a> of file <a class="el" href="_c_grid_8cpp_source.html">CGrid.cpp</a>.</p>
 
 </div>
 </div>
@@ -447,6 +485,8 @@ Protected Member Functions</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="class_c_herbicide_effect_env.html#ae8dbbf008905283e45fef1ed10d4ce3b">CHerbicideEffectEnv</a>.</p>
 
+<p class="definition">Definition at line <a class="el" href="_c_grid_8cpp_source.html#l00793">793</a> of file <a class="el" href="_c_grid_8cpp_source.html">CGrid.cpp</a>.</p>
+
 </div>
 </div>
 <a id="a2a233420c6bd8f36c2d6816ecba32238"></a>
@@ -472,6 +512,8 @@ Protected Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+<p class="definition">Definition at line <a class="el" href="_c_grid_8cpp_source.html#l00206">206</a> of file <a class="el" href="_c_grid_8cpp_source.html">CGrid.cpp</a>.</p>
 
 </div>
 </div>
@@ -510,6 +552,8 @@ Protected Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>list of seeds to dispers per LDD </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="_c_grid_8cpp_source.html#l00167">167</a> of file <a class="el" href="_c_grid_8cpp_source.html">CGrid.cpp</a>.</p>
+
 </div>
 </div>
 <a id="a51b5f510fc52d65bf24ae5272992f22e"></a>
@@ -538,6 +582,8 @@ Protected Member Functions</h2></td></tr>
 <p>distributes resource to each plant --&gt; calls competition functions </p>
 <p>Distributes local resources according to local competition and shares them between connected ramets of clonal genets. </p>
 
+<p class="definition">Definition at line <a class="el" href="_c_grid_8cpp_source.html#l00338">338</a> of file <a class="el" href="_c_grid_8cpp_source.html">CGrid.cpp</a>.</p>
+
 </div>
 </div>
 <a id="a684a34a53f8210acbd15926830d706c2"></a>
@@ -565,6 +611,8 @@ Protected Member Functions</h2></td></tr>
 
 <p>disturbance --&gt; calls grazing and gap formation functions </p>
 <p>Calculate the effects of <a class="el" href="class_c_grid.html#a816b11d543422eeffc27e56c44b30d43" title="simulates aboveground herbivory">Grazing()</a> and <a class="el" href="class_c_grid.html#a99267b09aab13f05bb87dd93bddf11bb">Trampling()</a> according to the probabilities <a class="el" href="struct_s_run_para.html#acb13e5adf214fe475adadcdf188f7edf">GrazProb</a> and <a class="el" href="struct_s_run_para.html#a244bdc3b72c2435d7f7b479abd6ad9bf">DistProb</a> calculate the effect of cutting after F.May(2010) <a class="el" href="struct_s_run_para.html#a3e6e6b64677e69b6cad5fc23f6e631c5">NCut</a> </p>
+
+<p class="definition">Definition at line <a class="el" href="_c_grid_8cpp_source.html#l00617">617</a> of file <a class="el" href="_c_grid_8cpp_source.html">CGrid.cpp</a>.</p>
 
 </div>
 </div>
@@ -602,6 +650,8 @@ Protected Member Functions</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="class_c_herbicide_effect_env.html#a6c75efbe3b28138bbe417e52d5a3f523">CHerbicideEffectEnv</a>.</p>
 
+<p class="definition">Definition at line <a class="el" href="_c_grid_8cpp_source.html#l00490">490</a> of file <a class="el" href="_c_grid_8cpp_source.html">CGrid.cpp</a>.</p>
+
 </div>
 </div>
 <a id="af762d179a32b74b78502ed926cfd35ed"></a>
@@ -637,6 +687,8 @@ Protected Member Functions</h2></td></tr>
 <li>seedlings that fail to establish will die </li>
 </ol>
 
+<p class="definition">Definition at line <a class="el" href="_c_grid_8cpp_source.html#l00395">395</a> of file <a class="el" href="_c_grid_8cpp_source.html">CGrid.cpp</a>.</p>
+
 </div>
 </div>
 <a id="ae18d00e3bedcd99aed40a406da832c4e"></a>
@@ -659,6 +711,8 @@ Protected Member Functions</h2></td></tr>
 <dl class="section note"><dt>Note</dt><dd>Call the function after updating weekly ZOIs in function <a class="el" href="class_c_grid.html#a4192c45a00e1b07e475e0f20bc87e67d" title="assigns grid cells to plants - which cell is covered by which plant">CGrid::CoverCells()</a></dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>the number of covered cells on grid </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="_c_grid_8cpp_source.html#l01084">1084</a> of file <a class="el" href="_c_grid_8cpp_source.html">CGrid.cpp</a>.</p>
+
 </div>
 </div>
 <a id="a62dd33a6d713a6343789d45fe8719908"></a>
@@ -678,6 +732,8 @@ Protected Member Functions</h2></td></tr>
 
 <p>number of living clonal plants </p>
 <dl class="section return"><dt>Returns</dt><dd>number of clonal plants on grid </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_c_grid_8cpp_source.html#l01012">1012</a> of file <a class="el" href="_c_grid_8cpp_source.html">CGrid.cpp</a>.</p>
 
 </div>
 </div>
@@ -699,6 +755,8 @@ Protected Member Functions</h2></td></tr>
 <p>number of Generations </p>
 <p>calculate the mean number of generations per genet </p><dl class="section return"><dt>Returns</dt><dd>mean number of generations per genet </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="_c_grid_8cpp_source.html#l01101">1101</a> of file <a class="el" href="_c_grid_8cpp_source.html">CGrid.cpp</a>.</p>
+
 </div>
 </div>
 <a id="a11d826c05cb7ba0dafc93f313c201f05"></a>
@@ -718,6 +776,8 @@ Protected Member Functions</h2></td></tr>
 
 <p>number of living genets </p>
 <dl class="section return"><dt>Returns</dt><dd>the number of genets with at least one ramet still alive </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_c_grid_8cpp_source.html#l01050">1050</a> of file <a class="el" href="_c_grid_8cpp_source.html">CGrid.cpp</a>.</p>
 
 </div>
 </div>
@@ -739,6 +799,8 @@ Protected Member Functions</h2></td></tr>
 <p>number of living non-clonal plants </p>
 <dl class="section return"><dt>Returns</dt><dd>number of non-clonal plants on grid </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="_c_grid_8cpp_source.html#l01032">1032</a> of file <a class="el" href="_c_grid_8cpp_source.html">CGrid.cpp</a>.</p>
+
 </div>
 </div>
 <a id="a85e0652f78cdac67875f9a9b2aec4280"></a>
@@ -759,6 +821,8 @@ Protected Member Functions</h2></td></tr>
 <p>get total aboveground biomass </p>
 <dl class="section return"><dt>Returns</dt><dd>sum of all plants' aboveground biomass (shoot and fruit) </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="_c_grid_8cpp_source.html#l00980">980</a> of file <a class="el" href="_c_grid_8cpp_source.html">CGrid.cpp</a>.</p>
+
 </div>
 </div>
 <a id="acf196b7d4489de11ccfbbd0702590afd"></a>
@@ -778,6 +842,8 @@ Protected Member Functions</h2></td></tr>
 
 <p>get total belowground biomass </p>
 <dl class="section return"><dt>Returns</dt><dd>sum of all plants' belowground biomass (roots) </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_c_grid_8cpp_source.html#l00996">996</a> of file <a class="el" href="_c_grid_8cpp_source.html">CGrid.cpp</a>.</p>
 
 </div>
 </div>
@@ -807,6 +873,8 @@ Protected Member Functions</h2></td></tr>
 <p>simulates aboveground herbivory </p>
 <p>trampling events</p>
 <p>The plants on the whole grid are grazed according to their relative grazing susceptibility until the given <a class="el" href="struct_s_run_para.html#a8a375f190fcd09bbe28973dc2505c830">proportion of removal</a> is reached or the grid is completely grazed. (Above ground mass that is ungrazable - see Schwinning and Parsons (1999): 15,3 g/m² * 1.6641 m² = 25.5 g) </p>
+
+<p class="definition">Definition at line <a class="el" href="_c_grid_8cpp_source.html#l00652">652</a> of file <a class="el" href="_c_grid_8cpp_source.html">CGrid.cpp</a>.</p>
 
 </div>
 </div>
@@ -853,6 +921,8 @@ Protected Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+<p class="definition">Definition at line <a class="el" href="_c_grid_8cpp_source.html#l00870">870</a> of file <a class="el" href="_c_grid_8cpp_source.html">CGrid.cpp</a>.</p>
 
 </div>
 </div>
@@ -906,6 +976,8 @@ Protected Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+<p class="definition">Definition at line <a class="el" href="_c_grid_8cpp_source.html#l00881">881</a> of file <a class="el" href="_c_grid_8cpp_source.html">CGrid.cpp</a>.</p>
 
 </div>
 </div>
@@ -973,6 +1045,8 @@ Protected Member Functions</h2></td></tr>
   </dd>
 </dl>
 
+<p class="definition">Definition at line <a class="el" href="_c_grid_8cpp_source.html#l00892">892</a> of file <a class="el" href="_c_grid_8cpp_source.html">CGrid.cpp</a>.</p>
+
 </div>
 </div>
 <a id="ae1d81bdcd569d928ccf01d8f1c495e2d"></a>
@@ -1019,6 +1093,8 @@ Protected Member Functions</h2></td></tr>
 </dl>
 
 <p>Reimplemented in <a class="el" href="class_c_herbicide_effect_env.html#aebf7af3b70caeba866e3ca2c8c0262f7">CHerbicideEffectEnv</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="_c_grid_8cpp_source.html#l00199">199</a> of file <a class="el" href="_c_grid_8cpp_source.html">CGrid.cpp</a>.</p>
 
 </div>
 </div>
@@ -1073,6 +1149,8 @@ Protected Member Functions</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="class_c_herbicide_effect_env.html#ae76943414d4aeded838e98dea916084d">CHerbicideEffectEnv</a>.</p>
 
+<p class="definition">Definition at line <a class="el" href="_c_grid_8cpp_source.html#l01161">1161</a> of file <a class="el" href="_c_grid_8cpp_source.html">CGrid.cpp</a>.</p>
+
 </div>
 </div>
 <a id="ad1258e316e92fd63a0efa7f594cefbf3"></a>
@@ -1100,6 +1178,8 @@ Protected Member Functions</h2></td></tr>
 
 <p>loop over all plants including growth, seed dispersal and mortality </p>
 <p>The clonal version of PlantLoop additionally to the CGrid-version disperses and grows the clonal ramets Growth (resource allocation and vegetative growth), seed dispersal and mortality of plants. </p>
+
+<p class="definition">Definition at line <a class="el" href="_c_grid_8cpp_source.html#l00102">102</a> of file <a class="el" href="_c_grid_8cpp_source.html">CGrid.cpp</a>.</p>
 
 </div>
 </div>
@@ -1129,6 +1209,8 @@ Protected Member Functions</h2></td></tr>
 <p>removes dead plants from the grid and deletes them </p>
 <p>remove dead and trampled plants from the grid </p>
 
+<p class="definition">Definition at line <a class="el" href="_c_grid_8cpp_source.html#l00772">772</a> of file <a class="el" href="_c_grid_8cpp_source.html">CGrid.cpp</a>.</p>
+
 </div>
 </div>
 <a id="a58eceb70207b1b651a99c70154163237"></a>
@@ -1157,6 +1239,8 @@ Protected Member Functions</h2></td></tr>
 <p>reset grid </p>
 <p>Clears the grid from Plants and resets cells. </p>
 
+<p class="definition">Definition at line <a class="el" href="_c_grid_8cpp_source.html#l00046">46</a> of file <a class="el" href="_c_grid_8cpp_source.html">CGrid.cpp</a>.</p>
+
 </div>
 </div>
 <a id="ad18ff5c3a42c370966e07d02daadb8b0"></a>
@@ -1184,6 +1268,8 @@ Protected Member Functions</h2></td></tr>
 
 <p>clears list of plants that cover each cell </p>
 <p>Resets all weekly variables of individual cells and plants (only in PlantList) </p>
+
+<p class="definition">Definition at line <a class="el" href="_c_grid_8cpp_source.html#l00311">311</a> of file <a class="el" href="_c_grid_8cpp_source.html">CGrid.cpp</a>.</p>
 
 </div>
 </div>
@@ -1215,6 +1301,8 @@ Protected Member Functions</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="class_c_herbicide_effect_env.html#aa325ab8688e1e1bbe060da4b2031cd44">CHerbicideEffectEnv</a>.</p>
 
+<p class="definition">Definition at line <a class="el" href="_c_grid_8cpp_source.html#l00814">814</a> of file <a class="el" href="_c_grid_8cpp_source.html">CGrid.cpp</a>.</p>
+
 </div>
 </div>
 <a id="a311160491d289235434e66cfd44dc1ad"></a>
@@ -1242,6 +1330,8 @@ Protected Member Functions</h2></td></tr>
 
 <p>seed mortality due to dormancy </p>
 <p>seed dormancy as seed mortality due to age </p>
+
+<p class="definition">Definition at line <a class="el" href="_c_grid_8cpp_source.html#l00581">581</a> of file <a class="el" href="_c_grid_8cpp_source.html">CGrid.cpp</a>.</p>
 
 </div>
 </div>
@@ -1271,6 +1361,8 @@ Protected Member Functions</h2></td></tr>
 <p>random seed mortality in winter </p>
 <p>seed mortality during winter </p>
 
+<p class="definition">Definition at line <a class="el" href="_c_grid_8cpp_source.html#l00841">841</a> of file <a class="el" href="_c_grid_8cpp_source.html">CGrid.cpp</a>.</p>
+
 </div>
 </div>
 <a id="aefbb8b3705148ab6a0baaa094276a62d"></a>
@@ -1298,6 +1390,8 @@ Protected Member Functions</h2></td></tr>
 
 <p>set amount of resources the cells serve </p>
 <p>Weekly sets cell's resources - above- and belowground variation during the year. </p>
+
+<p class="definition">Definition at line <a class="el" href="_c_grid_8cpp_source.html#l00899">899</a> of file <a class="el" href="_c_grid_8cpp_source.html">CGrid.cpp</a>.</p>
 
 </div>
 </div>
@@ -1327,6 +1421,8 @@ Protected Member Functions</h2></td></tr>
 <p>(Radius of disturbance currently is 10cm)</p>
 <p>The ZOI is defined by a list sorted after ascending distance to center </p>
 
+<p class="definition">Definition at line <a class="el" href="_c_grid_8cpp_source.html#l00728">728</a> of file <a class="el" href="_c_grid_8cpp_source.html">CGrid.cpp</a>.</p>
+
 </div>
 </div>
 <a id="a9ef602766345b51cd53326211b4e2ca9"></a>
@@ -1355,18 +1451,24 @@ Protected Member Functions</h2></td></tr>
 <p>calls seed mortality and mass removal of plants </p>
 <p>biomass removal (dieback) in winter time </p>
 
+<p class="definition">Definition at line <a class="el" href="_c_grid_8cpp_source.html#l00824">824</a> of file <a class="el" href="_c_grid_8cpp_source.html">CGrid.cpp</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Model-files/<a class="el" href="_c_grid_8h_source.html">CGrid.h</a></li>
-<li>Model-files/<a class="el" href="_c_grid_8cpp.html">CGrid.cpp</a></li>
+<li>D:/IBCgrassGUI.git/trunk/Model-files/<a class="el" href="_c_grid_8h_source.html">CGrid.h</a></li>
+<li>D:/IBCgrassGUI.git/trunk/Model-files/<a class="el" href="_c_grid_8cpp_source.html">CGrid.cpp</a></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.15
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="class_c_grid.html">CGrid</a></li>
+    <li class="footer">Generated by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.15 </li>
+  </ul>
+</div>
 </body>
 </html>

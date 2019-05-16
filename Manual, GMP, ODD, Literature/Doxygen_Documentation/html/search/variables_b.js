@@ -1,6 +1,7 @@
 var searchData=
 [
   ['name',['name',['../struct_s_ind_out.html#a08afee2407f7f1e35dd380cdb795fad4',1,'SIndOut::name()'],['../class_s_pft_traits.html#a5639574a1141f9b4c570a7632c9a1792',1,'SPftTraits::name()']]],
+  ['nameappratefile',['NameAppRateFile',['../struct_s_run_para.html#af084c204866b0f3137a70730bebe7e4a',1,'SRunPara']]],
   ['namegridoutfile',['NameGridOutFile',['../class_c_envir.html#a6ed76bed8230a347eb5cd456f9d12764',1,'CEnvir']]],
   ['nameherbeffectfile',['NameHerbEffectFile',['../struct_s_run_para.html#a185a1dfe4962cec31af4b3328d12c8e8',1,'SRunPara']]],
   ['nameindoutfile',['NameIndOutFile',['../class_c_envir.html#af43d5a1d6cc67cc053a34fb4f2730cfd',1,'CEnvir']]],

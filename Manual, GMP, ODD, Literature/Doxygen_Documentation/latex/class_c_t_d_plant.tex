@@ -1,0 +1,237 @@
+\hypertarget{class_c_t_d_plant}{}\section{C\+T\+D\+Plant Class Reference}
+\label{class_c_t_d_plant}\index{CTDPlant@{CTDPlant}}
+
+
+Class that describes herbicide impacts on plants.  
+
+
+
+
+{\ttfamily \#include $<$C\+T\+D\+Plant.\+h$>$}
+
+Inheritance diagram for C\+T\+D\+Plant\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_c_t_d_plant}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_c_t_d_plant_ad106f3466ae0f30e6d84c3bfe71dd4db}{C\+T\+D\+Plant}} (\mbox{\hyperlink{class_c_seed}{C\+Seed}} $\ast$seed)
+\begin{DoxyCompactList}\small\item\em make a plant from a seed object \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_c_t_d_plant_a674b0f94440fee06d71bb4d161a0bc66}{C\+T\+D\+Plant}} (double x, double y, \mbox{\hyperlink{class_c_t_d_plant}{C\+T\+D\+Plant}} $\ast$plant)
+\begin{DoxyCompactList}\small\item\em make a C\+TD plant from a normal plant \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_c_t_d_plant_a40351d1506a0032e241dbf8dfedef569}{C\+T\+D\+Plant}} (\mbox{\hyperlink{class_c_plant}{C\+Plant}} $\ast$plant)
+\begin{DoxyCompactList}\small\item\em no predefined values -\/ translate \mbox{\hyperlink{class_c_plant}{C\+Plant}} to C\+D\+T\+Plant \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_c_t_d_plant_a47b82e5be7be1ff3e8670229a68d053d}{$\sim$\+C\+T\+D\+Plant}} ()
+\begin{DoxyCompactList}\small\item\em destructor \end{DoxyCompactList}\item 
+virtual string \mbox{\hyperlink{class_c_t_d_plant_a4bed9454fd2fd6fa37109b544017361b}{type}} ()
+\begin{DoxyCompactList}\small\item\em say what type you are \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_c_t_d_plant_a4fedbe1ad644b4f4fd0e8f687ea92810}\label{class_c_t_d_plant_a4fedbe1ad644b4f4fd0e8f687ea92810}} 
+void \mbox{\hyperlink{class_c_t_d_plant_a4fedbe1ad644b4f4fd0e8f687ea92810}{Ageing}} ()
+\begin{DoxyCompactList}\small\item\em aging of a plant (weekly) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_c_t_d_plant_ac93a9be9717f2ceeeb1b53e96139308b}\label{class_c_t_d_plant_ac93a9be9717f2ceeeb1b53e96139308b}} 
+int \mbox{\hyperlink{class_c_t_d_plant_ac93a9be9717f2ceeeb1b53e96139308b}{Get\+Age}} ()
+\begin{DoxyCompactList}\small\item\em get current age of a plant \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_t_d_plant_af5806a71c9d946235d4736ea1a5997fb}{Get\+Profile}} (int year)
+\begin{DoxyCompactList}\small\item\em get current herbicide profile (currently only per year) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_c_t_d_plant_acf273f4578220cf4f303a0a49b4c2a9d}\label{class_c_t_d_plant_acf273f4578220cf4f303a0a49b4c2a9d}} 
+double \mbox{\hyperlink{class_c_t_d_plant_acf273f4578220cf4f303a0a49b4c2a9d}{get\+Hexposed}} () const
+\begin{DoxyCompactList}\small\item\em ask if plant was exposed to herbicide \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_t_d_plant_a5fd5e9ad220621ab462a3cef67bd3206}{set\+Hexposed}} (double hexposed=1)
+\begin{DoxyCompactList}\small\item\em set herbicide exposition \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_c_t_d_plant_a6b6ba874ab8a0bf643dc296935a28f2a}\label{class_c_t_d_plant_a6b6ba874ab8a0bf643dc296935a28f2a}} 
+bool \mbox{\hyperlink{class_c_t_d_plant_a6b6ba874ab8a0bf643dc296935a28f2a}{was\+Hexposed}} ()
+\begin{DoxyCompactList}\small\item\em was plant exposed? \end{DoxyCompactList}\item 
+virtual double \mbox{\hyperlink{class_c_t_d_plant_a19bab3a7643e23e1bdbf1f3b9a5fdf8b}{getp\+Estab\+Ramet}} ()
+\begin{DoxyCompactList}\small\item\em get (herbicide induced) establishment probability for ramets \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_c_t_d_plant_acdc8db83f80c17bbe5a6064cf9376aa3}\label{class_c_t_d_plant_acdc8db83f80c17bbe5a6064cf9376aa3}} 
+int \mbox{\hyperlink{class_c_t_d_plant_acdc8db83f80c17bbe5a6064cf9376aa3}{age}}
+\begin{DoxyCompactList}\small\item\em age in weeks \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_c_t_d_plant_a2bc2e8058517e3a403862b8ead6cc5d3}\label{class_c_t_d_plant_a2bc2e8058517e3a403862b8ead6cc5d3}} 
+\mbox{\hyperlink{struct_s_eff_profile}{S\+Eff\+Profile}} $\ast$ \mbox{\hyperlink{class_c_t_d_plant_a2bc2e8058517e3a403862b8ead6cc5d3}{Cexposition}}
+\begin{DoxyCompactList}\small\item\em current herbicide exposition \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_c_t_d_plant_a09caa9d708b3568b9c6e49294fe31dba}\label{class_c_t_d_plant_a09caa9d708b3568b9c6e49294fe31dba}} 
+double \mbox{\hyperlink{class_c_t_d_plant_a09caa9d708b3568b9c6e49294fe31dba}{Hexposed}}
+\begin{DoxyCompactList}\small\item\em herbicide exposition flag; \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Class that describes herbicide impacts on plants. 
+
+Definition at line 21 of file C\+T\+D\+Plant.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_c_t_d_plant_ad106f3466ae0f30e6d84c3bfe71dd4db}\label{class_c_t_d_plant_ad106f3466ae0f30e6d84c3bfe71dd4db}} 
+\index{CTDPlant@{CTDPlant}!CTDPlant@{CTDPlant}}
+\index{CTDPlant@{CTDPlant}!CTDPlant@{CTDPlant}}
+\subsubsection{\texorpdfstring{CTDPlant()}{CTDPlant()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily C\+T\+D\+Plant\+::\+C\+T\+D\+Plant (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_c_seed}{C\+Seed}} $\ast$}]{seed }\end{DoxyParamCaption})}
+
+
+
+make a plant from a seed object 
+
+constructor If a seed germinates, the new plant inherits its parameters. Genet has to be defined externally. 
+\begin{DoxyParams}{Parameters}
+{\em seed} & established seed \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 80 of file C\+T\+D\+Plant.\+cpp.
+
+\mbox{\Hypertarget{class_c_t_d_plant_a674b0f94440fee06d71bb4d161a0bc66}\label{class_c_t_d_plant_a674b0f94440fee06d71bb4d161a0bc66}} 
+\index{CTDPlant@{CTDPlant}!CTDPlant@{CTDPlant}}
+\index{CTDPlant@{CTDPlant}!CTDPlant@{CTDPlant}}
+\subsubsection{\texorpdfstring{CTDPlant()}{CTDPlant()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily C\+T\+D\+Plant\+::\+C\+T\+D\+Plant (\begin{DoxyParamCaption}\item[{double}]{x,  }\item[{double}]{y,  }\item[{\mbox{\hyperlink{class_c_t_d_plant}{C\+T\+D\+Plant}} $\ast$}]{plant }\end{DoxyParamCaption})}
+
+
+
+make a C\+TD plant from a normal plant 
+
+The new Plant inherits its parameters from \textquotesingle{}plant\textquotesingle{}. Genet is the same as for plant, Generation is by one larger than that of plant. sets the plant to a C\+TD plant specific for herbicide version of I\+B\+Cgrass 
+\begin{DoxyParams}{Parameters}
+{\em x} & cell location on grid \\
+\hline
+{\em y} & cell location on grid \\
+\hline
+{\em plant} & plant \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 31 of file C\+T\+D\+Plant.\+cpp.
+
+\mbox{\Hypertarget{class_c_t_d_plant_a40351d1506a0032e241dbf8dfedef569}\label{class_c_t_d_plant_a40351d1506a0032e241dbf8dfedef569}} 
+\index{CTDPlant@{CTDPlant}!CTDPlant@{CTDPlant}}
+\index{CTDPlant@{CTDPlant}!CTDPlant@{CTDPlant}}
+\subsubsection{\texorpdfstring{CTDPlant()}{CTDPlant()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily C\+T\+D\+Plant\+::\+C\+T\+D\+Plant (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_c_plant}{C\+Plant}} $\ast$}]{plant }\end{DoxyParamCaption})}
+
+
+
+no predefined values -\/ translate \mbox{\hyperlink{class_c_plant}{C\+Plant}} to C\+D\+T\+Plant 
+
+constructor for upgrading \mbox{\hyperlink{class_c_plant}{C\+Plant}}
+
+translates clonal plant (\mbox{\hyperlink{class_c_plant}{C\+Plant}}) into TD plant with specific age and herbicide history. 
+\begin{DoxyParams}{Parameters}
+{\em plant} & plant to upgrade \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 59 of file C\+T\+D\+Plant.\+cpp.
+
+\mbox{\Hypertarget{class_c_t_d_plant_a47b82e5be7be1ff3e8670229a68d053d}\label{class_c_t_d_plant_a47b82e5be7be1ff3e8670229a68d053d}} 
+\index{CTDPlant@{CTDPlant}!````~CTDPlant@{$\sim$CTDPlant}}
+\index{````~CTDPlant@{$\sim$CTDPlant}!CTDPlant@{CTDPlant}}
+\subsubsection{\texorpdfstring{$\sim$CTDPlant()}{~CTDPlant()}}
+{\footnotesize\ttfamily C\+T\+D\+Plant\+::$\sim$\+C\+T\+D\+Plant (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+destructor 
+
+destructor 
+
+Definition at line 17 of file C\+T\+D\+Plant.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_c_t_d_plant_a19bab3a7643e23e1bdbf1f3b9a5fdf8b}\label{class_c_t_d_plant_a19bab3a7643e23e1bdbf1f3b9a5fdf8b}} 
+\index{CTDPlant@{CTDPlant}!getpEstabRamet@{getpEstabRamet}}
+\index{getpEstabRamet@{getpEstabRamet}!CTDPlant@{CTDPlant}}
+\subsubsection{\texorpdfstring{getpEstabRamet()}{getpEstabRamet()}}
+{\footnotesize\ttfamily double C\+T\+D\+Plant\+::getp\+Estab\+Ramet (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+get (herbicide induced) establishment probability for ramets 
+
+Get establishment probability of Ramets depending on P\+FT and herbicide application. \begin{DoxyReturn}{Returns}
+establishment probability 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{class_c_plant_a5ab0a36c3e58898c7c750db485eca653}{C\+Plant}}.
+
+
+
+Definition at line 210 of file C\+T\+D\+Plant.\+cpp.
+
+\mbox{\Hypertarget{class_c_t_d_plant_af5806a71c9d946235d4736ea1a5997fb}\label{class_c_t_d_plant_af5806a71c9d946235d4736ea1a5997fb}} 
+\index{CTDPlant@{CTDPlant}!GetProfile@{GetProfile}}
+\index{GetProfile@{GetProfile}!CTDPlant@{CTDPlant}}
+\subsubsection{\texorpdfstring{GetProfile()}{GetProfile()}}
+{\footnotesize\ttfamily void C\+T\+D\+Plant\+::\+Get\+Profile (\begin{DoxyParamCaption}\item[{int}]{year }\end{DoxyParamCaption})}
+
+
+
+get current herbicide profile (currently only per year) 
+
+Get current Plant\textquotesingle{}s effect profile 
+\begin{DoxyParams}{Parameters}
+{\em year} & current year \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 223 of file C\+T\+D\+Plant.\+cpp.
+
+\mbox{\Hypertarget{class_c_t_d_plant_a5fd5e9ad220621ab462a3cef67bd3206}\label{class_c_t_d_plant_a5fd5e9ad220621ab462a3cef67bd3206}} 
+\index{CTDPlant@{CTDPlant}!setHexposed@{setHexposed}}
+\index{setHexposed@{setHexposed}!CTDPlant@{CTDPlant}}
+\subsubsection{\texorpdfstring{setHexposed()}{setHexposed()}}
+{\footnotesize\ttfamily void C\+T\+D\+Plant\+::set\+Hexposed (\begin{DoxyParamCaption}\item[{double}]{hexposed = {\ttfamily 1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+set herbicide exposition 
+
+Set the exposition flag. saying that plant was exposed 
+\begin{DoxyParams}{Parameters}
+{\em hexposed} & value of exposition (default=1) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 65 of file C\+T\+D\+Plant.\+h.
+
+\mbox{\Hypertarget{class_c_t_d_plant_a4bed9454fd2fd6fa37109b544017361b}\label{class_c_t_d_plant_a4bed9454fd2fd6fa37109b544017361b}} 
+\index{CTDPlant@{CTDPlant}!type@{type}}
+\index{type@{type}!CTDPlant@{CTDPlant}}
+\subsubsection{\texorpdfstring{type()}{type()}}
+{\footnotesize\ttfamily string C\+T\+D\+Plant\+::type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+say what type you are 
+
+get Plant\textquotesingle{}s class type \begin{DoxyReturn}{Returns}
+\textquotesingle{}\mbox{\hyperlink{class_c_t_d_plant}{C\+T\+D\+Plant}}\textquotesingle{} 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{class_c_plant_a6f01bbbf4d15243a1e00e85ce1a9de5b}{C\+Plant}}.
+
+
+
+Definition at line 103 of file C\+T\+D\+Plant.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+I\+B\+Cgrass\+G\+U\+I.\+git/trunk/\+Model-\/files/\mbox{\hyperlink{_c_t_d_plant_8h}{C\+T\+D\+Plant.\+h}}\item 
+D\+:/\+I\+B\+Cgrass\+G\+U\+I.\+git/trunk/\+Model-\/files/\mbox{\hyperlink{_c_t_d_plant_8cpp}{C\+T\+D\+Plant.\+cpp}}\end{DoxyCompactItemize}
