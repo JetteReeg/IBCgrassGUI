@@ -127,6 +127,7 @@ library(ggplot2)
 library(ggthemes)
 library(foreach)
 library(doParallel)
+library(labeling)
 
 # load necessary files
 source('R-files/Welcome.R')
