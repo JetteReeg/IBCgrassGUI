@@ -6,7 +6,7 @@
 ###############################################################################
 #       Author: Jette Reeg                                                    #
 ###############################################################################
-# Copyright Â© 2019 Jette Reeg
+# Copyright Ã‚Â© 2019 Jette Reeg
 # This program is free software: you can redistribute it and/or modify it under 
 # the terms of the GNU General Public License as published by the Free Software 
 # Foundation, either version 3 of the License, or any later version.
@@ -28,7 +28,7 @@ if (!"RGtk2" %in% installed.packages()) install.packages("https://cran.microsoft
 if (.Platform$OS.type == "unix") {
   if (!"RGtk2" %in% installed.packages()) install.packages("https://cran.r-project.org/src/contrib/Archive/RGtk2/RGtk2_2.20.35.tar.gz", repos=NULL, dependencies=T, lib = paste(getwd(), "/Rlibraries", sep=""))
 }
-if (!"RGtk2Extras" %in% installed.packages()) install.packages("RGtk2Extras", repos='http://cran.us.r-project.org', dependencies = T, lib = paste(getwd(), "/Rlibraries", sep=""))
+if (!"labeling" %in% installed.packages()) install.packages("labeling", repos='http://cran.us.r-project.org', dependencies = T, lib = paste(getwd(), "/Rlibraries", sep=""))
 if (!"data.table" %in% installed.packages()) install.packages("data.table", repos='http://cran.us.r-project.org', dependencies = T, lib = paste(getwd(), "/Rlibraries", sep=""))
 if (!"ggplot2" %in% installed.packages()) install.packages("ggplot2", repos='http://cran.us.r-project.org', dependencies = T, lib = paste(getwd(), "/Rlibraries", sep=""))
 if (!"ggthemes" %in% installed.packages()) install.packages("ggthemes", repos='http://cran.us.r-project.org', dependencies = T, lib = paste(getwd(), "/Rlibraries", sep=""))
@@ -38,7 +38,7 @@ if (!"doParallel" %in% installed.packages()) install.packages("doParallel", repo
 # install gtk if not already existing...
 # checks system
 if (.Platform$OS.type == "windows") {
-  # prüft die dlls
+  # prÃ¼ft die dlls
   dllpath <- Sys.getenv("RGTK2_GTK2_PATH")
   if (!nzchar(dllpath))
     dllpath <- file.path(file.path(system.file(package = "RGtk2"), "gtk", .Platform$r_arch), "bin")
@@ -59,7 +59,7 @@ if (is.character(dll)) {
                file.path(config_path, "gtkrc"))
   }
   # install the dependencies
-  # für windows 32 config..
+  # fÃ¼r windows 32 config..
   windows32_config <-
     list(
       source = FALSE,
@@ -73,11 +73,11 @@ if (is.character(dll)) {
       }
     )
   
-  # für windows 64 config
+  # fÃ¼r windows 64 config
   windows64_config <- windows32_config
   windows64_config$gtk_url <- "http://ftp.gnome.org/pub/gnome/binaries/win64/gtk+/2.22/gtk+-bundle_2.22.1-20101229_win64.zip"
   
-  # für darwin config
+  # fÃ¼r darwin config
   darwin_config <- list(
     source = FALSE,
     gtk_url = "http://r.research.att.com/libs/GTK_2.24.17-X11.pkg", 
@@ -86,7 +86,7 @@ if (is.character(dll)) {
     }
   )
   
-  # für unix config.
+  # fÃ¼r unix config.
   unix_config <- NULL
   
   gtk_web <- "http://www.gtk.org"
