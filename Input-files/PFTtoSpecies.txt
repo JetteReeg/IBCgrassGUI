@@ -36,7 +36,7 @@ MSCIcl3plb	Leucanthemum vulgare
 MSCIplb	"Daucus carota; Crepis biennis; Knautia arvensis"								
 MSCTcl1plb	"Ranunculus acris; Festuca pratensis; Phleum pratense; Holcus lanatus; Trollius europaeus"								
 MSCTcl2plb	"Centaurea jacea; Rumex acetosa; Dactylis glomerata; Cardamine pratensis"								
-MSCTcl3lb	Helictotrichon pubescens								
+MSCTcl3plb	Helictotrichon pubescens								
 MSIIcl1plb	Salvia pratensis								
 MSIIcl3plb	"Agrostis canina; Silene flos-cuculi"								
 MSIIplb	"Tragopogon pratensis; Campanula patula"								
@@ -62,8 +62,9 @@ SRIAcl1peb	Taraxacum
 SRIAcl2plb	"Cerastium holosteoides; Hyperchaeris radicata"								
 SRIAcl3plb	Potentilla anserina								
 SRIAcl4peb	Bellis perennis								
-SRITcl1lb	Leontodon hispidus								
-SRITcl3plb	Tussilago farfara								
+SRITcl1plb	Leontodon hispidus								
+SRITcl3peb	Tussilago farfara		
+SRITcl3plb	Tussilago farfara		
 SSCTplb	Trifolium pratense								
 SSIAcl4plb	"Trifolium repens; Colchicum autumnale; Cardamine pratensis"								
 SSITcl2lb	Ranunculus bulbosus								
