@@ -1,0 +1,36 @@
+GetTaskPasteIn          Return all tables
+[.GtkDfEdit             S3 data extraction method...
+dfedit                  Convenience function for editing a data frame
+                        in its own window
+dfview                  Convenience function for viewing a data frame
+                        in its own window
+get.value               Return all tables
+get_all_tables          Return all tables
+gtkDfEdit               gtkDfEdit
+gtkDfEditCommandData    Open the Command Editor
+gtkDfEditDoTask         Editor change handling.
+gtkDfEditEditFactors    Open the Factor Editor
+gtkDfEditGetColumnNames
+                        Return the columns of the RGtk2DfEdit object...
+gtkDfEditGetDataFrame   Return a data frame from the RGtk2DfEdit
+                        object...
+gtkDfEditGetDatasetName
+                        Return all tables
+gtkDfEditGetDimension   Return the dimensions (nrow, ncol) of the
+                        RGtk2DfEdit object...
+gtkDfEditGetModel       get Model from object...
+gtkDfEditGetRowNames    Return the row names of the RGtk2DfEdit
+                        object...
+gtkDfEditGetSelection   get selected row and column indices...
+gtkDfEditSetActionHandler
+                        Setting user defined functions on the editor
+gtkDfEditSetDatasetName
+                        Return all tables
+gtkDfEditSort           Open the Sort dialog
+gtkDfEditUndo           Undo the previous action
+my_choose_files         Return all tables
+object.exists           Return all tables
+quick_message           Return all tables
+run.dialog              Simple Dialog Maker package for RGtk2
+safe.eval               Return all tables
+set.value               Set widget value

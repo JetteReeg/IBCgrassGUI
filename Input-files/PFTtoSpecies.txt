@@ -63,8 +63,8 @@ SRIAcl2plb	"Cerastium holosteoides; Hyperchaeris radicata"
 SRIAcl3plb	Potentilla anserina								
 SRIAcl4peb	Bellis perennis								
 SRITcl1plb	Leontodon hispidus								
-SRITcl3peb	Tussilago farfara		
-SRITcl3plb	Potentilla reptans		
+SRITcl3peb	Tussilago farfara								
+SRITcl3plb	Potentilla reptans								
 SSCTplb	Trifolium pratense								
 SSIAcl4plb	"Trifolium repens; Colchicum autumnale; Cardamine pratensis"								
 SSITcl2lb	Ranunculus bulbosus								
