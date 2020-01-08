@@ -1,3 +1,6 @@
+# Example file to start IBCgrass GUI under Linux OS. 
+# Make sure you have installed the correct R version (3.4) and installed all necessary packages in advance!
+# add the location of the Rscript command in the last line
 #!/bin/bash
 echo IBCgrass GUI Copyright (C) 2019  Jette Reeg This program comes with ABSOLUTELY NO WARRANTY. This is free software, and you are welcome to redistribute it under certain conditions.
 cd ./Model-files
@@ -20,7 +23,7 @@ g++ -c -fmessage-length=0 -std=c++11 -o RunPara.o RunPara.cpp
 g++ -c -fmessage-length=0 -std=c++11 -o CHerbEff.o CHerbEff.cpp 
 g++ -o IBCgrassGUI SPftTraits.o RunPara.o Plant.o OutStructs.o LCG.o GMHerbicideEffect.o Cell.o CTKmodel.o CTDSeed.o CTDPlant.o CSeed.o CObject.o CHerbEff.o CGridEnvir.o CGrid.o CGenet.o CEnvir.o 
 cd ..
-Rscript "./R-files/IBC-grass.R"
+<location of rscript command> "./R-files/IBC-grass.R"
 
 
 
