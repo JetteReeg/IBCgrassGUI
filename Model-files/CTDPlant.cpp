@@ -1,4 +1,4 @@
-/**\file
+e/**\file
    \brief functions of toxico-dynamic plants
  *
  * CTDPlant.cpp
@@ -142,10 +142,10 @@ void CTDPlant::setMortBase(double abundance) {
 	double mbase=0;
 	// depending on the strength of density dependent mortality
 	switch (SRunPara::RunPara.ModelVersion){
-		//high
+		//moderate
 		case 1: mbase=0.007*
 	    		(exp((4/max_abundance)*abundance)); break;
-		//moderate
+		//high
 	    case 2: mbase=0.007*
 	    		(exp((5/max_abundance)*abundance)); break;
 	    //without
