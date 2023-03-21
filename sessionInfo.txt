@@ -1,0 +1,19 @@
+R version 3.4.1 (2017-06-30)
+Platform: x86_64-w64-mingw32/x64 (64-bit)
+Running under: Windows 10 x64 (build 19042)
+
+Matrix products: default
+
+locale:
+[1] LC_COLLATE=German_Germany.1252  LC_CTYPE=German_Germany.1252    LC_MONETARY=German_Germany.1252 LC_NUMERIC=C                    LC_TIME=German_Germany.1252    
+
+attached base packages:
+[1] parallel  stats     graphics  grDevices utils     datasets  methods   base     
+
+other attached packages:
+ [1] labeling_0.3      doParallel_1.0.11 iterators_1.0.10  foreach_1.4.4     ggthemes_3.4.0    ggplot2_2.2.1     reshape2_1.4.2    data.table_1.10.4
+ [9] RGtk2Extras_0.6.1 RGtk2_2.20.34    
+
+loaded via a namespace (and not attached):
+ [1] Rcpp_0.12.12     magrittr_1.5     munsell_0.4.3    colorspace_1.3-2 rlang_0.1.1      stringr_1.2.0    plyr_1.8.4       tools_3.4.1      grid_3.4.1      
+[10] gtable_0.2.0     lazyeval_0.2.0   assertthat_0.2.0 tibble_1.3.3     codetools_0.2-15 stringi_1.1.5    compiler_3.4.1   scales_0.4.1    

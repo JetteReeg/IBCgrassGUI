@@ -1,4 +1,4 @@
-e/**\file
+/**\file
    \brief functions of toxico-dynamic plants
  *
  * CTDPlant.cpp

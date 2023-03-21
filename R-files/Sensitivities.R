@@ -244,7 +244,7 @@ SensitivityTXT <- function(){
   Close <- function(button){
     rGtkstore <- view$getModel()
     assign("PFTSensitivityFile", data.frame(rGtkstore), envir=IBCvariables)
-    # write.table(rGtkstore,"PFTsensitivity.txt", sep="\t")
+    write.table(rGtkstore,"PFTsensitivity.txt", sep="\t")
     w$destroy()
     SimulationSpecifics()
   }

@@ -166,13 +166,13 @@ Output file names are given for each run individually.
 */
 int main(int argc, char* argv[])
 {
-	#ifdef _WIN32
+	#if defined _WIN32 || defined _WIN64
 	DWORD pid=GetCurrentProcessId();
 	#endif
 
-	#ifdef _WIN64
-	DWORD pid=GetCurrentProcessId();
-	#endif
+	//#ifdef _WIN64
+	//DWORD pid=GetCurrentProcessId();
+	//#endif
 
 	#ifdef __linux__
 	long int pid=getpid();
