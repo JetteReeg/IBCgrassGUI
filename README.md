@@ -24,7 +24,7 @@ To run the IBCgrass GUI, following software need to be installed on the local ma
 
 GTK		The R package RGtk2 depends on gtk. It might be necessary to install gtk by hand. 
 
-G++ compiler	e.g. MinGW (http://www.mingw.org/wiki/Getting_Started)
+C++ compiler	e.g. MinGW (http://www.mingw.org/wiki/Getting_Started)
 
 The software was tested on Windows 7, Windows 10 with following version:
 
